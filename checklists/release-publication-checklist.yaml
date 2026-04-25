@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 release_publication_checklist:
   purpose: Check release, archival, citation, and registry readiness.
   checks:
@@ -16,6 +17,9 @@ release_publication_checklist:
     - id: citation-ready
       question: Do citation files point to the correct release and identifier?
       evidence_required: [CITATION.cff, codemeta.json, metadata.yaml]
+    - id: licensing-ready
+      question: Are artifact license, code license where applicable, third-party material rights, downstream reuse constraints, and AI indexing/training preference documented?
+      evidence_required: [LICENSE, metadata.yaml, artifact-profile.yaml, third-party-materials-record]
     - id: registry-ready
       question: Does registry metadata match release metadata?
       evidence_required: [registry-submission-record.yaml, release-record.yaml]

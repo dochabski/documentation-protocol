@@ -1,25 +1,20 @@
-Creative Commons Attribution 4.0 International (CC BY 4.0)
+Repository licensing notice
 
-Copyright (c) 2026 David Ochabski
+Unless otherwise noted, all non-code content in this repository is dedicated to
+the public domain under CC0 1.0 Universal. This includes protocol
+documentation, structured specifications, templates, checklists, schemas,
+examples, metadata, and records.
 
-This work is licensed under the Creative Commons Attribution 4.0
-International License.
+Executable code, scripts, CI workflows, and software tooling are licensed under
+the Apache License 2.0.
 
-You are free to:
+Citation is appreciated and recommended for scholarly traceability, but it is
+not legally required as a license condition for CC0 content.
 
-- Share: copy and redistribute the material in any medium or format.
-- Adapt: remix, transform, and build upon the material for any purpose,
-  even commercially.
+Third-party materials, trademarks, external sources, and materials merely cited
+or described by this repository are not relicensed by this repository.
 
-Under the following terms:
+Full license texts are available in:
 
-- Attribution: You must give appropriate credit, provide a link to the
-  license, and indicate if changes were made. You may do so in any reasonable
-  manner, but not in any way that suggests the licensor endorses you or your
-  use.
-
-No additional restrictions: You may not apply legal terms or technological
-measures that legally restrict others from doing anything the license permits.
-
-Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
-Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+- LICENSES/CC0-1.0.txt
+- LICENSES/Apache-2.0.txt

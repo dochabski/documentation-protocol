@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "SPDX-License-Identifier: CC0-1.0",
   "title": "Documentation Protocol Metadata Record",
   "type": "object",
   "required": ["metadata"],
@@ -17,6 +18,11 @@
         "orcid_ids": {"type": "array"},
         "organizations": {"type": "array"},
         "license": {"type": "string", "minLength": 1},
+        "code_license": {"type": "string"},
+        "license_notes": {"type": "string"},
+        "third_party_materials": {"type": "array"},
+        "downstream_reuse_constraints": {"type": "array"},
+        "ai_indexing_training_preference": {"type": "string"},
         "repository_url": {"type": "string", "minLength": 1},
         "archive_doi": {"type": "string"},
         "keywords": {"type": "array", "minItems": 1},

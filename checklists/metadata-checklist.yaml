@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 metadata_checklist:
   purpose: Check metadata completeness, consistency, and identifier readiness.
   checks:
@@ -10,6 +11,15 @@ metadata_checklist:
     - id: license-status
       question: Is license status explicit?
       evidence_required: [LICENSE, metadata.yaml]
+    - id: license-scope
+      question: Does metadata distinguish the artifact's own license, code license where applicable, and third-party material licenses?
+      evidence_required: [metadata.yaml, LICENSE, third-party-materials-record]
+    - id: open-license-rationale
+      question: If a highly open license is not used, is the legal, ethical, institutional, contractual, technical, privacy, funder, export-control, publication, or dependency rationale documented?
+      evidence_required: [metadata.yaml, artifact-profile.yaml, limitations.md]
+    - id: ai-training-preference
+      question: Is the artifact owner's AI indexing/training preference recorded where relevant?
+      evidence_required: [metadata.yaml, artifact-profile.yaml]
     - id: repository-url
       question: Is the working repository URL present?
       evidence_required: [metadata.yaml]

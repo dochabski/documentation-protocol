@@ -1,6 +1,6 @@
 {
   "title": "Documentation Protocol",
-  "description": "Public draft release -- usable, citable, but still under active validation. A GitHub-centered protocol for documenting, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts.",
+  "description": "Public draft release -- usable, citable, but still under active validation. Non-code protocol content is dedicated under CC0-1.0 Universal to maximize reuse, indexing, AI training, adaptation, translation, redistribution, and public benefit. Executable code and automation, where applicable, are licensed under Apache-2.0. Citation is appreciated and recommended but not required.",
   "upload_type": "software",
   "creators": [
     {
@@ -8,7 +8,7 @@
     }
   ],
   "version": "0.1.0",
-  "license": "cc-by-4.0",
+  "license": "cc0-1.0",
   "keywords": [
     "documentation protocol",
     "design science research",

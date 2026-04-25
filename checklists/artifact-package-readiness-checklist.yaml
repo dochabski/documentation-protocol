@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 artifact_package_readiness_checklist:
   purpose: Check whether an artifact package is ready for review or release.
   checks:
@@ -24,4 +25,24 @@ artifact_package_readiness_checklist:
     - id: limitations-present
       question: Are known limitations and non-goals explicit?
       evidence_required: [limitations.md]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: license-declared
+      question: Does the artifact package declare its own license rather than inheriting the protocol license?
+      evidence_required: [LICENSE, metadata.yaml, artifact-profile.yaml]
+      required_for: [l1_documented, l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: license-compatible-with-contents
+      question: Is the declared license compatible with the artifact contents, dependencies, and included third-party materials?
+      evidence_required: [LICENSE, metadata.yaml, third-party-materials-record]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: third-party-materials-identified
+      question: Are third-party materials, trademarks, data restrictions, and external rights constraints identified?
+      evidence_required: [third-party-materials-record, package-inventory.yaml]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: downstream-reuse-constraints-documented
+      question: Are downstream reuse constraints documented, including any reason a highly open license cannot be used?
+      evidence_required: [artifact-profile.yaml, metadata.yaml, limitations.md]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: ai-indexing-training-preference-documented
+      question: Is the artifact owner's preference for AI indexing/training documented where relevant?
+      evidence_required: [artifact-profile.yaml, metadata.yaml]
       required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]

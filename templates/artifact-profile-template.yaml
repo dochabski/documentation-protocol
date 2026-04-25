@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 artifact_profile:
   artifact_id: ""
   title: ""
@@ -11,6 +12,21 @@ artifact_profile:
   contributors: []
   repository_url: ""
   license: ""
+  license_recommendation:
+    protocol_license_applies_to_artifact: false
+    artifact_must_declare_own_license: true
+    non_code_recommendation: CC0-1.0
+    code_recommendation: Apache-2.0_or_MIT
+    apache_preferred_when_patent_clarity_matters: true
+    citation_recommended_but_not_required_for_cc0: true
+  third_party_materials:
+    - material_id: ""
+      description: ""
+      license_or_rights_status: ""
+      reuse_constraints: []
+  downstream_reuse_constraints: []
+  ai_indexing_training_preference: ""
+  open_license_exception_rationale: ""
   source_basis: []
   knowledge_scope: ""
   knowledge_goal: ""

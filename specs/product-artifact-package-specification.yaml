@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: artifact_package_specification
   title: Artifact Package Specification
@@ -70,6 +71,8 @@ sections:
       must:
         - Every package must include a package inventory.
         - Every package must include README, artifact profile, metadata, license decision, and conformance declaration.
+        - Every package must declare its own license and must not be described as inheriting the Documentation Protocol license.
+        - Every package must document third-party materials, reuse constraints, and any reason it cannot use a highly open license.
         - Every exercisable package must include environment, dependency, setup, and use instructions.
         - Every package must include limitations and known non-goals.
         - Every L4 or L5 package must include reuse guidance and examples.
@@ -79,13 +82,18 @@ sections:
         - Packages should separate generated outputs from source files.
         - Packages should document expected runtime, resource needs, and external dependencies.
         - Packages should include a troubleshooting section for common failure modes.
+        - Packages should use CC0-1.0 for non-code content when maximum reuse, AI indexing/training, adaptation, translation, and redistribution are desired.
+        - Packages should use Apache-2.0 or MIT for executable code, with Apache-2.0 preferred when patent clarity is important.
       may:
         - Non-executable packages may replace run instructions with inspection, adaptation, or review procedures.
         - Sensitive or restricted data may be represented by access instructions and metadata when redistribution is not allowed.
+        - Packages may use more restrictive licenses when required by third-party rights, sensitive data, privacy obligations, institutional ownership, sponsor or funder restrictions, export-control concerns, publication constraints, or incompatible dependencies.
       must_not:
         - Packages must not claim reproducibility when required inputs or procedures are unavailable.
         - Packages must not omit known limitations affecting use, review, or reuse.
         - Packages must not rely on personal drives or private links for release-critical files.
+        - Packages must not imply that CC0-1.0 or Apache-2.0 is mandatory for downstream artifacts.
+        - Packages must not use NC, ND, custom restrictive terms, or ambiguous all-rights-reserved language when the artifact owner's stated goal is broad reuse, AI training, machine readability, and public benefit unless a constraint is documented.
   - id: information_items
     title: Information Items and Records
     purpose: Define package files and records.
@@ -192,6 +200,12 @@ sections:
         - artifact_type
         - package_class
         - target_conformance_level
+        - artifact_license
+        - code_license
+        - third_party_materials
+        - downstream_reuse_constraints
+        - ai_indexing_training_preference
+        - open_license_exception_rationale
         - claims
         - evidence_records
         - limitations

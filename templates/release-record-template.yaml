@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 release_record:
   release_id: ""
   artifact_id: ""
@@ -11,6 +12,13 @@ release_record:
   validation_records: []
   review_records: []
   known_limitations: []
+  licensing:
+    artifact_license: ""
+    code_license: ""
+    third_party_materials_identified: false
+    downstream_reuse_constraints_documented: false
+    ai_indexing_training_preference: ""
+    citation_recommended_but_not_required_for_cc0: true
   citation:
     citation_file: CITATION.cff
     archive_identifier: ""

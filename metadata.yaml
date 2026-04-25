@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 metadata:
   title: Documentation Protocol
   short_description: >
@@ -9,7 +10,13 @@ metadata:
     - Ochabski, David
   contributors: []
   organizations: []
-  license: CC-BY-4.0
+  license: CC0-1.0
+  code_license: Apache-2.0
+  license_notes: >
+    Primary non-code protocol content is dedicated under CC0-1.0. Executable
+    code, scripts, CI workflows, and software tooling are licensed under
+    Apache-2.0 where present. Citation is appreciated and recommended but not
+    required.
   repository_url: https://github.com/dochabski/documentation-protocol
   archive_doi: 10.5281/zenodo.19748824
   keywords:

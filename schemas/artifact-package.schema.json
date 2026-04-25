@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "SPDX-License-Identifier: CC0-1.0",
   "title": "Documentation Protocol Artifact Package",
   "type": "object",
   "required": ["artifact_profile"],
@@ -22,6 +23,12 @@
         "authors": {"type": "array"},
         "repository_url": {"type": "string"},
         "license": {"type": "string"},
+        "code_license": {"type": "string"},
+        "license_recommendation": {"type": "object"},
+        "third_party_materials": {"type": "array"},
+        "downstream_reuse_constraints": {"type": "array"},
+        "ai_indexing_training_preference": {"type": "string"},
+        "open_license_exception_rationale": {"type": "string"},
         "claims": {"type": "array"},
         "open_questions": {"type": "array"}
       }

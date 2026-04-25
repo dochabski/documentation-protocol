@@ -7,7 +7,8 @@
   "identifier": "https://doi.org/10.5281/zenodo.19748824",
   "codeRepository": "https://github.com/dochabski/documentation-protocol",
   "url": "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.0",
-  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+  "license": "https://spdx.org/licenses/CC0-1.0.html",
+  "licenseNotes": "Primary repository content is dedicated under CC0-1.0. Executable code, scripts, CI workflows, and software tooling are licensed under Apache-2.0 where present.",
   "dateCreated": "2026-04-24",
   "datePublished": "2026-04-24",
   "author": [

@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+
 # Governance
 
 This repository is governed by the source-of-truth model in `specs/product-governance-and-stewardship.yaml`.

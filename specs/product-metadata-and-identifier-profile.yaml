@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: metadata_and_identifier_profile
   title: Metadata and Persistent Identifier Profile
@@ -108,6 +109,24 @@ sections:
         - archive_doi identifies the immutable archival release.
         - citation metadata resolves authorship and preferred citation.
         - related identifiers connect publications, artifacts, datasets, and software.
+      downstream_artifact_licensing_recommendation:
+        protocol_license_scope: The Documentation Protocol repository license does not automatically apply to artifacts created with the protocol.
+        required_artifact_action: Each downstream artifact must declare its own license.
+        non_code_recommendation: >
+          Recommend CC0-1.0 for non-code artifact content, documentation,
+          structured specifications, examples, metadata, and reusable templates
+          when maximum reuse, accessibility, AI indexing/training, adaptation,
+          translation, and redistribution are desired.
+        code_recommendation: >
+          Recommend Apache-2.0 or MIT for executable software, scripts,
+          automation, and source code; prefer Apache-2.0 when patent clarity is
+          important.
+        restrictive_terms_discouraged:
+          - noncommercial_restrictions
+          - no_derivatives_restrictions
+          - custom_restrictive_terms
+          - ambiguous_all_rights_reserved_language
+        citation_position: Citation may be recommended for scholarly traceability but should not be framed as required when CC0 is used.
   - id: normative_requirements
     title: Normative Requirements
     purpose: Define metadata and identifier requirements.
@@ -115,6 +134,8 @@ sections:
       must:
         - Every artifact package must include machine-readable metadata.
         - Every package must declare license status before public release.
+        - Every package must distinguish the license of the downstream artifact from the license of the Documentation Protocol.
+        - Every package must identify third-party materials and downstream reuse constraints where applicable.
         - Every publication-ready release must include citation metadata and an archive DOI or DOI-ready archival deposit plan.
         - Every metadata record must identify version, status, authors, repository URL, keywords, and maintenance status.
         - Metadata values repeated across files must be consistent or explicitly mapped.
@@ -123,6 +144,7 @@ sections:
         - Projects should maintain CITATION.cff, codemeta.json, .zenodo.json, and metadata.yaml from a common source where possible.
         - Metadata should identify dependencies and runtime environment for exercisable artifacts.
         - Related artifacts and publications should be cross-linked.
+        - Metadata should recommend highly open licenses without making CC0-1.0 or Apache-2.0 mandatory for downstream artifacts.
       may:
         - Draft packages may use a placeholder archive DOI status of not_yet_assigned.
         - Projects may include discipline-specific metadata extensions.
@@ -130,6 +152,7 @@ sections:
         - Projects must not publish a stable release with unknown license status.
         - Projects must not cite a mutable branch as the archival version.
         - Projects must not allow conflicting title, version, author, or license values across metadata files.
+        - Projects must not imply that using the Documentation Protocol relicenses downstream artifacts.
   - id: information_items
     title: Information Items and Records
     purpose: Define metadata files and records.
@@ -248,8 +271,8 @@ sections:
     purpose: Track metadata decisions.
     content:
       open_questions:
-        - id: oq-metadata-license
-          question: Which default license and citation convention should the public protocol recommend?
+        - id: oq-metadata-license-exceptions
+          question: Which pilot-specific license exceptions require additional template fields?
           status: open
       backlog:
         - Add a script to generate metadata output files from metadata.yaml.
@@ -284,6 +307,6 @@ traceability:
     evidence_location: citation_set:fair4rs_principles+wang_strong_1996+github_documentation_standards_synthesis
     status: proposed
 open_questions:
-  - id: oq-metadata-license
-    question: Select a default license recommendation before public publication.
+  - id: oq-metadata-license-exceptions
+    question: Identify pilot-specific license exceptions that require additional template fields.
     status: open

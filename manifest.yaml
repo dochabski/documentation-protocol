@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 protocol:
   id: documentation_protocol
   title: Documentation Protocol

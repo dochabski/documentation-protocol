@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+
 # Records
 
 Use this directory in future protocol applications for change, decision, review, evaluation, validation, release, preservation, registry, and roadmap records.

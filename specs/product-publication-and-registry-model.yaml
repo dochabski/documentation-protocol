@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: publication_and_registry_model
   title: Publication and Registry Model
@@ -72,12 +73,14 @@ sections:
         - Every release candidate must have passing required quality gates or recorded exceptions.
         - Every publication-ready release must freeze metadata before tagging.
         - Every public release must include citation metadata and license status.
+        - Every public release must preserve the distinction between the protocol license, the downstream artifact license, and licenses of third-party materials.
         - Every archival release must include an immutable snapshot and persistent identifier.
         - Every registry submission must match the release metadata and archive identifier.
       should:
         - Release notes should summarize changes, known limitations, review status, and conformance level.
         - Publication appendices should identify artifact location, DOI, system requirements, claims, and review status.
         - Registry entries should link repository, archive, citation, and related publication.
+        - Publication and registry metadata should document any AI indexing/training preference and any constraints preventing maximally open licensing.
       may:
         - Draft releases may be tagged without archival deposit when they are not presented as publication-ready.
         - Projects may use multiple registries when metadata remains consistent.
@@ -85,6 +88,8 @@ sections:
         - Projects must not change files after archival release without creating a new release.
         - Projects must not submit registry metadata that conflicts with package metadata.
         - Projects must not cite a moving branch as the released artifact.
+        - Projects must not represent citation as a legal condition for downstream CC0-licensed artifacts.
+        - Projects must not imply that protocol use relicenses a downstream artifact.
   - id: information_items
     title: Information Items and Records
     purpose: Define release, publication, and registry records.
@@ -207,6 +212,11 @@ sections:
         - submitted_metadata
         - related_release_record
         - related_archive_identifier
+        - artifact_license
+        - code_license
+        - third_party_materials_status
+        - downstream_reuse_constraints
+        - ai_indexing_training_preference
   - id: open_questions_and_backlog
     title: Open Questions and Backlog
     purpose: Track publication decisions.

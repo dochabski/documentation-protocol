@@ -1,3 +1,5 @@
+<!-- SPDX-License-Identifier: CC0-1.0 -->
+
 # Contributing
 
 This protocol is in draft form until pilot review is complete.
