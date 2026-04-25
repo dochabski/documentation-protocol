@@ -7,7 +7,7 @@ product:
     metadata, evidence, reproducibility material, limitations, examples, and
     conformance-specific package obligations.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - dsr_corpus

@@ -7,7 +7,7 @@ product:
     process, release path, and continuous improvement plan for turning this
     protocol into a reusable GitHub repository.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - isos_and_more

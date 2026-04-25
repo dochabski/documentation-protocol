@@ -7,7 +7,7 @@ product:
     workflow, scoring rubrics, acceptance criteria, and evidence requirements
     for protocol-governed artifact packages.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - data_and_information

@@ -7,7 +7,7 @@ product:
     identity, related artifact, and registry metadata requirements for
     protocol-governed packages.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - data_and_information

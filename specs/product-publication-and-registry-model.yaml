@@ -7,7 +7,7 @@ product:
     citation, registry submission, publication appendix material, and
     preservation readiness for protocol-governed artifacts.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - isos_and_more

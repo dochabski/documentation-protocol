@@ -6,7 +6,7 @@ product:
     Define reusable templates, checklists, and schema implications that make
     the protocol easy to apply consistently across projects.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - isos_and_more

@@ -7,7 +7,7 @@ product:
     assumptions, tailoring rules, and non-goals for a reusable
     GitHub-centered documentation protocol.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - isos_and_more

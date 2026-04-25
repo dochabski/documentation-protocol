@@ -7,7 +7,7 @@ product:
     checks, review gates, release gates, and automation responsibilities for
     GitHub-centered protocol use.
   status: draft
-  version: "0.1.0"
+version: "0.1.1"
 source_basis:
   - md_guides
   - data_and_information

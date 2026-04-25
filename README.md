@@ -18,11 +18,11 @@ The source of truth is the YAML product specifications in `specs/`. Markdown fil
 
 ## Source Policy
 
-This protocol was generated from the project corpus and scaffold basis cited in `manifest.yaml`. It intentionally does not expose local source file names or conversion artifact names. The v0.1.0 release contains generated protocol/scaffold files only and no source PDFs or copyrighted source documents.
+This protocol was generated from the project corpus and scaffold basis cited in `manifest.yaml`. It intentionally does not expose local source file names or conversion artifact names. Public releases contain generated protocol/scaffold files only and no source PDFs or copyrighted source documents.
 
 ## Citation
 
-Use the citation metadata in `CITATION.cff`. The v0.1.0 draft DOI is `10.5281/zenodo.19748824`. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content.
+Use the citation metadata in `CITATION.cff`. The v0.1.1 draft DOI is `10.5281/zenodo.19764060`. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content.
 
 ## License
 
