@@ -1,0 +1,30 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Documentation Protocol",
+  "description": "A GitHub-centered protocol for documenting, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts.",
+  "version": "0.1.0",
+  "identifier": "https://doi.org/10.5281/zenodo.19748824",
+  "codeRepository": "https://github.com/dochabski/documentation-protocol",
+  "url": "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.0",
+  "license": "https://spdx.org/licenses/CC-BY-4.0.html",
+  "dateCreated": "2026-04-24",
+  "datePublished": "2026-04-24",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "David",
+      "familyName": "Ochabski"
+    }
+  ],
+  "keywords": [
+    "documentation protocol",
+    "design science research",
+    "artifact evaluation",
+    "reproducibility",
+    "research software",
+    "GitHub"
+  ],
+  "developmentStatus": "wip",
+  "isAccessibleForFree": true
+}

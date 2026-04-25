@@ -1,0 +1,26 @@
+release_record:
+  release_id: ""
+  artifact_id: ""
+  version: ""
+  tag: ""
+  release_date: ""
+  release_manager: ""
+  conformance_level: ""
+  package_inventory: ""
+  metadata_freeze_record: ""
+  validation_records: []
+  review_records: []
+  known_limitations: []
+  citation:
+    citation_file: CITATION.cff
+    archive_identifier: ""
+    repository_url: ""
+  preservation:
+    archival_repository: ""
+    archive_doi: ""
+    preservation_record: ""
+  decision:
+    approved: false
+    approver: ""
+    approval_date: ""
+    conditions: []

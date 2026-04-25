@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Documentation Protocol Artifact Package",
+  "type": "object",
+  "required": ["artifact_profile"],
+  "properties": {
+    "artifact_profile": {
+      "type": "object",
+      "required": ["artifact_id", "title", "package_class", "artifact_types", "target_conformance_level", "version", "status"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "short_description": {"type": "string"},
+        "package_class": {"type": "string"},
+        "artifact_types": {"type": "array", "items": {"type": "string"}},
+        "target_conformance_level": {
+          "type": "string",
+          "enum": ["l0_draft", "l1_documented", "l2_reviewable", "l3_exercisable", "l4_reusable", "l5_archival_publication_ready"]
+        },
+        "version": {"type": "string"},
+        "status": {"type": "string"},
+        "authors": {"type": "array"},
+        "repository_url": {"type": "string"},
+        "license": {"type": "string"},
+        "claims": {"type": "array"},
+        "open_questions": {"type": "array"}
+      }
+    }
+  }
+}

@@ -1,0 +1,253 @@
+product:
+  id: publication_and_registry_model
+  title: Publication and Registry Model
+  purpose: >
+    Define release versioning, tagged releases, archival deposits, DOI-backed
+    citation, registry submission, publication appendix material, and
+    preservation readiness for protocol-governed artifacts.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - isos_and_more
+  - data_and_information
+dependencies:
+  - metadata_and_identifier_profile
+  - artifact_package_specification
+  - quality_conformance_and_review_model
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define publication and registry scope.
+    content:
+      primary_outputs:
+        - release_model
+        - preservation_model
+        - publication_readiness_model
+        - registry_crosswalk
+        - artifact_appendix_model
+      release_goal: >
+        Convert a reviewed package into a versioned, citable, preservable, and
+        registry-ready artifact without losing traceability from claim to
+        evidence to release identifier.
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define release, preservation, and registry entities.
+    content:
+      release_phases:
+        - release_candidate
+        - metadata_freeze
+        - quality_gate_review
+        - tag_release
+        - archive_release
+        - update_citation_metadata
+        - publication_or_registry_submission
+      preservation_requirements:
+        - immutable_release_snapshot
+        - persistent_identifier
+        - package_inventory
+        - license_record
+        - citation_record
+        - dependency_record
+        - maintenance_or_deprecation_status
+      registry_record:
+        required_fields:
+          - registry_name
+          - submission_url_or_identifier
+          - artifact_title
+          - version
+          - repository_url
+          - archive_doi
+          - license
+          - authors
+          - keywords
+          - conformance_level
+          - review_status
+          - related_publication
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define publication and registry rules.
+    content:
+      must:
+        - Every release candidate must have passing required quality gates or recorded exceptions.
+        - Every publication-ready release must freeze metadata before tagging.
+        - Every public release must include citation metadata and license status.
+        - Every archival release must include an immutable snapshot and persistent identifier.
+        - Every registry submission must match the release metadata and archive identifier.
+      should:
+        - Release notes should summarize changes, known limitations, review status, and conformance level.
+        - Publication appendices should identify artifact location, DOI, system requirements, claims, and review status.
+        - Registry entries should link repository, archive, citation, and related publication.
+      may:
+        - Draft releases may be tagged without archival deposit when they are not presented as publication-ready.
+        - Projects may use multiple registries when metadata remains consistent.
+      must_not:
+        - Projects must not change files after archival release without creating a new release.
+        - Projects must not submit registry metadata that conflicts with package metadata.
+        - Projects must not cite a moving branch as the released artifact.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define release, publication, and registry records.
+    content:
+      required_files:
+        - CHANGELOG.md
+        - CITATION.cff
+        - codemeta.json
+        - .zenodo.json
+        - records/releases/release-record-<version>.yaml
+        - records/preservation/preservation-record-<version>.yaml
+        - docs/protocol/artifact-appendix.md
+      required_records:
+        - release_candidate_record
+        - metadata_freeze_record
+        - release_approval_record
+        - archival_deposit_record
+        - registry_submission_record
+        - preservation_record
+      retention_expectations:
+        - Preserve release, archive, registry, citation, and preservation records indefinitely.
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define release and publication process.
+    content:
+      steps:
+        - id: prepare_release_candidate
+          action: Confirm package inventory, review records, validation results, and release notes.
+          output: release_candidate_record
+        - id: freeze_metadata
+          action: Lock metadata values used for citation, archive, and registry.
+          output: metadata_freeze_record
+        - id: approve_release
+          action: Confirm quality gates and unresolved limitations.
+          output: release_approval_record
+        - id: tag_release
+          action: Create semantic version tag or documented release label.
+          output: version_tag
+        - id: archive_release
+          action: Deposit immutable release snapshot in archival repository.
+          output: archival_deposit_record
+        - id: update_identifiers
+          action: Update citation and metadata files with archive identifier.
+          output: identifier_update_record
+        - id: submit_registry
+          action: Submit or prepare registry entry and publication appendix.
+          output: registry_submission_record
+      failure_modes:
+        - metadata_changed_after_tag
+        - archive_identifier_missing
+        - registry_metadata_conflict
+        - release_without_review_approval
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define publication readiness gates.
+    content:
+      acceptance_criteria:
+        - Release candidate has a complete package inventory.
+        - Required review and validation records exist.
+        - Metadata freeze occurred before tag.
+        - Archive deposit contains the tagged release contents.
+        - Registry and publication appendix match release metadata.
+      evidence_required:
+        - release_record
+        - metadata_freeze_record
+        - validation_results
+        - archive_doi_or_deposit_record
+        - registry_submission_record
+  - id: traceability
+    title: Traceability
+    purpose: Link release to registry and publication claims.
+    content:
+      upstream_dependencies:
+        - metadata_and_identifier_profile
+        - artifact_package_specification
+        - quality_conformance_and_review_model
+      downstream_outputs:
+        - templates_and_checklists
+        - automation_and_validation_model
+        - implementation_roadmap
+      trace_links:
+        - release_record_to_version_tag
+        - version_tag_to_archive_deposit
+        - archive_identifier_to_citation
+        - citation_to_registry_record
+        - registry_record_to_publication_appendix
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Implement release and registry workflow.
+    content:
+      repository_locations:
+        release_records: records/releases/
+        preservation_records: records/preservation/
+        registry_records: records/registry/
+        publication_appendix: docs/protocol/artifact-appendix.md
+      anti_patterns:
+        - publishing a release from an unreviewed branch.
+        - updating metadata after archive deposit without a new record.
+        - using separate manual registry metadata.
+      automation_hooks:
+        - require clean validation results before release.
+        - compare archive deposit files against package inventory.
+        - require metadata freeze record before version tag.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define release and registry template fields.
+    content:
+      release_record_fields:
+        - version
+        - tag
+        - release_date
+        - conformance_level
+        - validation_results
+        - review_record_ids
+        - archive_identifier
+        - known_limitations
+      registry_record_fields:
+        - registry_name
+        - submission_status
+        - submitted_metadata
+        - related_release_record
+        - related_archive_identifier
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Track publication decisions.
+    content:
+      open_questions:
+        - id: oq-publication-registry-targets
+          question: Which archival and registry targets should be the default examples?
+          status: open
+      backlog:
+        - Add a generated artifact appendix template.
+quality_gates:
+  - id: qg-publication-release
+    question: Is the release candidate reviewed, validated, and tagged?
+    evidence_required: [release_approval_record, validation_results, version_tag]
+    status: draft_pass
+  - id: qg-publication-archive
+    question: Does the archival deposit preserve the release snapshot and identifier?
+    evidence_required: [archive_deposit_record, archive_doi]
+    status: draft_pass
+  - id: qg-publication-registry
+    question: Does registry metadata match release and citation metadata?
+    evidence_required: [registry_submission_record, citation_record, metadata_freeze_record]
+    status: draft_pass
+traceability:
+  - trace_id: trace-publication-001
+    source_type: scaffold
+    source_id: models/07_review_release_preservation_model.yaml
+    relationship: defines
+    target_type: product
+    target_id: publication_and_registry_model
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-publication-002
+    source_type: source_family
+    source_id: md_guides
+    relationship: grounds
+    target_type: section
+    target_id: conceptual_model
+    evidence_location: citation_set:acm_artifact_badging_policy_2020+niso_rp_31_2021+fair4rs_principles
+    status: proposed
+open_questions:
+  - id: oq-publication-registry-targets
+    question: Choose default archival and registry examples before public documentation render.
+    status: open

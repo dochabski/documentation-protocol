@@ -1,0 +1,250 @@
+product:
+  id: protocol_foundation
+  title: Protocol Foundation and Scope
+  purpose: >
+    Define the protocol identity, scope, intended users, conformance logic,
+    assumptions, tailoring rules, and non-goals for a reusable
+    GitHub-centered documentation protocol.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - isos_and_more
+dependencies: []
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Establish the protocol boundary and intended use.
+    content:
+      protocol_identity:
+        name: Documentation Protocol
+        object_type: reusable_documentation_protocol
+        primary_users: [artifact_authors, reviewers, maintainers, adopters, future_ai_assistants]
+        governed_objects:
+          - design_science_research_artifacts
+          - research_software_artifacts
+          - documentation_packages
+          - review_and_release_records
+          - reusable_templates_checklists_and_schemas
+      scope:
+        in_scope:
+          - GitHub-centered working repositories
+          - YAML source-of-truth specifications
+          - Markdown publication renders
+          - artifact package documentation
+          - quality review and conformance gates
+          - metadata, citation, release, preservation, and registry readiness
+        out_of_scope:
+          - legal advice
+          - publisher-specific acceptance guarantees
+          - replacement of a research method section
+          - uncontrolled ad hoc documentation that cannot be reviewed
+      primary_outputs:
+        - protocol_overview
+        - scope_statement
+        - applicability_model
+        - conformance_levels
+        - tailoring_rules
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define the core logic that connects artifact, documentation, evidence, and release.
+    content:
+      key_concepts:
+        artifact: A designed or produced object that makes a claim and can be inspected.
+        information_item: A controlled documentation object with type, purpose, minimum content, and lifecycle state.
+        record: Retained evidence of a decision, action, review, test, evaluation, release, or preservation event.
+        conformance_level: A declared maturity target that determines required evidence and review depth.
+        package: The repository-bounded collection of artifact files, documentation, metadata, evidence, and release records.
+      relationships:
+        - source_basis grounds protocol requirements.
+        - protocol requirements define information items and quality gates.
+        - information items capture artifact claims, procedures, evidence, and records.
+        - quality gates determine whether a package is reviewable, reusable, or publication-ready.
+        - release and registry records preserve the citable identity of an approved package.
+      assumptions:
+        - GitHub is the working hub but not the archival repository by itself.
+        - YAML is the controlled source and Markdown is the human render.
+        - Review evidence must be inspectable without relying on private memory.
+        - Tailoring is allowed only when it is explicit and recorded.
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: State protocol-wide requirements using controlled requirement strength.
+    content:
+      must:
+        - Every governed artifact must declare artifact type, scope, intended audience, version, authorship, license, repository URL, and maintenance status.
+        - Every protocol application must declare a target conformance level before review.
+        - Every normative claim must be traceable to a source family, protocol product, or project-specific decision record.
+        - Every reviewable package must include README, metadata, license decision, package inventory, and required records.
+        - Every release candidate must preserve a release record and a citable version identifier.
+      should:
+        - Projects should use the canonical directory structure unless a tailoring record justifies a different structure.
+        - Projects should maintain YAML source files and generate Markdown renders for readers.
+        - Projects should use issue and pull request templates to capture controlled change information.
+        - Projects should automate schema, metadata, link, and package checks before release.
+      may:
+        - Projects may adopt only a lower conformance level for early-stage work.
+        - Projects may defer archival DOI assignment until publication or stable release.
+        - Projects may add domain-specific templates when they preserve the required metadata and evidence fields.
+      must_not:
+        - Projects must not claim archival permanence from GitHub alone.
+        - Projects must not remove review evidence after release.
+        - Projects must not silently tailor away required records or quality gates.
+        - Projects must not present unsupported results as validated or reusable.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Identify foundation-level files and records.
+    content:
+      required_files:
+        - README.md
+        - manifest.yaml
+        - specs/product-catalog.yaml
+        - specs/product-protocol-foundation.yaml
+      required_record_classes:
+        - tailoring_record
+        - conformance_declaration_record
+        - source_basis_record
+        - decision_record
+      retention_expectations:
+        - Preserve conformance declarations for the lifetime of the release they govern.
+        - Preserve tailoring decisions until superseded and keep a change history.
+        - Preserve source-basis references with protocol versions.
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define how a project applies the protocol foundation.
+    content:
+      steps:
+        - id: identify_artifact
+          action: Declare artifact type, scope, audience, claims, and repository boundary.
+          output: artifact_profile
+        - id: select_conformance
+          action: Choose target conformance level and required evidence.
+          output: conformance_declaration_record
+        - id: tailor_protocol
+          action: Record any justified deviations from the canonical protocol.
+          output: tailoring_record
+        - id: instantiate_repository
+          action: Create or map required directories, templates, records, and metadata files.
+          output: repository_setup_record
+        - id: enter_quality_workflow
+          action: Submit the package to quality and review gates.
+          output: review_request
+      failure_modes:
+        - missing_artifact_boundary
+        - unsupported_conformance_claim
+        - unrecorded_tailoring
+        - missing_source_of_truth_files
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define baseline conformance levels.
+    content:
+      conformance_levels:
+        - id: l0_draft
+          minimum_state: Basic files exist but are not reviewable.
+        - id: l1_documented
+          minimum_state: README, license decision, artifact profile, and basic metadata exist.
+        - id: l2_reviewable
+          minimum_state: Requirements, design description, evaluation plan, and traceability exist.
+        - id: l3_exercisable
+          minimum_state: Installation, use, execution, or inspection procedure works where applicable.
+        - id: l4_reusable
+          minimum_state: Examples, modular documentation, provenance, limitations, and adaptation guidance exist.
+        - id: l5_archival_publication_ready
+          minimum_state: Tagged release, DOI-ready metadata, release record, preservation plan, and publication appendix exist.
+      acceptance_criteria:
+        - Scope, non-goals, conformance level, and tailoring decisions are explicit.
+        - Every required downstream product has a declared dependency path.
+        - The protocol can be applied without relying on unstated source knowledge.
+  - id: traceability
+    title: Traceability
+    purpose: Establish foundation trace links.
+    content:
+      upstream_dependencies: []
+      downstream_outputs:
+        - governance_and_stewardship
+        - dsr_lifecycle_and_contribution_model
+        - information_item_architecture
+        - repository_architecture
+        - metadata_and_identifier_profile
+        - quality_conformance_and_review_model
+        - artifact_package_specification
+        - publication_and_registry_model
+        - templates_and_checklists
+        - automation_and_validation_model
+        - implementation_roadmap
+      claim_evidence_alignment:
+        - Claims about GitHub repository practice trace to md_guides.
+        - Claims about controlled information items and conformance trace to isos_and_more.
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Define where foundation material lives.
+    content:
+      repository_location: specs/product-protocol-foundation.yaml
+      file_naming: lower-kebab-case
+      examples:
+        - Use `conformance_level: l2_reviewable` for a package being prepared for first review.
+        - Use a tailoring record when a non-software artifact has no runtime environment.
+      anti_patterns:
+        - README-only artifact documentation.
+        - Metadata written only in prose.
+        - Review checklists detached from release evidence.
+      automation_hooks:
+        - validate manifest.yaml against schema when available.
+        - require conformance level before review issue can be accepted.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Identify reusable fields required by foundation decisions.
+    content:
+      required_fields:
+        - artifact_id
+        - artifact_type
+        - conformance_level
+        - source_basis
+        - tailoring_decisions
+        - review_status
+        - release_status
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Preserve unresolved foundation issues.
+    content:
+      open_questions:
+        - id: oq-foundation-license
+          question: Which default license should be used when this protocol is published publicly?
+          owner: protocol_owner
+          status: open
+      backlog:
+        - Add generated Markdown renders after the YAML source is reviewed.
+        - Add examples from pilot artifact packages.
+quality_gates:
+  - id: qg-foundation-scope
+    question: Are scope, non-goals, assumptions, and intended users explicit?
+    evidence_required: [scope_statement, non_goals, user_roles]
+    status: draft_pass
+  - id: qg-foundation-conformance
+    question: Are conformance levels and tailoring rules operational enough for review?
+    evidence_required: [conformance_levels, tailoring_rules, acceptance_criteria]
+    status: draft_pass
+  - id: qg-foundation-source-policy
+    question: Does the product follow the uploaded-corpus-only source policy?
+    evidence_required: [source_basis, traceability]
+    status: draft_pass
+traceability:
+  - trace_id: trace-foundation-001
+    source_type: scaffold
+    source_id: registries/00_project_configuration.yaml
+    relationship: defines
+    target_type: product
+    target_id: protocol_foundation
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-foundation-002
+    source_type: source_family
+    source_id: md_guides
+    relationship: grounds
+    target_type: section
+    target_id: repository_and_artifact_scope
+    evidence_location: citation_set:acm_artifact_badging_policy_2020+niso_rp_31_2021+fair4rs_principles+github_documentation_standards_synthesis
+    status: proposed
+open_questions:
+  - id: oq-foundation-license
+    question: Choose the protocol's public repository license before GitHub publication.
+    status: open

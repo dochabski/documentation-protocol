@@ -1,0 +1,140 @@
+protocol:
+  id: documentation_protocol
+  title: Documentation Protocol
+  version: "0.1.0"
+  status: draft
+  generated_date: "2026-04-24"
+  source_of_truth_format: yaml
+  publication_render_format: markdown
+  working_hub: GitHub
+  archival_position: >
+    GitHub is the working collaboration hub. Immutable, DOI-backed releases
+    should be deposited in an archival repository or registry during release.
+source_policy:
+  default: uploaded_project_corpus_only
+  outside_sources_allowed: false
+  governing_principle: >
+    Every governed artifact must be understandable, inspectable, citable,
+    exercisable where applicable, evaluable, reusable, and preservable at the
+    level appropriate to its type and claim.
+source_citation_policy:
+  local_source_file_names_exposed: false
+  rule: >
+    Public protocol files should cite source families, standards, scholarly
+    works, or internal project-control citations instead of local source file
+    names, local paths, or conversion artifact names.
+source_families:
+  - id: md_guides
+    role: >
+      Markdown guides for artifact badging, DSR, FAIR research software,
+      GitHub documentation, standards references, architecture description, and
+      documentation quality.
+  - id: isos_and_more
+    role: >
+      Standards-derived material for lifecycle information items, architecture
+      views, systems documentation, conformance logic, and stewardship.
+  - id: dsr_corpus
+    role: >
+      Design science research corpus for artifact types, contribution logic,
+      lifecycle, evaluation, generalization, and publication.
+  - id: data_and_information
+    role: >
+      Data, information, system, metadata, and evidence quality material for
+      quality dimensions, measurement, and review.
+source_citations:
+  - id: project_control_scaffold_2026
+    type: internal_project_control_model
+    citation: >
+      Documentation Protocol Builder project-control scaffold, internal draft
+      specification, 2026.
+    supports: [product_catalog, part_work_breakdown, controlled_models, generation_workflow]
+  - id: acm_artifact_badging_policy_2020
+    type: policy
+    citation: >
+      Association for Computing Machinery. Artifact Review and Badging Policy,
+      version 1.1, 2020.
+    supports: [artifact_review, badging, archival_requirements, artifact_appendix]
+  - id: niso_rp_31_2021
+    type: recommended_practice
+    citation: >
+      National Information Standards Organization. Reproducibility Badging and
+      Definitions: A Recommended Practice, NISO RP-31-2021, 2021.
+    supports: [reproducibility_terms, badging_alignment]
+  - id: hevner_et_al_2004
+    type: scholarly_work
+    citation: >
+      Hevner, A. R., March, S. T., Park, J., and Ram, S. Design Science in
+      Information Systems Research. MIS Quarterly, 28(1), 2004.
+    supports: [dsr_guidelines, artifact_evaluation, relevance_and_rigor]
+  - id: peffers_et_al_2007
+    type: scholarly_work
+    citation: >
+      Peffers, K., Tuunanen, T., Rothenberger, M. A., and Chatterjee, S. A
+      Design Science Research Methodology for Information Systems Research.
+      Journal of Management Information Systems, 24(3), 2007.
+    supports: [dsr_lifecycle, objectives_design_demonstration_evaluation_communication]
+  - id: gregor_hevner_2013
+    type: scholarly_work
+    citation: >
+      Gregor, S., and Hevner, A. R. Positioning and Presenting Design Science
+      Research for Maximum Impact. MIS Quarterly, 37(2), 2013.
+    supports: [knowledge_contribution, contribution_positioning, publication_structure]
+  - id: fair4rs_principles
+    type: community_principles
+    citation: >
+      FAIR for Research Software Working Group. FAIR Principles for Research
+      Software (FAIR4RS Principles), 2022.
+    supports: [findability, accessibility, interoperability, reusability, software_metadata]
+  - id: iso_iec_ieee_15289_2019
+    type: standard
+    citation: >
+      ISO/IEC/IEEE 15289:2019, Systems and software engineering, Content of
+      life-cycle information items.
+    supports: [information_item_architecture, document_control, record_classes]
+  - id: iso_iec_ieee_15288
+    type: standard
+    citation: >
+      ISO/IEC/IEEE 15288, Systems and software engineering, System life cycle
+      processes.
+    supports: [lifecycle_processes, governance, systems_documentation]
+  - id: iso_iec_ieee_42010_2022
+    type: standard
+    citation: >
+      ISO/IEC/IEEE 42010:2022, Software, systems and enterprise, Architecture
+      description.
+    supports: [architecture_description, viewpoints, concerns, architecture_records]
+  - id: wang_strong_1996
+    type: scholarly_work
+    citation: >
+      Wang, R. Y., and Strong, D. M. Beyond Accuracy: What Data Quality Means
+      to Data Consumers. Journal of Management Information Systems, 12(4), 1996.
+    supports: [quality_dimensions_for_data, information_quality, evidence_quality]
+  - id: delone_mclean_2003
+    type: scholarly_work
+    citation: >
+      DeLone, W. H., and McLean, E. R. The DeLone and McLean Model of
+      Information Systems Success: A Ten-Year Update. Journal of Management
+      Information Systems, 19(4), 2003.
+    supports: [information_quality, system_quality, use_and_user_satisfaction]
+  - id: github_documentation_standards_synthesis
+    type: internal_synthesis
+    citation: >
+      GitHub repository documentation standards synthesis, internal protocol
+      source-family synthesis, 2026.
+    supports: [readme, changelog, contributing, repository_structure, reproducibility_package]
+canonical_directories:
+  - path: specs
+    purpose: YAML source-of-truth specifications for protocol products.
+  - path: docs/protocol
+    purpose: Human-facing protocol index and future rendered documentation.
+  - path: templates
+    purpose: Reusable starter files for applying the protocol.
+  - path: checklists
+    purpose: Operational readiness and review checklists.
+  - path: schemas
+    purpose: JSON schemas for validating generated YAML and JSON files.
+  - path: records
+    purpose: Placeholder for change, review, evaluation, and release records.
+  - path: examples
+    purpose: Placeholder for future pilot artifact packages.
+product_catalog: specs/product-catalog.yaml

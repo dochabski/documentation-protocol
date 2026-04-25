@@ -1,0 +1,26 @@
+artifact_profile:
+  artifact_id: ""
+  title: ""
+  short_description: ""
+  package_class: ""
+  artifact_types: []
+  target_conformance_level: l1_documented
+  version: "0.1.0"
+  status: draft
+  authors: []
+  contributors: []
+  repository_url: ""
+  license: ""
+  source_basis: []
+  knowledge_scope: ""
+  knowledge_goal: ""
+  lifecycle_stage: ""
+  design_strategy: ""
+  claims:
+    - claim_id: ""
+      statement: ""
+      evidence_records: []
+      limitations: []
+  required_information_items: []
+  tailoring_decisions: []
+  open_questions: []

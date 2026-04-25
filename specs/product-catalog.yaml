@@ -1,0 +1,93 @@
+products:
+  - id: protocol_foundation
+    title: Protocol Foundation and Scope
+    purpose: Define identity, scope, intended users, conformance logic, assumptions, and non-goals.
+    depends_on: []
+    source_basis: [md_guides, isos_and_more]
+    product_file: specs/product-protocol-foundation.yaml
+  - id: governance_and_stewardship
+    title: Governance and Stewardship Model
+    purpose: Define roles, authority, decision rights, review responsibilities, maintenance, and succession.
+    depends_on: [protocol_foundation]
+    source_basis: [md_guides, isos_and_more]
+    product_file: specs/product-governance-and-stewardship.yaml
+  - id: dsr_lifecycle_and_contribution_model
+    title: DSR Lifecycle and Contribution Model
+    purpose: Define artifact types, DSR knowledge contributions, lifecycle stages, design strategies, and generalization logic.
+    depends_on: [protocol_foundation]
+    source_basis: [dsr_corpus, md_guides]
+    product_file: specs/product-dsr-lifecycle-and-contribution-model.yaml
+  - id: information_item_architecture
+    title: Information Item Architecture
+    purpose: Define controlled documentation objects and record classes used by the protocol.
+    depends_on: [protocol_foundation, governance_and_stewardship]
+    source_basis: [isos_and_more, md_guides, data_and_information]
+    product_file: specs/product-information-item-architecture.yaml
+  - id: repository_architecture
+    title: GitHub Repository Architecture
+    purpose: Define repository structure, naming conventions, file responsibilities, issue and PR templates, release structure, and automation hooks.
+    depends_on: [information_item_architecture]
+    source_basis: [md_guides]
+    product_file: specs/product-repository-architecture.yaml
+  - id: metadata_and_identifier_profile
+    title: Metadata and Persistent Identifier Profile
+    purpose: Define citation, authorship, licensing, provenance, DOI, software identity, and registry metadata requirements.
+    depends_on: [repository_architecture]
+    source_basis: [md_guides, data_and_information]
+    product_file: specs/product-metadata-and-identifier-profile.yaml
+  - id: quality_conformance_and_review_model
+    title: Quality, Conformance, and Review Model
+    purpose: Define quality dimensions, maturity levels, gates, scoring rubrics, review workflow, acceptance criteria, and evidence requirements.
+    depends_on: [protocol_foundation, information_item_architecture, dsr_lifecycle_and_contribution_model]
+    source_basis: [md_guides, data_and_information, dsr_corpus]
+    product_file: specs/product-quality-conformance-and-review-model.yaml
+  - id: artifact_package_specification
+    title: Artifact Package Specification
+    purpose: Define required artifact package contents, package inventory, reproducibility material, limitations, examples, and evidence.
+    depends_on: [repository_architecture, metadata_and_identifier_profile, quality_conformance_and_review_model]
+    source_basis: [md_guides, dsr_corpus, data_and_information]
+    product_file: specs/product-artifact-package-specification.yaml
+  - id: publication_and_registry_model
+    title: Publication and Registry Model
+    purpose: Define versioning, tagged releases, archival deposits, DOI-backed citation, registry submission, and publication readiness.
+    depends_on: [metadata_and_identifier_profile, artifact_package_specification, quality_conformance_and_review_model]
+    source_basis: [md_guides, isos_and_more, data_and_information]
+    product_file: specs/product-publication-and-registry-model.yaml
+  - id: templates_and_checklists
+    title: Templates and Checklists
+    purpose: Produce reusable templates, checklists, and schema implications for applying the protocol consistently.
+    depends_on:
+      - protocol_foundation
+      - governance_and_stewardship
+      - dsr_lifecycle_and_contribution_model
+      - information_item_architecture
+      - repository_architecture
+      - metadata_and_identifier_profile
+      - quality_conformance_and_review_model
+      - artifact_package_specification
+      - publication_and_registry_model
+    source_basis: [md_guides, isos_and_more, dsr_corpus, data_and_information]
+    product_file: specs/product-templates-and-checklists.yaml
+  - id: automation_and_validation_model
+    title: Automation and Validation Model
+    purpose: Define schema validation, metadata checks, link checks, package checks, CI gates, and release validation automation.
+    depends_on: [repository_architecture, metadata_and_identifier_profile, quality_conformance_and_review_model, templates_and_checklists]
+    source_basis: [md_guides, data_and_information, isos_and_more]
+    product_file: specs/product-automation-and-validation-model.yaml
+  - id: implementation_roadmap
+    title: Implementation Roadmap and Pilot Plan
+    purpose: Define phased development, pilot artifacts, validation cycles, feedback process, and improvement pathway.
+    depends_on:
+      - protocol_foundation
+      - governance_and_stewardship
+      - dsr_lifecycle_and_contribution_model
+      - information_item_architecture
+      - repository_architecture
+      - metadata_and_identifier_profile
+      - quality_conformance_and_review_model
+      - artifact_package_specification
+      - publication_and_registry_model
+      - templates_and_checklists
+      - automation_and_validation_model
+    source_basis: [md_guides, isos_and_more, dsr_corpus, data_and_information]
+    product_file: specs/product-implementation-roadmap.yaml

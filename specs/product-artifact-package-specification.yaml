@@ -1,0 +1,247 @@
+product:
+  id: artifact_package_specification
+  title: Artifact Package Specification
+  purpose: >
+    Define required artifact package contents, inventory, documentation,
+    metadata, evidence, reproducibility material, limitations, examples, and
+    conformance-specific package obligations.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - dsr_corpus
+  - data_and_information
+dependencies:
+  - repository_architecture
+  - metadata_and_identifier_profile
+  - quality_conformance_and_review_model
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define the artifact package as the unit of review and release.
+    content:
+      package_definition: >
+        A protocol-governed artifact package is a repository-bounded collection
+        of artifact files, documentation, metadata, evidence, records, examples,
+        and release material sufficient for the declared conformance level.
+      package_classes:
+        - documentation_only
+        - data_or_information_artifact
+        - software_or_executable_artifact
+        - method_or_protocol_artifact
+        - model_or_taxonomy_artifact
+        - compound_dsr_artifact
+      primary_outputs:
+        - artifact_package_inventory
+        - artifact_profile
+        - package_structure
+        - reproducibility_material
+        - limitations_profile
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define package components and relationships.
+    content:
+      component_groups:
+        - id: identity
+          includes: [README.md, artifact-profile.yaml, metadata.yaml]
+        - id: governance
+          includes: [LICENSE, CONTRIBUTING.md, GOVERNANCE.md]
+        - id: source_and_artifact
+          includes: [source_files, data_files_or_pointers, templates, models, documentation]
+        - id: use_and_reproduction
+          includes: [installation_or_access, usage_procedure, environment_specification, dependencies, examples]
+        - id: evidence
+          includes: [evaluation_plan, evaluation_report, traceability_matrix, tests_or_inspection_records]
+        - id: review_and_release
+          includes: [review_records, release_record, citation_metadata, preservation_record]
+      package_inventory_fields:
+        - path
+        - component_group
+        - information_item_type
+        - required_for_level
+        - status
+        - owner
+        - validation_rule
+        - notes
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define package requirements.
+    content:
+      must:
+        - Every package must include a package inventory.
+        - Every package must include README, artifact profile, metadata, license decision, and conformance declaration.
+        - Every exercisable package must include environment, dependency, setup, and use instructions.
+        - Every package must include limitations and known non-goals.
+        - Every L4 or L5 package must include reuse guidance and examples.
+        - Every L5 package must include release, citation, archival, and preservation records.
+      should:
+        - Packages should include a minimal worked example or inspection path.
+        - Packages should separate generated outputs from source files.
+        - Packages should document expected runtime, resource needs, and external dependencies.
+        - Packages should include a troubleshooting section for common failure modes.
+      may:
+        - Non-executable packages may replace run instructions with inspection, adaptation, or review procedures.
+        - Sensitive or restricted data may be represented by access instructions and metadata when redistribution is not allowed.
+      must_not:
+        - Packages must not claim reproducibility when required inputs or procedures are unavailable.
+        - Packages must not omit known limitations affecting use, review, or reuse.
+        - Packages must not rely on personal drives or private links for release-critical files.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define package files and records.
+    content:
+      required_files_by_level:
+        l1_documented: [README.md, LICENSE, metadata.yaml, artifact-profile.yaml]
+        l2_reviewable: [requirements.md, design-rationale.md, traceability-matrix.yaml, evaluation-plan.yaml]
+        l3_exercisable: [environment.yaml, dependencies.yaml, usage-procedure.md, smoke-test-record.yaml]
+        l4_reusable: [examples/, reuse-guide.md, limitations.md, adaptation-notes.md]
+        l5_archival_publication_ready: [release-record.yaml, preservation-record.yaml, CITATION.cff, codemeta.json, .zenodo.json]
+      required_records:
+        - package_inventory_record
+        - conformance_declaration_record
+        - evaluation_record
+        - review_record
+        - release_record
+        - preservation_record
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define package assembly and review.
+    content:
+      steps:
+        - id: declare_package
+          action: Identify package class, artifact type, scope, and target conformance level.
+          output: artifact_profile
+        - id: inventory_files
+          action: List required and optional files with status and validation rules.
+          output: package_inventory
+        - id: fill_metadata
+          action: Create metadata and citation files.
+          output: metadata_record
+        - id: add_use_material
+          action: Add setup, use, inspection, example, and limitation material.
+          output: use_and_reuse_material
+        - id: attach_evidence
+          action: Add evaluation, tests, review evidence, and traceability.
+          output: evidence_bundle
+        - id: run_package_check
+          action: Validate files, metadata, links, schemas, and conformance requirements.
+          output: package_validation_record
+      failure_modes:
+        - missing_inventory
+        - package_claim_exceeds_evidence
+        - environment_not_specified
+        - example_not_executable_or_inspectable
+        - private_or_unstable_dependency
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define package acceptance criteria.
+    content:
+      acceptance_criteria:
+        - Package class and artifact type are declared.
+        - Inventory matches actual files.
+        - Required files for target conformance level exist or have recorded tailoring.
+        - Use, inspection, or reproduction path is clear.
+        - Claims, evidence, and limitations are aligned.
+      evidence_required:
+        - package_inventory
+        - artifact_profile
+        - metadata_validation_record
+        - review_record
+        - package_validation_record
+  - id: traceability
+    title: Traceability
+    purpose: Connect package files to conformance claims.
+    content:
+      upstream_dependencies:
+        - repository_architecture
+        - metadata_and_identifier_profile
+        - quality_conformance_and_review_model
+      downstream_outputs:
+        - publication_and_registry_model
+        - templates_and_checklists
+        - automation_and_validation_model
+      trace_links:
+        - package_file_to_information_item
+        - package_file_to_validation_rule
+        - evidence_to_claim
+        - package_inventory_to_release_record
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Apply the package specification.
+    content:
+      repository_locations:
+        inventory: package-inventory.yaml
+        profile: artifact-profile.yaml
+        evidence: records/evaluations/
+        reviews: records/reviews/
+        release: records/releases/
+      anti_patterns:
+        - "'works on my machine' as a reproduction statement."
+        - README instructions without versioned dependencies.
+        - examples that require unavailable inputs.
+      automation_hooks:
+        - compare package inventory paths to repository files.
+        - require environment files for exercisable packages.
+        - require release records for L5 packages.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define package template and schema fields.
+    content:
+      artifact_profile_fields:
+        - artifact_id
+        - artifact_type
+        - package_class
+        - target_conformance_level
+        - claims
+        - evidence_records
+        - limitations
+      package_inventory_fields:
+        - path
+        - required
+        - required_for_level
+        - status
+        - validation_rule
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Preserve package questions.
+    content:
+      open_questions:
+        - id: oq-package-data-policy
+          question: What default policy should be used for restricted or non-redistributable data?
+          status: open
+      backlog:
+        - Add example packages for executable and non-executable artifacts.
+quality_gates:
+  - id: qg-package-inventory
+    question: Does the inventory match required files and actual repository contents?
+    evidence_required: [package_inventory, repository_tree]
+    status: draft_pass
+  - id: qg-package-use
+    question: Is there a clear use, inspection, or reproduction path?
+    evidence_required: [usage_procedure, environment_specification, examples]
+    status: draft_pass
+  - id: qg-package-claims
+    question: Are package claims aligned with evidence and limitations?
+    evidence_required: [traceability_matrix, evaluation_report, limitations]
+    status: draft_pass
+traceability:
+  - trace_id: trace-package-001
+    source_type: product
+    source_id: repository_architecture
+    relationship: depends_on
+    target_type: product
+    target_id: artifact_package_specification
+    evidence_location: product:repository_architecture
+    status: proposed
+  - trace_id: trace-package-002
+    source_type: source_family
+    source_id: md_guides
+    relationship: grounds
+    target_type: section
+    target_id: conceptual_model
+    evidence_location: citation_set:acm_artifact_badging_policy_2020+niso_rp_31_2021+fair4rs_principles+github_documentation_standards_synthesis
+    status: proposed
+open_questions:
+  - id: oq-package-data-policy
+    question: Define default handling for restricted or non-redistributable data in artifact packages.
+    status: open

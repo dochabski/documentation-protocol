@@ -1,0 +1,21 @@
+release_publication_checklist:
+  purpose: Check release, archival, citation, and registry readiness.
+  checks:
+    - id: release-approved
+      question: Is there a release approval record?
+      evidence_required: [release-record.yaml, review-record.yaml]
+    - id: metadata-frozen
+      question: Was metadata frozen before the release tag?
+      evidence_required: [metadata-freeze-record.yaml]
+    - id: tag-created
+      question: Is the release tied to a version tag?
+      evidence_required: [release-record.yaml]
+    - id: archive-ready
+      question: Is the release ready for archival deposit or already deposited?
+      evidence_required: [.zenodo.json, preservation-record.yaml]
+    - id: citation-ready
+      question: Do citation files point to the correct release and identifier?
+      evidence_required: [CITATION.cff, codemeta.json, metadata.yaml]
+    - id: registry-ready
+      question: Does registry metadata match release metadata?
+      evidence_required: [registry-submission-record.yaml, release-record.yaml]

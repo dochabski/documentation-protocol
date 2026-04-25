@@ -1,0 +1,28 @@
+{
+  "title": "Documentation Protocol",
+  "description": "Public draft release -- usable, citable, but still under active validation. A GitHub-centered protocol for documenting, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Ochabski, David"
+    }
+  ],
+  "version": "0.1.0",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "documentation protocol",
+    "design science research",
+    "artifact evaluation",
+    "reproducibility",
+    "research software",
+    "GitHub"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.0",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Generated protocol files only. No source PDFs or copyrighted source documents are included."
+}

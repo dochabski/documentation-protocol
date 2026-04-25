@@ -1,0 +1,289 @@
+product:
+  id: quality_conformance_and_review_model
+  title: Quality, Conformance, and Review Model
+  purpose: >
+    Define quality dimensions, maturity levels, conformance gates, review
+    workflow, scoring rubrics, acceptance criteria, and evidence requirements
+    for protocol-governed artifact packages.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - data_and_information
+  - dsr_corpus
+dependencies:
+  - protocol_foundation
+  - information_item_architecture
+  - dsr_lifecycle_and_contribution_model
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define the role of quality and review.
+    content:
+      primary_outputs:
+        - quality_model
+        - conformance_levels
+        - quality_rubric
+        - acceptance_criteria
+        - evidence_model
+        - review_workflow
+      review_scope:
+        - completeness
+        - correctness_of_structure
+        - traceability
+        - exercisability_where_applicable
+        - reusability
+        - preservation_and_publication_readiness
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define quality dimensions, maturity levels, and review phases.
+    content:
+      quality_dimensions:
+        - id: instrumental_quality
+          question: Does the protocol help produce useful, publication-ready artifacts?
+          evidence: [completed_artifact_packages, successful_reviews, successful_releases]
+        - id: epistemic_quality
+          question: Does the package preserve claims, evidence, provenance, rationale, and version identity?
+          evidence: [traceability_matrix, decision_records, evaluation_reports, citation_metadata]
+        - id: experiential_quality
+          question: Can authors, reviewers, maintainers, and users apply the package without excessive friction?
+          evidence: [usability_feedback, onboarding_test, reviewer_comments]
+        - id: technical_quality
+          question: Are structures, schemas, workflows, and validation checks internally consistent and automatable?
+          evidence: [schema_validation, ci_results, metadata_validation, link_checks]
+        - id: stewardship_quality
+          question: Can the artifact survive maintenance turnover and long-term reuse?
+          evidence: [governance_file, preservation_plan, release_history, deprecation_policy]
+      maturity_levels:
+        - level: 0
+          id: missing
+          meaning: Missing, informal, or not usable.
+        - level: 1
+          id: present
+          meaning: Present but incomplete or unreviewed.
+        - level: 2
+          id: structured
+          meaning: Structured and usable by the author team.
+        - level: 3
+          id: reviewed
+          meaning: Reviewed, evidence-backed, and internally consistent.
+        - level: 4
+          id: reusable
+          meaning: Reusable by parties beyond the original project.
+        - level: 5
+          id: archival_publication_ready
+          meaning: Citable, preservable, publication-ready, and maintainable.
+      review_phases:
+        - registration
+        - completeness_check
+        - kick_the_tires_review
+        - full_review
+        - author_response
+        - decision
+        - release_approval
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define review and conformance rules.
+    content:
+      must:
+        - Every review must use the declared target conformance level.
+        - Every quality gate must identify required evidence and decision criteria.
+        - Every reviewer decision must be recorded as accept, conditional_accept, revise, reject, or defer.
+        - Every failed gate must produce either a remediation item or an accepted limitation.
+        - Every L5 release must pass metadata, package, review, release, and preservation gates.
+      should:
+        - Reviewers should separate completeness review from substantive quality review.
+        - Reviewers should perform a basic open, install, run, use, or inspect check where applicable.
+        - Review rubrics should use consistent scoring labels across packages.
+        - Authors should respond to review findings with change links or limitation records.
+      may:
+        - Draft packages may use self-review for L0 and L1.
+        - External review may be required by maintainers for high-risk or publication-ready claims.
+      must_not:
+        - Reviewers must not approve claims unsupported by evidence.
+        - Authors must not close review findings by deleting the affected claim without a record.
+        - Maintainers must not issue release approval when required gates are unresolved.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define quality and review records.
+    content:
+      required_files:
+        - checklists/artifact-package-readiness-checklist.yaml
+        - checklists/review-checklist.yaml
+        - templates/review-record-template.yaml
+        - records/review-record-<id>.yaml
+      required_records:
+        - artifact_submission_record
+        - completeness_review_record
+        - preliminary_review_record
+        - artifact_review_record
+        - author_response_record
+        - decision_record
+        - release_approval_record
+      retention_expectations:
+        - Preserve review records for the life of the release or claim they support.
+        - Preserve rejected or deferred decision records when later releases rely on their history.
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define end-to-end review flow.
+    content:
+      steps:
+        - id: registration
+          actor: author
+          action: Declare artifact type, claims, scope, dependencies, and target conformance level.
+          output: artifact_submission_record
+        - id: completeness_check
+          actor: maintainer
+          action: Check required files, metadata, inventory, and records.
+          output: completeness_review_record
+        - id: kick_the_tires_review
+          actor: reviewer
+          action: Perform basic open, install, run, use, or inspect review.
+          output: preliminary_review_record
+        - id: full_review
+          actor: reviewer
+          action: Evaluate documentation, evidence, traceability, reuse, and limitations.
+          output: artifact_review_record
+        - id: author_response
+          actor: author
+          action: Resolve findings or document accepted limitations.
+          output: author_response_record
+        - id: decision
+          actor: reviewer_or_maintainer
+          action: Record decision and conditions.
+          output: decision_record
+        - id: release_approval
+          actor: release_manager
+          action: Confirm gates, metadata freeze, tag readiness, and archival readiness.
+          output: release_approval_record
+      failure_modes:
+        - missing_target_conformance
+        - evidence_not_reproducible_or_inspectable
+        - review_findings_unresolved
+        - unsupported_badge_or_quality_claim
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define acceptance criteria and scoring.
+    content:
+      scoring_scale:
+        - id: not_present
+          score: 0
+        - id: present_with_major_gaps
+          score: 1
+        - id: adequate_with_minor_gaps
+          score: 2
+        - id: complete_and_reviewed
+          score: 3
+        - id: exemplary_and_reusable
+          score: 4
+      acceptance_criteria:
+        - Required files exist and match declared package type.
+        - Metadata is complete and internally consistent.
+        - Claims trace to evidence and limitations.
+        - Review findings are resolved, deferred with rationale, or captured as accepted limitations.
+        - Release approval cites validation results and preservation plan.
+      evidence_required:
+        - package_inventory
+        - metadata_validation_record
+        - traceability_matrix
+        - evaluation_report
+        - review_record
+        - release_approval_record
+  - id: traceability
+    title: Traceability
+    purpose: Link review results to evidence and release decisions.
+    content:
+      upstream_dependencies:
+        - protocol_foundation
+        - information_item_architecture
+        - dsr_lifecycle_and_contribution_model
+      downstream_outputs:
+        - artifact_package_specification
+        - publication_and_registry_model
+        - templates_and_checklists
+        - automation_and_validation_model
+      trace_links:
+        - claim_to_evidence
+        - evidence_to_review_finding
+        - review_finding_to_author_response
+        - author_response_to_decision
+        - decision_to_release_approval
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Apply review in GitHub.
+    content:
+      repository_locations:
+        review_templates: templates/review-record-template.yaml
+        review_checklists: checklists/review-checklist.yaml
+        review_records: records/reviews/
+      github_practice:
+        - Use pull requests for controlled changes.
+        - Link each review finding to a file, section, issue, or record.
+        - Preserve release approval as a record, not only a merged PR.
+      anti_patterns:
+        - vague approval comments with no evidence.
+        - conflating paper merit with artifact package quality.
+        - claiming reusable status without independent-use guidance.
+      automation_hooks:
+        - require review record before release.
+        - block release if validation checks fail.
+        - require accepted limitation records for unresolved findings.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define review fields.
+    content:
+      review_record_fields:
+        - review_id
+        - artifact_id
+        - target_conformance_level
+        - reviewer
+        - review_phase
+        - findings
+        - evidence_checked
+        - decision
+        - conditions
+        - follow_up_required
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Preserve review model questions.
+    content:
+      open_questions:
+        - id: oq-review-external
+          question: Which conformance levels should require independent external review?
+          status: open
+      backlog:
+        - Pilot the rubric on one software artifact and one non-software artifact.
+quality_gates:
+  - id: qg-quality-model
+    question: Are quality dimensions and maturity levels defined?
+    evidence_required: [quality_dimensions, maturity_levels]
+    status: draft_pass
+  - id: qg-review-workflow
+    question: Are review phases, records, decisions, and author response paths explicit?
+    evidence_required: [review_phases, required_records, workflow]
+    status: draft_pass
+  - id: qg-evidence-alignment
+    question: Are claims, evidence, findings, decisions, and release approval traceable?
+    evidence_required: [trace_links, review_record_fields]
+    status: draft_pass
+traceability:
+  - trace_id: trace-quality-001
+    source_type: scaffold
+    source_id: models/04_quality_conformance_model.yaml
+    relationship: defines
+    target_type: product
+    target_id: quality_conformance_and_review_model
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-quality-002
+    source_type: scaffold
+    source_id: models/07_review_release_preservation_model.yaml
+    relationship: extends
+    target_type: section
+    target_id: workflow
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+open_questions:
+  - id: oq-review-external
+    question: Decide whether L4 or L5 packages require external review before public release.
+    status: open

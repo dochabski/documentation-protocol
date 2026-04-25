@@ -1,0 +1,226 @@
+product:
+  id: implementation_roadmap
+  title: Implementation Roadmap and Pilot Plan
+  purpose: >
+    Define phased development, pilot artifacts, validation cycle, feedback
+    process, release path, and continuous improvement plan for turning this
+    protocol into a reusable GitHub repository.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - isos_and_more
+  - dsr_corpus
+  - data_and_information
+dependencies:
+  - protocol_foundation
+  - governance_and_stewardship
+  - dsr_lifecycle_and_contribution_model
+  - information_item_architecture
+  - repository_architecture
+  - metadata_and_identifier_profile
+  - quality_conformance_and_review_model
+  - artifact_package_specification
+  - publication_and_registry_model
+  - templates_and_checklists
+  - automation_and_validation_model
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define roadmap scope and completion criteria.
+    content:
+      primary_outputs:
+        - roadmap
+        - pilot_plan
+        - backlog
+        - improvement_cycle
+        - success_metrics
+      implementation_goal: >
+        Convert draft protocol products into a reviewed, pilot-tested,
+        reusable repository that can be pulled into future projects and used
+        to generate project-specific documentation.
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define phases and feedback loops.
+    content:
+      phases:
+        - id: phase_0_draft_protocol
+          outcome: All protocol products, templates, checklists, and schemas exist as draft files.
+        - id: phase_1_internal_review
+          outcome: Product specs are checked for consistency, missing dependencies, and open questions.
+        - id: phase_2_pilot_package
+          outcome: One real artifact package is documented using the protocol.
+        - id: phase_3_review_and_revision
+          outcome: Pilot findings drive revisions to templates, checklists, schemas, and products.
+        - id: phase_4_publication_preparation
+          outcome: License, governance, README, metadata, examples, and release records are ready.
+        - id: phase_5_public_release
+          outcome: GitHub repository is tagged, archived, and ready for reuse.
+      learning_loop:
+        - apply_protocol
+        - collect_review_findings
+        - revise_source_specs
+        - update_templates_and_schemas
+        - validate_against_pilot
+        - release_updated_protocol
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define roadmap rules.
+    content:
+      must:
+        - Each phase must have entry criteria, exit criteria, evidence, and responsible role.
+        - Pilot findings must be recorded as issues, decisions, or review records.
+        - Public release must not occur until license, governance, metadata, README, and release records are complete.
+        - Open questions that affect public use must be closed or explicitly documented as known limitations.
+      should:
+        - The first pilot should include both reviewable documentation and at least one exercisable or inspectable artifact.
+        - Roadmap progress should be tracked in GitHub issues or a project board after repository publication.
+        - Improvements should be grouped into minor releases when they change templates or schemas.
+      may:
+        - Public release may begin as an alpha if limitations and draft status are explicit.
+        - Pilot examples may be synthetic if real artifacts are not ready.
+      must_not:
+        - The protocol must not be presented as stable before pilot review.
+        - Pilot feedback must not be implemented without updating source specs when requirements change.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define roadmap records.
+    content:
+      required_files:
+        - specs/product-implementation-roadmap.yaml
+        - records/roadmap/roadmap-status.yaml
+        - records/pilots/pilot-plan.yaml
+        - records/pilots/pilot-review-record.yaml
+      required_records:
+        - roadmap_status_record
+        - pilot_plan_record
+        - pilot_review_record
+        - improvement_backlog_record
+        - release_readiness_record
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define roadmap execution.
+    content:
+      steps:
+        - id: complete_draft_package
+          action: Confirm all required products and reusable files exist.
+          output: draft_completion_record
+        - id: run_internal_review
+          action: Check consistency, naming, dependencies, and YAML validity.
+          output: internal_review_record
+        - id: select_pilot
+          action: Choose one artifact and target conformance level.
+          output: pilot_plan
+        - id: apply_protocol_to_pilot
+          action: Generate or update pilot documentation using templates and checklists.
+          output: pilot_artifact_package
+        - id: collect_feedback
+          action: Record author, reviewer, maintainer, and automation findings.
+          output: pilot_review_record
+        - id: revise_protocol
+          action: Update products, templates, checklists, schemas, and docs.
+          output: protocol_revision
+        - id: prepare_public_release
+          action: Resolve license, governance, metadata, examples, and release records.
+          output: release_readiness_record
+      failure_modes:
+        - no_pilot_artifact
+        - unresolved_license
+        - product_specs_out_of_sync_with_templates
+        - public_release_without_examples
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define roadmap success metrics.
+    content:
+      success_metrics:
+        - all_requested_products_created
+        - YAML files parse successfully
+        - template suite covers package, evaluation, review, release, and traceability
+        - checklist suite covers metadata, package readiness, review, and publication
+        - one pilot package reaches at least l2_reviewable
+        - public release has metadata, license, governance, and release record
+      acceptance_criteria:
+        - Dependencies in product catalog match product files.
+        - Open questions are visible and assigned to release milestones.
+        - Pilot findings result in controlled revisions.
+  - id: traceability
+    title: Traceability
+    purpose: Link roadmap work to products and releases.
+    content:
+      upstream_dependencies:
+        - all_prior_products
+      downstream_outputs:
+        - public_github_repository
+        - pilot_artifact_package
+        - release_record
+      trace_links:
+        - roadmap_phase_to_product
+        - pilot_finding_to_revision
+        - revision_to_release_record
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Define next actions.
+    content:
+      recommended_next_steps:
+        - Review YAML products for terminology and scope.
+        - Choose public license and governance contacts.
+        - Add GitHub issue and PR templates.
+        - Select pilot artifact and conformance target.
+        - Run pilot, record findings, revise protocol.
+        - Create GitHub repository, commit files, tag alpha release, then archive when ready.
+      anti_patterns:
+        - publishing before license and governance are resolved.
+        - treating templates as stable before pilot use.
+        - losing pilot feedback in chat instead of records.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define roadmap template needs.
+    content:
+      future_templates:
+        - pilot-plan-template.yaml
+        - roadmap-status-template.yaml
+        - improvement-backlog-template.yaml
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Preserve implementation backlog.
+    content:
+      open_questions:
+        - id: oq-roadmap-pilot
+          question: Which real project should be the first protocol pilot?
+          status: open
+        - id: oq-roadmap-publication
+          question: What GitHub organization or account should host the public repository?
+          status: open
+      backlog:
+        - Generate Markdown protocol documentation from YAML.
+        - Add active GitHub workflows after validation scripts are selected.
+        - Add example artifact package after pilot.
+quality_gates:
+  - id: qg-roadmap-completion
+    question: Are all required protocol products and support files present?
+    evidence_required: [product_catalog, specs_directory, templates, checklists, schemas]
+    status: draft_pass
+  - id: qg-roadmap-pilot
+    question: Is there a defined pilot with target conformance and evidence plan?
+    evidence_required: [pilot_plan, target_conformance_level]
+    status: pending
+  - id: qg-roadmap-publication
+    question: Are license, governance, metadata, and release readiness resolved for public GitHub publication?
+    evidence_required: [LICENSE, GOVERNANCE.md, metadata.yaml, release_record]
+    status: pending
+traceability:
+  - trace_id: trace-roadmap-001
+    source_type: product
+    source_id: all_prior_products
+    relationship: depends_on
+    target_type: product
+    target_id: implementation_roadmap
+    evidence_location: product_set:all_prior_products
+    status: proposed
+open_questions:
+  - id: oq-roadmap-pilot
+    question: Select the first project or artifact package for pilot application.
+    status: open
+  - id: oq-roadmap-publication
+    question: Decide the GitHub account or organization for the public repository.
+    status: open

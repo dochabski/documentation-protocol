@@ -1,0 +1,21 @@
+review_checklist:
+  purpose: Guide completeness, preliminary, and full artifact review.
+  checks:
+    - id: target-conformance-declared
+      question: Is the target conformance level declared?
+      evidence_required: [artifact-profile.yaml]
+    - id: required-files-present
+      question: Are required files present for the declared level?
+      evidence_required: [package-inventory.yaml]
+    - id: evidence-inspected
+      question: Did the reviewer inspect evidence supporting each major claim?
+      evidence_required: [traceability-matrix.yaml, evaluation-report.yaml]
+    - id: use-path-tested
+      question: Was the open, install, run, use, or inspect path checked where applicable?
+      evidence_required: [usage-procedure.md, review-record.yaml]
+    - id: limitations-reviewed
+      question: Are limitations accurate and visible?
+      evidence_required: [limitations.md]
+    - id: findings-recorded
+      question: Are findings, decisions, and required author responses recorded?
+      evidence_required: [review-record.yaml]

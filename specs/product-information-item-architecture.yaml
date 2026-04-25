@@ -1,0 +1,283 @@
+product:
+  id: information_item_architecture
+  title: Information Item Architecture
+  purpose: >
+    Define the controlled documentation objects, minimum content expectations,
+    document control rules, record classes, and retention logic used by the
+    protocol.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - isos_and_more
+  - md_guides
+  - data_and_information
+dependencies:
+  - protocol_foundation
+  - governance_and_stewardship
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Establish the information item system.
+    content:
+      primary_outputs:
+        - information_item_taxonomy
+        - required_information_items
+        - record_retention_model
+        - document_control_model
+        - information_management_plan_model
+      intended_users:
+        - authors
+        - reviewers
+        - maintainers
+        - release_managers
+        - future_ai_assistants
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define the taxonomy of controlled documentation objects.
+    content:
+      item_types:
+        - id: description
+          purpose: Describe an entity, artifact, system, context, model, component, or design.
+          minimum_content: [identity, purpose, scope, relevant_entities, properties, relationships, assumptions, references, change_history]
+        - id: plan
+          purpose: Define intended activities, responsibilities, sequence, resources, criteria, risks, and controls.
+          minimum_content: [objectives, scope, activities, roles, resources, sequence, risks, acceptance_criteria, review_points, change_history]
+        - id: policy
+          purpose: State governing intentions, rules, authorities, compliance expectations, and exceptions.
+          minimum_content: [scope, issuing_authority, effective_date, policy_statement, roles, compliance_expectations, exceptions, references, change_history]
+        - id: procedure
+          purpose: Give stepwise instructions for performing a controlled activity.
+          minimum_content: [purpose, scope, prerequisites, inputs, steps, decision_points, outputs, error_handling, records_created, change_history]
+        - id: report
+          purpose: Record what was done, observed, concluded, and evidenced.
+          minimum_content: [purpose, scope, method, inputs, results, interpretation, limitations, conclusions, recommendations, change_history]
+        - id: request
+          purpose: Initiate, justify, route, and decide a controlled action.
+          minimum_content: [request_id, requester, requested_action, rationale, affected_items, risk_or_impact, decision, approvals, status]
+        - id: specification
+          purpose: Define required properties, interfaces, constraints, and acceptance criteria.
+          minimum_content: [scope, requirements, constraints, interfaces, acceptance_criteria, verification_method, traceability, change_history]
+        - id: record
+          purpose: Retain evidence of decisions, actions, events, reviews, tests, approvals, or results.
+          minimum_content: [record_id, event_or_action, date, responsible_party, evidence, outcome, related_items, retention_rule]
+      required_record_classes:
+        - design_decision_record
+        - change_request_record
+        - review_record
+        - test_record
+        - evaluation_record
+        - release_record
+        - metadata_record
+        - preservation_record
+        - risk_record
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define information item rules.
+    content:
+      must:
+        - Every controlled file must declare or imply its information item type.
+        - Every information item must include identity, purpose, owner or responsible role, status, version, and change history.
+        - Every record must identify the event or decision it preserves and the related artifact or release.
+        - Every required record class must have a storage location and retention expectation.
+        - Every artifact package must include an information management plan or equivalent section.
+      should:
+        - Information items should be short enough to review and structured enough to validate.
+        - Repeated records should use YAML templates to reduce drift.
+        - Human-facing Markdown should be generated from or reconciled with YAML source files.
+      may:
+        - A single file may satisfy multiple information item roles when the roles are explicitly mapped.
+        - Projects may add domain-specific item types if they crosswalk to the controlled taxonomy.
+      must_not:
+        - Projects must not treat ephemeral comments as retained records unless they are captured in a controlled record.
+        - Projects must not delete release-supporting records when documentation is reorganized.
+        - Projects must not mix draft and approved content without status metadata.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define required protocol item set.
+    content:
+      core_items:
+        - artifact_profile
+        - metadata_record
+        - package_inventory
+        - requirements_specification
+        - design_description
+        - evaluation_plan
+        - evaluation_report
+        - review_record
+        - release_record
+        - preservation_record
+        - change_request_record
+      document_control_fields:
+        - item_id
+        - item_type
+        - title
+        - status
+        - version
+        - owner
+        - approver
+        - related_items
+        - change_history
+      retention_model:
+        draft_working_items: retain_until_superseded_or_release
+        review_records: retain_for_life_of_related_release
+        release_records: retain_indefinitely
+        metadata_records: retain_indefinitely
+        preservation_records: retain_indefinitely
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define information item lifecycle.
+    content:
+      states:
+        - draft
+        - in_review
+        - approved
+        - released
+        - superseded
+        - deprecated
+        - archived
+      steps:
+        - id: create
+          action: Create item from template or schema.
+          output: draft_information_item
+        - id: classify
+          action: Assign item type, owner, status, related products, and retention rule.
+          output: classified_information_item
+        - id: review
+          action: Check completeness, consistency, traceability, and evidence.
+          output: review_record
+        - id: approve
+          action: Approve item for release or operational use.
+          output: approval_record
+        - id: preserve
+          action: Retain records and release-supporting items.
+          output: preservation_record
+      failure_modes:
+        - unknown_item_type
+        - missing_owner
+        - missing_change_history
+        - orphaned_record
+        - stale_generated_markdown
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define information quality requirements.
+    content:
+      quality_dimensions:
+        - completeness
+        - consistency
+        - accuracy
+        - relevance
+        - timeliness
+        - traceability
+        - interpretability
+        - auditability
+      acceptance_criteria:
+        - Each item has a declared type and required minimum content.
+        - Records are linked to the event, decision, evidence, artifact, or release they preserve.
+        - Draft, approved, released, and superseded states are unambiguous.
+        - Retention expectations are explicit.
+      evidence_required:
+        - item_inventory
+        - record_index
+        - change_history
+        - review_records
+  - id: traceability
+    title: Traceability
+    purpose: Connect information items to claims, records, and releases.
+    content:
+      upstream_dependencies:
+        - protocol_foundation
+        - governance_and_stewardship
+      downstream_outputs:
+        - repository_architecture
+        - metadata_and_identifier_profile
+        - quality_conformance_and_review_model
+        - artifact_package_specification
+      trace_links:
+        - requirement_to_information_item
+        - information_item_to_record
+        - record_to_release
+        - released_item_to_identifier
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Place information items in a repository.
+    content:
+      repository_locations:
+        specifications: specs/
+        metadata: metadata/
+        records: records/
+        docs: docs/
+        templates: templates/
+      naming_rules:
+        files: lower-kebab-case
+        records: record-<record-class>-<date-or-sequence>.yaml
+        generated_markdown: generated files should identify their YAML source.
+      anti_patterns:
+        - unstructured records in issue comments only
+        - duplicate metadata fields with conflicting values
+        - record files without related item IDs
+      automation_hooks:
+        - validate required document control fields.
+        - detect duplicate item IDs.
+        - report stale generated Markdown if source timestamps differ.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define shared schema fields.
+    content:
+      shared_fields:
+        - item_id
+        - item_type
+        - status
+        - version
+        - owner
+        - source_basis
+        - related_items
+        - evidence_locations
+        - change_history
+      validation_rules:
+        - item_id must be unique within the package.
+        - status must use controlled status values.
+        - released records must include date and responsible party.
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Preserve architecture issues.
+    content:
+      open_questions:
+        - id: oq-info-retention-periods
+          question: Should non-release draft records have explicit minimum retention periods?
+          status: open
+      backlog:
+        - Create a generated item index from package inventory.
+quality_gates:
+  - id: qg-info-taxonomy
+    question: Are item types and minimum content rules defined?
+    evidence_required: [item_types, minimum_content, shared_fields]
+    status: draft_pass
+  - id: qg-info-records
+    question: Are required records and retention expectations explicit?
+    evidence_required: [required_record_classes, retention_model]
+    status: draft_pass
+  - id: qg-info-quality
+    question: Are information quality criteria reviewable?
+    evidence_required: [quality_dimensions, acceptance_criteria]
+    status: draft_pass
+traceability:
+  - trace_id: trace-info-001
+    source_type: scaffold
+    source_id: models/02_information_item_taxonomy.yaml
+    relationship: defines
+    target_type: product
+    target_id: information_item_architecture
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-info-002
+    source_type: source_family
+    source_id: data_and_information
+    relationship: grounds
+    target_type: section
+    target_id: quality_and_conformance
+    evidence_location: citation_set:iso_iec_ieee_15289_2019+wang_strong_1996+delone_mclean_2003
+    status: proposed
+open_questions:
+  - id: oq-info-retention-periods
+    question: Decide whether draft records need explicit minimum retention periods beyond supersession rules.
+    status: open

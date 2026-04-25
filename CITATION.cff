@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this documentation protocol, please cite the Zenodo DOI for the release you used."
+type: software
+title: "Documentation Protocol"
+abstract: "A GitHub-centered protocol for documenting, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts."
+authors:
+  - family-names: "Ochabski"
+    given-names: "David"
+version: "0.1.0"
+date-released: "2026-04-24"
+license: "CC-BY-4.0"
+doi: "10.5281/zenodo.19748824"
+repository-code: "https://github.com/dochabski/documentation-protocol"
+url: "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.0"
+keywords:
+  - documentation protocol
+  - design science research
+  - artifact evaluation
+  - reproducibility
+  - research software
+  - GitHub

@@ -1,0 +1,264 @@
+product:
+  id: governance_and_stewardship
+  title: Governance and Stewardship Model
+  purpose: >
+    Define roles, authority, decision rights, contribution routes, review
+    responsibilities, maintenance, succession, and change control for the
+    documentation protocol and repositories governed by it.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - isos_and_more
+dependencies:
+  - protocol_foundation
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define governance scope and accountable parties.
+    content:
+      governance_scope:
+        - protocol evolution
+        - repository stewardship
+        - contributor onboarding
+        - review coordination
+        - release approval
+        - archival and preservation readiness
+      roles:
+        - id: protocol_owner
+          authority: Final accountability for protocol direction and public release readiness.
+        - id: maintainer
+          authority: Merge authority, issue triage, release preparation, and change control.
+        - id: steward
+          authority: Long-term continuity, preservation status, and succession coordination.
+        - id: contributor
+          authority: Propose changes, submit artifacts, respond to reviews, and maintain assigned files.
+        - id: reviewer
+          authority: Evaluate completeness, exercisability, evidence, reuse, and conformance.
+        - id: release_manager
+          authority: Coordinate version tagging, metadata freeze, archival deposit, and registry submission.
+        - id: automation_maintainer
+          authority: Maintain schemas, CI checks, validation scripts, and workflow records.
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Link roles to decisions, records, and controlled changes.
+    content:
+      governance_objects:
+        - decision_right
+        - change_request
+        - review_record
+        - release_approval
+        - succession_record
+        - deprecation_record
+      relationship_model:
+        - Contributors submit requests and evidence.
+        - Maintainers triage, route, and merge approved work.
+        - Reviewers inspect against declared conformance level.
+        - Release managers freeze metadata and coordinate release records.
+        - Stewards preserve continuity when maintainers change.
+      assumptions:
+        - Governance must be explicit enough for future maintainers and AI assistants to continue work.
+        - Change control applies to protocol source files, templates, schemas, and published releases.
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define governance rules.
+    content:
+      must:
+        - Every repository governed by the protocol must identify at least one maintainer.
+        - Every accepted change must be traceable to an issue, pull request, decision record, or review record.
+        - Every release must have an accountable release manager or maintainer.
+        - Every protocol-level breaking change must update affected templates, checklists, schemas, and product specs.
+        - Every governance exception must be recorded with scope, rationale, approver, and expiration or review date.
+      should:
+        - Maintainers should separate author, reviewer, and release approval responsibilities when feasible.
+        - Projects should use GitHub issue labels to distinguish bug, documentation, template, schema, release, and governance changes.
+        - Projects should review stewardship status at least once per major release.
+      may:
+        - Small projects may combine maintainer and release manager roles if the combination is recorded.
+        - External reviewers may be invited for L4 or L5 conformance claims.
+      must_not:
+        - Maintainers must not merge their own release approval without a recorded compensating review when reviewers are available.
+        - Contributors must not bypass review records for changes that affect conformance, metadata, release, or preservation.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define governance files and retained evidence.
+    content:
+      required_files:
+        - GOVERNANCE.md
+        - CONTRIBUTING.md
+        - CODE_OF_CONDUCT.md
+        - SECURITY.md
+        - records/change-request-template.yaml
+        - records/decision-record-template.yaml
+      required_records:
+        - change_request_record
+        - decision_record
+        - maintainer_assignment_record
+        - release_approval_record
+        - deprecation_record
+        - succession_record
+      retention_expectations:
+        - Preserve decision and release records indefinitely for citable releases.
+        - Preserve change requests for at least the support lifetime of affected versions.
+        - Preserve succession records until the next governance review supersedes them.
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define the governance operating flow.
+    content:
+      steps:
+        - id: intake
+          actor: maintainer
+          action: Classify issue or pull request by product, risk, and required review.
+          output: triage_label_and_scope
+        - id: assess_change
+          actor: maintainer
+          action: Determine whether the change affects protocol behavior, templates, schemas, automation, or release state.
+          output: change_request_record
+        - id: assign_review
+          actor: maintainer
+          action: Assign reviewer and acceptance criteria.
+          output: review_assignment
+        - id: decide
+          actor: maintainer_or_release_manager
+          action: Accept, request revision, defer, reject, or approve release.
+          output: decision_record
+        - id: preserve
+          actor: steward
+          action: Confirm records and metadata are retained.
+          output: stewardship_record
+      decision_points:
+        - Is the change editorial, normative, structural, schema-affecting, or release-affecting?
+        - Does the change require a version bump?
+        - Does the change alter previously published evidence or metadata?
+      failure_modes:
+        - unassigned_authority
+        - orphaned_review
+        - unrecorded_exception
+        - stale_maintainer_list
+        - release_without_governance_record
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define governance quality criteria.
+    content:
+      quality_dimensions:
+        - accountability
+        - maintainability
+        - decision_traceability
+        - continuity
+        - fairness
+      acceptance_criteria:
+        - Every role has authority, responsibility, records, and escalation path.
+        - Change decisions are traceable from issue to merged change to release note where applicable.
+        - Review assignments match change risk and declared conformance level.
+        - Succession and deprecation handling are explicit.
+      evidence_required:
+        - GOVERNANCE.md
+        - CONTRIBUTING.md
+        - decision_records
+        - review_records
+        - release_records
+  - id: traceability
+    title: Traceability
+    purpose: Connect governance to foundation and downstream products.
+    content:
+      upstream_dependencies:
+        - protocol_foundation
+      downstream_outputs:
+        - information_item_architecture
+        - quality_conformance_and_review_model
+        - publication_and_registry_model
+        - implementation_roadmap
+      trace_links:
+        - role_to_record
+        - change_request_to_decision
+        - decision_to_release_note
+        - release_approval_to_identifier
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Operationalize governance in GitHub.
+    content:
+      repository_location:
+        policy_files: [GOVERNANCE.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md, SECURITY.md]
+        records: records/
+        issue_templates: .github/ISSUE_TEMPLATE/
+      labels:
+        - governance
+        - protocol-change
+        - template-change
+        - schema-change
+        - release
+        - review-required
+      anti_patterns:
+        - undocumented maintainer authority
+        - permanent draft decisions
+        - review comments that are not converted into records for release-affecting changes
+      automation_hooks:
+        - require linked issue for pull requests touching specs, schemas, templates, or workflows.
+        - require release approval record before version tags.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define reusable governance fields.
+    content:
+      change_request_fields:
+        - request_id
+        - requester
+        - affected_products
+        - affected_files
+        - change_type
+        - risk_level
+        - review_required
+        - decision
+        - approver
+      decision_record_fields:
+        - decision_id
+        - status
+        - context
+        - decision
+        - consequences
+        - affected_items
+        - supersedes
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Track governance decisions before public release.
+    content:
+      open_questions:
+        - id: oq-governance-maintainers
+          question: Who will be listed as initial maintainers when the protocol is published?
+          status: open
+      backlog:
+        - Create GitHub issue and pull request templates from this model.
+        - Decide default label set and branch protection rules.
+quality_gates:
+  - id: qg-governance-authority
+    question: Are authority, decision rights, and escalation routes explicit?
+    evidence_required: [role_model, decision_rights, escalation_rules]
+    status: draft_pass
+  - id: qg-governance-records
+    question: Are required governance records defined and retained?
+    evidence_required: [record_classes, retention_expectations]
+    status: draft_pass
+  - id: qg-governance-change-control
+    question: Can protocol changes be reviewed without losing traceability?
+    evidence_required: [change_workflow, decision_record_fields]
+    status: draft_pass
+traceability:
+  - trace_id: trace-governance-001
+    source_type: product
+    source_id: protocol_foundation
+    relationship: depends_on
+    target_type: product
+    target_id: governance_and_stewardship
+    evidence_location: product:protocol_foundation
+    status: proposed
+  - trace_id: trace-governance-002
+    source_type: source_family
+    source_id: md_guides
+    relationship: grounds
+    target_type: section
+    target_id: workflow
+    evidence_location: citation_set:acm_artifact_badging_policy_2020+github_documentation_standards_synthesis+iso_iec_ieee_15289_2019
+    status: proposed
+open_questions:
+  - id: oq-governance-maintainers
+    question: Identify the first public maintainers and governance contact before publication.
+    status: open

@@ -1,0 +1,21 @@
+metadata_checklist:
+  purpose: Check metadata completeness, consistency, and identifier readiness.
+  checks:
+    - id: title-description-version
+      question: Are title, short description, version, and status present?
+      evidence_required: [metadata.yaml]
+    - id: authorship
+      question: Are authors and contributors identified?
+      evidence_required: [metadata.yaml, CITATION.cff]
+    - id: license-status
+      question: Is license status explicit?
+      evidence_required: [LICENSE, metadata.yaml]
+    - id: repository-url
+      question: Is the working repository URL present?
+      evidence_required: [metadata.yaml]
+    - id: persistent-identifier
+      question: Is archive DOI present or deferred with release status?
+      evidence_required: [metadata.yaml, release-record.yaml]
+    - id: cross-file-consistency
+      question: Do metadata.yaml, CITATION.cff, codemeta.json, and .zenodo.json agree on title, version, authors, license, and identifiers?
+      evidence_required: [metadata.yaml, CITATION.cff, codemeta.json, .zenodo.json]

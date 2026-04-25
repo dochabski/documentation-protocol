@@ -1,0 +1,13 @@
+traceability_matrix:
+  artifact_id: ""
+  version: ""
+  links:
+    - trace_id: ""
+      source_type: problem_statement
+      source_id: ""
+      relationship: problem_to_requirement
+      target_type: requirement
+      target_id: ""
+      evidence_location: ""
+      status: proposed
+      reviewer_notes: ""

@@ -1,0 +1,272 @@
+product:
+  id: dsr_lifecycle_and_contribution_model
+  title: DSR Lifecycle and Contribution Model
+  purpose: >
+    Define artifact types, design science research knowledge contributions,
+    lifecycle stages, design strategy families, evaluation alignment, and
+    generalization logic for artifacts governed by the protocol.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - dsr_corpus
+  - md_guides
+dependencies:
+  - protocol_foundation
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define the DSR scope of the protocol.
+    content:
+      applies_to:
+        - design_science_research_artifacts
+        - research_software_used_as_dsr_instantiation
+        - artifact_methods_models_constructs_and_design_principles
+        - artifact_evaluation_and_generalization_records
+      primary_outputs:
+        - dsr_lifecycle_model
+        - artifact_taxonomy
+        - knowledge_contribution_model
+        - design_strategy_model
+        - evaluation_alignment_model
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define DSR artifact and contribution concepts.
+    content:
+      artifact_types:
+        - id: construct
+          definition: Defined concept, vocabulary, typology, classification, or conceptual primitive.
+          typical_outputs: [glossary, ontology, taxonomy, controlled_vocabulary]
+        - id: model
+          definition: Representation of entities, relationships, processes, structures, mechanisms, or architectures.
+          typical_outputs: [process_model, architecture_model, data_model, causal_model, conceptual_map]
+        - id: method
+          definition: Prescriptive procedure or technique for achieving a defined goal.
+          typical_outputs: [protocol, workflow, algorithm, evaluation_method, packaging_method]
+        - id: instantiation
+          definition: Realized artifact implemented in a concrete setting or technical form.
+          typical_outputs: [repository, software_tool, template_suite, documentation_system, database]
+        - id: design_principle
+          definition: Generalized prescriptive statement derived from design and evaluation experience.
+          typical_outputs: [principle_catalog, pattern_language, design_rule_set]
+        - id: design_theory
+          definition: Integrated package of meta-requirements, meta-design, kernel theory, design propositions, artifact logic, and evidence.
+          typical_outputs: [design_theory_report, theory_schema, testable_propositions]
+      knowledge_scope:
+        - id: idiographic
+          meaning: Specific case, context, intervention, or artifact instance.
+        - id: nomothetic
+          meaning: General method, theory, principle, taxonomy, or class-level guidance.
+      knowledge_goals:
+        - definitional
+        - descriptive
+        - explanatory
+        - predictive
+        - explanatory_predictive
+        - prescriptive
+      lifecycle_stages:
+        - problem_analysis
+        - objectives_and_requirements
+        - design_and_development
+        - demonstration
+        - evaluation
+        - generalization
+        - communication_and_publication
+        - maintenance_and_evolution
+      design_strategy_families:
+        - build_and_instantiate
+        - build_and_generalize_from_instantiation
+        - hypothesize_and_test
+        - build_design_theory
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define DSR documentation requirements.
+    content:
+      must:
+        - Every DSR artifact must declare one or more artifact types from the controlled taxonomy.
+        - Every DSR artifact must describe its problem context, objectives, design rationale, evaluation evidence, and contribution claim.
+        - Every contribution claim must state whether it is idiographic, nomothetic, or both.
+        - Every evaluation record must connect evaluated artifact components to claims.
+        - Every generalization claim must state the basis for transfer beyond the original context.
+      should:
+        - Authors should distinguish artifact utility, artifact quality, and contribution to knowledge.
+        - Authors should describe design strategies and why they fit the problem context.
+        - Authors should document negative, partial, or bounded evaluation results.
+        - Reviewers should evaluate DSR claims against declared artifact type and lifecycle stage.
+      may:
+        - A package may include multiple artifact types when the contribution is compound.
+        - A package may remain at an idiographic contribution level when generalization evidence is not yet available.
+      must_not:
+        - Authors must not claim a design theory when only an unevaluated instantiation is provided.
+        - Authors must not treat demonstration as evaluation unless acceptance criteria and evidence are defined.
+        - Authors must not omit limitations that affect contribution scope.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define DSR-specific documentation objects.
+    content:
+      required_files:
+        - artifact-profile.yaml
+        - problem-and-objectives.md
+        - design-rationale.md
+        - evaluation-plan.yaml
+        - evaluation-report.yaml
+        - contribution-claim.yaml
+        - limitations.md
+      required_records:
+        - design_decision_record
+        - evaluation_record
+        - claim_evidence_record
+        - generalization_record
+        - reviewer_assessment_record
+      retention_expectations:
+        - Preserve design and evaluation records with the release they support.
+        - Preserve contribution claims and limitations indefinitely for citable releases.
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define DSR lifecycle operations.
+    content:
+      steps:
+        - id: characterize_problem
+          action: Describe problem context, stakeholders, constraints, and relevance.
+          output: problem_statement
+        - id: define_objectives
+          action: Convert problem analysis into requirements and success criteria.
+          output: objectives_and_requirements
+        - id: design_artifact
+          action: Document design decisions, artifact components, and underlying logic.
+          output: design_rationale
+        - id: demonstrate
+          action: Show artifact use in a relevant context or scenario.
+          output: demonstration_record
+        - id: evaluate
+          action: Evaluate against declared criteria and contribution claims.
+          output: evaluation_report
+        - id: generalize
+          action: State reusable knowledge, scope conditions, and limitations.
+          output: contribution_claim
+        - id: communicate
+          action: Prepare artifact package, appendix, release, and publication material.
+          output: publication_ready_package
+      decision_points:
+        - Is the artifact type correctly declared?
+        - Is evaluation sufficient for the target claim?
+        - Is the contribution case-specific or generalized?
+      failure_modes:
+        - artifact_type_mismatch
+        - untested_claim
+        - missing_design_rationale
+        - unsupported_generalization
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define DSR quality criteria.
+    content:
+      quality_dimensions:
+        - epistemic_rigor
+        - contribution_clarity
+        - evaluation_alignment
+        - artifact_utility
+        - generalization_transparency
+      acceptance_criteria:
+        - Artifact type, lifecycle stage, contribution claim, and evaluation evidence are mutually consistent.
+        - Claims are bounded by demonstrated evidence.
+        - Design rationale connects requirements to artifact components.
+        - Limitations and transfer conditions are explicit.
+      evidence_required:
+        - artifact_profile
+        - design_decision_records
+        - evaluation_plan
+        - evaluation_report
+        - claim_evidence_matrix
+  - id: traceability
+    title: Traceability
+    purpose: Define DSR trace links.
+    content:
+      upstream_dependencies:
+        - protocol_foundation
+      downstream_outputs:
+        - information_item_architecture
+        - quality_conformance_and_review_model
+        - artifact_package_specification
+        - publication_and_registry_model
+      trace_links:
+        - problem_to_requirement
+        - requirement_to_design_decision
+        - design_decision_to_component
+        - component_to_evaluation
+        - evaluation_to_claim
+        - claim_to_publication_section
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Implement DSR lifecycle in a repository.
+    content:
+      repository_locations:
+        artifact_profile: metadata/artifact-profile.yaml
+        design_records: records/design-decisions/
+        evaluation_records: records/evaluations/
+        claims: docs/protocol/contribution-claim.md
+      examples:
+        - A software tool may be both an instantiation and a method when the reusable procedure is explicit.
+        - A taxonomy may be a construct artifact even when no executable artifact exists.
+      anti_patterns:
+        - evaluation evidence disconnected from claims.
+        - contribution claims copied from the paper without artifact-specific evidence.
+        - hiding failed demonstrations.
+      automation_hooks:
+        - require evaluation record IDs for claims marked evaluated.
+        - require limitation text for L3 and above.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define DSR fields for templates and schemas.
+    content:
+      artifact_profile_fields:
+        - artifact_type
+        - knowledge_scope
+        - knowledge_goal
+        - lifecycle_stage
+        - design_strategy
+        - contribution_claims
+        - evaluation_records
+        - limitations
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Preserve DSR issues for pilot testing.
+    content:
+      open_questions:
+        - id: oq-dsr-domain-variants
+          question: Which domain-specific DSR variants should receive optional template extensions?
+          status: open
+      backlog:
+        - Create an example claim-evidence matrix for a pilot artifact.
+quality_gates:
+  - id: qg-dsr-artifact-type
+    question: Is the artifact type declared and justified?
+    evidence_required: [artifact_profile, design_rationale]
+    status: draft_pass
+  - id: qg-dsr-evaluation-alignment
+    question: Does evaluation evidence support the contribution claim?
+    evidence_required: [evaluation_plan, evaluation_report, claim_evidence_matrix]
+    status: draft_pass
+  - id: qg-dsr-generalization
+    question: Are generalization and limitation statements bounded by evidence?
+    evidence_required: [contribution_claim, limitations]
+    status: draft_pass
+traceability:
+  - trace_id: trace-dsr-001
+    source_type: scaffold
+    source_id: models/01_dsr_artifact_model.yaml
+    relationship: defines
+    target_type: product
+    target_id: dsr_lifecycle_and_contribution_model
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-dsr-002
+    source_type: source_family
+    source_id: dsr_corpus
+    relationship: grounds
+    target_type: section
+    target_id: conceptual_model
+    evidence_location: citation_set:hevner_et_al_2004+peffers_et_al_2007+gregor_hevner_2013
+    status: proposed
+open_questions:
+  - id: oq-dsr-domain-variants
+    question: Decide whether to add optional DSR variants for education, healthcare, operations, or software engineering pilots.
+    status: open

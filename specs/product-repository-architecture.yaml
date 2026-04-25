@@ -1,0 +1,260 @@
+product:
+  id: repository_architecture
+  title: GitHub Repository Architecture
+  purpose: >
+    Define the GitHub repository structure, naming conventions, file
+    responsibilities, issue and pull request templates, release structure, and
+    automation hooks for protocol-governed artifact packages.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+dependencies:
+  - information_item_architecture
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define repository as the working system of record.
+    content:
+      architecture_position: >
+        The repository is the working collaboration hub and source-of-truth
+        location for controlled YAML specifications, templates, checklists,
+        records, and human-facing Markdown.
+      primary_outputs:
+        - repository_tree
+        - file_naming_rules
+        - github_issue_templates
+        - pull_request_template_model
+        - automation_workflow_model
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define canonical repository areas and responsibilities.
+    content:
+      source_of_truth_position: YAML files define controlled specifications; Markdown may be generated or maintained as human-facing render.
+      canonical_tree:
+        root_files:
+          - README.md
+          - LICENSE
+          - CITATION.cff
+          - codemeta.json
+          - CHANGELOG.md
+          - CONTRIBUTING.md
+          - GOVERNANCE.md
+          - SECURITY.md
+          - CODE_OF_CONDUCT.md
+          - .zenodo.json
+        directories:
+          - path: docs/protocol
+            purpose: Human-facing protocol documentation.
+          - path: specs
+            purpose: YAML source-of-truth specifications.
+          - path: models
+            purpose: Conceptual and operational models.
+          - path: templates
+            purpose: Reusable templates for artifact packages.
+          - path: checklists
+            purpose: Quality, release, reproducibility, and publication readiness checklists.
+          - path: schemas
+            purpose: JSON schemas for YAML or JSON validation.
+          - path: examples
+            purpose: Example artifact packages and demonstrations.
+          - path: records
+            purpose: Review, release, change, and evaluation records.
+          - path: .github/ISSUE_TEMPLATE
+            purpose: Structured GitHub issue templates.
+          - path: .github/workflows
+            purpose: Automation for schema, metadata, link, package, and release checks.
+      naming_rules:
+        file_names: lower-kebab-case
+        yaml_extension: .yaml
+        markdown_extension: .md
+        schema_extension: .schema.json
+        product_file_pattern: product-<product-id>.yaml
+        record_file_pattern: record-<record-class>-<date-or-sequence>.yaml
+        version_tags: semantic_versioning
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define repository requirements.
+    content:
+      must:
+        - The repository must include a README that identifies purpose, artifact scope, status, license, and how to use the package.
+        - Controlled protocol products must live in `specs/`.
+        - Reusable templates, checklists, and schemas must live in their named directories.
+        - Records supporting review, evaluation, release, and preservation must be retained in `records/` or a documented equivalent.
+        - Release tags must identify immutable package states.
+      should:
+        - Markdown docs should link back to YAML source files.
+        - Issue and pull request templates should capture affected files, evidence, tests, and conformance impact.
+        - Examples should be separated from required package files.
+        - Branch protection should require validation before release tags.
+      may:
+        - Projects may add language-specific directories such as `src/`, `notebooks/`, `data/`, or `scripts/`.
+        - Non-software artifacts may omit runtime directories when a tailoring record explains the omission.
+      must_not:
+        - Projects must not store source-of-truth metadata only in generated Markdown.
+        - Projects must not use ambiguous file names for controlled records.
+        - Projects must not overwrite published release records without supersession history.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Map repository files to information item types.
+    content:
+      root_file_roles:
+        README.md: description
+        LICENSE: policy
+        CITATION.cff: metadata_record
+        codemeta.json: metadata_record
+        CHANGELOG.md: record
+        CONTRIBUTING.md: procedure
+        GOVERNANCE.md: policy
+        SECURITY.md: policy
+        CODE_OF_CONDUCT.md: policy
+        .zenodo.json: metadata_record
+      directory_roles:
+        specs: specification
+        templates: specification
+        checklists: procedure
+        schemas: specification
+        records: record
+        docs: description
+        examples: demonstration_material
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define repository setup and maintenance flow.
+    content:
+      steps:
+        - id: initialize_repository
+          action: Create canonical files and directories or map existing equivalents.
+          output: repository_inventory
+        - id: add_protocol_specs
+          action: Place product specs, templates, checklists, and schemas.
+          output: controlled_source_tree
+        - id: configure_templates
+          action: Add issue, pull request, review, and release templates.
+          output: contribution_workflow
+        - id: configure_validation
+          action: Add schema, metadata, link, package, and release checks.
+          output: automation_workflow
+        - id: release_snapshot
+          action: Tag release and archive when quality gates pass.
+          output: release_record
+      failure_modes:
+        - mixed_source_and_render_files
+        - missing_records_directory
+        - no_package_inventory
+        - unvalidated_release_tag
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define repository quality criteria.
+    content:
+      quality_dimensions:
+        - navigability
+        - developer_experience
+        - maintainability
+        - traceability
+        - validation_readiness
+      acceptance_criteria:
+        - A new user can locate purpose, use instructions, metadata, license, and review status from the root README.
+        - Controlled source files are grouped in predictable directories.
+        - Required records are not mixed with examples or generated docs.
+        - File naming is consistent and machine-addressable.
+      evidence_required:
+        - repository_tree
+        - package_inventory
+        - issue_templates
+        - pull_request_template
+        - validation_results
+  - id: traceability
+    title: Traceability
+    purpose: Link repository architecture to information items.
+    content:
+      upstream_dependencies:
+        - information_item_architecture
+      downstream_outputs:
+        - metadata_and_identifier_profile
+        - artifact_package_specification
+        - automation_and_validation_model
+      trace_links:
+        - directory_to_information_item_type
+        - file_to_record_class
+        - workflow_to_quality_gate
+        - release_tag_to_release_record
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Provide practical repository rules.
+    content:
+      minimum_repository:
+        - README.md
+        - LICENSE
+        - CITATION.cff
+        - CHANGELOG.md
+        - CONTRIBUTING.md
+        - specs/
+        - templates/
+        - checklists/
+        - schemas/
+        - records/
+      anti_patterns:
+        - deep custom folder structure with no index.
+        - unversioned downloads outside repository history.
+        - generated docs committed without source linkage.
+      automation_hooks:
+        - validate required root files.
+        - validate file naming rules.
+        - compare package inventory to actual files.
+        - block release when required records are missing.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define repository inventory fields.
+    content:
+      inventory_fields:
+        - path
+        - information_item_type
+        - required
+        - owner
+        - status
+        - related_product
+        - validation_rule
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Track repository publication decisions.
+    content:
+      open_questions:
+        - id: oq-repo-github-templates
+          question: Should GitHub issue and PR templates be generated now or after first pilot?
+          status: open
+      backlog:
+        - Add .github templates after pilot review.
+quality_gates:
+  - id: qg-repo-tree
+    question: Does the repository tree include required source, template, checklist, schema, and record locations?
+    evidence_required: [repository_tree, package_inventory]
+    status: draft_pass
+  - id: qg-repo-naming
+    question: Are naming rules consistent and automatable?
+    evidence_required: [naming_rules, validation_rules]
+    status: draft_pass
+  - id: qg-repo-navigation
+    question: Can users find purpose, usage, metadata, license, review, and release information?
+    evidence_required: [README.md, docs_index, metadata_files]
+    status: draft_pass
+traceability:
+  - trace_id: trace-repo-001
+    source_type: scaffold
+    source_id: models/03_repository_architecture_model.yaml
+    relationship: defines
+    target_type: product
+    target_id: repository_architecture
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-repo-002
+    source_type: source_family
+    source_id: md_guides
+    relationship: grounds
+    target_type: section
+    target_id: conceptual_model
+    evidence_location: citation_set:github_documentation_standards_synthesis+fair4rs_principles+acm_artifact_badging_policy_2020
+    status: proposed
+open_questions:
+  - id: oq-repo-github-templates
+    question: Decide whether to add active GitHub templates before publication or keep them as protocol examples until pilot completion.
+    status: open

@@ -1,0 +1,27 @@
+review_record:
+  review_id: ""
+  artifact_id: ""
+  package_version: ""
+  target_conformance_level: ""
+  review_phase: completeness_check
+  reviewer: ""
+  review_date: ""
+  evidence_checked: []
+  checklist_results:
+    - check_id: ""
+      result: not_checked
+      evidence: []
+      notes: ""
+  findings:
+    - finding_id: ""
+      severity: ""
+      affected_item: ""
+      description: ""
+      required_response: ""
+      status: open
+  decision:
+    outcome: defer
+    rationale: ""
+    conditions: []
+  author_response_records: []
+  related_release_record: ""

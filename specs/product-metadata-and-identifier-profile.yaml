@@ -1,0 +1,289 @@
+product:
+  id: metadata_and_identifier_profile
+  title: Metadata and Persistent Identifier Profile
+  purpose: >
+    Define metadata, citation, authorship, licensing, provenance, DOI, software
+    identity, related artifact, and registry metadata requirements for
+    protocol-governed packages.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - data_and_information
+dependencies:
+  - repository_architecture
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define the metadata profile and its use.
+    content:
+      primary_outputs:
+        - metadata_profile
+        - citation_profile
+        - identifier_crosswalk
+        - license_profile
+        - provenance_profile
+      metadata_goals:
+        - findability
+        - citation_integrity
+        - machine_readability
+        - provenance
+        - preservation_readiness
+        - registry_submission
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define metadata fields and identifier relationships.
+    content:
+      required_fields:
+        - id: title
+          type: string
+          required: true
+        - id: short_description
+          type: string
+          required: true
+        - id: artifact_type
+          type: controlled_string
+          required: true
+        - id: version
+          type: semver_or_release_label
+          required: true
+        - id: authors
+          type: list
+          required: true
+        - id: contributors
+          type: list
+          required: false
+        - id: orcid_ids
+          type: list
+          required: recommended
+        - id: organizations
+          type: list
+          required: recommended
+        - id: license
+          type: spdx_identifier_or_license_decision
+          required: true
+        - id: repository_url
+          type: uri
+          required: true
+        - id: archive_doi
+          type: doi
+          required: required_for_publication_release
+        - id: keywords
+          type: list
+          required: true
+        - id: related_publication
+          type: uri_or_citation
+          required: if_available
+        - id: related_artifacts
+          type: list
+          required: if_available
+        - id: dependencies
+          type: list
+          required: if_exercisable
+        - id: runtime_environment
+          type: object
+          required: if_exercisable
+        - id: funding
+          type: list
+          required: if_applicable
+        - id: maintenance_status
+          type: controlled_string
+          required: true
+      status_values:
+        - draft
+        - active
+        - stable
+        - deprecated
+        - superseded
+        - archived
+      output_files:
+        - CITATION.cff
+        - codemeta.json
+        - .zenodo.json
+        - metadata.yaml
+        - release-record.yaml
+      identifier_relationships:
+        - repository_url identifies the working hub.
+        - version tag identifies the released source snapshot.
+        - archive_doi identifies the immutable archival release.
+        - citation metadata resolves authorship and preferred citation.
+        - related identifiers connect publications, artifacts, datasets, and software.
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define metadata and identifier requirements.
+    content:
+      must:
+        - Every artifact package must include machine-readable metadata.
+        - Every package must declare license status before public release.
+        - Every publication-ready release must include citation metadata and an archive DOI or DOI-ready archival deposit plan.
+        - Every metadata record must identify version, status, authors, repository URL, keywords, and maintenance status.
+        - Metadata values repeated across files must be consistent or explicitly mapped.
+      should:
+        - Authors should provide ORCID identifiers where available.
+        - Projects should maintain CITATION.cff, codemeta.json, .zenodo.json, and metadata.yaml from a common source where possible.
+        - Metadata should identify dependencies and runtime environment for exercisable artifacts.
+        - Related artifacts and publications should be cross-linked.
+      may:
+        - Draft packages may use a placeholder archive DOI status of not_yet_assigned.
+        - Projects may include discipline-specific metadata extensions.
+      must_not:
+        - Projects must not publish a stable release with unknown license status.
+        - Projects must not cite a mutable branch as the archival version.
+        - Projects must not allow conflicting title, version, author, or license values across metadata files.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define metadata files and records.
+    content:
+      required_files:
+        - metadata.yaml
+        - CITATION.cff
+        - codemeta.json
+        - .zenodo.json
+        - release-record.yaml
+      required_records:
+        - metadata_record
+        - citation_record
+        - license_record
+        - provenance_record
+        - identifier_record
+      retention_expectations:
+        - Preserve metadata records indefinitely for citable releases.
+        - Preserve superseded metadata with the release it describes.
+        - Preserve license and identifier records indefinitely.
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define metadata lifecycle.
+    content:
+      steps:
+        - id: create_metadata
+          action: Fill metadata.yaml from artifact profile.
+          output: draft_metadata_record
+        - id: crosswalk_outputs
+          action: Generate or reconcile CITATION.cff, codemeta.json, and .zenodo.json.
+          output: metadata_crosswalk
+        - id: validate_metadata
+          action: Check required fields, consistency, controlled values, and URI syntax.
+          output: metadata_validation_record
+        - id: freeze_release_metadata
+          action: Lock title, authors, version, license, repository URL, and archive target for release.
+          output: metadata_freeze_record
+        - id: archive_and_update
+          action: Deposit release and update archive DOI fields.
+          output: identifier_record
+      failure_modes:
+        - inconsistent_metadata_values
+        - missing_license
+        - mutable_identifier_used_as_archive
+        - missing_dependency_metadata
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define metadata quality criteria.
+    content:
+      quality_dimensions:
+        - findability
+        - citation_integrity
+        - consistency
+        - machine_readability
+        - provenance
+        - preservation_readiness
+      acceptance_criteria:
+        - Required metadata fields are present and controlled values are valid.
+        - Citation metadata matches release metadata.
+        - Version tag, release record, archive DOI, and citation record align.
+        - Provenance and dependency metadata are sufficient for review.
+      evidence_required:
+        - metadata.yaml
+        - CITATION.cff
+        - codemeta.json
+        - .zenodo.json
+        - metadata_validation_record
+  - id: traceability
+    title: Traceability
+    purpose: Link identifiers to release and citation.
+    content:
+      upstream_dependencies:
+        - repository_architecture
+      downstream_outputs:
+        - quality_conformance_and_review_model
+        - artifact_package_specification
+        - publication_and_registry_model
+        - automation_and_validation_model
+      trace_links:
+        - release_to_identifier
+        - identifier_to_citation
+        - artifact_to_metadata
+        - metadata_to_registry_record
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Implement metadata in repository files.
+    content:
+      repository_locations:
+        primary_metadata: metadata.yaml
+        citation: CITATION.cff
+        software_metadata: codemeta.json
+        archival_metadata: .zenodo.json
+        release_metadata: records/release-record.yaml
+      anti_patterns:
+        - editing citation files manually after release without a metadata record.
+        - omitting dependency metadata for executable artifacts.
+        - using vague status values such as complete or final.
+      automation_hooks:
+        - validate required metadata fields.
+        - compare version across metadata files.
+        - detect missing license.
+        - require archive DOI for L5 release.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define schema fields for metadata validation.
+    content:
+      schema_targets:
+        - metadata-record.schema.json
+        - artifact-package.schema.json
+      required_crosswalks:
+        - metadata.yaml to CITATION.cff
+        - metadata.yaml to codemeta.json
+        - metadata.yaml to .zenodo.json
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Track metadata decisions.
+    content:
+      open_questions:
+        - id: oq-metadata-license
+          question: Which default license and citation convention should the public protocol recommend?
+          status: open
+      backlog:
+        - Add a script to generate metadata output files from metadata.yaml.
+quality_gates:
+  - id: qg-metadata-required-fields
+    question: Are required metadata fields present and controlled?
+    evidence_required: [metadata.yaml, schema_validation_record]
+    status: draft_pass
+  - id: qg-metadata-crosswalk
+    question: Are citation, software, archival, and release metadata consistent?
+    evidence_required: [CITATION.cff, codemeta.json, .zenodo.json, release_record]
+    status: draft_pass
+  - id: qg-metadata-identifiers
+    question: Are mutable and immutable identifiers distinguished?
+    evidence_required: [repository_url, version_tag, archive_doi_or_plan]
+    status: draft_pass
+traceability:
+  - trace_id: trace-metadata-001
+    source_type: scaffold
+    source_id: models/05_metadata_identifier_profile.yaml
+    relationship: defines
+    target_type: product
+    target_id: metadata_and_identifier_profile
+    evidence_location: citation:project_control_scaffold_2026
+    status: proposed
+  - trace_id: trace-metadata-002
+    source_type: source_family
+    source_id: data_and_information
+    relationship: grounds
+    target_type: section
+    target_id: quality_and_conformance
+    evidence_location: citation_set:fair4rs_principles+wang_strong_1996+github_documentation_standards_synthesis
+    status: proposed
+open_questions:
+  - id: oq-metadata-license
+    question: Select a default license recommendation before public publication.
+    status: open

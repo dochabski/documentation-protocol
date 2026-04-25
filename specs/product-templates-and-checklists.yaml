@@ -1,0 +1,212 @@
+product:
+  id: templates_and_checklists
+  title: Templates and Checklists
+  purpose: >
+    Define reusable templates, checklists, and schema implications that make
+    the protocol easy to apply consistently across projects.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - isos_and_more
+  - dsr_corpus
+  - data_and_information
+dependencies:
+  - protocol_foundation
+  - governance_and_stewardship
+  - dsr_lifecycle_and_contribution_model
+  - information_item_architecture
+  - repository_architecture
+  - metadata_and_identifier_profile
+  - quality_conformance_and_review_model
+  - artifact_package_specification
+  - publication_and_registry_model
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define the reusable operating material.
+    content:
+      primary_outputs:
+        - artifact_profile_template
+        - evaluation_plan_template
+        - review_record_template
+        - release_record_template
+        - checklist_suite
+        - schema_suite
+      users:
+        - artifact_authors
+        - reviewers
+        - maintainers
+        - release_managers
+        - automation_maintainers
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Map templates and checklists to protocol products.
+    content:
+      templates:
+        - path: templates/artifact-profile-template.yaml
+          supports: [protocol_foundation, dsr_lifecycle_and_contribution_model, artifact_package_specification]
+        - path: templates/evaluation-plan-template.yaml
+          supports: [dsr_lifecycle_and_contribution_model, quality_conformance_and_review_model]
+        - path: templates/review-record-template.yaml
+          supports: [quality_conformance_and_review_model]
+        - path: templates/release-record-template.yaml
+          supports: [publication_and_registry_model]
+        - path: templates/traceability-matrix-template.yaml
+          supports: [information_item_architecture, artifact_package_specification]
+      checklists:
+        - path: checklists/artifact-package-readiness-checklist.yaml
+          supports: [artifact_package_specification]
+        - path: checklists/review-checklist.yaml
+          supports: [quality_conformance_and_review_model]
+        - path: checklists/release-publication-checklist.yaml
+          supports: [publication_and_registry_model]
+        - path: checklists/metadata-checklist.yaml
+          supports: [metadata_and_identifier_profile]
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define template and checklist requirements.
+    content:
+      must:
+        - Templates must preserve required fields from the governing product specs.
+        - Checklists must identify evidence required for each check.
+        - Templates and checklists must be versioned with the protocol.
+        - Template changes affecting required fields must trigger schema and checklist review.
+      should:
+        - Templates should use controlled vocabulary and stable IDs.
+        - Checklists should be short enough for repeated use but complete enough to support release decisions.
+        - Examples should be added without replacing required placeholders.
+      may:
+        - Projects may extend templates with domain-specific fields.
+        - Maintainers may split large checklists into phase-specific checklists.
+      must_not:
+        - Templates must not include unsupported default claims.
+        - Checklists must not permit release approval when required evidence is missing.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define reusable files produced in this folder.
+    content:
+      files_created:
+        - templates/artifact-profile-template.yaml
+        - templates/evaluation-plan-template.yaml
+        - templates/review-record-template.yaml
+        - templates/release-record-template.yaml
+        - templates/traceability-matrix-template.yaml
+        - checklists/artifact-package-readiness-checklist.yaml
+        - checklists/review-checklist.yaml
+        - checklists/release-publication-checklist.yaml
+        - checklists/metadata-checklist.yaml
+        - schemas/artifact-package.schema.json
+        - schemas/metadata-record.schema.json
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define template use and maintenance.
+    content:
+      steps:
+        - id: select_template
+          action: Choose template matching artifact type, workflow phase, or record class.
+          output: draft_item
+        - id: complete_required_fields
+          action: Fill required fields and declare unknowns as open questions.
+          output: structured_item
+        - id: run_checklist
+          action: Apply relevant checklist and record evidence.
+          output: checklist_record
+        - id: validate_schema
+          action: Validate machine-readable files where schemas exist.
+          output: validation_record
+        - id: submit_for_review
+          action: Attach templates, checklist results, and validation outputs to review.
+          output: review_ready_package
+      failure_modes:
+        - template_field_deleted
+        - checklist_used_without_evidence
+        - schema_not_updated_after_template_change
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define template quality criteria.
+    content:
+      acceptance_criteria:
+        - Each template maps to at least one protocol product.
+        - Required fields are explicit and validation-ready.
+        - Each checklist item states evidence required.
+        - Schema files validate the core template fields they are meant to control.
+      evidence_required:
+        - template_files
+        - checklist_files
+        - schema_files
+        - mapping_to_product_catalog
+  - id: traceability
+    title: Traceability
+    purpose: Link reusable files to source products.
+    content:
+      upstream_dependencies:
+        - all_prior_products
+      downstream_outputs:
+        - automation_and_validation_model
+        - implementation_roadmap
+      trace_links:
+        - template_to_product
+        - checklist_to_quality_gate
+        - schema_to_template
+        - checklist_result_to_review_record
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Apply the reusable files.
+    content:
+      repository_locations:
+        templates: templates/
+        checklists: checklists/
+        schemas: schemas/
+      anti_patterns:
+        - editing templates inside project records without preserving the source template.
+        - checklist completion with unchecked evidence.
+        - schema drift after template updates.
+      automation_hooks:
+        - validate template YAML parseability.
+        - validate records against schema.
+        - require checklist completion for release approval.
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define schema maintenance rules.
+    content:
+      schema_rules:
+        - Required template fields should appear as required schema properties where machine validation is appropriate.
+        - Human narrative fields may remain free text but must have stable keys.
+        - Controlled vocabulary fields should use enums where possible.
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Track reusable asset improvements.
+    content:
+      open_questions:
+        - id: oq-templates-rendering
+          question: Should Markdown templates be generated from YAML templates before publication?
+          status: open
+      backlog:
+        - Add domain-specific template variants after pilot projects.
+quality_gates:
+  - id: qg-templates-coverage
+    question: Do templates and checklists cover the required protocol products?
+    evidence_required: [template_mapping, checklist_mapping]
+    status: draft_pass
+  - id: qg-templates-validation
+    question: Are schema-controlled files validation-ready?
+    evidence_required: [schema_files, validation_plan]
+    status: draft_pass
+  - id: qg-templates-usability
+    question: Can a new project fill the templates without unstated knowledge?
+    evidence_required: [template_fields, README_usage]
+    status: draft_pass
+traceability:
+  - trace_id: trace-templates-001
+    source_type: product
+    source_id: all_prior_products
+    relationship: synthesizes
+    target_type: product
+    target_id: templates_and_checklists
+    evidence_location: product_set:all_prior_products
+    status: proposed
+open_questions:
+  - id: oq-templates-rendering
+    question: Decide whether to include generated Markdown versions of YAML templates before GitHub publication.
+    status: open

@@ -1,0 +1,233 @@
+product:
+  id: automation_and_validation_model
+  title: Automation and Validation Model
+  purpose: >
+    Define schema validation, metadata checks, link checks, package inventory
+    checks, review gates, release gates, and automation responsibilities for
+    GitHub-centered protocol use.
+  status: draft
+  version: "0.1.0"
+source_basis:
+  - md_guides
+  - data_and_information
+  - isos_and_more
+dependencies:
+  - repository_architecture
+  - metadata_and_identifier_profile
+  - quality_conformance_and_review_model
+  - templates_and_checklists
+sections:
+  - id: identity_and_purpose
+    title: Identity and Purpose
+    purpose: Define validation automation scope.
+    content:
+      primary_outputs:
+        - validation_model
+        - automation_workflow_model
+        - validation_records
+        - release_gate_checks
+      validation_goals:
+        - prevent structural drift
+        - surface missing evidence
+        - support repeatable review
+        - block invalid release candidates
+        - preserve machine-readable metadata quality
+  - id: conceptual_model
+    title: Conceptual Model
+    purpose: Define automation layers.
+    content:
+      validation_layers:
+        - id: syntax_validation
+          checks: [yaml_parse, json_parse, markdown_basic_structure]
+        - id: schema_validation
+          checks: [artifact_package_schema, metadata_record_schema, review_record_schema]
+        - id: metadata_validation
+          checks: [required_fields, cross_file_consistency, license_status, version_consistency]
+        - id: package_validation
+          checks: [inventory_matches_files, required_files_by_conformance, no_private_release_links]
+        - id: link_validation
+          checks: [internal_links, external_release_links, DOI_or_archive_identifier_when_required]
+        - id: review_release_validation
+          checks: [review_record_exists, unresolved_findings, release_approval_record, preservation_record]
+      validation_outputs:
+        - validation_summary
+        - validation_record
+        - failed_check_report
+        - release_gate_result
+  - id: normative_requirements
+    title: Normative Requirements
+    purpose: Define validation rules.
+    content:
+      must:
+        - Automation must validate machine-readable files before release approval.
+        - Release validation must check package inventory, metadata consistency, review records, and preservation records.
+        - Failed validation must identify file, rule, severity, and remediation guidance.
+        - Automation changes must be reviewed when they affect required gates.
+      should:
+        - Validation should run on pull requests that change specs, templates, schemas, metadata, records, or package inventory.
+        - Validation should distinguish warnings from release-blocking failures.
+        - Validation records should be retained for release candidates.
+      may:
+        - Projects may run lightweight validation locally before opening a pull request.
+        - Projects may add domain-specific checks for language, runtime, data, or publication venue.
+      must_not:
+        - Automation must not silently modify release metadata.
+        - Automation must not pass release gates when required records are missing.
+        - Automation must not treat warnings as resolved without an author or maintainer decision.
+  - id: information_items
+    title: Information Items and Records
+    purpose: Define automation files and records.
+    content:
+      required_files:
+        - schemas/artifact-package.schema.json
+        - schemas/metadata-record.schema.json
+        - checklists/artifact-package-readiness-checklist.yaml
+        - checklists/release-publication-checklist.yaml
+      optional_files:
+        - .github/workflows/validate-protocol.yaml
+        - scripts/validate-package.*
+      required_records:
+        - validation_record
+        - failed_check_record
+        - release_gate_record
+        - automation_change_record
+  - id: workflow
+    title: Workflow and Operating Procedure
+    purpose: Define validation flow.
+    content:
+      steps:
+        - id: detect_changed_files
+          action: Classify changed files by protocol area.
+          output: validation_scope
+        - id: run_syntax_checks
+          action: Parse YAML, JSON, and Markdown where applicable.
+          output: syntax_validation_record
+        - id: run_schema_checks
+          action: Validate controlled files against schemas.
+          output: schema_validation_record
+        - id: run_metadata_checks
+          action: Compare required metadata fields and cross-file values.
+          output: metadata_validation_record
+        - id: run_package_checks
+          action: Compare inventory, required files, evidence, and conformance level.
+          output: package_validation_record
+        - id: evaluate_release_gate
+          action: Confirm required validation, review, and release records.
+          output: release_gate_record
+      failure_modes:
+        - yaml_or_json_parse_failure
+        - schema_required_field_missing
+        - metadata_crosswalk_conflict
+        - package_inventory_mismatch
+        - missing_release_approval
+  - id: quality_and_conformance
+    title: Quality and Conformance
+    purpose: Define automation quality criteria.
+    content:
+      acceptance_criteria:
+        - Validation rules map to protocol requirements.
+        - Failures are actionable and traceable to files.
+        - Release-blocking checks are documented.
+        - Validation records can be attached to review and release records.
+      evidence_required:
+        - validation_rules
+        - schemas
+        - checklist_mappings
+        - validation_records
+        - release_gate_results
+  - id: traceability
+    title: Traceability
+    purpose: Link automation to requirements and records.
+    content:
+      upstream_dependencies:
+        - repository_architecture
+        - metadata_and_identifier_profile
+        - quality_conformance_and_review_model
+        - templates_and_checklists
+      downstream_outputs:
+        - implementation_roadmap
+      trace_links:
+        - validation_rule_to_requirement
+        - failed_check_to_remediation
+        - validation_record_to_review_record
+        - release_gate_to_release_record
+  - id: implementation_guidance
+    title: Implementation Guidance
+    purpose: Implement automation without overfitting.
+    content:
+      repository_locations:
+        schemas: schemas/
+        workflows: .github/workflows/
+        validation_records: records/validation/
+      minimum_checks:
+        - parse YAML and JSON.
+        - validate required metadata fields.
+        - compare package inventory against repository files.
+        - require review and release approval records for release candidates.
+      anti_patterns:
+        - checks that only run on maintainer machines.
+        - validation that rewrites user files without review.
+        - release workflow that ignores failed checks.
+      automation_hooks:
+        - pull_request_validation
+        - pre_release_validation
+        - metadata_freeze_check
+        - archive_readiness_check
+  - id: template_or_schema_implications
+    title: Template or Schema Implications
+    purpose: Define validation schema implications.
+    content:
+      schema_priorities:
+        - metadata_record
+        - artifact_package
+        - review_record
+        - release_record
+        - traceability_matrix
+      severity_levels:
+        - error
+        - warning
+        - info
+  - id: open_questions_and_backlog
+    title: Open Questions and Backlog
+    purpose: Track automation implementation questions.
+    content:
+      open_questions:
+        - id: oq-automation-language
+          question: Which implementation language should be used for portable validation scripts?
+          status: open
+      backlog:
+        - Add a GitHub Actions workflow after schemas stabilize.
+quality_gates:
+  - id: qg-automation-rule-map
+    question: Do validation rules map to protocol requirements and quality gates?
+    evidence_required: [validation_layers, trace_links]
+    status: draft_pass
+  - id: qg-automation-release
+    question: Can automation block invalid release candidates?
+    evidence_required: [release_gate_checks, required_records]
+    status: draft_pass
+  - id: qg-automation-records
+    question: Are validation results retained as review or release evidence?
+    evidence_required: [validation_record_fields, release_gate_record]
+    status: draft_pass
+traceability:
+  - trace_id: trace-automation-001
+    source_type: product
+    source_id: templates_and_checklists
+    relationship: depends_on
+    target_type: product
+    target_id: automation_and_validation_model
+    evidence_location: product:templates_and_checklists
+    status: proposed
+  - trace_id: trace-automation-002
+    source_type: source_family
+    source_id: data_and_information
+    relationship: grounds
+    target_type: section
+    target_id: quality_and_conformance
+    evidence_location: citation_set:wang_strong_1996+delone_mclean_2003+iso_iec_ieee_15289_2019
+    status: proposed
+open_questions:
+  - id: oq-automation-language
+    question: Choose the first portable validation implementation language after the pilot target repository is known.
+    status: open

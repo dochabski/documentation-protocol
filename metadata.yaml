@@ -1,0 +1,28 @@
+metadata:
+  title: Documentation Protocol
+  short_description: >
+    A GitHub-centered protocol for documenting, reviewing, packaging,
+    releasing, publishing, and preserving open research and design artifacts.
+  artifact_type: method
+  version: "0.1.0"
+  authors:
+    - Ochabski, David
+  contributors: []
+  organizations: []
+  license: CC-BY-4.0
+  repository_url: https://github.com/dochabski/documentation-protocol
+  archive_doi: 10.5281/zenodo.19748824
+  keywords:
+    - documentation-protocol
+    - design-science-research
+    - artifact-evaluation
+    - reproducibility
+    - research-software
+    - github
+  related_publication: ""
+  related_artifacts: []
+  dependencies: []
+  runtime_environment: {}
+  funding: []
+  maintenance_status: draft
+  release_status: Public draft release -- usable, citable, but still under active validation.

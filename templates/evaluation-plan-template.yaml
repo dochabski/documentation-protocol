@@ -1,0 +1,26 @@
+evaluation_plan:
+  evaluation_id: ""
+  artifact_id: ""
+  target_conformance_level: ""
+  purpose: ""
+  evaluated_claims: []
+  evaluation_questions: []
+  criteria:
+    - criterion_id: ""
+      description: ""
+      required_evidence: []
+      acceptance_rule: ""
+  method:
+    type: ""
+    procedure: []
+    required_inputs: []
+    environment: {}
+  roles:
+    author: ""
+    reviewer: ""
+    maintainer: ""
+  expected_outputs: []
+  limitations: []
+  records_to_create:
+    - evaluation_record
+    - review_record

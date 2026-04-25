@@ -1,0 +1,27 @@
+artifact_package_readiness_checklist:
+  purpose: Check whether an artifact package is ready for review or release.
+  checks:
+    - id: package-profile-present
+      question: Is artifact-profile.yaml complete?
+      evidence_required: [artifact-profile.yaml]
+      required_for: [l1_documented, l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: metadata-present
+      question: Are required metadata and citation files present or explicitly deferred?
+      evidence_required: [metadata.yaml, CITATION.cff]
+      required_for: [l1_documented, l5_archival_publication_ready]
+    - id: inventory-matches-files
+      question: Does the package inventory match repository contents?
+      evidence_required: [package-inventory.yaml, repository_tree]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: claims-have-evidence
+      question: Do artifact claims trace to evaluation or review evidence?
+      evidence_required: [traceability-matrix.yaml, evaluation-report.yaml]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: use-path-present
+      question: Is there a clear use, inspection, or reproduction procedure?
+      evidence_required: [usage-procedure.md, environment.yaml]
+      required_for: [l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: limitations-present
+      question: Are known limitations and non-goals explicit?
+      evidence_required: [limitations.md]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
