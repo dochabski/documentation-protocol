@@ -18,6 +18,22 @@ artifact_package_readiness_checklist:
       question: Do artifact claims trace to evaluation or review evidence?
       evidence_required: [traceability-matrix.yaml, evaluation-report.yaml]
       required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: dsr-transparency-crosswalk-complete
+      question: Is the DSR transparency crosswalk complete or explicitly tailored for the package?
+      evidence_required: [checklists/dsr-transparency-crosswalk-checklist.yaml, artifact-profile.yaml]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: contribution-positioning-present
+      question: Is the DSR contribution positioned by artifact type, knowledge scope, knowledge goal, contribution type, and transfer conditions?
+      evidence_required: [contribution-positioning-record.yaml, contribution-claim.yaml, artifact-profile.yaml]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: evaluation-strategy-declared
+      question: Does the evaluation plan declare timing, setting, method family, validity basis, stakeholder confidence basis, and claim-to-component mapping?
+      evidence_required: [evaluation-plan.yaml, traceability-matrix.yaml]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: demonstration-not-evaluation
+      question: Is any demonstration separated from evaluation unless acceptance criteria, evidence, and evaluation claims are defined?
+      evidence_required: [demonstration-record, evaluation-plan.yaml, evaluation-report.yaml]
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
     - id: use-path-present
       question: Is there a clear use, inspection, or reproduction procedure?
       evidence_required: [usage-procedure.md, environment.yaml]

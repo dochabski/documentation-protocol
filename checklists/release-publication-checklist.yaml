@@ -20,6 +20,12 @@ release_publication_checklist:
     - id: licensing-ready
       question: Are artifact license, code license where applicable, third-party material rights, downstream reuse constraints, and AI indexing/training preference documented?
       evidence_required: [LICENSE, metadata.yaml, artifact-profile.yaml, third-party-materials-record]
+    - id: dsr-publication-summary-ready
+      question: For DSR releases, do publication materials summarize transparency, contribution positioning, evaluation strategy, transfer conditions, and limitations?
+      evidence_required: [dsr-transparency-crosswalk.yaml, contribution-positioning-record.yaml, evaluation-plan.yaml, artifact-appendix.md]
+    - id: practitioner-communication-ready
+      question: When practice adoption or adaptation is claimed, are practitioner-facing guidance, demonstration material, tutorials, adaptation notes, or videos present or explicitly deferred?
+      evidence_required: [practitioner-guide.md, adaptation-notes.md, release-record.yaml]
     - id: registry-ready
       question: Does registry metadata match release metadata?
       evidence_required: [registry-submission-record.yaml, release-record.yaml]

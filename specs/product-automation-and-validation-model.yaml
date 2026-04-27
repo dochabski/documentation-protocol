@@ -45,11 +45,11 @@ sections:
         - id: metadata_validation
           checks: [required_fields, cross_file_consistency, license_status, version_consistency]
         - id: package_validation
-          checks: [inventory_matches_files, required_files_by_conformance, no_private_release_links]
+          checks: [inventory_matches_files, required_files_by_conformance, dsr_transparency_required_where_applicable, contribution_positioning_required_where_applicable, no_private_release_links]
         - id: link_validation
           checks: [internal_links, external_release_links, DOI_or_archive_identifier_when_required]
         - id: review_release_validation
-          checks: [review_record_exists, unresolved_findings, release_approval_record, preservation_record]
+          checks: [review_record_exists, dsr_review_fields_present_where_applicable, unresolved_findings, release_approval_record, preservation_record]
       validation_outputs:
         - validation_summary
         - validation_record
@@ -62,6 +62,7 @@ sections:
       must:
         - Automation must validate machine-readable files before release approval.
         - Release validation must check package inventory, metadata consistency, review records, and preservation records.
+        - DSR package validation must check DSR transparency, contribution positioning, evaluation strategy, and demonstration/evaluation boundary fields when the target level is L2 or higher.
         - Failed validation must identify file, rule, severity, and remediation guidance.
         - Automation changes must be reviewed when they affect required gates.
       should:
@@ -83,6 +84,7 @@ sections:
         - schemas/artifact-package.schema.json
         - schemas/metadata-record.schema.json
         - checklists/artifact-package-readiness-checklist.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
         - checklists/release-publication-checklist.yaml
       optional_files:
         - .github/workflows/validate-protocol.yaml
@@ -110,7 +112,7 @@ sections:
           action: Compare required metadata fields and cross-file values.
           output: metadata_validation_record
         - id: run_package_checks
-          action: Compare inventory, required files, evidence, and conformance level.
+          action: Compare inventory, required files, DSR transparency evidence, contribution positioning, evaluation strategy evidence, and conformance level.
           output: package_validation_record
         - id: evaluate_release_gate
           action: Confirm required validation, review, and release records.
@@ -120,6 +122,9 @@ sections:
         - schema_required_field_missing
         - metadata_crosswalk_conflict
         - package_inventory_mismatch
+        - missing_dsr_transparency_crosswalk
+        - missing_contribution_positioning_record
+        - demonstration_conflated_with_evaluation
         - missing_release_approval
   - id: quality_and_conformance
     title: Quality and Conformance
@@ -164,6 +169,7 @@ sections:
         - parse YAML and JSON.
         - validate required metadata fields.
         - compare package inventory against repository files.
+        - check DSR transparency and contribution-positioning records where applicable.
         - require review and release approval records for release candidates.
       anti_patterns:
         - checks that only run on maintainer machines.
@@ -184,6 +190,8 @@ sections:
         - review_record
         - release_record
         - traceability_matrix
+        - dsr_transparency_crosswalk
+        - contribution_positioning_record
       severity_levels:
         - error
         - warning

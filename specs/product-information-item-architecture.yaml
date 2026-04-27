@@ -67,6 +67,8 @@ sections:
         - review_record
         - test_record
         - evaluation_record
+        - dsr_transparency_crosswalk_record
+        - contribution_positioning_record
         - release_record
         - metadata_record
         - preservation_record
@@ -102,6 +104,8 @@ sections:
         - package_inventory
         - requirements_specification
         - design_description
+        - dsr_transparency_crosswalk
+        - contribution_positioning_record
         - evaluation_plan
         - evaluation_report
         - review_record
@@ -264,7 +268,7 @@ quality_gates:
 traceability:
   - trace_id: trace-info-001
     source_type: scaffold
-    source_id: models/02_information_item_taxonomy.yaml
+    source_id: project_control_information_item_taxonomy
     relationship: defines
     target_type: product
     target_id: information_item_architecture

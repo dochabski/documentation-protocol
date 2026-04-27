@@ -2,6 +2,22 @@
 
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- Added DSR transparency as a first-class protocol layer covering process, problem space, solution space, build, evaluation, and contribution transparency.
+- Added `checklists/dsr-transparency-crosswalk-checklist.yaml`.
+- Added `templates/contribution-positioning-record-template.yaml`.
+- Added DSR-specific artifact profile fields for stakeholders, problem space, solution space, context constraints, kernel theories, existing artifacts, build process, alternatives, design decisions, contribution positioning, transfer conditions, and transparency evidence.
+- Added DSR-specific evaluation-plan fields for formative/summative timing, artificial/naturalistic setting, method family, validity basis, stakeholder confidence basis, and claim-to-component mapping.
+
+### Changed
+
+- Strengthened package readiness and review checks to catch the common DSR failure mode of treating demonstration as evaluation.
+- Updated the implementation roadmap to require both a software or executable pilot and a non-software DSR pilot before treating the protocol as validated.
+- Expanded manifest citations for DSR transparency, evaluation strategy, and contribution positioning.
+
 ## [0.1.1] - 2026-04-25
 
 ### Changed

@@ -21,7 +21,13 @@ Use this index as the human-facing entry point. The authoritative source is the 
 
 ## Minimum Use Path
 
-For a new project, fill `templates/artifact-profile-template.yaml`, select a conformance level, create a package inventory, complete metadata, run the package readiness checklist, then enter review. For a publication-ready project, also complete release, preservation, citation, and registry records.
+For a new project, fill `templates/artifact-profile-template.yaml`, select a conformance level, create a package inventory, complete metadata, run the package readiness checklist, then enter review. For a DSR project at L2 or above, also complete the DSR transparency crosswalk, contribution-positioning record, and DSR-specific evaluation-plan fields. For a publication-ready project, also complete release, preservation, citation, registry, and practitioner-facing communication records where applicable.
+
+## DSR Transparency Minimum
+
+DSR packages should expose six transparency dimensions: process, problem space, solution space, build, evaluation, and contribution. The protocol asks for enough evidence to support review, reuse, adaptation, and stakeholder confidence while allowing documented limits for privacy, security, intellectual property, proprietary constraints, institutional obligations, maintenance cost, or nonreplicable field interventions.
+
+Evaluation evidence must be separated from demonstration evidence unless acceptance criteria and evidence are defined. Contribution claims should be positioned by artifact type, knowledge scope, knowledge goal, novelty basis, practice contribution, scientific contribution, and transfer conditions.
 
 ## Downstream Artifact Licensing Recommendation
 
@@ -31,7 +37,6 @@ For maximum reuse, accessibility, AI indexing/training, adaptation, translation,
 
 ## Current Draft Open Questions
 
-- Choose the default public license.
 - Identify first public maintainers and governance contact.
-- Select the first pilot artifact.
+- Select one software or executable pilot and one non-software DSR pilot.
 - Decide whether active GitHub workflow files should be generated before or after the first pilot.

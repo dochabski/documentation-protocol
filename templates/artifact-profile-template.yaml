@@ -32,6 +32,93 @@ artifact_profile:
   knowledge_goal: ""
   lifecycle_stage: ""
   design_strategy: ""
+  stakeholders:
+    - stakeholder_id: ""
+      role: ""
+      interest_or_concern: ""
+      involvement: ""
+  problem_space:
+    problem_class: ""
+    local_problem_instance: ""
+    application_context: ""
+    improvement_goals: []
+    scope: ""
+    timeframe: ""
+    boundary_conditions: []
+  context_constraints:
+    legal_or_policy: []
+    institutional: []
+    technical: []
+    resource: []
+    privacy_security_or_ip: []
+  solution_space:
+    solution_class: ""
+    design_knowledge_base: []
+    candidate_technologies: []
+    relevant_design_theories: []
+  kernel_theories_or_justificatory_knowledge:
+    - knowledge_id: ""
+      citation_or_source: ""
+      role_in_design: ""
+  existing_artifacts_or_solution_classes:
+    - artifact_or_class: ""
+      relation_to_this_artifact: ""
+      reuse_or_distinction: ""
+  build_process_summary: ""
+  alternatives_considered:
+    - alternative_id: ""
+      description: ""
+      disposition: ""
+      rationale: ""
+  design_decision_records:
+    - record_id: ""
+      decision_summary: ""
+      evidence_location: ""
+  build_transparency:
+    creative_search_process: ""
+    collaboration_roles: []
+    emergent_changes: []
+    unresolved_build_questions: []
+  contribution_positioning:
+    record_id: ""
+    contribution_outputs: []
+    knowledge_scope: ""
+    knowledge_goal: ""
+    contribution_type: ""
+    gregor_hevner_position: ""
+    dynamic_contribution_path: ""
+    practice_contribution: ""
+    scientific_contribution: ""
+  transfer_conditions:
+    intended_contexts: []
+    boundary_conditions: []
+    adaptation_requirements: []
+    constraints_on_generalization: []
+  dsr_transparency:
+    process_transparency:
+      status: not_checked
+      evidence: []
+      disclosure_limits: []
+    problem_space_transparency:
+      status: not_checked
+      evidence: []
+      disclosure_limits: []
+    solution_space_transparency:
+      status: not_checked
+      evidence: []
+      disclosure_limits: []
+    build_transparency:
+      status: not_checked
+      evidence: []
+      disclosure_limits: []
+    evaluation_transparency:
+      status: not_checked
+      evidence: []
+      disclosure_limits: []
+    contribution_transparency:
+      status: not_checked
+      evidence: []
+      disclosure_limits: []
   claims:
     - claim_id: ""
       statement: ""

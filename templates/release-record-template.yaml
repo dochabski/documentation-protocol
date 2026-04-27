@@ -11,6 +11,13 @@ release_record:
   metadata_freeze_record: ""
   validation_records: []
   review_records: []
+  dsr_publication_summary:
+    dsr_transparency_crosswalk: ""
+    contribution_positioning_record: ""
+    evaluation_strategy_record: ""
+    transfer_conditions: []
+    practitioner_guidance: ""
+    demonstration_material: []
   known_limitations: []
   licensing:
     artifact_license: ""

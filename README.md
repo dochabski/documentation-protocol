@@ -12,9 +12,17 @@ The source of truth is the YAML product specifications in `specs/`. Markdown fil
 
 1. Start with `specs/product-catalog.yaml` to identify the protocol product relevant to the project.
 2. Use `specs/product-protocol-foundation.yaml` to determine scope, conformance level, tailoring rules, and non-goals.
-3. Apply the package, metadata, quality, review, and publication products to the target project.
-4. Use the files in `templates/`, `checklists/`, and `schemas/` as the reusable operating material.
-5. Preserve decisions, reviews, evaluation records, and release records in the target project's `records/` folder.
+3. For DSR artifacts, complete the problem-space, solution-space, build, evaluation, contribution-positioning, and transparency fields in `templates/artifact-profile-template.yaml`.
+4. Apply the package, metadata, quality, review, and publication products to the target project.
+5. Use the files in `templates/`, `checklists/`, and `schemas/` as the reusable operating material.
+6. Use `checklists/dsr-transparency-crosswalk-checklist.yaml` before review for L2 or higher DSR packages.
+7. Preserve decisions, reviews, evaluation records, and release records in the target project's `records/` folder.
+
+## DSR Transparency Layer
+
+The protocol treats DSR transparency as a first-class review concern. DSR packages should document process transparency, problem-space transparency, solution-space transparency, build transparency, evaluation transparency, and contribution transparency at a level appropriate to their conformance target.
+
+Evaluation plans should distinguish formative, summative, or combined timing; artificial, naturalistic, or mixed setting; evaluation method family; validity basis; stakeholder confidence basis; and claim-to-component mapping. Demonstration is not evaluation unless acceptance criteria, evidence, and evaluation claims are explicitly defined.
 
 ## Source Policy
 

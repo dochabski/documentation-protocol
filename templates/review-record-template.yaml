@@ -8,6 +8,33 @@ review_record:
   reviewer: ""
   review_date: ""
   evidence_checked: []
+  dsr_transparency_results:
+    process_transparency: not_checked
+    problem_space_transparency: not_checked
+    solution_space_transparency: not_checked
+    build_transparency: not_checked
+    evaluation_transparency: not_checked
+    contribution_transparency: not_checked
+  evaluation_strategy_review:
+    evaluation_timing: ""
+    evaluation_setting: ""
+    evaluation_method_family: ""
+    validity_basis_reviewed: false
+    claim_to_component_mapping_reviewed: false
+    stakeholder_confidence_basis_reviewed: false
+  demonstration_evaluation_boundary:
+    demonstration_cited: false
+    treated_as_evaluation: false
+    acceptance_criteria_present: false
+    evidence_present: false
+    reviewer_notes: ""
+  contribution_positioning_review:
+    record_id: ""
+    contribution_type_reviewed: false
+    knowledge_scope_reviewed: false
+    knowledge_goal_reviewed: false
+    transfer_conditions_reviewed: false
+    reviewer_notes: ""
   checklist_results:
     - check_id: ""
       result: not_checked

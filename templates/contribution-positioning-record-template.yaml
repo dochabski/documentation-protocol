@@ -1,0 +1,54 @@
+# SPDX-License-Identifier: CC0-1.0
+contribution_positioning_record:
+  contribution_id: ""
+  artifact_id: ""
+  package_version: ""
+  prepared_by: ""
+  prepared_date: ""
+  source_basis:
+    - gregor_hevner_2013
+    - akoka_et_al_2023
+    - hevner_et_al_2024
+  contribution_outputs:
+    - output_type: ""
+      description: ""
+  artifact_taxonomy:
+    artifact_types: []
+    compound_artifact: false
+  knowledge_position:
+    knowledge_scope: ""
+    knowledge_goal: ""
+    contribution_path_summary: ""
+    knowledge_moments: []
+  contribution_classification:
+    gregor_hevner_type: ""
+    normalized_contribution_type: ""
+    routine_design_rationale: ""
+    improvement_rationale: ""
+    exaptation_rationale: ""
+    invention_rationale: ""
+    method_extension_or_synthesis_rationale: ""
+    theory_building_rationale: ""
+  novelty_and_grounding:
+    problem_class: ""
+    solution_class: ""
+    prior_artifacts_or_methods: []
+    kernel_theories_or_justificatory_knowledge: []
+    novelty_basis: ""
+  contribution_claims:
+    - claim_id: ""
+      claim_type: ""
+      statement: ""
+      practice_contribution: ""
+      scientific_contribution: ""
+      evidence_records: []
+      limitations: []
+  transfer_conditions:
+    intended_contexts: []
+    boundary_conditions: []
+    adaptation_requirements: []
+    constraints_on_generalization: []
+  transparency_review:
+    contribution_transparency_evidence: []
+    unresolved_questions: []
+    disclosure_limits: []

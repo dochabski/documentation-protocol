@@ -14,7 +14,7 @@ products:
     product_file: specs/product-governance-and-stewardship.yaml
   - id: dsr_lifecycle_and_contribution_model
     title: DSR Lifecycle and Contribution Model
-    purpose: Define artifact types, DSR knowledge contributions, lifecycle stages, design strategies, and generalization logic.
+    purpose: Define artifact types, DSR knowledge contributions, lifecycle stages, design strategies, transparency, evaluation positioning, and generalization logic.
     depends_on: [protocol_foundation]
     source_basis: [dsr_corpus, md_guides]
     product_file: specs/product-dsr-lifecycle-and-contribution-model.yaml
@@ -38,7 +38,7 @@ products:
     product_file: specs/product-metadata-and-identifier-profile.yaml
   - id: quality_conformance_and_review_model
     title: Quality, Conformance, and Review Model
-    purpose: Define quality dimensions, maturity levels, gates, scoring rubrics, review workflow, acceptance criteria, and evidence requirements.
+    purpose: Define quality dimensions, maturity levels, gates, DSR transparency review, scoring rubrics, review workflow, acceptance criteria, and evidence requirements.
     depends_on: [protocol_foundation, information_item_architecture, dsr_lifecycle_and_contribution_model]
     source_basis: [md_guides, data_and_information, dsr_corpus]
     product_file: specs/product-quality-conformance-and-review-model.yaml

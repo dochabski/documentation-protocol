@@ -1,0 +1,104 @@
+# SPDX-License-Identifier: CC0-1.0
+dsr_transparency_crosswalk_checklist:
+  purpose: >
+    Check whether a DSR artifact package makes the research process, problem
+    space, solution space, build work, evaluation, and contribution visible
+    enough for review, reuse, adaptation, and publication.
+  source_basis:
+    - hevner_et_al_2024
+    - gregor_hevner_2013
+    - akoka_et_al_2023
+    - venable_pries_heje_baskerville_2016
+  guidance:
+    sufficiency_rule: >
+      Provide enough transparency to support stakeholder confidence, review,
+      reuse, and responsible adaptation without creating unnecessary burden.
+    disclosure_limits:
+      - privacy
+      - intellectual_property
+      - security
+      - proprietary_constraints
+      - institutional_or_contractual_limits
+      - maintenance_cost
+      - field_intervention_nonreplicability
+    tailoring_rule: >
+      If a transparency item cannot be disclosed, record the reason, the risk
+      created by nondisclosure, and any safe substitute evidence.
+  checks:
+    - id: process-transparency
+      transparency_dimension: process_transparency
+      question: >
+        Are the actual DSR activities, sequence, reasoning, collaborators,
+        deviations, and major decision points visible?
+      evidence_required:
+        - artifact-profile.yaml
+        - design-decision-records
+        - traceability-matrix.yaml
+        - review-record.yaml
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: problem-space-transparency
+      transparency_dimension: problem_space_transparency
+      question: >
+        Are the application context, stakeholders, problem class,
+        improvement goals, scope, timeframe, constraints, and boundary
+        conditions documented?
+      evidence_required:
+        - artifact-profile.yaml
+        - problem-and-objectives.md
+        - requirements-or-objectives-record
+      required_for: [l1_documented, l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: solution-space-transparency
+      transparency_dimension: solution_space_transparency
+      question: >
+        Are kernel theories or justificatory knowledge, existing artifacts,
+        solution classes, technologies, design knowledge, and knowledge-base
+        engagement documented?
+      evidence_required:
+        - artifact-profile.yaml
+        - design-rationale.md
+        - bibliography-or-source-basis-record
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: build-transparency
+      transparency_dimension: build_transparency
+      question: >
+        Are artifact construction choices, creative search, alternatives
+        considered, rejected options, collaboration roles, emergent changes,
+        and design decision records documented?
+      evidence_required:
+        - artifact-profile.yaml
+        - design-rationale.md
+        - design-decision-records
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: evaluation-transparency
+      transparency_dimension: evaluation_transparency
+      question: >
+        Does the evaluation plan declare timing, setting, method family,
+        criteria, claim-to-component mapping, validity basis, stakeholder
+        confidence basis, evidence, and limitations?
+      evidence_required:
+        - evaluation-plan.yaml
+        - evaluation-report.yaml
+        - traceability-matrix.yaml
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: contribution-transparency
+      transparency_dimension: contribution_transparency
+      question: >
+        Is the contribution positioned as artifact, method, design principle,
+        design theory, taxonomy, compound contribution, or another declared
+        form, with knowledge scope, knowledge goal, novelty basis, practice
+        value, scientific value, and transfer conditions?
+      evidence_required:
+        - contribution-positioning-record.yaml
+        - contribution-claim.yaml
+        - artifact-profile.yaml
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: demonstration-not-evaluation
+      transparency_dimension: evaluation_transparency
+      question: >
+        If a demonstration is cited, is it separated from evaluation unless
+        acceptance criteria, evidence, and evaluation claims are defined?
+      evidence_required:
+        - demonstration-record
+        - evaluation-plan.yaml
+        - evaluation-report.yaml
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]

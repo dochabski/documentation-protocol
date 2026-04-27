@@ -292,7 +292,7 @@ quality_gates:
 traceability:
   - trace_id: trace-metadata-001
     source_type: scaffold
-    source_id: models/05_metadata_identifier_profile.yaml
+    source_id: project_control_metadata_identifier_profile
     relationship: defines
     target_type: product
     target_id: metadata_and_identifier_profile

@@ -11,6 +11,18 @@ review_checklist:
     - id: evidence-inspected
       question: Did the reviewer inspect evidence supporting each major claim?
       evidence_required: [traceability-matrix.yaml, evaluation-report.yaml]
+    - id: dsr-transparency-reviewed
+      question: Did the reviewer inspect process, problem-space, solution-space, build, evaluation, and contribution transparency?
+      evidence_required: [dsr-transparency-crosswalk-checklist.yaml, artifact-profile.yaml, review-record.yaml]
+    - id: evaluation-strategy-reviewed
+      question: Does the evaluation strategy distinguish formative/summative timing, artificial/naturalistic setting, method family, and validity basis?
+      evidence_required: [evaluation-plan.yaml, evaluation-report.yaml]
+    - id: demonstration-not-evaluation
+      question: Is demonstration kept separate from evaluation unless acceptance criteria and evidence are defined?
+      evidence_required: [demonstration-record, evaluation-plan.yaml, evaluation-report.yaml]
+    - id: contribution-positioning-reviewed
+      question: Is the contribution positioning credible for the declared artifact type, knowledge scope, knowledge goal, novelty basis, and transfer conditions?
+      evidence_required: [contribution-positioning-record.yaml, contribution-claim.yaml, limitations.md]
     - id: use-path-tested
       question: Was the open, install, run, use, or inspect path checked where applicable?
       evidence_required: [usage-procedure.md, review-record.yaml]

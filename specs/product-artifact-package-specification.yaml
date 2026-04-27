@@ -52,7 +52,7 @@ sections:
         - id: use_and_reproduction
           includes: [installation_or_access, usage_procedure, environment_specification, dependencies, examples]
         - id: evidence
-          includes: [evaluation_plan, evaluation_report, traceability_matrix, tests_or_inspection_records]
+          includes: [dsr_transparency_crosswalk, contribution_positioning_record, evaluation_plan, evaluation_report, traceability_matrix, tests_or_inspection_records]
         - id: review_and_release
           includes: [review_records, release_record, citation_metadata, preservation_record]
       package_inventory_fields:
@@ -73,6 +73,7 @@ sections:
         - Every package must include README, artifact profile, metadata, license decision, and conformance declaration.
         - Every package must declare its own license and must not be described as inheriting the Documentation Protocol license.
         - Every package must document third-party materials, reuse constraints, and any reason it cannot use a highly open license.
+        - Every DSR package at L2 or higher must include DSR transparency, contribution positioning, and evaluation strategy evidence.
         - Every exercisable package must include environment, dependency, setup, and use instructions.
         - Every package must include limitations and known non-goals.
         - Every L4 or L5 package must include reuse guidance and examples.
@@ -82,6 +83,7 @@ sections:
         - Packages should separate generated outputs from source files.
         - Packages should document expected runtime, resource needs, and external dependencies.
         - Packages should include a troubleshooting section for common failure modes.
+        - DSR packages should include practitioner-facing demonstration or adaptation support when practice use is part of the contribution claim.
         - Packages should use CC0-1.0 for non-code content when maximum reuse, AI indexing/training, adaptation, translation, and redistribution are desired.
         - Packages should use Apache-2.0 or MIT for executable code, with Apache-2.0 preferred when patent clarity is important.
       may:
@@ -90,6 +92,7 @@ sections:
         - Packages may use more restrictive licenses when required by third-party rights, sensitive data, privacy obligations, institutional ownership, sponsor or funder restrictions, export-control concerns, publication constraints, or incompatible dependencies.
       must_not:
         - Packages must not claim reproducibility when required inputs or procedures are unavailable.
+        - Packages must not treat demonstration as evaluation unless acceptance criteria, evidence, and evaluation claims are defined.
         - Packages must not omit known limitations affecting use, review, or reuse.
         - Packages must not rely on personal drives or private links for release-critical files.
         - Packages must not imply that CC0-1.0 or Apache-2.0 is mandatory for downstream artifacts.
@@ -100,13 +103,15 @@ sections:
     content:
       required_files_by_level:
         l1_documented: [README.md, LICENSE, metadata.yaml, artifact-profile.yaml]
-        l2_reviewable: [requirements.md, design-rationale.md, traceability-matrix.yaml, evaluation-plan.yaml]
+        l2_reviewable: [requirements.md, design-rationale.md, dsr-transparency-crosswalk.yaml, contribution-positioning-record.yaml, traceability-matrix.yaml, evaluation-plan.yaml]
         l3_exercisable: [environment.yaml, dependencies.yaml, usage-procedure.md, smoke-test-record.yaml]
         l4_reusable: [examples/, reuse-guide.md, limitations.md, adaptation-notes.md]
         l5_archival_publication_ready: [release-record.yaml, preservation-record.yaml, CITATION.cff, codemeta.json, .zenodo.json]
       required_records:
         - package_inventory_record
         - conformance_declaration_record
+        - dsr_transparency_crosswalk_record
+        - contribution_positioning_record
         - evaluation_record
         - review_record
         - release_record
@@ -128,6 +133,9 @@ sections:
         - id: add_use_material
           action: Add setup, use, inspection, example, and limitation material.
           output: use_and_reuse_material
+        - id: add_dsr_transparency_material
+          action: Add problem-space, solution-space, build, evaluation, and contribution transparency records where applicable.
+          output: dsr_transparency_bundle
         - id: attach_evidence
           action: Add evaluation, tests, review evidence, and traceability.
           output: evidence_bundle
@@ -150,10 +158,15 @@ sections:
         - Required files for target conformance level exist or have recorded tailoring.
         - Use, inspection, or reproduction path is clear.
         - Claims, evidence, and limitations are aligned.
+        - DSR transparency and contribution-positioning evidence are present for DSR packages at L2 and above.
+        - Evaluation strategy is declared and demonstration is separated from evaluation.
       evidence_required:
         - package_inventory
         - artifact_profile
         - metadata_validation_record
+        - dsr_transparency_crosswalk
+        - contribution_positioning_record
+        - evaluation_plan
         - review_record
         - package_validation_record
   - id: traceability
@@ -190,6 +203,7 @@ sections:
       automation_hooks:
         - compare package inventory paths to repository files.
         - require environment files for exercisable packages.
+        - require DSR transparency and contribution positioning for DSR packages at L2 and above.
         - require release records for L5 packages.
   - id: template_or_schema_implications
     title: Template or Schema Implications
@@ -206,6 +220,18 @@ sections:
         - downstream_reuse_constraints
         - ai_indexing_training_preference
         - open_license_exception_rationale
+        - stakeholders
+        - problem_space
+        - context_constraints
+        - solution_space
+        - kernel_theories_or_justificatory_knowledge
+        - existing_artifacts_or_solution_classes
+        - build_process_summary
+        - alternatives_considered
+        - design_decision_records
+        - contribution_positioning
+        - transfer_conditions
+        - dsr_transparency
         - claims
         - evidence_records
         - limitations
@@ -237,6 +263,10 @@ quality_gates:
   - id: qg-package-claims
     question: Are package claims aligned with evidence and limitations?
     evidence_required: [traceability_matrix, evaluation_report, limitations]
+    status: draft_pass
+  - id: qg-package-dsr-transparency
+    question: Does a DSR package include transparency, contribution-positioning, and evaluation-strategy evidence?
+    evidence_required: [dsr_transparency_crosswalk, contribution_positioning_record, evaluation_plan]
     status: draft_pass
 traceability:
   - trace_id: trace-package-001

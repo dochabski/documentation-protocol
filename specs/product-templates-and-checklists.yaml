@@ -32,6 +32,7 @@ sections:
         - evaluation_plan_template
         - review_record_template
         - release_record_template
+        - contribution_positioning_record_template
         - checklist_suite
         - schema_suite
       users:
@@ -49,6 +50,8 @@ sections:
           supports: [protocol_foundation, dsr_lifecycle_and_contribution_model, artifact_package_specification]
         - path: templates/evaluation-plan-template.yaml
           supports: [dsr_lifecycle_and_contribution_model, quality_conformance_and_review_model]
+        - path: templates/contribution-positioning-record-template.yaml
+          supports: [dsr_lifecycle_and_contribution_model, artifact_package_specification, quality_conformance_and_review_model]
         - path: templates/review-record-template.yaml
           supports: [quality_conformance_and_review_model]
         - path: templates/release-record-template.yaml
@@ -58,6 +61,8 @@ sections:
       checklists:
         - path: checklists/artifact-package-readiness-checklist.yaml
           supports: [artifact_package_specification]
+        - path: checklists/dsr-transparency-crosswalk-checklist.yaml
+          supports: [dsr_lifecycle_and_contribution_model, quality_conformance_and_review_model]
         - path: checklists/review-checklist.yaml
           supports: [quality_conformance_and_review_model]
         - path: checklists/release-publication-checklist.yaml
@@ -90,10 +95,12 @@ sections:
       files_created:
         - templates/artifact-profile-template.yaml
         - templates/evaluation-plan-template.yaml
+        - templates/contribution-positioning-record-template.yaml
         - templates/review-record-template.yaml
         - templates/release-record-template.yaml
         - templates/traceability-matrix-template.yaml
         - checklists/artifact-package-readiness-checklist.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
         - checklists/review-checklist.yaml
         - checklists/release-publication-checklist.yaml
         - checklists/metadata-checklist.yaml
@@ -131,6 +138,7 @@ sections:
         - Each template maps to at least one protocol product.
         - Required fields are explicit and validation-ready.
         - Each checklist item states evidence required.
+        - DSR templates expose problem-space, solution-space, build, evaluation, contribution, and transparency fields.
         - Schema files validate the core template fields they are meant to control.
       evidence_required:
         - template_files

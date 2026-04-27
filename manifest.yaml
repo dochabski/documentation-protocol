@@ -37,7 +37,8 @@ source_families:
   - id: dsr_corpus
     role: >
       Design science research corpus for artifact types, contribution logic,
-      lifecycle, evaluation, generalization, and publication.
+      lifecycle, transparency, evaluation, contribution positioning,
+      generalization, and publication.
   - id: data_and_information
     role: >
       Data, information, system, metadata, and evidence quality material for
@@ -80,6 +81,29 @@ source_citations:
       Gregor, S., and Hevner, A. R. Positioning and Presenting Design Science
       Research for Maximum Impact. MIS Quarterly, 37(2), 2013.
     supports: [knowledge_contribution, contribution_positioning, publication_structure]
+  - id: venable_pries_heje_baskerville_2016
+    type: scholarly_work
+    citation: >
+      Venable, J., Pries-Heje, J., and Baskerville, R. FEDS: A Framework for
+      Evaluation in Design Science Research. European Journal of Information
+      Systems, 25(1), 2016.
+    supports: [evaluation_timing, evaluation_setting, evaluation_strategy_selection]
+  - id: akoka_et_al_2023
+    type: scholarly_work
+    citation: >
+      Akoka, J., Comyn-Wattiau, I., Prat, N., and Storey, V. C. Knowledge
+      contributions in design science research: Paths of knowledge types.
+      Decision Support Systems, 166, 113898, 2023.
+      https://doi.org/10.1016/j.dss.2022.113898.
+    supports: [dynamic_contribution_paths, knowledge_scope, knowledge_goal, contribution_positioning]
+  - id: hevner_et_al_2024
+    type: scholarly_work
+    citation: >
+      Hevner, A. R., Parsons, J., Brendel, A. B., Lukyanenko, R.,
+      Tiefenbeck, V., Tremblay, M. C., and vom Brocke, J. Transparency in
+      design science research. Decision Support Systems, 182, Article 114236,
+      2024. https://doi.org/10.1016/j.dss.2024.114236.
+    supports: [dsr_transparency, problem_space_transparency, solution_space_transparency, build_transparency, evaluation_transparency, contribution_transparency]
   - id: fair4rs_principles
     type: community_principles
     citation: >

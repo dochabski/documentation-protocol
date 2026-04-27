@@ -35,6 +35,9 @@ sections:
         - exercisability_where_applicable
         - reusability
         - preservation_and_publication_readiness
+        - dsr_transparency
+        - contribution_positioning
+        - demonstration_evaluation_boundary
   - id: conceptual_model
     title: Conceptual Model
     purpose: Define quality dimensions, maturity levels, and review phases.
@@ -92,11 +95,15 @@ sections:
         - Every reviewer decision must be recorded as accept, conditional_accept, revise, reject, or defer.
         - Every failed gate must produce either a remediation item or an accepted limitation.
         - Every L5 release must pass metadata, package, review, release, and preservation gates.
+        - Every DSR review at L2 or higher must inspect the six transparency dimensions or record a tailored exception.
+        - Every DSR review must check that demonstrations are not treated as evaluations unless acceptance criteria and evidence are defined.
+        - Every DSR review must inspect evaluation timing, evaluation setting, method family, validity basis, stakeholder confidence basis, and claim-to-component mapping.
       should:
         - Reviewers should separate completeness review from substantive quality review.
         - Reviewers should perform a basic open, install, run, use, or inspect check where applicable.
         - Review rubrics should use consistent scoring labels across packages.
         - Authors should respond to review findings with change links or limitation records.
+        - Reviewers should check that transparency evidence is sufficient for stakeholder confidence without forcing disclosure that creates privacy, security, intellectual-property, proprietary, or maintenance risk.
       may:
         - Draft packages may use self-review for L0 and L1.
         - External review may be required by maintainers for high-risk or publication-ready claims.
@@ -110,6 +117,7 @@ sections:
     content:
       required_files:
         - checklists/artifact-package-readiness-checklist.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
         - checklists/review-checklist.yaml
         - templates/review-record-template.yaml
         - records/review-record-<id>.yaml
@@ -181,12 +189,17 @@ sections:
         - Required files exist and match declared package type.
         - Metadata is complete and internally consistent.
         - Claims trace to evidence and limitations.
+        - DSR transparency evidence covers process, problem space, solution space, build, evaluation, and contribution or records justified limits.
+        - Evaluation evidence is distinguished from demonstration evidence.
+        - Contribution positioning is explicit and bounded by evidence.
         - Review findings are resolved, deferred with rationale, or captured as accepted limitations.
         - Release approval cites validation results and preservation plan.
       evidence_required:
         - package_inventory
         - metadata_validation_record
         - traceability_matrix
+        - dsr_transparency_crosswalk
+        - contribution_positioning_record
         - evaluation_report
         - review_record
         - release_approval_record
@@ -225,9 +238,12 @@ sections:
         - vague approval comments with no evidence.
         - conflating paper merit with artifact package quality.
         - claiming reusable status without independent-use guidance.
+        - treating demonstration scenarios as evaluation results without criteria and evidence.
+        - approving DSR claims without problem-space, solution-space, build, evaluation, and contribution transparency.
       automation_hooks:
         - require review record before release.
         - block release if validation checks fail.
+        - require DSR transparency checklist results for L2 and above DSR packages.
         - require accepted limitation records for unresolved findings.
   - id: template_or_schema_implications
     title: Template or Schema Implications
@@ -244,6 +260,10 @@ sections:
         - decision
         - conditions
         - follow_up_required
+        - dsr_transparency_results
+        - evaluation_strategy_review
+        - demonstration_evaluation_boundary
+        - contribution_positioning_review
   - id: open_questions_and_backlog
     title: Open Questions and Backlog
     purpose: Preserve review model questions.
@@ -267,10 +287,14 @@ quality_gates:
     question: Are claims, evidence, findings, decisions, and release approval traceable?
     evidence_required: [trace_links, review_record_fields]
     status: draft_pass
+  - id: qg-dsr-transparency-review
+    question: Does review explicitly inspect DSR transparency, evaluation strategy, and contribution positioning?
+    evidence_required: [dsr_transparency_crosswalk, review_record_fields, evaluation_plan]
+    status: draft_pass
 traceability:
   - trace_id: trace-quality-001
     source_type: scaffold
-    source_id: models/04_quality_conformance_model.yaml
+    source_id: project_control_quality_conformance_model
     relationship: defines
     target_type: product
     target_id: quality_conformance_and_review_model
@@ -278,7 +302,7 @@ traceability:
     status: proposed
   - trace_id: trace-quality-002
     source_type: scaffold
-    source_id: models/07_review_release_preservation_model.yaml
+    source_id: project_control_review_release_preservation_model
     relationship: extends
     target_type: section
     target_id: workflow

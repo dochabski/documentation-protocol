@@ -5,7 +5,8 @@ product:
   purpose: >
     Define artifact types, design science research knowledge contributions,
     lifecycle stages, design strategy families, evaluation alignment, and
-    generalization logic for artifacts governed by the protocol.
+    transparency, contribution positioning, and generalization logic for
+    artifacts governed by the protocol.
   status: draft
 version: "0.1.1"
 source_basis:
@@ -29,6 +30,8 @@ sections:
         - knowledge_contribution_model
         - design_strategy_model
         - evaluation_alignment_model
+        - dsr_transparency_model
+        - contribution_positioning_model
   - id: conceptual_model
     title: Conceptual Model
     purpose: Define DSR artifact and contribution concepts.
@@ -78,6 +81,35 @@ sections:
         - build_and_generalize_from_instantiation
         - hypothesize_and_test
         - build_design_theory
+      transparency_dimensions:
+        - id: process_transparency
+          focus: Actual DSR activities, sequence, reasoning, collaborators, deviations, and decision points.
+        - id: problem_space_transparency
+          focus: Application context, stakeholders, improvement goals, scope, timeframe, constraints, and boundaries.
+        - id: solution_space_transparency
+          focus: Kernel theories, justificatory knowledge, existing artifacts, technologies, and design knowledge bases.
+        - id: build_transparency
+          focus: Construction choices, creative search, alternatives considered, rejected options, collaboration, and emergent changes.
+        - id: evaluation_transparency
+          focus: Formative and summative evaluation, artificial or naturalistic setting, criteria, evidence, and stakeholder confidence.
+        - id: contribution_transparency
+          focus: Practice contribution, scientific contribution, novelty basis, knowledge scope, knowledge goal, and transfer conditions.
+      evaluation_strategy_dimensions:
+        evaluation_timing: [formative, summative, both]
+        evaluation_setting: [artificial, naturalistic, mixed]
+        validity_dimensions:
+          - technical_validity
+          - purpose_validity
+          - design_validity
+          - generalization_validity
+      contribution_positioning_types:
+        - routine_design
+        - improvement
+        - exaptation
+        - invention
+        - method_extension
+        - synthesis
+        - theory_building
   - id: normative_requirements
     title: Normative Requirements
     purpose: Define DSR documentation requirements.
@@ -88,11 +120,17 @@ sections:
         - Every contribution claim must state whether it is idiographic, nomothetic, or both.
         - Every evaluation record must connect evaluated artifact components to claims.
         - Every generalization claim must state the basis for transfer beyond the original context.
+        - Every L2 or higher DSR package must complete or explicitly tailor the six-part DSR transparency crosswalk.
+        - Every L2 or higher DSR package must state problem-space, solution-space, build, evaluation, and contribution transparency evidence.
+        - Every evaluation plan must distinguish evaluation timing, evaluation setting, method family, validity basis, stakeholder confidence basis, and claim-to-component mapping.
+        - Every contribution claim must have a contribution-positioning record or equivalent section.
       should:
         - Authors should distinguish artifact utility, artifact quality, and contribution to knowledge.
         - Authors should describe design strategies and why they fit the problem context.
         - Authors should document negative, partial, or bounded evaluation results.
         - Reviewers should evaluate DSR claims against declared artifact type and lifecycle stage.
+        - Authors should document alternatives considered and rejected when those decisions affect contribution scope or reuse.
+        - Authors should document any privacy, security, intellectual-property, proprietary, or maintenance limits on transparency.
       may:
         - A package may include multiple artifact types when the contribution is compound.
         - A package may remain at an idiographic contribution level when generalization evidence is not yet available.
@@ -108,12 +146,16 @@ sections:
         - artifact-profile.yaml
         - problem-and-objectives.md
         - design-rationale.md
+        - dsr-transparency-crosswalk.yaml
         - evaluation-plan.yaml
         - evaluation-report.yaml
         - contribution-claim.yaml
+        - contribution-positioning-record.yaml
         - limitations.md
       required_records:
         - design_decision_record
+        - contribution_positioning_record
+        - dsr_transparency_crosswalk_record
         - evaluation_record
         - claim_evidence_record
         - generalization_record
@@ -132,15 +174,24 @@ sections:
         - id: define_objectives
           action: Convert problem analysis into requirements and success criteria.
           output: objectives_and_requirements
+        - id: document_solution_space
+          action: Record kernel theories, existing artifacts, solution classes, candidate technologies, and knowledge-base engagement.
+          output: solution_space_record
         - id: design_artifact
           action: Document design decisions, artifact components, and underlying logic.
           output: design_rationale
+        - id: document_build_transparency
+          action: Record construction choices, creative search, alternatives considered, collaboration roles, and emergent changes.
+          output: build_transparency_record
         - id: demonstrate
           action: Show artifact use in a relevant context or scenario.
           output: demonstration_record
         - id: evaluate
-          action: Evaluate against declared criteria and contribution claims.
+          action: Evaluate against declared criteria, timing, setting, validity basis, stakeholder confidence basis, and contribution claims.
           output: evaluation_report
+        - id: position_contribution
+          action: Classify contribution type, knowledge goal, knowledge scope, novelty basis, practice value, scientific value, and transfer conditions.
+          output: contribution_positioning_record
         - id: generalize
           action: State reusable knowledge, scope conditions, and limitations.
           output: contribution_claim
@@ -150,12 +201,17 @@ sections:
       decision_points:
         - Is the artifact type correctly declared?
         - Is evaluation sufficient for the target claim?
+        - Is the evaluation artificial, naturalistic, or mixed, and is that setting justified?
         - Is the contribution case-specific or generalized?
+        - Is any demonstration being incorrectly used as evaluation?
       failure_modes:
         - artifact_type_mismatch
         - untested_claim
         - missing_design_rationale
         - unsupported_generalization
+        - demonstration_conflated_with_evaluation
+        - missing_problem_or_solution_space_transparency
+        - contribution_positioning_missing_or_overstated
   - id: quality_and_conformance
     title: Quality and Conformance
     purpose: Define DSR quality criteria.
@@ -166,14 +222,19 @@ sections:
         - evaluation_alignment
         - artifact_utility
         - generalization_transparency
+        - dsr_transparency
       acceptance_criteria:
         - Artifact type, lifecycle stage, contribution claim, and evaluation evidence are mutually consistent.
         - Claims are bounded by demonstrated evidence.
         - Design rationale connects requirements to artifact components.
         - Limitations and transfer conditions are explicit.
+        - Problem-space, solution-space, build, evaluation, and contribution transparency are sufficient for the target conformance level.
+        - Demonstration evidence is not treated as evaluation evidence unless acceptance criteria and evaluation evidence are explicit.
       evidence_required:
         - artifact_profile
         - design_decision_records
+        - dsr_transparency_crosswalk
+        - contribution_positioning_record
         - evaluation_plan
         - evaluation_report
         - claim_evidence_matrix
@@ -192,6 +253,9 @@ sections:
         - problem_to_requirement
         - requirement_to_design_decision
         - design_decision_to_component
+        - problem_space_to_objectives
+        - solution_space_to_design_rationale
+        - build_decision_to_alternative
         - component_to_evaluation
         - evaluation_to_claim
         - claim_to_publication_section
@@ -202,6 +266,8 @@ sections:
       repository_locations:
         artifact_profile: metadata/artifact-profile.yaml
         design_records: records/design-decisions/
+        transparency_records: records/dsr-transparency/
+        contribution_positioning_records: records/contributions/
         evaluation_records: records/evaluations/
         claims: docs/protocol/contribution-claim.md
       examples:
@@ -213,6 +279,8 @@ sections:
         - hiding failed demonstrations.
       automation_hooks:
         - require evaluation record IDs for claims marked evaluated.
+        - require DSR transparency crosswalk completion for L2 and above.
+        - require contribution-positioning record for DSR packages with contribution claims.
         - require limitation text for L3 and above.
   - id: template_or_schema_implications
     title: Template or Schema Implications
@@ -224,9 +292,31 @@ sections:
         - knowledge_goal
         - lifecycle_stage
         - design_strategy
+        - problem_space
+        - solution_space
+        - stakeholders
+        - context_constraints
+        - kernel_theories_or_justificatory_knowledge
+        - existing_artifacts_or_solution_classes
+        - build_process_summary
+        - alternatives_considered
+        - design_decision_records
+        - contribution_positioning
+        - transfer_conditions
+        - dsr_transparency
         - contribution_claims
         - evaluation_records
         - limitations
+      evaluation_plan_fields:
+        - evaluation_timing
+        - evaluation_setting
+        - evaluation_method_family
+        - technical_validity
+        - purpose_validity
+        - design_validity
+        - generalization_validity
+        - stakeholder_confidence_basis
+        - claim_to_component_mapping
   - id: open_questions_and_backlog
     title: Open Questions and Backlog
     purpose: Preserve DSR issues for pilot testing.
@@ -250,10 +340,22 @@ quality_gates:
     question: Are generalization and limitation statements bounded by evidence?
     evidence_required: [contribution_claim, limitations]
     status: draft_pass
+  - id: qg-dsr-transparency
+    question: Is the six-part DSR transparency crosswalk complete or explicitly tailored?
+    evidence_required: [dsr_transparency_crosswalk, artifact_profile, review_record]
+    status: draft_pass
+  - id: qg-dsr-evaluation-strategy
+    question: Does the evaluation plan declare timing, setting, method family, validity basis, and claim-to-component mapping?
+    evidence_required: [evaluation_plan, traceability_matrix]
+    status: draft_pass
+  - id: qg-dsr-contribution-positioning
+    question: Is the contribution positioned against declared artifact type, knowledge scope, knowledge goal, novelty basis, and transfer conditions?
+    evidence_required: [contribution_positioning_record, contribution_claim]
+    status: draft_pass
 traceability:
   - trace_id: trace-dsr-001
     source_type: scaffold
-    source_id: models/01_dsr_artifact_model.yaml
+    source_id: project_control_dsr_artifact_model
     relationship: defines
     target_type: product
     target_id: dsr_lifecycle_and_contribution_model
@@ -265,9 +367,28 @@ traceability:
     relationship: grounds
     target_type: section
     target_id: conceptual_model
-    evidence_location: citation_set:hevner_et_al_2004+peffers_et_al_2007+gregor_hevner_2013
+    evidence_location: citation_set:hevner_et_al_2004+peffers_et_al_2007+gregor_hevner_2013+hevner_et_al_2024+akoka_et_al_2023+venable_pries_heje_baskerville_2016
+    status: proposed
+  - trace_id: trace-dsr-003
+    source_type: scholarly_work
+    source_id: hevner_et_al_2024
+    relationship: operationalizes
+    target_type: section
+    target_id: conceptual_model
+    evidence_location: citation:hevner_et_al_2024
+    status: proposed
+  - trace_id: trace-dsr-004
+    source_type: scholarly_work
+    source_id: akoka_et_al_2023
+    relationship: refines
+    target_type: section
+    target_id: conceptual_model
+    evidence_location: citation:akoka_et_al_2023
     status: proposed
 open_questions:
   - id: oq-dsr-domain-variants
     question: Decide whether to add optional DSR variants for education, healthcare, operations, or software engineering pilots.
+    status: open
+  - id: oq-dsr-transparency-pilot
+    question: Calibrate how much transparency evidence is sufficient but not burdensome in the first two pilots.
     status: open

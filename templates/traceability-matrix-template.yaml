@@ -12,3 +12,10 @@ traceability_matrix:
       evidence_location: ""
       status: proposed
       reviewer_notes: ""
+  dsr_links:
+    - trace_id: ""
+      transparency_dimension: ""
+      source_record: ""
+      target_claim_or_component: ""
+      evidence_location: ""
+      status: proposed

@@ -5,17 +5,56 @@ evaluation_plan:
   target_conformance_level: ""
   purpose: ""
   evaluated_claims: []
+  evaluation_timing: ""
+  evaluation_setting: ""
+  evaluation_method_family: ""
+  evaluation_strategy_rationale: ""
+  demonstration_boundary:
+    demonstration_record: ""
+    demonstration_used_as_evaluation: false
+    acceptance_criteria_defined: false
+    evidence_defined: false
+    notes: ""
   evaluation_questions: []
+  claim_to_component_mapping:
+    - claim_id: ""
+      artifact_components: []
+      evaluation_questions: []
+      criteria: []
+      evidence_records: []
   criteria:
     - criterion_id: ""
       description: ""
       required_evidence: []
       acceptance_rule: ""
+      validity_dimension: ""
   method:
     type: ""
+    family: ""
     procedure: []
     required_inputs: []
     environment: {}
+    setting_description: ""
+    data_collection: []
+    analysis_method: ""
+  validity:
+    technical_validity:
+      rationale: ""
+      evidence: []
+    purpose_validity:
+      rationale: ""
+      evidence: []
+    design_validity:
+      rationale: ""
+      evidence: []
+    generalization_validity:
+      rationale: ""
+      evidence: []
+  stakeholder_confidence_basis:
+    stakeholders: []
+    confidence_claim: ""
+    evidence: []
+    limitations: []
   roles:
     author: ""
     reviewer: ""

@@ -50,7 +50,7 @@ sections:
         - id: phase_1_internal_review
           outcome: Product specs are checked for consistency, missing dependencies, and open questions.
         - id: phase_2_pilot_package
-          outcome: One real artifact package is documented using the protocol.
+          outcome: One software or executable artifact and one non-software conceptual, method, model, or taxonomy artifact are documented using the protocol.
         - id: phase_3_review_and_revision
           outcome: Pilot findings drive revisions to templates, checklists, schemas, and products.
         - id: phase_4_publication_preparation
@@ -74,7 +74,8 @@ sections:
         - Public release must not occur until license, governance, metadata, README, and release records are complete.
         - Open questions that affect public use must be closed or explicitly documented as known limitations.
       should:
-        - The first pilot should include both reviewable documentation and at least one exercisable or inspectable artifact.
+        - The first validation cycle should include one software or executable artifact and one non-software conceptual, method, model, or taxonomy artifact.
+        - Pilot packages should target L3 or L4 before the protocol is described as validated.
         - Roadmap progress should be tracked in GitHub issues or a project board after repository publication.
         - Improvements should be grouped into minor releases when they change templates or schemas.
       may:
@@ -126,6 +127,8 @@ sections:
           output: release_readiness_record
       failure_modes:
         - no_pilot_artifact
+        - only_one_artifact_class_piloted
+        - pilot_without_dsr_transparency_review
         - unresolved_license
         - product_specs_out_of_sync_with_templates
         - public_release_without_examples
@@ -138,7 +141,9 @@ sections:
         - YAML files parse successfully
         - template suite covers package, evaluation, review, release, and traceability
         - checklist suite covers metadata, package readiness, review, and publication
-        - one pilot package reaches at least l2_reviewable
+        - one software or executable pilot package reaches at least l3_exercisable
+        - one non-software conceptual, method, model, or taxonomy pilot package reaches at least l3_exercisable or l4_reusable
+        - pilot reviews exercise DSR transparency, contribution positioning, and evaluation strategy checks
         - public release has metadata, license, governance, and release record
       acceptance_criteria:
         - Dependencies in product catalog match product files.
@@ -164,11 +169,11 @@ sections:
     content:
       recommended_next_steps:
         - Review YAML products for terminology and scope.
-        - Choose public license and governance contacts.
+        - Assign or confirm governance contacts.
         - Add GitHub issue and PR templates.
-        - Select pilot artifact and conformance target.
-        - Run pilot, record findings, revise protocol.
-        - Create GitHub repository, commit files, tag alpha release, then archive when ready.
+        - Select one software or executable pilot and one non-software DSR pilot with conformance targets.
+        - Run pilots through DSR transparency, contribution-positioning, evaluation-strategy, package, and review checklists.
+        - Record pilot findings, revise protocol, and prepare a v0.2.0 validated-draft release when evidence supports it.
       anti_patterns:
         - publishing before license and governance are resolved.
         - treating templates as stable before pilot use.
@@ -202,8 +207,8 @@ quality_gates:
     evidence_required: [product_catalog, specs_directory, templates, checklists, schemas]
     status: draft_pass
   - id: qg-roadmap-pilot
-    question: Is there a defined pilot with target conformance and evidence plan?
-    evidence_required: [pilot_plan, target_conformance_level]
+    question: Are two pilot artifacts defined with target conformance and DSR transparency evidence plans?
+    evidence_required: [pilot_plan, target_conformance_level, dsr_transparency_crosswalk]
     status: pending
   - id: qg-roadmap-publication
     question: Are license, governance, metadata, and release readiness resolved for public GitHub publication?
@@ -220,7 +225,7 @@ traceability:
     status: proposed
 open_questions:
   - id: oq-roadmap-pilot
-    question: Select the first project or artifact package for pilot application.
+    question: Select one software or executable pilot and one non-software DSR pilot for protocol validation.
     status: open
   - id: oq-roadmap-publication
     question: Decide the GitHub account or organization for the public repository.

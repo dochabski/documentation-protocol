@@ -27,6 +27,7 @@ sections:
         - publication_readiness_model
         - registry_crosswalk
         - artifact_appendix_model
+        - practitioner_communication_package
       release_goal: >
         Convert a reviewed package into a versioned, citable, preservable, and
         registry-ready artifact without losing traceability from claim to
@@ -50,6 +51,9 @@ sections:
         - license_record
         - citation_record
         - dependency_record
+        - dsr_transparency_summary
+        - contribution_positioning_summary
+        - practitioner_adaptation_material
         - maintenance_or_deprecation_status
       registry_record:
         required_fields:
@@ -74,11 +78,13 @@ sections:
         - Every publication-ready release must freeze metadata before tagging.
         - Every public release must include citation metadata and license status.
         - Every public release must preserve the distinction between the protocol license, the downstream artifact license, and licenses of third-party materials.
+        - Every DSR publication-ready release must summarize DSR transparency, contribution positioning, evaluation strategy, transfer conditions, and limitations.
         - Every archival release must include an immutable snapshot and persistent identifier.
         - Every registry submission must match the release metadata and archive identifier.
       should:
         - Release notes should summarize changes, known limitations, review status, and conformance level.
         - Publication appendices should identify artifact location, DOI, system requirements, claims, and review status.
+        - Practitioner-facing releases should include demonstration material, tutorials, adaptation notes, or videos when those aids are needed for responsible use.
         - Registry entries should link repository, archive, citation, and related publication.
         - Publication and registry metadata should document any AI indexing/training preference and any constraints preventing maximally open licensing.
       may:
@@ -102,6 +108,7 @@ sections:
         - records/releases/release-record-<version>.yaml
         - records/preservation/preservation-record-<version>.yaml
         - docs/protocol/artifact-appendix.md
+        - docs/protocol/practitioner-guide.md
       required_records:
         - release_candidate_record
         - metadata_freeze_record
@@ -109,6 +116,7 @@ sections:
         - archival_deposit_record
         - registry_submission_record
         - preservation_record
+        - practitioner_communication_record
       retention_expectations:
         - Preserve release, archive, registry, citation, and preservation records indefinitely.
   - id: workflow
@@ -152,12 +160,16 @@ sections:
         - Metadata freeze occurred before tag.
         - Archive deposit contains the tagged release contents.
         - Registry and publication appendix match release metadata.
+        - Practitioner-facing materials are present when practice contribution or adaptation is claimed.
+        - DSR transparency and contribution-positioning summaries match the underlying records.
       evidence_required:
         - release_record
         - metadata_freeze_record
         - validation_results
         - archive_doi_or_deposit_record
         - registry_submission_record
+        - contribution_positioning_record
+        - dsr_transparency_crosswalk
   - id: traceability
     title: Traceability
     purpose: Link release to registry and publication claims.
@@ -176,6 +188,8 @@ sections:
         - archive_identifier_to_citation
         - citation_to_registry_record
         - registry_record_to_publication_appendix
+        - contribution_positioning_to_publication_summary
+        - dsr_transparency_to_publication_summary
   - id: implementation_guidance
     title: Implementation Guidance
     purpose: Implement release and registry workflow.
@@ -185,6 +199,7 @@ sections:
         preservation_records: records/preservation/
         registry_records: records/registry/
         publication_appendix: docs/protocol/artifact-appendix.md
+        practitioner_guidance: docs/protocol/practitioner-guide.md
       anti_patterns:
         - publishing a release from an unreviewed branch.
         - updating metadata after archive deposit without a new record.
@@ -193,6 +208,7 @@ sections:
         - require clean validation results before release.
         - compare archive deposit files against package inventory.
         - require metadata freeze record before version tag.
+        - require practitioner-facing guidance when a release claims practical adoption or adaptation.
   - id: template_or_schema_implications
     title: Template or Schema Implications
     purpose: Define release and registry template fields.
@@ -217,6 +233,9 @@ sections:
         - third_party_materials_status
         - downstream_reuse_constraints
         - ai_indexing_training_preference
+        - dsr_transparency_summary
+        - contribution_positioning_summary
+        - practitioner_adaptation_material
   - id: open_questions_and_backlog
     title: Open Questions and Backlog
     purpose: Track publication decisions.
@@ -243,7 +262,7 @@ quality_gates:
 traceability:
   - trace_id: trace-publication-001
     source_type: scaffold
-    source_id: models/07_review_release_preservation_model.yaml
+    source_id: project_control_review_release_preservation_model
     relationship: defines
     target_type: product
     target_id: publication_and_registry_model

@@ -241,7 +241,7 @@ quality_gates:
 traceability:
   - trace_id: trace-repo-001
     source_type: scaffold
-    source_id: models/03_repository_architecture_model.yaml
+    source_id: project_control_repository_architecture_model
     relationship: defines
     target_type: product
     target_id: repository_architecture
