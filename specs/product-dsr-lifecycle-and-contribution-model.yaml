@@ -8,7 +8,7 @@ product:
     transparency, contribution positioning, and generalization logic for
     artifacts governed by the protocol.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - dsr_corpus
   - md_guides
@@ -56,10 +56,16 @@ sections:
           definition: Integrated package of meta-requirements, meta-design, kernel theory, design propositions, artifact logic, and evidence.
           typical_outputs: [design_theory_report, theory_schema, testable_propositions]
       knowledge_scope:
-        - id: idiographic
-          meaning: Specific case, context, intervention, or artifact instance.
-        - id: nomothetic
-          meaning: General method, theory, principle, taxonomy, or class-level guidance.
+        - id: local_or_idiographic
+          meaning: Applies to one case, site, organization, project, artifact instance, or bounded local context.
+        - id: projectable_to_problem_class
+          meaning: Applies plausibly to a bounded class of similar problems or contexts when transfer conditions are satisfied.
+        - id: mixed
+          meaning: Combines local evidence with partially generalized or projectable design knowledge.
+        - id: nomothetic_or_general
+          meaning: Intended to apply broadly across a defined class of cases, artifacts, or problem contexts.
+        - id: not_yet_established
+          meaning: Evidence is insufficient to define transfer or generalization scope.
       knowledge_goals:
         - definitional
         - descriptive
@@ -67,6 +73,9 @@ sections:
         - predictive
         - explanatory_predictive
         - prescriptive
+        - methodological
+        - evaluative
+        - normative
       lifecycle_stages:
         - problem_analysis
         - objectives_and_requirements
@@ -76,6 +85,39 @@ sections:
         - generalization
         - communication_and_publication
         - maintenance_and_evolution
+      lifecycle_extension_profiles:
+        - id: dsr_framework_expanded_lifecycle
+          status: approved_extension_profile
+          purpose: Map the Documentation Protocol lifecycle to the expanded DSR Framework lifecycle used in the first validation case.
+          crosswalk:
+            - protocol_stage: problem_analysis
+              dsr_framework_stages:
+                - problem_space_initiation
+            - protocol_stage: objectives_and_requirements
+              dsr_framework_stages:
+                - objectives_and_requirements
+            - protocol_stage: design_and_development
+              dsr_framework_stages:
+                - solution_space_grounding
+                - contribution_positioning
+                - artifact_design_and_specification
+                - build_or_instantiation
+            - protocol_stage: demonstration
+              dsr_framework_stages:
+                - demonstration
+            - protocol_stage: evaluation
+              dsr_framework_stages:
+                - evaluation
+            - protocol_stage: generalization
+              dsr_framework_stages:
+                - contribution_synthesis
+            - protocol_stage: communication_and_publication
+              dsr_framework_stages:
+                - communication_and_packaging
+            - protocol_stage: maintenance_and_evolution
+              dsr_framework_stages:
+                - iteration_and_accumulation
+          rule: Downstream DSR packages may use this expanded lifecycle only when they declare the extension profile and preserve traceability back to the canonical protocol lifecycle.
       design_strategy_families:
         - build_and_instantiate
         - build_and_generalize_from_instantiation
@@ -117,13 +159,15 @@ sections:
       must:
         - Every DSR artifact must declare one or more artifact types from the controlled taxonomy.
         - Every DSR artifact must describe its problem context, objectives, design rationale, evaluation evidence, and contribution claim.
-        - Every contribution claim must state whether it is idiographic, nomothetic, or both.
+        - Every contribution claim must state whether its scope is local_or_idiographic, projectable_to_problem_class, mixed, nomothetic_or_general, or not_yet_established.
         - Every evaluation record must connect evaluated artifact components to claims.
         - Every generalization claim must state the basis for transfer beyond the original context.
         - Every L2 or higher DSR package must complete or explicitly tailor the six-part DSR transparency crosswalk.
         - Every L2 or higher DSR package must state problem-space, solution-space, build, evaluation, and contribution transparency evidence.
         - Every evaluation plan must distinguish evaluation timing, evaluation setting, method family, validity basis, stakeholder confidence basis, and claim-to-component mapping.
         - Every contribution claim must have a contribution-positioning record or equivalent section.
+        - Every DSR package using lifecycle stages, knowledge goals, or knowledge scopes beyond the canonical protocol values must declare the applicable extension profile and map extension values to protocol-controlled values.
+        - Every L3 or higher DSR package must include retained records for design decisions, tailoring decisions, evaluation, review, and preservation, unless a not_applicable rationale is recorded.
       should:
         - Authors should distinguish artifact utility, artifact quality, and contribution to knowledge.
         - Authors should describe design strategies and why they fit the problem context.
@@ -133,7 +177,7 @@ sections:
         - Authors should document any privacy, security, intellectual-property, proprietary, or maintenance limits on transparency.
       may:
         - A package may include multiple artifact types when the contribution is compound.
-        - A package may remain at an idiographic contribution level when generalization evidence is not yet available.
+        - A package may remain at a local_or_idiographic contribution level when generalization evidence is not yet available.
       must_not:
         - Authors must not claim a design theory when only an unevaluated instantiation is provided.
         - Authors must not treat demonstration as evaluation unless acceptance criteria and evidence are defined.
@@ -142,24 +186,34 @@ sections:
     title: Information Items and Records
     purpose: Define DSR-specific documentation objects.
     content:
-      required_files:
-        - artifact-profile.yaml
-        - problem-and-objectives.md
-        - design-rationale.md
-        - dsr-transparency-crosswalk.yaml
-        - evaluation-plan.yaml
-        - evaluation-report.yaml
-        - contribution-claim.yaml
-        - contribution-positioning-record.yaml
-        - limitations.md
-      required_records:
-        - design_decision_record
-        - contribution_positioning_record
-        - dsr_transparency_crosswalk_record
-        - evaluation_record
-        - claim_evidence_record
-        - generalization_record
-        - reviewer_assessment_record
+      required_information_items:
+        root_or_metadata:
+          - artifact-profile.yaml
+          - conformance-declaration.yaml
+          - package-inventory.yaml
+        documentation:
+          - docs/protocol/problem-and-objectives.md
+          - docs/protocol/design-rationale.md
+          - docs/protocol/contribution-claim.md
+          - docs/protocol/limitations.md
+        records:
+          - records/design-decisions/
+          - records/dsr-transparency/
+          - records/evaluations/
+          - records/contributions/
+          - records/reviews/
+          - records/releases/
+          - records/preservation/
+        templates_or_downstream_equivalents:
+          - problem-and-objectives-template
+          - solution-space-record-template
+          - build-transparency-record-template
+          - demonstration-record-template
+          - evaluation-plan-template
+          - evaluation-report-template
+          - contribution-claim-template
+          - contribution-positioning-record-template
+          - dsr-transparency-crosswalk-template
       retention_expectations:
         - Preserve design and evaluation records with the release they support.
         - Preserve contribution claims and limitations indefinitely for citable releases.

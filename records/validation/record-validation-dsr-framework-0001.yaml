@@ -1,0 +1,67 @@
+# SPDX-License-Identifier: CC0-1.0
+validation_record:
+  record_id: record-validation-dsr-framework-0001
+  record_class: pilot_validation_case
+  title: DSR Framework Pilot Validation of Documentation Protocol
+  date: "2026-04-27"
+  status: qualified_pass_l2_reviewable
+  protocol_repository: dochabski/documentation-protocol
+  validation_case_repository: dochabski/dsr-framework
+  validation_case_artifact: DSR Framework
+  validation_scope:
+    - repository_architecture
+    - artifact_package_metadata
+    - dsr_lifecycle_and_contribution_model
+    - dsr_transparency_crosswalk
+    - evaluation_alignment
+    - contribution_positioning
+    - package_inventory
+    - publication_readiness_boundaries
+  validation_result:
+    overall: qualified_pass
+    supported_conformance_level: l2_reviewable
+    unsupported_claims:
+      - l4_reusable
+      - l5_archival_publication_ready
+  findings:
+    passes:
+      - DSR Framework substantially follows Documentation Protocol artifact-package architecture.
+      - Six-part DSR transparency model is consistent across protocol and validation case.
+      - Evaluation alignment and contribution-positioning logic are consistent across protocol and validation case.
+      - Package inventory and controlled-file structure support L2 reviewability.
+    limitations:
+      - Lifecycle-stage vocabulary required an approved extension-profile crosswalk.
+      - Knowledge-goal and knowledge-scope vocabularies required expansion or extension mapping.
+      - Template and required-information-item locations required repository-location clarification.
+      - Empty required directories are acceptable only at early conformance levels unless justified.
+      - Publication-readiness claims require additional release, citation, preservation, and review evidence.
+  remediation_actions:
+    - Add lifecycle extension profile for DSR Framework expanded lifecycle.
+    - Expand knowledge-goal and knowledge-scope controlled values.
+    - Add repository-location rules for required files, templates, and records.
+    - Add validation-status language distinguishing L2 pilot validation from L4/L5 readiness.
+    - Add empty-required-directory rule by conformance level.
+    - Add nonpublic-source-basis disclosure rule.
+  evidence_basis:
+    - Documentation Protocol README
+    - Documentation Protocol DSR lifecycle and contribution model
+    - Documentation Protocol DSR transparency crosswalk checklist
+    - DSR Framework README
+    - DSR Framework lifecycle and contribution documentation
+    - DSR Framework evaluation framework
+    - DSR Framework transparency and reporting documentation
+    - DSR Framework package inventory
+  outcome_statement: "Validated against DSR Framework for L2 reviewable conformance; L4/L5 validation pending reuse, review, archival, and publication-readiness evidence."
+  retention_rule: retain_with_protocol_release_records
+  related_items:
+    - README.md
+    - specs/product-dsr-lifecycle-and-contribution-model.yaml
+    - specs/product-artifact-package-specification.yaml
+    - specs/product-quality-conformance-and-review-model.yaml
+    - specs/product-publication-and-registry-model.yaml
+    - checklists/dsr-transparency-crosswalk-checklist.yaml
+    - checklists/artifact-package-readiness-checklist.yaml
+  open_questions:
+    - Should the protocol define a general extension-profile registry for non-DSR artifact-package variants?
+    - Should L3-L5 validation require an independent reviewer record before publication?
+    - Should the DSR Framework validation case become an example package in a later release?

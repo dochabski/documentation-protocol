@@ -96,6 +96,10 @@ sections:
         - Projects must not cite a moving branch as the released artifact.
         - Projects must not represent citation as a legal condition for downstream CC0-licensed artifacts.
         - Projects must not imply that protocol use relicenses a downstream artifact.
+      publication_validation_rule:
+        id: pub-val-001
+        rule: A pilot validation case may support L2 reviewable status but must not be used to claim L4 reusable or L5 archival/publication-ready status unless reuse, independent review, release, citation, preservation, and metadata closure evidence are present.
+        required_language: "Validated against DSR Framework for L2 reviewable conformance; L4/L5 validation pending reuse, review, archival, and publication-readiness evidence."
   - id: information_items
     title: Information Items and Records
     purpose: Define release, publication, and registry records.

@@ -2,10 +2,16 @@
 
 # Changelog
 
-## [Unreleased]
+## Unreleased
 
 ### Added
 
+- Added DSR Framework pilot-validation record for L2 reviewable conformance.
+- Added DSR lifecycle extension-profile mapping for the DSR Framework expanded lifecycle.
+- Added expanded DSR knowledge-goal and knowledge-scope values.
+- Added repository-location rules for required information items, templates, and records.
+- Added conformance-level rules for empty required directories.
+- Added publication-readiness guardrail distinguishing L2 pilot validation from L4/L5 readiness.
 - Added DSR transparency as a first-class protocol layer covering process, problem space, solution space, build, evaluation, and contribution transparency.
 - Added `checklists/dsr-transparency-crosswalk-checklist.yaml`.
 - Added `templates/contribution-positioning-record-template.yaml`.
@@ -14,6 +20,7 @@
 
 ### Changed
 
+- Clarified that DSR Framework validation is a qualified L2 validation pass, not final L4/L5 publication-ready validation.
 - Strengthened package readiness and review checks to catch the common DSR failure mode of treating demonstration as evaluation.
 - Updated the implementation roadmap to require both a software or executable pilot and a non-software DSR pilot before treating the protocol as validated.
 - Expanded manifest citations for DSR transparency, evaluation strategy, and contribution positioning.

@@ -102,3 +102,27 @@ dsr_transparency_crosswalk_checklist:
         - evaluation-plan.yaml
         - evaluation-report.yaml
       required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: lifecycle-extension-profile-declared
+      transparency_dimension: process_transparency
+      question: If the package uses a lifecycle extension profile, is the extension profile declared and mapped to the canonical protocol lifecycle?
+      evidence_required:
+        - artifact-profile.yaml
+        - package-inventory.yaml
+        - lifecycle-crosswalk-or-extension-profile
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: contribution-vocabulary-extension-declared
+      transparency_dimension: contribution_transparency
+      question: If the package uses extended knowledge-goal or knowledge-scope values, are those values mapped to protocol-controlled values?
+      evidence_required:
+        - contribution-positioning-record.yaml
+        - contribution-claim.yaml
+        - controlled-vocabulary-crosswalk
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: nonpublic-source-basis-disclosed
+      transparency_dimension: solution_space_transparency
+      question: If source-basis corpora or extraction files are not public, does the package disclose source family, evidence status, crosswalk, and limitations without exposing restricted files?
+      evidence_required:
+        - source-basis-record
+        - source-to-framework-crosswalk
+        - nondisclosure-or-exclusion-rationale
+      required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]

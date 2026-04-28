@@ -12,7 +12,7 @@ The source of truth is the YAML product specifications in `specs/`. Markdown fil
 
 1. Start with `specs/product-catalog.yaml` to identify the protocol product relevant to the project.
 2. Use `specs/product-protocol-foundation.yaml` to determine scope, conformance level, tailoring rules, and non-goals.
-3. For DSR artifacts, complete the problem-space, solution-space, build, evaluation, contribution-positioning, and transparency fields in `templates/artifact-profile-template.yaml`.
+3. For DSR artifacts, complete the problem-space, solution-space, build, evaluation, contribution-positioning, and transparency fields in the applicable artifact-profile template or downstream package artifact-profile record. If this repository does not provide a local `templates/artifact-profile-template.yaml`, use the downstream artifact package's declared template or record path and document the mapping.
 4. Apply the package, metadata, quality, review, and publication products to the target project.
 5. Use the files in `templates/`, `checklists/`, and `schemas/` as the reusable operating material.
 6. Use `checklists/dsr-transparency-crosswalk-checklist.yaml` before review for L2 or higher DSR packages.
@@ -23,6 +23,23 @@ The source of truth is the YAML product specifications in `specs/`. Markdown fil
 The protocol treats DSR transparency as a first-class review concern. DSR packages should document process transparency, problem-space transparency, solution-space transparency, build transparency, evaluation transparency, and contribution transparency at a level appropriate to their conformance target.
 
 Evaluation plans should distinguish formative, summative, or combined timing; artificial, naturalistic, or mixed setting; evaluation method family; validity basis; stakeholder confidence basis; and claim-to-component mapping. Demonstration is not evaluation unless acceptance criteria, evidence, and evaluation claims are explicitly defined.
+
+## Validation Status
+
+The Documentation Protocol has been pilot-validated against the DSR Framework artifact package as an L2 reviewable Design Science Research documentation case.
+
+Validation result: qualified pass.
+
+The pilot confirms that the protocol supports repository architecture, artifact-package metadata, DSR transparency, evaluation alignment, contribution positioning, reviewability, and structured package inventory for a substantial DSR artifact package.
+
+Known validation limits:
+- This validation supports L2 reviewable conformance, not final L5 archival/publication-ready conformance.
+- Lifecycle-stage vocabulary requires a formal crosswalk between the protocol lifecycle and approved DSR extension lifecycles.
+- Knowledge-goal and knowledge-scope vocabularies now support DSR extension values, but downstream packages must declare any extension-profile use.
+- Template, record, and required-file path expectations must be interpreted through repository-location rules rather than as fixed root-file requirements.
+- Publication-readiness claims require final metadata, citation, release, preservation, and review records.
+
+Current recommended status: public validation candidate / validated draft, not stable 1.0.
 
 ## Source Policy
 

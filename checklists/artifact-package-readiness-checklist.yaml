@@ -1,6 +1,17 @@
 # SPDX-License-Identifier: CC0-1.0
 artifact_package_readiness_checklist:
   purpose: Check whether an artifact package is ready for review or release.
+  empty_required_directory_rule:
+    l0_l2: Empty required directories may pass only when explicitly marked empty-required, planned, or not-yet-applicable in the package inventory.
+    l3_l5: Empty required directories fail unless each missing record class has an approved not_applicable rationale or an equivalent retained record elsewhere in the package.
+    applies_to:
+      - records/design-decisions/
+      - records/tailoring/
+      - records/evaluations/
+      - records/reviews/
+      - records/releases/
+      - records/preservation/
+      - examples/
   checks:
     - id: package-profile-present
       question: Is artifact-profile.yaml complete?
@@ -62,3 +73,11 @@ artifact_package_readiness_checklist:
       question: Is the artifact owner's preference for AI indexing/training documented where relevant?
       evidence_required: [artifact-profile.yaml, metadata.yaml]
       required_for: [l2_reviewable, l3_exercisable, l4_reusable, l5_archival_publication_ready]
+    - id: readiness-validation-level-not-overclaimed
+      question: Does the package avoid claiming L4 reusable or L5 archival/publication-ready status from an L2 pilot validation?
+      evidence_required:
+        - validation record
+        - conformance declaration
+        - release-publication checklist
+      pass_condition: Readiness language matches the highest supported evidence level.
+      fail_condition: L4/L5 readiness is claimed without reuse, independent review, preservation, citation, and final release evidence.

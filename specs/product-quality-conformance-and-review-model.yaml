@@ -291,6 +291,16 @@ quality_gates:
     question: Does review explicitly inspect DSR transparency, evaluation strategy, and contribution positioning?
     evidence_required: [dsr_transparency_crosswalk, review_record_fields, evaluation_plan]
     status: draft_pass
+  - id: qg-validation-case-status
+    question: Does the package distinguish pilot validation, reviewable conformance, reusable conformance, and archival/publication-ready conformance?
+    evidence_required:
+      - records/validation/
+      - package-inventory.yaml
+      - conformance-declaration.yaml
+      - release-publication-checklist.yaml
+    pass_condition: The package states validation case, conformance level, evidence basis, limits, and unresolved issues without implying L4 or L5 readiness from an L2 pilot.
+    fail_condition: The package describes a pilot validation as final publication readiness or omits validation limits.
+    remediation: Add validation-status language and restrict readiness claims to the supported conformance level.
 traceability:
   - trace_id: trace-quality-001
     source_type: scaffold

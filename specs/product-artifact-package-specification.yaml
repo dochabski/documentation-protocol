@@ -64,6 +64,14 @@ sections:
         - owner
         - validation_rule
         - notes
+      repository_location_rules:
+        rule: Required information items may be implemented as root files, docs, templates, schemas, checklists, or records when the package inventory declares the path and role.
+        requirements:
+          - Package inventory must identify each required information item or approved downstream equivalent.
+          - A template is not a completed record unless instantiated for the reviewed artifact or package.
+          - Empty required directories are acceptable at L0-L2 only when the package inventory labels them as empty-required or planned.
+          - L3-L5 packages must either contain retained records or explicit not_applicable rationales for each required record class.
+          - Human-facing Markdown may summarize controlled files but must not override YAML source-of-truth files.
   - id: normative_requirements
     title: Normative Requirements
     purpose: Define package requirements.
