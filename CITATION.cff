@@ -7,6 +7,7 @@ abstract: "A GitHub-centered protocol for documenting, reviewing, packaging, rel
 authors:
   - family-names: "Ochabski"
     given-names: "David"
+    orcid: "https://orcid.org/0009-0000-9117-0651"
 version: "0.1.1"
 date-released: "2026-04-25"
 license: "CC0-1.0"

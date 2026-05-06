@@ -30,7 +30,7 @@ This protocol was generated from the project corpus and scaffold basis cited in 
 
 ## Citation
 
-Use the citation metadata in `CITATION.cff`. The v0.1.1 draft DOI is `10.5281/zenodo.19764060`. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content.
+Use the citation metadata in `CITATION.cff`. The v0.1.1 draft DOI is `10.5281/zenodo.19764060`. Author identity is linked with ORCID iD [0009-0000-9117-0651](https://orcid.org/0009-0000-9117-0651); see `docs/protocol/orcid-identity.md` for reuse targets. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content.
 
 ## License
 

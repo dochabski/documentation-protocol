@@ -14,8 +14,10 @@
   "author": [
     {
       "@type": "Person",
+      "@id": "https://orcid.org/0009-0000-9117-0651",
       "givenName": "David",
-      "familyName": "Ochabski"
+      "familyName": "Ochabski",
+      "identifier": "https://orcid.org/0009-0000-9117-0651"
     }
   ],
   "keywords": [
