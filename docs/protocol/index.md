@@ -23,6 +23,8 @@ Use this index as the human-facing entry point. The authoritative source is the 
 
 For a new project, fill `templates/artifact-profile-template.yaml`, select a conformance level, create a package inventory, complete metadata, run the package readiness checklist, then enter review. For a DSR project at L2 or above, also complete the DSR transparency crosswalk, contribution-positioning record, and DSR-specific evaluation-plan fields. For a publication-ready project, also complete release, preservation, citation, registry, and practitioner-facing communication records where applicable.
 
+Use `orcid-identity.md` to keep author identity consistent across citation, repository, archival, and public profile metadata.
+
 ## DSR Transparency Minimum
 
 DSR packages should expose six transparency dimensions: process, problem space, solution space, build, evaluation, and contribution. The protocol asks for enough evidence to support review, reuse, adaptation, and stakeholder confidence while allowing documented limits for privacy, security, intellectual property, proprietary constraints, institutional obligations, maintenance cost, or nonreplicable field interventions.

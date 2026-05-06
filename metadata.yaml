@@ -8,6 +8,8 @@ metadata:
   version: "0.1.1"
   authors:
     - Ochabski, David
+  orcid_ids:
+    - https://orcid.org/0009-0000-9117-0651
   contributors: []
   organizations: []
   license: CC0-1.0
