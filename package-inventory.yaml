@@ -1,0 +1,102 @@
+# SPDX-License-Identifier: CC0-1.0
+package_inventory:
+  package_id: documentation_protocol
+  title: Documentation Protocol Package Inventory
+  version: "1.0.0"
+  status: l4_reusable_stable
+  inventory_date: "2026-05-08"
+  repository_url: https://github.com/dochabski/documentation-protocol
+  inventory_scope: >
+    Generated protocol, scaffold-derived, documentation, metadata, template,
+    checklist, schema, vocabulary, example, and retained record files included
+    in the public GitHub repository.
+  excluded_materials:
+    - raw_source_pdfs
+    - copyrighted_source_documents
+    - local_conversion_chunks
+    - raw_builder_scaffold_archive
+    - private_tokens_or_credentials
+  root_files:
+    - path: README.md
+      purpose: Human-facing repository orientation, status, use, citation, license, and downstream licensing guidance.
+    - path: artifact-profile.yaml
+      purpose: Package-level artifact profile for the Documentation Protocol itself.
+    - path: conformance-declaration.yaml
+      purpose: Package-level L4 reusable-stable conformance declaration.
+    - path: package-inventory.yaml
+      purpose: Package inventory and public inclusion/exclusion boundary.
+    - path: traceability-matrix.yaml
+      purpose: Claim-to-evidence traceability for the v1.0.0 package.
+    - path: evaluation-report.yaml
+      purpose: Evaluation summary for the L4 release claim and retained limitations.
+    - path: LIMITATIONS.md
+      purpose: Human-facing limitation boundary for v1.0.0.
+    - path: manifest.yaml
+      purpose: Source families, citation policy, repository structure, and conformance pointers.
+    - path: metadata.yaml
+      purpose: Repository metadata, license metadata, DOI status, and release status.
+    - path: CITATION.cff
+      purpose: Citation metadata for the release.
+    - path: .zenodo.json
+      purpose: Zenodo metadata prepared for a future archival deposit.
+    - path: codemeta.json
+      purpose: CodeMeta metadata for software/source repository indexing.
+    - path: LICENSE
+      purpose: Repository licensing notice.
+    - path: REUSE.toml
+      purpose: Repository license mapping.
+    - path: CHANGELOG.md
+      purpose: Version history.
+    - path: CONTRIBUTING.md
+      purpose: Contribution guidance.
+    - path: GOVERNANCE.md
+      purpose: Governance and stewardship guidance.
+  directories:
+    - path: specs/
+      purpose: YAML source-of-truth product specifications.
+      release_role: authoritative_protocol_content
+    - path: docs/protocol/
+      purpose: Human-facing protocol navigation and explanatory guidance.
+      release_role: documentation
+    - path: docs/validation/
+      purpose: Human-facing validation summaries.
+      release_role: validation_evidence
+    - path: templates/
+      purpose: Reusable starter records and package files for downstream artifacts.
+      release_role: reusable_operating_material
+    - path: checklists/
+      purpose: Operational readiness, review, release, service, DSR, and pilot-learning checks.
+      release_role: reusable_operating_material
+    - path: schemas/
+      purpose: JSON schemas for selected structured files.
+      release_role: validation_material
+    - path: vocabularies/
+      purpose: Controlled vocabulary files.
+      release_role: controlled_terms
+    - path: examples/service-profiles/
+      purpose: Non-normative example service profiles and service candidate catalog.
+      release_role: example_and_adaptation_guidance
+    - path: crosswalks/
+      purpose: Protocol-to-pilot evidence mappings.
+      release_role: validation_traceability
+    - path: records/
+      purpose: Retained validation, roadmap, review, release, and approval records.
+      release_role: retained_evidence
+    - path: LICENSES/
+      purpose: Full CC0-1.0 and Apache-2.0 license texts.
+      release_role: licensing_evidence
+    - path: prompts/codex/
+      purpose: Codex handoff and implementation prompts for future maintenance.
+      release_role: maintenance_support
+  release_evidence:
+    conformance_declaration: conformance-declaration.yaml
+    l4_readiness_review: records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    release_record: records/releases/record-release-0002-v1-0-0.yaml
+    release_approval: records/releases/record-release-approval-0001-v1-0-0.yaml
+    pilot_validation: records/validations/record-validation-0001-dsr-framework-pilot.yaml
+    pilot_crosswalk: crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+  public_release_checks:
+    source_pdfs_included: false
+    archives_included: false
+    private_tokens_or_credentials_included: false
+    generated_protocol_and_scaffold_derived_files_only: true

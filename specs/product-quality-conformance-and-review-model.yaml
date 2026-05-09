@@ -6,8 +6,8 @@ product:
     Define quality dimensions, maturity levels, conformance gates, review
     workflow, scoring rubrics, acceptance criteria, and evidence requirements
     for protocol-governed artifact packages.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - data_and_information
@@ -278,19 +278,19 @@ quality_gates:
   - id: qg-quality-model
     question: Are quality dimensions and maturity levels defined?
     evidence_required: [quality_dimensions, maturity_levels]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-review-workflow
     question: Are review phases, records, decisions, and author response paths explicit?
     evidence_required: [review_phases, required_records, workflow]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-evidence-alignment
     question: Are claims, evidence, findings, decisions, and release approval traceable?
     evidence_required: [trace_links, review_record_fields]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-dsr-transparency-review
     question: Does review explicitly inspect DSR transparency, evaluation strategy, and contribution positioning?
     evidence_required: [dsr_transparency_crosswalk, review_record_fields, evaluation_plan]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-quality-001
     source_type: scaffold

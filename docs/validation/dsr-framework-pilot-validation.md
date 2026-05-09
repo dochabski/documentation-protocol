@@ -2,7 +2,7 @@
 
 # DSR Framework Pilot Validation
 
-**Status:** Public draft/self-application validation evidence.
+**Status:** Retained pilot validation evidence for v1.0.0 L4 reusable-stable release; L5 not claimed.
 
 The DSR Framework repository is the first retained downstream pilot for the Documentation Protocol. The validation target is the Documentation Protocol. The validation vehicle is the DSR Framework repository. The validation type is downstream pilot application, self-application, and structural-conceptual validation.
 
@@ -10,7 +10,7 @@ The DSR Framework repository is the first retained downstream pilot for the Docu
 
 The DSR Framework repository functions as the first substantive pilot artifact for validating the Documentation Protocol's ability to guide, structure, review, and release a complex DSR artifact package. This validation supports protocol coherence, structural adequacy, repository usability, source-of-truth discipline, traceability, and reviewability.
 
-This validation does not prove external adoption, empirical effectiveness, independent semantic adequacy, or publication-ready/L5 status. It also does not validate downstream artifacts automatically merely because they use the Documentation Protocol.
+For v1.0.0, this pilot is used with the L4 readiness review and release approval records to support a package-level L4 reusable-stable claim. This validation does not prove external adoption, empirical effectiveness, independent semantic adequacy, or publication-ready/L5 status. It also does not validate downstream artifacts automatically merely because they use the Documentation Protocol.
 
 ## Evidence Inspected
 
@@ -39,9 +39,9 @@ The pilot evidence includes the DSR Framework root control files, `manifest.yaml
 
 ## Disposition
 
-The pilot is retained as public draft validation evidence. The current verdict is `pass_with_public_draft_self_application_limitations`.
+The pilot is retained as bounded validation evidence. The current verdict is `pass_with_l4_supporting_self_application_limitations`.
 
-The Documentation Protocol should remain a public draft release: usable, citable, but still under active validation. This pilot can support movement toward a future `v0.2.0` validated draft after additional pilot evidence and independent review are retained.
+The Documentation Protocol v1.0.0 may be described as L4 reusable-stable when this pilot evidence is interpreted together with the L4 readiness review, conformance declaration, and release approval record. It should not be described as L5 archival/publication-ready, externally validated, empirically proven, or automatically validating downstream artifacts.
 
 ## Next Validation Tier
 

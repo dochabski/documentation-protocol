@@ -5,7 +5,7 @@ service_integration_profile:
   normative_status: project_profile
   artifact_or_package_id: ''
   target_conformance_level: ''
-  version: 0.1.0
+  version: ''
   status: draft
   owner_or_maintainer: ''
   governing_rule: Named services are candidates, not universal conformance requirements.

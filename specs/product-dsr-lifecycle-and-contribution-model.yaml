@@ -7,8 +7,8 @@ product:
     lifecycle stages, design strategy families, evaluation alignment, and
     transparency, contribution positioning, and generalization logic for
     artifacts governed by the protocol.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - dsr_corpus
   - md_guides
@@ -331,27 +331,27 @@ quality_gates:
   - id: qg-dsr-artifact-type
     question: Is the artifact type declared and justified?
     evidence_required: [artifact_profile, design_rationale]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-dsr-evaluation-alignment
     question: Does evaluation evidence support the contribution claim?
     evidence_required: [evaluation_plan, evaluation_report, claim_evidence_matrix]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-dsr-generalization
     question: Are generalization and limitation statements bounded by evidence?
     evidence_required: [contribution_claim, limitations]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-dsr-transparency
     question: Is the six-part DSR transparency crosswalk complete or explicitly tailored?
     evidence_required: [dsr_transparency_crosswalk, artifact_profile, review_record]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-dsr-evaluation-strategy
     question: Does the evaluation plan declare timing, setting, method family, validity basis, and claim-to-component mapping?
     evidence_required: [evaluation_plan, traceability_matrix]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-dsr-contribution-positioning
     question: Is the contribution positioned against declared artifact type, knowledge scope, knowledge goal, novelty basis, and transfer conditions?
     evidence_required: [contribution_positioning_record, contribution_claim]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-dsr-001
     source_type: scaffold

@@ -5,8 +5,8 @@ product:
   purpose: Define nonblocking, vendor-neutral service roles that protocol-governed artifact packages should consider for storage,
     source control, persistent identification, archival deposit, metadata indexing, educational dissemination, public communication,
     open peer review, open-science sustainability, and long-form publication.
-  status: draft
-version: 0.2.0-draft
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
 - md_guides
 - data_and_information
@@ -382,19 +382,19 @@ quality_gates:
   evidence_required:
   - service_role_model
   - service_candidate_vocabulary
-  status: draft_pass
+  status: l4_reusable_stable_pass
 - id: qg-service-evidence
   question: Are selected services, substitutions, and omissions documented without exposing secrets?
   evidence_required:
   - service_integration_profile
   - service_integration_record
-  status: draft_pass
+  status: l4_reusable_stable_pass
 - id: qg-service-variant-location
   question: Are personal or project-specific choices stored as profiles rather than long-lived branches?
   evidence_required:
   - example_profile
   - branch_policy
-  status: draft_pass
+  status: l4_reusable_stable_pass
 traceability:
 - trace_id: trace-service-integration-001
   source_type: product

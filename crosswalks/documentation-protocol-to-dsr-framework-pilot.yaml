@@ -2,13 +2,14 @@
 crosswalk:
   crosswalk_id: documentation-protocol-to-dsr-framework-pilot
   title: Documentation Protocol to DSR Framework Pilot Crosswalk
-  status: retained_public_draft_mapping
+  status: retained_pilot_mapping
   date: "2026-05-05"
   validation_record: records/validations/record-validation-0001-dsr-framework-pilot.yaml
   protocol_target:
     repository_url: https://github.com/dochabski/documentation-protocol
     release_reference: v0.1.1
     commit: 80aec1aab1f1317e258fbce12e02419bbe9b6ca1
+    later_release_interpretation: v1.0.0_l4_reusable_stable_l5_not_claimed
   pilot_artifact:
     repository_url: https://github.com/dochabski/dsr-framework
     release_reference: v1.2.0

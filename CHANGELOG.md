@@ -4,6 +4,21 @@
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-05-08
+
+### Added
+
+- Added `conformance-declaration.yaml` for the package-level L4 reusable-stable claim.
+- Added package-control files: `artifact-profile.yaml`, `package-inventory.yaml`, `traceability-matrix.yaml`, `evaluation-report.yaml`, and `LIMITATIONS.md`.
+- Added L4 readiness review and v1.0.0 release approval records.
+
+### Changed
+
+- Stabilized the Documentation Protocol as `v1.0.0` with package conformance `L4 reusable-stable`.
+- Clarified that L5 archival/publication-ready status is not claimed.
+- Reinterpreted the DSR Framework pilot as L4-supporting evidence when paired with the v1.0.0 readiness and release records.
+- Updated repository metadata, citation metadata, and human-facing documentation for the v1.0.0 release.
+
 ## [0.1.2] - 2026-05-08
 
 ### Added

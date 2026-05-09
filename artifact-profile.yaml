@@ -1,0 +1,213 @@
+# SPDX-License-Identifier: CC0-1.0
+artifact_profile:
+  artifact_id: documentation_protocol
+  title: Documentation Protocol
+  short_description: >
+    A GitHub-centered protocol for documenting, reviewing, packaging,
+    releasing, publishing, and preserving open research and design artifacts.
+  package_class: protocol_package
+  artifact_types:
+    - method
+    - design_artifact
+    - documentation_protocol
+    - reusable_template_set
+  target_conformance_level: l4_reusable
+  version: "1.0.0"
+  status: l4_reusable_stable
+  authors:
+    - Ochabski, David
+  orcid_ids:
+    - https://orcid.org/0009-0000-9117-0651
+  contributors: []
+  repository_url: https://github.com/dochabski/documentation-protocol
+  license: CC0-1.0
+  code_license: Apache-2.0
+  license_recommendation:
+    protocol_license_applies_to_downstream_artifacts: false
+    artifact_must_declare_own_license: true
+    non_code_recommendation: CC0-1.0
+    code_recommendation: Apache-2.0_or_MIT
+    apache_preferred_when_patent_clarity_matters: true
+    citation_recommended_but_not_required_for_cc0: true
+  third_party_materials:
+    - material_id: external_source_citations
+      description: Scholarly works, standards, policies, and community practices cited as intellectual basis.
+      license_or_rights_status: cited_only_not_republished_or_relicensed
+      reuse_constraints:
+        - external_sources_are_not_relicensed_by_this_repository
+  downstream_reuse_constraints: []
+  ai_indexing_training_preference: >
+    Non-code protocol content is dedicated under CC0-1.0 to maximize reuse,
+    indexing, AI training, adaptation, translation, redistribution, and public
+    benefit.
+  open_license_exception_rationale: ""
+  source_basis:
+    - md_guides
+    - isos_and_more
+    - dsr_corpus
+    - data_and_information
+    - protocol_project_decision
+  knowledge_scope: both_idiographic_and_nomothetic
+  knowledge_goal: prescriptive
+  lifecycle_stage: release_and_maintenance
+  design_strategy: build_and_generalize
+  stakeholders:
+    - artifact_authors
+    - reviewers
+    - maintainers
+    - repository_stewards
+    - AI_assisted_documentation_users
+    - open_artifact_reusers
+  problem_space:
+    summary: >
+      Open research and design artifacts often need structured documentation,
+      review evidence, release records, citation metadata, license clarity,
+      and preservation planning that can be reused across projects.
+    affected_contexts:
+      - research_software
+      - design_science_research_artifacts
+      - documentation_packages
+      - reusable_templates_and_checklists
+    stakeholder_needs:
+      - inspectable_artifact_claims
+      - reusable_package_structure
+      - traceable_review_and_release_evidence
+      - clear_license_and_citation_metadata
+      - machine_readable_source_of_truth_files
+  context_constraints:
+    privacy_or_rights_limits:
+      - source_pdfs_and_copyrighted_source_documents_are_not_included
+      - local_source_file_names_and_paths_are_not_exposed
+      - third_party_sources_are_cited_not_relicensed
+    release_limits:
+      - l5_archival_publication_ready_status_not_claimed
+      - version_specific_zenodo_doi_for_v1_0_0_not_minted_by_this_release
+      - independent_external_validation_not_completed
+  solution_space:
+    designed_artifact: >
+      A standalone documentation protocol repository with YAML source-of-truth
+      specifications, Markdown navigation, reusable templates, checklists,
+      schemas, records, metadata, license files, and release evidence.
+    reusable_components:
+      - specs/
+      - templates/
+      - checklists/
+      - schemas/
+      - vocabularies/
+      - records/
+      - docs/protocol/
+  kernel_theories_or_justificatory_knowledge:
+    - hevner_et_al_2004
+    - peffers_et_al_2007
+    - gregor_hevner_2013
+    - venable_pries_heje_baskerville_2016
+    - akoka_et_al_2023
+    - hevner_et_al_2024
+    - fair4rs_principles
+    - acm_artifact_badging_policy_2020
+    - niso_rp_31_2021
+  existing_artifacts_or_solution_classes:
+    - artifact_badging_policies
+    - FAIR_research_software_guidance
+    - GitHub_repository_documentation_practices
+    - citation_metadata_files
+    - archival_release_records
+    - design_science_research_methodology
+  build_process_summary: >
+    The protocol was generated and iteratively revised from the project corpus,
+    scaffold basis, DSR transparency review, licensing update, service-profile
+    package, and retained pilot validation evidence. The v1.0.0 release
+    consolidates those materials into an L4 reusable-stable package without
+    claiming L5 archival/publication readiness.
+  alternatives_considered:
+    - alternative: publish_raw_builder_scaffold_archive
+      disposition: rejected
+      rationale: Useful content was integrated into public protocol files; publishing the archive would duplicate guidance and risk exposing local source-basis details.
+    - alternative: treat_named_services_as_required
+      disposition: rejected
+      rationale: Service guidance is vendor-neutral and advisory so users can substitute equivalent services.
+    - alternative: claim_l5_on_github_release_alone
+      disposition: rejected
+      rationale: L5 requires separate preservation, registry, archival, and stronger validation closure.
+  design_decision_records:
+    - README.md#builder-scaffold-decision
+    - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+    - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    - records/releases/record-release-approval-0001-v1-0-0.yaml
+  contribution_positioning:
+    contribution_type: method_and_reusable_protocol_package
+    novelty_basis:
+      - synthesis
+      - method_extension
+      - operationalization
+    knowledge_scope: both_idiographic_and_nomothetic
+    knowledge_goal: prescriptive
+    practice_contribution: >
+      Provides a reusable protocol package that artifact authors and
+      maintainers can copy into projects to create documentation, review,
+      metadata, license, release, and validation records.
+    scientific_or_method_contribution: >
+      Operationalizes DSR transparency, contribution positioning, evaluation
+      strategy, quality review, and release governance in reusable protocol
+      files.
+  transfer_conditions:
+    appropriate_when:
+      - project_can_use_file_based_repository_documentation
+      - artifact_owner_can_declare_license_and_metadata
+      - review_or_release_evidence_can_be_retained
+    tailoring_required_when:
+      - artifact_contains_sensitive_or_restricted_material
+      - project_uses_non_github_repository_infrastructure
+      - domain_requires_specialized_regulatory_or_archival_practices
+  dsr_transparency:
+    process_transparency:
+      evidence:
+        - CHANGELOG.md
+        - records/
+    problem_space_transparency:
+      evidence:
+        - artifact-profile.yaml
+        - specs/product-protocol-foundation.yaml
+    solution_space_transparency:
+      evidence:
+        - specs/
+        - docs/protocol/
+    build_transparency:
+      evidence:
+        - manifest.yaml
+        - records/releases/
+    evaluation_transparency:
+      evidence:
+        - evaluation-report.yaml
+        - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+        - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    contribution_transparency:
+      evidence:
+        - artifact-profile.yaml
+        - conformance-declaration.yaml
+        - traceability-matrix.yaml
+  claims:
+    - claim_id: claim_l4_reusable_stable
+      statement: Documentation Protocol v1.0.0 is an L4 reusable-stable protocol package.
+      evidence:
+        - conformance-declaration.yaml
+        - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+        - records/releases/record-release-0002-v1-0-0.yaml
+    - claim_id: claim_dsr_transparency_support
+      statement: The protocol supports DSR transparency, contribution positioning, and evaluation strategy documentation.
+      evidence:
+        - specs/product-dsr-lifecycle-and-contribution-model.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
+        - templates/contribution-positioning-record-template.yaml
+        - templates/evaluation-plan-template.yaml
+    - claim_id: claim_downstream_open_reuse_guidance
+      statement: The protocol recommends highly open downstream licensing without relicensing downstream artifacts.
+      evidence:
+        - README.md
+        - specs/product-artifact-package-specification.yaml
+        - specs/product-publication-and-registry-model.yaml
+        - checklists/artifact-package-readiness-checklist.yaml
+  open_questions:
+    - second_internal_pilot_beyond_dsr_framework
+    - non_dsr_pilot_or_external_reviewer_pass
+    - future_l5_preservation_registry_and_doi_closure

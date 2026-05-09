@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: CC0-1.0
 service_role_vocabulary:
   metadata:
-    id: service_role_vocabulary_v0_2_0
+    id: service_role_vocabulary_v1_0_0
     title: Service Role Vocabulary for Documentation Protocol Artifact Packages
-    version: 0.2.0-draft
-    status: draft
+    version: "1.0.0"
+    status: l4_reusable_stable
     normative_status: recommended_controlled_vocabulary
     purpose: Provide vendor-neutral service-role terms and candidate service examples, including open-science repositories,
       preprint servers, peer-review venues, identifier infrastructure, and sustainability/community resources.

@@ -1,0 +1,78 @@
+# SPDX-License-Identifier: CC0-1.0
+release_record:
+  record_id: record-release-0002-v1-0-0
+  title: Documentation Protocol v1.0.0 L4 reusable-stable release
+  release_version: "1.0.0"
+  release_tag: v1.0.0
+  date: "2026-05-08"
+  release_type: l4_reusable_stable_github_release
+  release_status: approved_for_github_release
+  package_conformance: l4_reusable_stable
+  l5_claimed: false
+  release_url: https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.0
+  release_summary: >
+    Documentation Protocol v1.0.0 is an L4 reusable-stable release. It is
+    usable and citable by GitHub release URL. L5 archival/publication-ready
+    status is not claimed.
+  included_evidence:
+    - README.md
+    - artifact-profile.yaml
+    - package-inventory.yaml
+    - traceability-matrix.yaml
+    - evaluation-report.yaml
+    - LIMITATIONS.md
+    - manifest.yaml
+    - metadata.yaml
+    - conformance-declaration.yaml
+    - specs/
+    - docs/protocol/
+    - docs/validation/
+    - templates/
+    - checklists/
+    - schemas/
+    - vocabularies/
+    - examples/service-profiles/
+    - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+    - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+    - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    - records/releases/record-release-approval-0001-v1-0-0.yaml
+    - CITATION.cff
+    - .zenodo.json
+    - codemeta.json
+    - LICENSE
+    - LICENSES/
+    - REUSE.toml
+  validation_summary:
+    l4_readiness_review: records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    pilot_validation: records/validations/record-validation-0001-dsr-framework-pilot.yaml
+    result: pass_for_l4_reusable_stable
+    retained_limitations:
+      - self_application_single_pilot_limitation
+      - external_adoption_not_proven
+      - empirical_utility_not_proven
+      - independent_external_validation_not_completed
+      - l5_archival_publication_ready_status_not_claimed
+  publication_and_preservation:
+    github_release: planned_for_v1_0_0
+    zenodo_doi_for_v1_0_0: not_minted_by_this_record
+    preservation_closure: deferred
+    registry_publication: deferred
+  license_summary:
+    non_code_content: CC0-1.0
+    code_and_automation: Apache-2.0
+    citation: recommended_not_required
+  release_checks:
+    source_pdfs_included: false
+    generated_protocol_files_only: true
+    license_chosen: true
+    readme_explains_status_and_intended_use: true
+    citation_cff_present: true
+    zenodo_json_present: true
+    codemeta_json_present: true
+    release_tag_to_create: v1.0.0
+    zenodo_doi_minted_from_this_release: false
+  limitations:
+    - The release is L4 reusable-stable, not L5 archival/publication-ready.
+    - The release is citable by GitHub release URL unless a separate archival DOI is minted later.
+    - The DSR Framework pilot is retained as bounded L4-supporting evidence, not empirical or external validation.
+    - Downstream artifacts must declare their own licenses, metadata, conformance targets, and validation evidence.

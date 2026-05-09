@@ -6,8 +6,8 @@ product:
     Define required artifact package contents, inventory, documentation,
     metadata, evidence, reproducibility material, limitations, examples, and
     conformance-specific package obligations.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - dsr_corpus
@@ -255,19 +255,19 @@ quality_gates:
   - id: qg-package-inventory
     question: Does the inventory match required files and actual repository contents?
     evidence_required: [package_inventory, repository_tree]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-package-use
     question: Is there a clear use, inspection, or reproduction path?
     evidence_required: [usage_procedure, environment_specification, examples]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-package-claims
     question: Are package claims aligned with evidence and limitations?
     evidence_required: [traceability_matrix, evaluation_report, limitations]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-package-dsr-transparency
     question: Does a DSR package include transparency, contribution-positioning, and evaluation-strategy evidence?
     evidence_required: [dsr_transparency_crosswalk, contribution_positioning_record, evaluation_plan]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-package-001
     source_type: product

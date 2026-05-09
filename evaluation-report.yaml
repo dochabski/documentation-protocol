@@ -1,0 +1,75 @@
+# SPDX-License-Identifier: CC0-1.0
+evaluation_report:
+  report_id: evaluation-report-v1-0-0-l4
+  title: Documentation Protocol v1.0.0 L4 Evaluation Summary
+  version: "1.0.0"
+  date: "2026-05-08"
+  evaluation_type: structural_conceptual_and_release_readiness
+  evaluation_timing: summative_for_v1_0_0
+  evaluation_setting: artificial_repository_review_with_downstream_pilot_evidence
+  evaluation_method_family:
+    - structured_review
+    - source_of_truth_consistency_check
+    - downstream_pilot_application
+    - syntax_validation
+    - release_readiness_review
+  evaluated_claims:
+    - claim_id: claim_l4_reusable_stable
+      claim: Documentation Protocol v1.0.0 is L4 reusable-stable.
+      result: supported_with_limitations
+      evidence:
+        - conformance-declaration.yaml
+        - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+        - records/releases/record-release-0002-v1-0-0.yaml
+    - claim_id: claim_dsr_framework_pilot_support
+      claim: The DSR Framework pilot supports coherence, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control.
+      result: supported_with_self_application_limitations
+      evidence:
+        - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+        - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+        - docs/validation/dsr-framework-pilot-validation.md
+    - claim_id: claim_l5_not_claimed
+      claim: L5 archival/publication-ready status is not claimed.
+      result: supported
+      evidence:
+        - README.md
+        - LIMITATIONS.md
+        - conformance-declaration.yaml
+        - records/roadmap/record-next-validation-tier-0001.yaml
+  validity_basis:
+    technical_validity: >
+      Structured YAML, JSON, and CFF files parse successfully; release files
+      and package metadata are internally consistent.
+    purpose_validity: >
+      The package exposes reusable protocol products, templates, checklists,
+      schemas, metadata, service guidance, and records for documentation
+      protocol reuse.
+    design_validity: >
+      The package retains a pilot application, crosswalk, readiness review,
+      release record, conformance declaration, and limitation boundary.
+    generalization_validity: >
+      Generalization is limited. The DSR Framework pilot shows one complex
+      DSR case; non-DSR pilots, external review, and re-instantiation tests
+      remain future validation work.
+  findings:
+    - finding_id: eval_v1_001
+      result: pass
+      summary: Package structure, source-of-truth files, metadata, and records support L4 reusable-stable release.
+    - finding_id: eval_v1_002
+      result: pass_with_limitations
+      summary: DSR Framework pilot evidence supports L4 reviewability and usability but remains self-application evidence.
+    - finding_id: eval_v1_003
+      result: retained_limitation
+      summary: L5 DOI, preservation, registry, publication, and independent external validation closure are deferred.
+  validation_commands:
+    - command: YAML/CFF/JSON parse validation
+      result: pass
+    - command: git diff --check
+      result: pass
+    - command: source archive/PDF hygiene search
+      result: pass
+  conclusion: >
+    The evidence supports releasing Documentation Protocol v1.0.0 as L4
+    reusable-stable. The release must not be described as L5
+    archival/publication-ready, empirically validated, independently
+    externally validated, or automatically validating downstream artifacts.

@@ -1,6 +1,6 @@
 {
   "title": "Documentation Protocol",
-  "description": "Public draft release -- usable, citable, but still under active validation. Version 0.1.2 adds retained DSR Framework pilot validation evidence and a vendor-neutral recommended service integration profile with expanded open-science service candidates. Non-code protocol content is dedicated under CC0-1.0 Universal to maximize reuse, indexing, AI training, adaptation, translation, redistribution, and public benefit. Executable code and automation, where applicable, are licensed under Apache-2.0. Citation is appreciated and recommended but not required.",
+  "description": "Documentation Protocol v1.0.0 is an L4 reusable-stable release -- usable and citable; L5 archival/publication-ready status is not claimed. The release retains DSR Framework pilot validation evidence and includes a vendor-neutral recommended service integration profile with expanded open-science service candidates. Non-code protocol content is dedicated under CC0-1.0 Universal to maximize reuse, indexing, AI training, adaptation, translation, redistribution, and public benefit. Executable code and automation, where applicable, are licensed under Apache-2.0. Citation is appreciated and recommended but not required.",
   "upload_type": "software",
   "creators": [
     {
@@ -8,7 +8,7 @@
       "orcid": "0009-0000-9117-0651"
     }
   ],
-  "version": "0.1.2",
+  "version": "1.0.0",
   "license": "cc0-1.0",
   "keywords": [
     "documentation protocol",
@@ -20,7 +20,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.2",
+      "identifier": "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.0",
       "relation": "isSupplementTo",
       "scheme": "url"
     }

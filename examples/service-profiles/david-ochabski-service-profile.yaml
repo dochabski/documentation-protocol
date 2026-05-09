@@ -5,8 +5,8 @@ service_integration_profile:
   normative_status: non_normative_example
   artifact_or_package_id: documentation_protocol_and_dsr_quality_artifacts
   target_conformance_level: l5_archival_publication_ready
-  version: 0.2.0
-  status: draft_example
+  version: "1.0.0"
+  status: non_normative_example
   owner_or_maintainer: David Ochabski
   governing_rule: This example does not require other users to use these platforms.
   disclosure_policy:

@@ -6,7 +6,7 @@ artifact_profile:
   package_class: ""
   artifact_types: []
   target_conformance_level: l1_documented
-  version: "0.1.0"
+  version: ""
   status: draft
   authors: []
   orcid_ids: []

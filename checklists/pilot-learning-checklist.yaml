@@ -2,15 +2,15 @@
 checklist:
   id: pilot-learning-checklist
   title: Pilot Learning Checklist
-  status: draft
-  version: "0.1.1"
+  status: l4_reusable_stable
+  version: "1.0.0"
   purpose: >
     Capture what each pilot reveals that the Documentation Protocol should
     add, clarify, relax, automate, defer, or preserve as a limitation.
   when_to_use:
     - after_each_downstream_pilot
     - before_protocol_revision_from_pilot_findings
-    - before_claiming_validated_draft_or_stable_status
+    - before_claiming_stronger_validation_or_l5_status
   checks:
     - id: pilot_learning_001_validation_boundary
       question: Is the pilot validation boundary stated without overclaiming?

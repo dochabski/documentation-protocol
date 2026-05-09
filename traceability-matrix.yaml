@@ -1,0 +1,108 @@
+# SPDX-License-Identifier: CC0-1.0
+traceability_matrix:
+  artifact_id: documentation_protocol
+  version: "1.0.0"
+  purpose: Trace v1.0.0 release claims to retained evidence.
+  links:
+    - trace_id: trace_v1_001_l4_conformance
+      source_type: release_claim
+      source_id: claim_l4_reusable_stable
+      relationship: supported_by
+      target_type: evidence_set
+      target_id: l4_release_evidence
+      evidence_location:
+        - conformance-declaration.yaml
+        - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+        - records/releases/record-release-0002-v1-0-0.yaml
+      status: accepted
+      reviewer_notes: L4 reusable-stable supported; L5 not claimed.
+    - trace_id: trace_v1_002_dsr_transparency
+      source_type: protocol_claim
+      source_id: claim_dsr_transparency_support
+      relationship: operationalized_by
+      target_type: protocol_material
+      target_id: dsr_transparency_layer
+      evidence_location:
+        - specs/product-dsr-lifecycle-and-contribution-model.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
+        - templates/artifact-profile-template.yaml
+        - templates/evaluation-plan-template.yaml
+        - templates/contribution-positioning-record-template.yaml
+      status: accepted
+      reviewer_notes: DSR transparency is first-class in the v1.0.0 package.
+    - trace_id: trace_v1_003_pilot_validation
+      source_type: validation_claim
+      source_id: dsr_framework_pilot_application
+      relationship: bounded_support_for
+      target_type: conformance_claim
+      target_id: l4_reusable_stable
+      evidence_location:
+        - docs/validation/dsr-framework-pilot-validation.md
+        - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+        - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+      status: accepted_with_limitations
+      reviewer_notes: Self-application pilot supports L4, not empirical external validation or L5.
+    - trace_id: trace_v1_004_open_licensing
+      source_type: reuse_claim
+      source_id: open_reuse_and_ai_training_preference
+      relationship: governed_by
+      target_type: license_metadata
+      target_id: repository_license_model
+      evidence_location:
+        - LICENSE
+        - LICENSES/
+        - REUSE.toml
+        - README.md
+        - metadata.yaml
+      status: accepted
+      reviewer_notes: Protocol content is CC0-1.0 unless otherwise noted; code and automation are Apache-2.0.
+    - trace_id: trace_v1_005_l5_boundary
+      source_type: limitation_claim
+      source_id: l5_not_claimed
+      relationship: documented_by
+      target_type: limitation_evidence
+      target_id: l5_deferral
+      evidence_location:
+        - LIMITATIONS.md
+        - conformance-declaration.yaml
+        - records/releases/record-release-0002-v1-0-0.yaml
+        - records/roadmap/record-next-validation-tier-0001.yaml
+      status: accepted
+      reviewer_notes: DOI, preservation, registry, and independent external validation work remains deferred.
+  dsr_links:
+    - trace_id: dsr_trace_v1_001_process
+      transparency_dimension: process_transparency
+      source_record: CHANGELOG.md
+      target_claim_or_component: release_process
+      evidence_location: records/releases/
+      status: accepted
+    - trace_id: dsr_trace_v1_002_problem_space
+      transparency_dimension: problem_space_transparency
+      source_record: artifact-profile.yaml
+      target_claim_or_component: protocol_problem_context
+      evidence_location: specs/product-protocol-foundation.yaml
+      status: accepted
+    - trace_id: dsr_trace_v1_003_solution_space
+      transparency_dimension: solution_space_transparency
+      source_record: artifact-profile.yaml
+      target_claim_or_component: protocol_solution_structure
+      evidence_location: specs/
+      status: accepted
+    - trace_id: dsr_trace_v1_004_build
+      transparency_dimension: build_transparency
+      source_record: manifest.yaml
+      target_claim_or_component: protocol_build_basis
+      evidence_location: records/
+      status: accepted
+    - trace_id: dsr_trace_v1_005_evaluation
+      transparency_dimension: evaluation_transparency
+      source_record: evaluation-report.yaml
+      target_claim_or_component: l4_release_claim
+      evidence_location: records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+      status: accepted
+    - trace_id: dsr_trace_v1_006_contribution
+      transparency_dimension: contribution_transparency
+      source_record: artifact-profile.yaml
+      target_claim_or_component: method_and_protocol_contribution
+      evidence_location: conformance-declaration.yaml
+      status: accepted

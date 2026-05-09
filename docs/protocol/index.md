@@ -36,7 +36,7 @@ Evaluation evidence must be separated from demonstration evidence unless accepta
 
 The first retained pilot is the DSR Framework repository. It validates the protocol only in a bounded sense: downstream pilot application, self-application, and structural-conceptual validation. The current verdict is pass with public-draft/self-application limitations.
 
-This supports coherence, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control. It does not support claims of external adoption, empirical effectiveness, independent external semantic review, or L5 archival/publication-ready status. Use `docs/validation/dsr-framework-pilot-validation.md` and `records/validations/record-validation-0001-dsr-framework-pilot.yaml` for the retained validation boundary.
+This supports coherence, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control. In combination with the v1.0.0 L4 readiness review and release records, it supports the package-level L4 reusable-stable release claim. It does not support claims of external adoption, empirical effectiveness, independent external semantic review, or L5 archival/publication-ready status. Use `conformance-declaration.yaml`, `docs/validation/dsr-framework-pilot-validation.md`, `records/validations/record-validation-0001-dsr-framework-pilot.yaml`, and `records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml` for the retained validation boundary.
 
 ## Recommended Service Ecosystem
 
@@ -48,9 +48,9 @@ Using this protocol does not relicense downstream artifacts. Each artifact packa
 
 For maximum reuse, accessibility, AI indexing/training, adaptation, translation, redistribution, and public benefit, use CC0-1.0 for non-code content and Apache-2.0 or MIT for executable code, with Apache-2.0 preferred when patent clarity is important. Do not make CC0 or Apache-2.0 mandatory for downstream artifacts; document any legal, ethical, institutional, contractual, technical, privacy, funder, export-control, publication, or dependency reason that prevents a highly open license.
 
-## Current Draft Open Questions
+## Post-v1 Validation Work
 
 - Identify first public maintainers and governance contact.
 - Complete a second internal pilot beyond the DSR Framework pilot.
-- Complete a non-DSR pilot or an independent external reviewer pass before claiming validated-draft status.
+- Complete a non-DSR pilot or an independent external reviewer pass before claiming stronger external validation or L5 readiness.
 - Decide whether active GitHub workflow files should be generated before or after the first pilot.

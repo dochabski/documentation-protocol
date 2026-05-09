@@ -6,8 +6,8 @@ product:
     Define phased development, pilot artifacts, validation cycle, feedback
     process, release path, and continuous improvement plan for turning this
     protocol into a reusable GitHub repository.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - isos_and_more
@@ -38,9 +38,10 @@ sections:
         - improvement_cycle
         - success_metrics
       implementation_goal: >
-        Convert draft protocol products into a reviewed, pilot-tested,
-        reusable repository that can be pulled into future projects and used
-        to generate project-specific documentation.
+        Maintain the v1.0.0 L4 reusable-stable protocol as a reviewed,
+        pilot-tested repository that can be pulled into future projects and
+        used to generate project-specific documentation, while collecting
+        stronger evidence for future validation or L5 claims.
   - id: conceptual_model
     title: Conceptual Model
     purpose: Define phases and feedback loops.
@@ -72,19 +73,19 @@ sections:
       must:
         - Each phase must have entry criteria, exit criteria, evidence, and responsible role.
         - Pilot findings must be recorded as issues, decisions, or review records.
-        - Public release must not occur until license, governance, metadata, README, and release records are complete.
+        - Public release and later releases must not occur until license, governance, metadata, README, and release records are complete.
         - Open questions that affect public use must be closed or explicitly documented as known limitations.
       should:
         - The first validation cycle should retain the DSR Framework pilot as bounded self-application evidence and then add at least one further pilot beyond the DSR Framework.
         - A stronger validation claim should include one software or executable artifact and one non-software conceptual, method, model, taxonomy, policy, education, or data artifact.
-        - Pilot packages should target L3 or L4 before the protocol is described as validated.
+        - Pilot packages should target L3 or L4 before the protocol is described as externally validated.
         - Roadmap progress should be tracked in GitHub issues or a project board after repository publication.
         - Improvements should be grouped into minor releases when they change templates or schemas.
       may:
-        - Public release may begin as an alpha if limitations and draft status are explicit.
+        - Future experimental features may begin as alpha material if limitations and non-stable status are explicit.
         - Pilot examples may be synthetic if real artifacts are not ready.
       must_not:
-        - The protocol must not be presented as stable before pilot review.
+        - The protocol must not be presented as L5 archival/publication-ready before preservation, registry, and stronger validation evidence are retained.
         - Pilot feedback must not be implemented without updating source specs when requirements change.
   - id: information_items
     title: Information Items and Records
@@ -191,15 +192,15 @@ sections:
         - Review YAML products for terminology and scope.
         - Assign or confirm governance contacts.
         - Add GitHub issue and PR templates.
-        - Retain the DSR Framework pilot as bounded public-draft validation evidence.
+        - Retain the DSR Framework pilot as bounded L4-supporting validation evidence.
         - Review the recommended service integration profile against the first reusable or publication-ready pilot.
         - Select a second internal pilot beyond the DSR Framework and a non-DSR or external-review pilot with conformance targets.
         - Run pilots through DSR transparency, contribution-positioning, evaluation-strategy, package, and review checklists.
         - Complete the pilot learning checklist after each pilot.
-        - Record pilot findings, revise protocol, and prepare a v0.2.0 validated-draft release when evidence supports it.
+        - Record pilot findings, revise protocol, and prepare a future validation release when evidence supports stronger external-validation or L5 claims.
       anti_patterns:
-        - publishing before license and governance are resolved.
-        - treating templates as stable before pilot use.
+        - publishing release claims before license, governance, metadata, and release records are resolved.
+        - treating future template changes as externally validated before pilot use.
         - losing pilot feedback in chat instead of records.
   - id: template_or_schema_implications
     title: Template or Schema Implications
@@ -220,7 +221,8 @@ sections:
           status: open
         - id: oq-roadmap-publication
           question: What GitHub organization or account should host the public repository?
-          status: open
+          status: resolved
+          resolution: https://github.com/dochabski/documentation-protocol
       backlog:
         - Generate Markdown protocol documentation from YAML.
         - Add active GitHub workflows after validation scripts are selected.
@@ -230,7 +232,7 @@ quality_gates:
   - id: qg-roadmap-completion
     question: Are all required protocol products and support files present?
     evidence_required: [product_catalog, specs_directory, templates, checklists, schemas]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-roadmap-pilot
     question: Is the DSR Framework pilot retained and are additional non-self-application pilots defined with target conformance and evidence plans?
     evidence_required: [dsr_framework_pilot_validation_record, pilot_plan, target_conformance_level, dsr_transparency_crosswalk, pilot_learning_checklist]
@@ -238,7 +240,7 @@ quality_gates:
   - id: qg-roadmap-publication
     question: Are license, governance, metadata, and release readiness resolved for public GitHub publication?
     evidence_required: [LICENSE, GOVERNANCE.md, metadata.yaml, release_record]
-    status: pending
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-roadmap-001
     source_type: product
@@ -254,4 +256,5 @@ open_questions:
     status: open
   - id: oq-roadmap-publication
     question: Decide the GitHub account or organization for the public repository.
-    status: open
+    status: resolved
+    resolution: https://github.com/dochabski/documentation-protocol

@@ -6,8 +6,8 @@ product:
     Define roles, authority, decision rights, contribution routes, review
     responsibilities, maintenance, succession, and change control for the
     documentation protocol and repositories governed by it.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - isos_and_more
@@ -233,15 +233,15 @@ quality_gates:
   - id: qg-governance-authority
     question: Are authority, decision rights, and escalation routes explicit?
     evidence_required: [role_model, decision_rights, escalation_rules]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-governance-records
     question: Are required governance records defined and retained?
     evidence_required: [record_classes, retention_expectations]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-governance-change-control
     question: Can protocol changes be reviewed without losing traceability?
     evidence_required: [change_workflow, decision_record_fields]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-governance-001
     source_type: product

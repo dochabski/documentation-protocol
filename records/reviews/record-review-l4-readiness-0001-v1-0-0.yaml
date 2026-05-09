@@ -1,0 +1,121 @@
+# SPDX-License-Identifier: CC0-1.0
+review_record:
+  record_id: record-review-l4-readiness-0001-v1-0-0
+  title: Documentation Protocol v1.0.0 L4 readiness review
+  date: "2026-05-08"
+  review_type: l4_release_readiness
+  package_version_reviewed: "1.0.0"
+  package_conformance_target: l4_reusable_stable
+  l5_claimed: false
+  result: pass_for_l4_reusable_stable
+  scope:
+    included:
+      - root_repository_orientation
+      - product_specifications
+      - reusable_templates_checklists_schemas_and_vocabularies
+      - metadata_citation_license_and_governance_files
+      - retained_pilot_validation_and_crosswalk_records
+      - service_integration_profile_and_example_profile
+      - release_and_roadmap_records
+    excluded:
+      - independent_external_review
+      - empirical_downstream_utility_testing
+      - zenodo_or_other_archival_doi_minting_for_v1_0_0
+      - l5_preservation_registry_or_publication_closure
+  checks:
+    - id: l4_001_repository_orientation
+      question: Does the repository explain status, intended use, source-of-truth policy, and reuse path?
+      result: pass
+      evidence:
+        - README.md
+        - artifact-profile.yaml
+        - package-inventory.yaml
+        - LIMITATIONS.md
+        - docs/protocol/index.md
+        - manifest.yaml
+    - id: l4_002_modular_protocol_products
+      question: Are protocol products present as modular source-of-truth specifications?
+      result: pass
+      evidence:
+        - specs/product-catalog.yaml
+        - specs/
+    - id: l4_003_reusable_operating_material
+      question: Are reusable templates, checklists, schemas, and vocabularies present?
+      result: pass
+      evidence:
+        - templates/
+        - checklists/
+        - schemas/
+        - vocabularies/
+    - id: l4_004_metadata_license_and_citation
+      question: Are public reuse, citation, identity, and license metadata present and consistent?
+      result: pass
+      evidence:
+        - LICENSE
+        - LICENSES/
+        - REUSE.toml
+        - CITATION.cff
+        - .zenodo.json
+        - codemeta.json
+        - metadata.yaml
+    - id: l4_005_pilot_validation
+      question: Is at least one substantive pilot retained with clear validation limits?
+      result: pass_with_limitations
+      evidence:
+        - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+        - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+        - docs/validation/dsr-framework-pilot-validation.md
+      limitation: self_application_single_pilot_not_external_or_empirical_validation
+    - id: l4_006_overclaiming_control
+      question: Does the package distinguish L4 reusable-stable from L5 archival/publication-ready status?
+      result: pass
+      evidence:
+        - traceability-matrix.yaml
+        - evaluation-report.yaml
+        - README.md
+        - conformance-declaration.yaml
+        - records/releases/record-release-0002-v1-0-0.yaml
+    - id: l4_007_downstream_reuse_guidance
+      question: Does the package explain that downstream artifacts need their own licenses, evidence, and validation claims?
+      result: pass
+      evidence:
+        - README.md
+        - specs/product-artifact-package-specification.yaml
+        - specs/product-publication-and-registry-model.yaml
+        - checklists/artifact-package-readiness-checklist.yaml
+    - id: l4_008_release_blockers
+      question: Are remaining blockers either closed for L4 or documented as nonblocking limitations?
+      result: pass
+      evidence:
+        - conformance-declaration.yaml
+        - records/roadmap/record-next-validation-tier-0001.yaml
+      limitation: l5_and_stronger_external_validation_are_deferred
+  findings:
+    - id: finding_l4_001
+      type: release_support
+      summary: >
+        The repository contains enough modular documentation, reusable
+        operating material, provenance metadata, retained pilot evidence,
+        examples, and adaptation guidance to support L4 reusable-stable status.
+    - id: finding_l4_002
+      type: retained_limitation
+      summary: >
+        The DSR Framework pilot is sufficient as L4-supporting evidence when
+        paired with readiness review, but not sufficient for empirical,
+        external, or L5 validation claims.
+    - id: finding_l4_003
+      type: retained_limitation
+      summary: >
+        A version-specific Zenodo DOI, registry publication closure,
+        independent external review, and preservation closure are deferred and
+        must not be implied by the v1.0.0 GitHub release.
+  decision:
+    release_decision: approve_l4_reusable_stable_release
+    approved_version: "1.0.0"
+    approved_tag: v1.0.0
+    approved_claim: Documentation Protocol v1.0.0 -- L4 reusable-stable; L5 archival/publication-ready not claimed.
+    not_approved:
+      - l5_archival_publication_ready_status
+      - empirical_downstream_utility_claim
+      - independent_external_validation_claim
+      - automatic_downstream_artifact_validation

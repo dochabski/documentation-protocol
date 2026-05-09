@@ -2,8 +2,8 @@
 protocol:
   id: documentation_protocol
   title: Documentation Protocol
-  version: "0.1.2"
-  status: draft
+  version: "1.0.0"
+  status: l4_reusable_stable
   generated_date: "2026-04-24"
   source_of_truth_format: yaml
   publication_render_format: markdown
@@ -187,3 +187,10 @@ canonical_directories:
   - path: prompts/codex
     purpose: Codex handoff prompts for future implementation or maintenance work.
 product_catalog: specs/product-catalog.yaml
+conformance:
+  package_conformance: l4_reusable_stable
+  l5_claimed: false
+  conformance_declaration: conformance-declaration.yaml
+  current_release_record: records/releases/record-release-0002-v1-0-0.yaml
+  current_release_approval: records/releases/record-release-approval-0001-v1-0-0.yaml
+  readiness_review: records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml

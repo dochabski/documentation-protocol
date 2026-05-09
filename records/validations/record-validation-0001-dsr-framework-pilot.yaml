@@ -2,15 +2,16 @@
 validation_record:
   record_id: record-validation-0001-dsr-framework-pilot
   title: Documentation Protocol validation through DSR Framework pilot application
-  status: retained_public_draft_validation
+  status: retained_pilot_validation_evidence
   date: "2026-05-05"
-  result: pass_with_public_draft_self_application_limitations
+  result: pass_with_l4_supporting_self_application_limitations
   validation_target:
     name: Documentation Protocol
     repository_url: https://github.com/dochabski/documentation-protocol
     release_reference: v0.1.1
     commit: 80aec1aab1f1317e258fbce12e02419bbe9b6ca1
     role: general_meta_protocol_layer
+    later_release_interpretation: v1.0.0_l4_reusable_stable_l5_not_claimed
   validation_vehicle:
     name: DSR Framework
     repository_url: https://github.com/dochabski/dsr-framework
@@ -206,14 +207,16 @@ validation_record:
         what the pilot required the protocol to add, clarify, relax, automate,
         or defer.
   disposition:
-    decision: retain_as_public_draft_validation_evidence
+    decision: retain_as_bounded_pilot_validation_evidence
     conformance_interpretation: >
-      Supports Documentation Protocol movement toward a v0.2.0 validated
-      draft after additional pilot and review evidence. Does not justify a
-      stable or L5 claim.
+      Supports Documentation Protocol L4 reusable-stable status when paired
+      with the v1.0.0 L4 readiness review, conformance declaration, and
+      release approval evidence. Does not justify external empirical
+      validation, automatic downstream validation, or an L5
+      archival/publication-ready claim.
     release_implication: >
-      Keep the Documentation Protocol status as public draft release --
-      usable, citable, but still under active validation.
+      Supports a v1.0.0 GitHub release described as L4 reusable-stable and
+      not L5 archival/publication-ready.
   next_validation_needed:
     - second_internal_pilot_beyond_dsr_framework
     - non_dsr_artifact_pilot

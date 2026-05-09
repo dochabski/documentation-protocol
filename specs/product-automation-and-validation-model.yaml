@@ -6,8 +6,8 @@ product:
     Define schema validation, metadata checks, link checks, package inventory
     checks, review gates, release gates, and automation responsibilities for
     GitHub-centered protocol use.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - data_and_information
@@ -222,15 +222,15 @@ quality_gates:
   - id: qg-automation-rule-map
     question: Do validation rules map to protocol requirements and quality gates?
     evidence_required: [validation_layers, trace_links]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-automation-release
     question: Can automation block invalid release candidates?
     evidence_required: [release_gate_checks, required_records]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-automation-records
     question: Are validation results retained as review or release evidence?
     evidence_required: [validation_record_fields, release_gate_record]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-automation-001
     source_type: product

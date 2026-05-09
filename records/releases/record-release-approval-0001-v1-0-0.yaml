@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: CC0-1.0
+release_approval_record:
+  record_id: record-release-approval-0001-v1-0-0
+  title: Documentation Protocol v1.0.0 release approval
+  date: "2026-05-08"
+  release_version: "1.0.0"
+  release_tag: v1.0.0
+  approval_scope: github_l4_reusable_stable_release
+  decision: approved
+  approved_claim: >
+    Documentation Protocol v1.0.0 -- L4 reusable-stable; L5
+    archival/publication-ready not claimed.
+  approval_basis:
+    - conformance-declaration.yaml
+    - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    - records/releases/record-release-0002-v1-0-0.yaml
+    - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+    - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+  release_requirements:
+    no_copyrighted_iso_or_source_pdfs_included: true
+    only_generated_protocol_scaffold_files_included: true
+    license_chosen: true
+    readme_explains_status_and_intended_use: true
+    citation_cff_present: true
+    zenodo_json_present: true
+    codemeta_json_present: true
+    release_tag_v1_0_0_to_exist: true
+    zenodo_doi_required_for_this_l4_release: false
+  not_approved:
+    - l5_archival_publication_ready_claim
+    - zenodo_doi_minting_without_explicit_action_confirmation
+    - registry_publication_claim
+    - independent_external_validation_claim
+    - empirical_downstream_utility_claim
+  github_release_notes: >
+    Documentation Protocol v1.0.0 -- L4 reusable-stable; usable and citable by
+    GitHub release URL. L5 archival/publication-ready status is not claimed.

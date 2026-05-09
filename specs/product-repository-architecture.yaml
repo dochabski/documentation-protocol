@@ -6,8 +6,8 @@ product:
     Define the GitHub repository structure, naming conventions, file
     responsibilities, issue and pull request templates, release structure, and
     automation hooks for protocol-governed artifact packages.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
 dependencies:
@@ -229,15 +229,15 @@ quality_gates:
   - id: qg-repo-tree
     question: Does the repository tree include required source, template, checklist, schema, and record locations?
     evidence_required: [repository_tree, package_inventory]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-repo-naming
     question: Are naming rules consistent and automatable?
     evidence_required: [naming_rules, validation_rules]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-repo-navigation
     question: Can users find purpose, usage, metadata, license, review, and release information?
     evidence_required: [README.md, docs_index, metadata_files]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-repo-001
     source_type: scaffold

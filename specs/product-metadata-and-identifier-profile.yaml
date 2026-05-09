@@ -6,8 +6,8 @@ product:
     Define metadata, citation, authorship, licensing, provenance, DOI, software
     identity, related artifact, and registry metadata requirements for
     protocol-governed packages.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - data_and_information
@@ -296,15 +296,15 @@ quality_gates:
   - id: qg-metadata-required-fields
     question: Are required metadata fields present and controlled?
     evidence_required: [metadata.yaml, schema_validation_record]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-metadata-crosswalk
     question: Are citation, software, archival, and release metadata consistent?
     evidence_required: [CITATION.cff, codemeta.json, .zenodo.json, release_record]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-metadata-identifiers
     question: Are mutable and immutable identifiers distinguished?
     evidence_required: [repository_url, version_tag, archive_doi_or_plan]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-metadata-001
     source_type: scaffold

@@ -5,7 +5,7 @@ metadata:
     A GitHub-centered protocol for documenting, reviewing, packaging,
     releasing, publishing, and preserving open research and design artifacts.
   artifact_type: method
-  version: "0.1.2"
+  version: "1.0.0"
   authors:
     - Ochabski, David
   orcid_ids:
@@ -21,7 +21,7 @@ metadata:
     required.
   repository_url: https://github.com/dochabski/documentation-protocol
   archive_doi: ""
-  archive_doi_status: not_yet_minted_for_v0_1_2
+  archive_doi_status: not_yet_minted_for_v1_0_0_l5_not_claimed
   keywords:
     - documentation-protocol
     - design-science-research
@@ -34,5 +34,7 @@ metadata:
   dependencies: []
   runtime_environment: {}
   funding: []
-  maintenance_status: draft
-  release_status: Public draft release -- usable, citable, but still under active validation.
+  maintenance_status: stable
+  package_conformance: l4_reusable_stable
+  l5_claimed: false
+  release_status: v1.0.0 L4 reusable-stable release -- usable and citable; L5 archival/publication-ready status is not claimed.

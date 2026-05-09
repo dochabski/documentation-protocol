@@ -6,8 +6,8 @@ product:
     Define the controlled documentation objects, minimum content expectations,
     document control rules, record classes, and retention logic used by the
     protocol.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - isos_and_more
   - md_guides
@@ -256,15 +256,15 @@ quality_gates:
   - id: qg-info-taxonomy
     question: Are item types and minimum content rules defined?
     evidence_required: [item_types, minimum_content, shared_fields]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-info-records
     question: Are required records and retention expectations explicit?
     evidence_required: [required_record_classes, retention_model]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-info-quality
     question: Are information quality criteria reviewable?
     evidence_required: [quality_dimensions, acceptance_criteria]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-info-001
     source_type: scaffold

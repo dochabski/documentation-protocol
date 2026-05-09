@@ -6,8 +6,8 @@ product:
     Define release versioning, tagged releases, archival deposits, DOI-backed
     citation, registry submission, publication appendix material, and
     preservation readiness for protocol-governed artifacts.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - isos_and_more
@@ -257,15 +257,15 @@ quality_gates:
   - id: qg-publication-release
     question: Is the release candidate reviewed, validated, and tagged?
     evidence_required: [release_approval_record, validation_results, version_tag]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-publication-archive
     question: Does the archival deposit preserve the release snapshot and identifier?
     evidence_required: [archive_deposit_record, archive_doi]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-publication-registry
     question: Does registry metadata match release and citation metadata?
     evidence_required: [registry_submission_record, citation_record, metadata_freeze_record]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-publication-001
     source_type: scaffold

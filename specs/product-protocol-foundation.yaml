@@ -6,8 +6,8 @@ product:
     Define the protocol identity, scope, intended users, conformance logic,
     assumptions, tailoring rules, and non-goals for a reusable
     GitHub-centered documentation protocol.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - isos_and_more
@@ -223,15 +223,15 @@ quality_gates:
   - id: qg-foundation-scope
     question: Are scope, non-goals, assumptions, and intended users explicit?
     evidence_required: [scope_statement, non_goals, user_roles]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-foundation-conformance
     question: Are conformance levels and tailoring rules operational enough for review?
     evidence_required: [conformance_levels, tailoring_rules, acceptance_criteria]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-foundation-source-policy
     question: Does the product follow the uploaded-corpus-only source policy?
     evidence_required: [source_basis, traceability]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-foundation-001
     source_type: scaffold

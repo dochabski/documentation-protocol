@@ -5,8 +5,8 @@ product:
   purpose: >
     Define reusable templates, checklists, and schema implications that make
     the protocol easy to apply consistently across projects.
-  status: draft
-version: "0.1.2"
+  status: l4_reusable_stable
+version: "1.0.0"
 source_basis:
   - md_guides
   - isos_and_more
@@ -216,15 +216,15 @@ quality_gates:
   - id: qg-templates-coverage
     question: Do templates and checklists cover the required protocol products?
     evidence_required: [template_mapping, checklist_mapping]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-templates-validation
     question: Are schema-controlled files validation-ready?
     evidence_required: [schema_files, validation_plan]
-    status: draft_pass
+    status: l4_reusable_stable_pass
   - id: qg-templates-usability
     question: Can a new project fill the templates without unstated knowledge?
     evidence_required: [template_fields, README_usage]
-    status: draft_pass
+    status: l4_reusable_stable_pass
 traceability:
   - trace_id: trace-templates-001
     source_type: product
