@@ -1,0 +1,51 @@
+# SPDX-License-Identifier: CC0-1.0
+release_record:
+  record_id: record-release-0001-v0-1-2
+  title: Documentation Protocol v0.1.2 public draft release
+  release_version: "0.1.2"
+  release_tag: v0.1.2
+  release_date: "2026-05-08"
+  release_status: approved_for_github_release
+  release_type: public_draft_validation_and_service_profile_update
+  repository_url: https://github.com/dochabski/documentation-protocol
+  release_url: https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.2
+  release_summary: >
+    Public draft release -- usable, citable, but still under active
+    validation. This release retains the DSR Framework pilot validation
+    layer and adds the vendor-neutral Recommended Service Integration Profile
+    with expanded bookmark-derived open-science service candidates.
+  included_changes:
+    - retained_dsr_framework_pilot_validation_record
+    - protocol_to_dsr_framework_pilot_crosswalk
+    - dsr_framework_pilot_validation_human_summary
+    - pilot_learning_checklist
+    - next_validation_tier_record
+    - service_integration_profile_product
+    - service_role_vocabulary_v0_2
+    - service_integration_templates_and_checklist
+    - service_integration_schema
+    - recommended_service_ecosystem_documentation
+    - non_normative_david_ochabski_service_profile
+    - service_candidate_catalog_v0_2
+  validation_status:
+    yaml_json_cff_parse: pass
+    service_profile_schema_validation: pass_for_david_example_profile
+    git_diff_check: pass
+    no_source_pdf_or_archive_files: pass
+    no_credentials_or_private_links: pass_policy_language_only
+    no_named_v0_2_service_required: pass
+    v0_2_service_candidates_present: pass
+  archival_status:
+    github_release: approved_for_publication
+    zenodo_doi_for_v0_1_2: not_minted_by_this_record
+    note: >
+      Direct Zenodo publication is intentionally separate because DOI minting
+      is an external archival action requiring explicit confirmation.
+  limitations:
+    - The protocol remains a public draft, not a stable or L5-validated protocol.
+    - The DSR Framework pilot is self-application evidence, not empirical downstream utility validation.
+    - Named service candidates are examples and are not required for conformance.
+    - A version-specific Zenodo DOI for v0.1.2 is not minted by this release record.
+  approval:
+    approved_for_github_release: true
+    approved_for_zenodo_publication: false

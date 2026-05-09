@@ -1,0 +1,109 @@
+# SPDX-License-Identifier: CC0-1.0
+checklist:
+  id: pilot-learning-checklist
+  title: Pilot Learning Checklist
+  status: draft
+  version: "0.1.1"
+  purpose: >
+    Capture what each pilot reveals that the Documentation Protocol should
+    add, clarify, relax, automate, defer, or preserve as a limitation.
+  when_to_use:
+    - after_each_downstream_pilot
+    - before_protocol_revision_from_pilot_findings
+    - before_claiming_validated_draft_or_stable_status
+  checks:
+    - id: pilot_learning_001_validation_boundary
+      question: Is the pilot validation boundary stated without overclaiming?
+      evidence_required:
+        - validation_target
+        - validation_vehicle
+        - validation_type
+        - included_evidence
+        - excluded_evidence
+      expected_result: >
+        The record distinguishes structural-conceptual validation, usability
+        evidence, empirical utility validation, external review, and L5
+        archival/publication-ready closure.
+    - id: pilot_learning_002_missing_requirements
+      question: Did the pilot reveal missing protocol fields, templates, checklists, schemas, or records?
+      evidence_required:
+        - pilot_findings
+        - affected_protocol_files
+        - proposed_revision
+      expected_result: >
+        Missing requirements are recorded with affected files and revision
+        disposition.
+    - id: pilot_learning_003_clarification_needed
+      question: Did users or reviewers misunderstand any protocol term, workflow, conformance level, or evidence requirement?
+      evidence_required:
+        - user_or_reviewer_feedback
+        - unclear_protocol_location
+        - proposed_clarification
+      expected_result: >
+        Ambiguities are resolved in source-of-truth YAML or retained as known
+        limitations with rationale.
+    - id: pilot_learning_004_requirements_to_relax
+      question: Did the pilot show that any requirement is too burdensome, redundant, or inappropriate for a conformance level?
+      evidence_required:
+        - burdensome_requirement
+        - conformance_level
+        - pilot_context
+        - proposed_tailoring_rule
+      expected_result: >
+        Requirements are relaxed only when the evidence need can still be met
+        or the limitation is explicitly accepted.
+    - id: pilot_learning_005_automation_needed
+      question: Did the pilot identify checks that should be automated?
+      evidence_required:
+        - repeated_manual_check
+        - validation_rule_candidate
+        - target_file_types
+      expected_result: >
+        Candidate automation is logged without treating automation as proof of
+        empirical utility.
+    - id: pilot_learning_006_overclaiming_control
+      question: Did the pilot reveal any wording that overstates validation, stability, publication readiness, or downstream effect?
+      evidence_required:
+        - overclaiming_location
+        - revised_language
+        - retained_limitation
+      expected_result: >
+        Strong claims are revised to match evidence and conformance level.
+    - id: pilot_learning_007_downstream_followability
+      question: Could a user follow the protocol without local context or maintainer explanation?
+      evidence_required:
+        - followability_observations
+        - missing_orientation
+        - missing_example_or_template
+      expected_result: >
+        Missing public-facing orientation is added or scheduled for the next
+        release.
+    - id: pilot_learning_008_license_and_reuse
+      question: Did the pilot declare its own license and document third-party materials, reuse constraints, and AI indexing/training preferences where relevant?
+      evidence_required:
+        - artifact_license
+        - third_party_materials_review
+        - reuse_constraints
+        - ai_indexing_or_training_preference
+      expected_result: >
+        The pilot keeps its own license distinct from the protocol license and
+        documents reuse constraints without implying inherited licensing.
+    - id: pilot_learning_009_revision_traceability
+      question: Are pilot findings traceable to protocol revisions or accepted non-changes?
+      evidence_required:
+        - pilot_finding_id
+        - revision_commit_or_record
+        - disposition
+      expected_result: >
+        Every actionable finding has a revision, issue, roadmap entry, or
+        accepted limitation.
+    - id: pilot_learning_010_next_validation_tier
+      question: Does the pilot record identify the next validation tier needed?
+      evidence_required:
+        - next_pilot_type
+        - external_review_need
+        - reinstantiation_test_need
+        - l5_readiness_preconditions
+      expected_result: >
+        The next validation step moves beyond self-application when stronger
+        validation claims are desired.

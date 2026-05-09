@@ -12,14 +12,17 @@ path = [
   "*.json",
   "*.cff",
   "checklists/**",
+  "crosswalks/**",
   "docs/**",
   "examples/**",
   "manifest.yaml",
   "metadata.yaml",
+  "prompts/**",
   "records/**",
   "schemas/**",
   "specs/**",
-  "templates/**"
+  "templates/**",
+  "vocabularies/**"
 ]
 SPDX-FileCopyrightText = "2026 David Ochabski"
 SPDX-License-Identifier = "CC0-1.0"

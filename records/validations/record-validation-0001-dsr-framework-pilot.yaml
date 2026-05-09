@@ -1,0 +1,227 @@
+# SPDX-License-Identifier: CC0-1.0
+validation_record:
+  record_id: record-validation-0001-dsr-framework-pilot
+  title: Documentation Protocol validation through DSR Framework pilot application
+  status: retained_public_draft_validation
+  date: "2026-05-05"
+  result: pass_with_public_draft_self_application_limitations
+  validation_target:
+    name: Documentation Protocol
+    repository_url: https://github.com/dochabski/documentation-protocol
+    release_reference: v0.1.1
+    commit: 80aec1aab1f1317e258fbce12e02419bbe9b6ca1
+    role: general_meta_protocol_layer
+  validation_vehicle:
+    name: DSR Framework
+    repository_url: https://github.com/dochabski/dsr-framework
+    release_reference: v1.2.0
+    commit: 080b634acd256d5be87baf7bb9533d89d1a1c1c7
+    role: dsr_specific_operationalization_layer
+  validation_type:
+    - downstream_pilot_application
+    - self_application
+    - structural_conceptual_validation
+  validation_claim: >
+    The DSR Framework repository functions as the first substantive pilot
+    artifact for validating the Documentation Protocol's ability to guide,
+    structure, review, and release a complex DSR artifact package. This
+    validation supports protocol coherence, structural adequacy, repository
+    usability, source-of-truth discipline, traceability, and reviewability,
+    but it does not prove external adoption, empirical effectiveness, or
+    publication-ready/L5 status.
+  relationship_model:
+    documentation_protocol: >
+      General reusable meta-protocol for artifact documentation, stewardship,
+      review, packaging, release, publication, preservation, and validation.
+    dsr_framework: >
+      DSR-specific operationalization layer that applies and extends the
+      protocol for DSR artifact ontology, transparency, evaluation,
+      contribution positioning, review, release, and reuse.
+    interpretation_rule: >
+      Evidence from the DSR Framework pilot may validate coherence,
+      structural adequacy, and reviewability of the Documentation Protocol,
+      but it must not be treated as independent empirical validation of
+      downstream utility.
+  validation_boundary:
+    included:
+      - l2_reviewability
+      - l3_exercisability
+      - l4_reusability_indicators
+      - repository_structure
+      - source_of_truth_and_human_facing_documentation_discipline
+      - artifact_package_inventory_and_metadata
+      - dsr_lifecycle_contribution_evaluation_and_transparency_support
+      - retained_decision_review_evaluation_release_and_preservation_records
+      - overclaiming_controls
+    excluded:
+      - empirical_downstream_utility_validation
+      - independent_external_semantic_review
+      - external_adoption_evidence
+      - l5_archival_publication_ready_closure
+      - proof_that_future_artifacts_will_be_validated_by_using_the_protocol
+  evidence_scope:
+    documentation_protocol_evidence:
+      - README.md
+      - manifest.yaml
+      - metadata.yaml
+      - specs/
+      - templates/
+      - checklists/
+      - schemas/
+      - records/
+      - CITATION.cff
+      - .zenodo.json
+      - codemeta.json
+    dsr_framework_evidence:
+      - README.md
+      - manifest.yaml
+      - metadata.yaml
+      - artifact-profile.yaml
+      - package-inventory.yaml
+      - conformance-declaration.yaml
+      - specs/
+      - models/
+      - vocabularies/
+      - templates/
+      - checklists/
+      - schemas/
+      - docs/protocol/
+      - records/
+      - crosswalks/
+      - examples/
+      - scripts/validate-package.py
+  validation_questions:
+    - question_id: vq_001_repository_architecture
+      question: Can the protocol generate a coherent repository architecture?
+      result: pass
+      evidence_inspected:
+        - DSR Framework README.md repository map
+        - DSR Framework manifest.yaml repository architecture section
+        - DSR Framework package-inventory.yaml
+        - DSR Framework canonical directory structure
+      rationale: >
+        The pilot repository has a coherent root-file set, canonical
+        directories, package-control files, structured specifications,
+        reusable operating material, records, crosswalks, examples, and
+        validation automation.
+      limitation: single_repository_case
+    - question_id: vq_002_source_of_truth_discipline
+      question: Can the protocol distinguish source-of-truth YAML from explanatory Markdown?
+      result: pass
+      evidence_inspected:
+        - DSR Framework manifest.yaml
+        - DSR Framework metadata.yaml
+        - DSR Framework artifact-profile.yaml
+        - DSR Framework package-inventory.yaml
+        - DSR Framework specs/
+        - DSR Framework docs/protocol/
+      rationale: >
+        The pilot preserves structured YAML and JSON-compatible files as
+        controlled records while using Markdown for repository orientation
+        and human-facing guidance.
+      limitation: markdown_generation_from_yaml_is_not_yet_automated_by_the_protocol
+    - question_id: vq_003_dsr_transparency_support
+      question: Can the protocol support DSR transparency dimensions?
+      result: pass_with_limitations
+      evidence_inspected:
+        - DSR Framework records/dsr-transparency/record-dsr-transparency-crosswalk-0001.yaml
+        - DSR Framework templates/
+        - DSR Framework checklists/
+        - DSR Framework docs/protocol/
+      rationale: >
+        The pilot operationalizes process, problem-space, solution-space,
+        build, evaluation, and contribution transparency. The Documentation
+        Protocol now contains matching first-class transparency fields and
+        checklist hooks, but the DSR-specific implementation remains richer
+        in the DSR Framework repository.
+      limitation: dsr_specific_operational_detail_lives_in_the_pilot_repository
+    - question_id: vq_004_evidence_retention
+      question: Can the protocol preserve decision, review, evaluation, and release evidence?
+      result: pass
+      evidence_inspected:
+        - DSR Framework records/design-decisions/
+        - DSR Framework records/contributions/
+        - DSR Framework records/evaluations/
+        - DSR Framework records/reviews/
+        - DSR Framework records/releases/
+        - DSR Framework records/preservation/
+      rationale: >
+        The pilot retains review packets, release records, metadata freeze
+        records, contribution-positioning records, evaluation records,
+        design-decision records, and preservation evidence.
+      limitation: retained_records_are_self_application_records_unless_explicitly_marked_external
+    - question_id: vq_005_overclaiming_control
+      question: Can the protocol prevent overclaiming?
+      result: pass
+      evidence_inspected:
+        - DSR Framework README.md repository status and limitations
+        - DSR Framework conformance-declaration.yaml
+        - DSR Framework records/releases/
+        - DSR Framework records/preservation/
+      rationale: >
+        The pilot distinguishes L4 reusable-stable status from L5
+        archival/publication-ready closure and explicitly states that the
+        framework does not prove empirical improvement of DSR outcomes or
+        validate downstream artifacts automatically.
+      limitation: external_review_is_still_needed_before_any_stronger_validation_claim
+    - question_id: vq_006_followability_without_local_context
+      question: Can another user follow the protocol without local context?
+      result: pass_with_limitations
+      evidence_inspected:
+        - DSR Framework README.md
+        - DSR Framework templates/
+        - DSR Framework checklists/
+        - DSR Framework schemas/
+        - DSR Framework examples/
+        - DSR Framework scripts/validate-package.py
+      rationale: >
+        The pilot includes public orientation, templates, checklists, schemas,
+        examples, and validation automation. This supports followability, but
+        the claim remains limited until an external user or reviewer applies
+        the protocol without maintainer guidance.
+      limitation: no_independent_reinstantiation_or_external_human_review_yet
+  findings:
+    - finding_id: finding_001
+      type: strength
+      summary: >
+        The pilot demonstrates that the protocol can govern a complex,
+        multi-directory artifact package with structured metadata, records,
+        review evidence, release controls, and reusable operating materials.
+    - finding_id: finding_002
+      type: strength
+      summary: >
+        The pilot confirms that DSR-specific transparency, contribution
+        positioning, evaluation planning, and overclaiming controls are
+        compatible with the Documentation Protocol architecture.
+    - finding_id: finding_003
+      type: limitation
+      summary: >
+        The pilot is a self-application case and cannot substitute for
+        independent external review, empirical downstream utility evidence, or
+        adoption evidence.
+    - finding_id: finding_004
+      type: improvement_need
+      summary: >
+        Future protocol validation should record pilot lessons explicitly:
+        what the pilot required the protocol to add, clarify, relax, automate,
+        or defer.
+  disposition:
+    decision: retain_as_public_draft_validation_evidence
+    conformance_interpretation: >
+      Supports Documentation Protocol movement toward a v0.2.0 validated
+      draft after additional pilot and review evidence. Does not justify a
+      stable or L5 claim.
+    release_implication: >
+      Keep the Documentation Protocol status as public draft release --
+      usable, citable, but still under active validation.
+  next_validation_needed:
+    - second_internal_pilot_beyond_dsr_framework
+    - non_dsr_artifact_pilot
+    - independent_external_reviewer_pass
+    - time_bounded_reinstantiation_test
+    - l5_readiness_review_after_preservation_registry_and_external_review_closure
+  related_files:
+    - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+    - docs/validation/dsr-framework-pilot-validation.md
+    - checklists/pilot-learning-checklist.yaml
+    - records/roadmap/record-next-validation-tier-0001.yaml

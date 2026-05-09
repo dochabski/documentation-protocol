@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: information_item_architecture
   title: Information Item Architecture
@@ -7,7 +7,7 @@ product:
     document control rules, record classes, and retention logic used by the
     protocol.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - isos_and_more
   - md_guides

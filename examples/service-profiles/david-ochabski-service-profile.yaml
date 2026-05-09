@@ -1,0 +1,255 @@
+# SPDX-License-Identifier: CC0-1.0
+service_integration_profile:
+  profile_id: david_ochabski_service_profile_v0_2_0
+  profile_label: David Ochabski Current Quality Artifact Service Ecosystem
+  normative_status: non_normative_example
+  artifact_or_package_id: documentation_protocol_and_dsr_quality_artifacts
+  target_conformance_level: l5_archival_publication_ready
+  version: 0.2.0
+  status: draft_example
+  owner_or_maintainer: David Ochabski
+  governing_rule: This example does not require other users to use these platforms.
+  disclosure_policy:
+    contains_no_credentials: true
+    contains_no_private_tokens: true
+    contains_no_restricted_links: true
+    public_safe: true
+    notes: Public-safe service names only; account-private details belong in private records.
+  branch_policy:
+    feature_branch_used_for_implementation: feature/service-integration-profile-bookmarks-v2
+    long_lived_branch_used_for_service_variant: false
+    variant_storage_location: examples/service-profiles/
+  service_roles:
+  - role_id: working_storage
+    role_obligation: recommended
+    integration_status: used
+    selected_services:
+    - service_name: Dropbox
+      service_type: cloud_storage
+      service_url: ''
+    notes: Working files, source material staging, exports, and backups.
+  - role_id: source_control_and_change_management
+    role_obligation: highly_recommended
+    integration_status: used
+    selected_services:
+    - service_name: GitHub
+      service_type: source_control
+      service_url: https://github.com/dochabski/documentation-protocol
+    - service_name: GitHub
+      service_type: source_control
+      service_url: https://github.com/dochabski/dsr-framework
+    notes: Primary working hub for protocol and DSR framework artifacts.
+  - role_id: persistent_contributor_identity
+    role_obligation: recommended
+    integration_status: used
+    selected_services:
+    - service_name: ORCID
+      service_type: persistent_contributor_identifier
+      service_url: https://orcid.org/0009-0000-9117-0651
+  - role_id: doi_archival_deposit
+    role_obligation: highly_recommended
+    integration_status: planned
+    selected_services:
+    - service_name: Zenodo
+      service_type: doi_archive
+      service_url: ''
+    - service_name: Figshare
+      service_type: doi_archive_or_supplement_repository
+      service_url: ''
+    - service_name: Mendeley Data
+      service_type: data_repository
+      service_url: ''
+    - service_name: OSF
+      service_type: project_archive_or_component_repository
+      service_url: ''
+    - service_name: Dryad
+      service_type: data_repository_or_doi_archive
+      service_url: ''
+    - service_name: HAL
+      service_type: open_archive
+      service_url: ''
+    notes: Use the repository that fits the artifact type; do not treat GitHub alone as archive.
+  - role_id: open_project_wrapper
+    role_obligation: recommended
+    integration_status: planned
+    selected_services:
+    - service_name: OSF
+      service_type: research_project_wrapper
+      service_url: ''
+  - role_id: metadata_and_indexing
+    role_obligation: recommended
+    integration_status: used
+    selected_services:
+    - service_name: DataCite
+      service_type: doi_metadata_infrastructure
+      service_url: ''
+    - service_name: OpenAlex
+      service_type: scholarly_index
+      service_url: ''
+    - service_name: ORCID
+      service_type: contributor_identifier_graph
+      service_url: https://orcid.org/0009-0000-9117-0651
+    - service_name: Google Scholar
+      service_type: scholarly_profile_and_index
+      service_url: ''
+    - service_name: Crossref
+      service_type: doi_metadata_registration_infrastructure
+      service_url: ''
+    - service_name: Research Organization Registry
+      service_type: organization_identifier_registry
+      service_url: ''
+    - service_name: CITATION.cff
+      service_type: repository_metadata_file
+      service_url: ''
+    - service_name: codemeta.json
+      service_type: repository_metadata_file
+      service_url: ''
+    notes: Crossref, DataCite, and ROR are infrastructure candidates; they should not be framed as mandatory account requirements
+      for ordinary users.
+  - role_id: identifier_registration_infrastructure
+    role_obligation: recommended
+    integration_status: planned
+    selected_services:
+    - service_name: DataCite
+      service_type: doi_registration_metadata_infrastructure
+      service_url: ''
+    - service_name: Crossref
+      service_type: doi_registration_metadata_infrastructure
+      service_url: ''
+    - service_name: Research Organization Registry
+      service_type: organization_identifier_registry
+      service_url: ''
+    - service_name: ORCID
+      service_type: contributor_identifier_registry
+      service_url: https://orcid.org/0009-0000-9117-0651
+    notes: Use direct membership only when appropriate; otherwise rely on repository or publisher integrations.
+  - role_id: scholarly_discovery_profile
+    role_obligation: optional
+    integration_status: used
+    selected_services:
+    - service_name: Google Scholar
+      service_type: scholarly_profile
+      service_url: ''
+    - service_name: ResearchGate
+      service_type: research_network
+      service_url: ''
+    - service_name: Academia.edu
+      service_type: research_network
+      service_url: ''
+    notes: Public discoverability layer; canonical preservation remains in DOI-backed repositories and release records.
+  - role_id: data_or_supplement_repository
+    role_obligation: recommended
+    integration_status: planned
+    selected_services:
+    - service_name: Mendeley Data
+      service_type: data_repository
+      service_url: ''
+    - service_name: Figshare
+      service_type: supplement_repository
+      service_url: ''
+    - service_name: Zenodo
+      service_type: general_research_repository
+      service_url: ''
+    - service_name: Dryad
+      service_type: data_repository
+      service_url: ''
+  - role_id: preprint_or_paper_dissemination
+    role_obligation: optional
+    integration_status: planned
+    selected_services:
+    - service_name: SSRN
+      service_type: preprint_platform
+      service_url: ''
+    - service_name: arXiv
+      service_type: preprint_platform
+      service_url: ''
+    - service_name: Octopus
+      service_type: open_research_publication_platform
+      service_url: ''
+    - service_name: HAL
+      service_type: open_archive
+      service_url: ''
+    - service_name: bioRxiv
+      service_type: disciplinary_preprint_server
+      service_url: ''
+    - service_name: medRxiv
+      service_type: disciplinary_preprint_server
+      service_url: ''
+    - service_name: ResearchGate
+      service_type: research_network
+      service_url: ''
+    - service_name: Academia.edu
+      service_type: research_network
+      service_url: ''
+    notes: Use discipline-appropriate venues; do not imply that all artifact packages should appear on all preprint servers.
+  - role_id: open_peer_review_and_recommendation
+    role_obligation: optional
+    integration_status: planned
+    selected_services:
+    - service_name: Peer Community In
+      service_type: open_peer_review_or_recommendation_venue
+      service_url: ''
+    notes: Optional route for open review or recommendation of preprints or related research outputs.
+  - role_id: oer_or_training_dissemination
+    role_obligation: optional
+    integration_status: planned
+    selected_services:
+    - service_name: OER Commons
+      service_type: open_educational_resource_repository
+      service_url: ''
+    - service_name: VIVA Open
+      service_type: open_education_hub
+      service_url: ''
+    - service_name: MERLOT
+      service_type: learning_object_repository
+      service_url: ''
+  - role_id: professional_public_communication
+    role_obligation: optional
+    integration_status: planned
+    selected_services:
+    - service_name: LinkedIn
+      service_type: professional_network
+      service_url: ''
+    - service_name: Substack
+      service_type: newsletter_or_longform_essay_platform
+      service_url: ''
+    - service_name: X
+      service_type: shortform_public_communication
+      service_url: ''
+    - service_name: YouTube
+      service_type: video_platform
+      service_url: ''
+    - service_name: Instagram
+      service_type: visual_public_communication
+      service_url: ''
+    - service_name: Spotify for Creators
+      service_type: podcast_or_video_distribution
+      service_url: ''
+  - role_id: open_science_community_and_sustainability
+    role_obligation: optional
+    integration_status: planned
+    selected_services:
+    - service_name: data.org Funding Opportunities
+      service_type: funding_opportunity_discovery
+      service_url: ''
+    - service_name: FORCE11
+      service_type: open_science_community_or_standards_venue
+      service_url: ''
+    - service_name: SCOSS
+      service_type: open_science_infrastructure_sustainability_coalition
+      service_url: ''
+    notes: Use for awareness, funding, standards, and sustainability records; not a required artifact-publication channel.
+  - role_id: long_form_publication
+    role_obligation: optional
+    integration_status: planned
+    selected_services:
+    - service_name: Amazon Kindle Direct Publishing
+      service_type: self_publishing_platform
+      service_url: ''
+  validation:
+    warnings:
+    - Public URLs for planned services are intentionally blank until public releases or project pages exist.
+    - Bookmark labels that point to account dashboards or submission consoles should be converted to public landing-page,
+      publication, DOI, or identifier evidence before public release.
+    errors: []
+    last_validation_result: not_checked

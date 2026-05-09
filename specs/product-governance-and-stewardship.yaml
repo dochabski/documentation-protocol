@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: governance_and_stewardship
   title: Governance and Stewardship Model
@@ -7,7 +7,7 @@ product:
     responsibilities, maintenance, succession, and change control for the
     documentation protocol and repositories governed by it.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - md_guides
   - isos_and_more

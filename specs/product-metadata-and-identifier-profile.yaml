@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: metadata_and_identifier_profile
   title: Metadata and Persistent Identifier Profile
@@ -7,7 +7,7 @@ product:
     identity, related artifact, and registry metadata requirements for
     protocol-governed packages.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - md_guides
   - data_and_information
@@ -66,6 +66,9 @@ sections:
         - id: repository_url
           type: uri
           required: true
+        - id: service_integration_profile
+          type: uri_or_path
+          required: recommended_for_l4_l5
         - id: archive_doi
           type: doi
           required: required_for_publication_release
@@ -109,6 +112,15 @@ sections:
         - archive_doi identifies the immutable archival release.
         - citation metadata resolves authorship and preferred citation.
         - related identifiers connect publications, artifacts, datasets, and software.
+      identifier_and_indexing_examples:
+        - DataCite
+        - Crossref
+        - Research Organization Registry
+        - ORCID
+        - OpenAlex
+        - Google Scholar
+        - CITATION.cff
+        - codemeta.json
       downstream_artifact_licensing_recommendation:
         protocol_license_scope: The Documentation Protocol repository license does not automatically apply to artifacts created with the protocol.
         required_artifact_action: Each downstream artifact must declare its own license.
@@ -145,6 +157,8 @@ sections:
         - Metadata should identify dependencies and runtime environment for exercisable artifacts.
         - Related artifacts and publications should be cross-linked.
         - Metadata should recommend highly open licenses without making CC0-1.0 or Apache-2.0 mandatory for downstream artifacts.
+        - Metadata should link to the service integration profile when service roles support citation, preservation, registry submission, dissemination, or public communication.
+        - Identifier and indexing metadata should use appropriate public infrastructure examples such as DataCite, Crossref, ROR, ORCID, OpenAlex, Google Scholar, CITATION.cff, and codemeta.json without making any one service universally required.
       may:
         - Draft packages may use a placeholder archive DOI status of not_yet_assigned.
         - Projects may include discipline-specific metadata extensions.
@@ -230,6 +244,7 @@ sections:
         - quality_conformance_and_review_model
         - artifact_package_specification
         - publication_and_registry_model
+        - service_integration_profile
         - automation_and_validation_model
       trace_links:
         - release_to_identifier
@@ -255,6 +270,7 @@ sections:
         - compare version across metadata files.
         - detect missing license.
         - require archive DOI for L5 release.
+        - warn when recommended service profile links are missing for L4 or L5 packages.
   - id: template_or_schema_implications
     title: Template or Schema Implications
     purpose: Define schema fields for metadata validation.

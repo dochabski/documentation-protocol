@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: templates_and_checklists
   title: Templates and Checklists
@@ -6,7 +6,7 @@ product:
     Define reusable templates, checklists, and schema implications that make
     the protocol easy to apply consistently across projects.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - md_guides
   - isos_and_more
@@ -22,6 +22,7 @@ dependencies:
   - quality_conformance_and_review_model
   - artifact_package_specification
   - publication_and_registry_model
+  - service_integration_profile
 sections:
   - id: identity_and_purpose
     title: Identity and Purpose
@@ -33,6 +34,8 @@ sections:
         - review_record_template
         - release_record_template
         - contribution_positioning_record_template
+        - service_integration_profile_template
+        - service_integration_record_template
         - checklist_suite
         - schema_suite
       users:
@@ -58,6 +61,10 @@ sections:
           supports: [publication_and_registry_model]
         - path: templates/traceability-matrix-template.yaml
           supports: [information_item_architecture, artifact_package_specification]
+        - path: templates/service-integration-profile-template.yaml
+          supports: [service_integration_profile, metadata_and_identifier_profile, publication_and_registry_model]
+        - path: templates/service-integration-record-template.yaml
+          supports: [service_integration_profile, publication_and_registry_model, quality_conformance_and_review_model]
       checklists:
         - path: checklists/artifact-package-readiness-checklist.yaml
           supports: [artifact_package_specification]
@@ -69,6 +76,10 @@ sections:
           supports: [publication_and_registry_model]
         - path: checklists/metadata-checklist.yaml
           supports: [metadata_and_identifier_profile]
+        - path: checklists/service-integration-readiness-checklist.yaml
+          supports: [service_integration_profile, publication_and_registry_model, automation_and_validation_model]
+        - path: checklists/pilot-learning-checklist.yaml
+          supports: [implementation_roadmap, quality_conformance_and_review_model]
   - id: normative_requirements
     title: Normative Requirements
     purpose: Define template and checklist requirements.
@@ -99,13 +110,18 @@ sections:
         - templates/review-record-template.yaml
         - templates/release-record-template.yaml
         - templates/traceability-matrix-template.yaml
+        - templates/service-integration-profile-template.yaml
+        - templates/service-integration-record-template.yaml
         - checklists/artifact-package-readiness-checklist.yaml
         - checklists/dsr-transparency-crosswalk-checklist.yaml
         - checklists/review-checklist.yaml
         - checklists/release-publication-checklist.yaml
         - checklists/metadata-checklist.yaml
+        - checklists/service-integration-readiness-checklist.yaml
+        - checklists/pilot-learning-checklist.yaml
         - schemas/artifact-package.schema.json
         - schemas/metadata-record.schema.json
+        - schemas/service-integration-profile.schema.json
   - id: workflow
     title: Workflow and Operating Procedure
     purpose: Define template use and maintenance.
@@ -139,6 +155,8 @@ sections:
         - Required fields are explicit and validation-ready.
         - Each checklist item states evidence required.
         - DSR templates expose problem-space, solution-space, build, evaluation, contribution, and transparency fields.
+        - Service integration templates and checklists recommend service roles without requiring named platforms.
+        - Pilot learning checks capture what downstream pilots reveal the protocol should add, clarify, relax, automate, defer, or retain as a limitation.
         - Schema files validate the core template fields they are meant to control.
       evidence_required:
         - template_files
@@ -167,6 +185,7 @@ sections:
         templates: templates/
         checklists: checklists/
         schemas: schemas/
+        vocabularies: vocabularies/
       anti_patterns:
         - editing templates inside project records without preserving the source template.
         - checklist completion with unchecked evidence.

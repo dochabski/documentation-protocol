@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: publication_and_registry_model
   title: Publication and Registry Model
@@ -7,7 +7,7 @@ product:
     citation, registry submission, publication appendix material, and
     preservation readiness for protocol-governed artifacts.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - md_guides
   - isos_and_more
@@ -87,6 +87,7 @@ sections:
         - Practitioner-facing releases should include demonstration material, tutorials, adaptation notes, or videos when those aids are needed for responsible use.
         - Registry entries should link repository, archive, citation, and related publication.
         - Publication and registry metadata should document any AI indexing/training preference and any constraints preventing maximally open licensing.
+        - Publication-ready packages should review the service integration profile to confirm repository, archive, citation, registry, project-wrapper, and communication links are consistent with release metadata.
       may:
         - Draft releases may be tagged without archival deposit when they are not presented as publication-ready.
         - Projects may use multiple registries when metadata remains consistent.
@@ -117,6 +118,8 @@ sections:
         - registry_submission_record
         - preservation_record
         - practitioner_communication_record
+      recommended_records:
+        - service_integration_record
       retention_expectations:
         - Preserve release, archive, registry, citation, and preservation records indefinitely.
   - id: workflow
@@ -162,6 +165,7 @@ sections:
         - Registry and publication appendix match release metadata.
         - Practitioner-facing materials are present when practice contribution or adaptation is claimed.
         - DSR transparency and contribution-positioning summaries match the underlying records.
+        - Service integration profile links are reviewed for publication-ready packages when applicable.
       evidence_required:
         - release_record
         - metadata_freeze_record
@@ -170,6 +174,7 @@ sections:
         - registry_submission_record
         - contribution_positioning_record
         - dsr_transparency_crosswalk
+        - service_integration_profile_or_record
   - id: traceability
     title: Traceability
     purpose: Link release to registry and publication claims.
@@ -179,6 +184,7 @@ sections:
         - artifact_package_specification
         - quality_conformance_and_review_model
       downstream_outputs:
+        - service_integration_profile
         - templates_and_checklists
         - automation_and_validation_model
         - implementation_roadmap
@@ -200,6 +206,7 @@ sections:
         registry_records: records/registry/
         publication_appendix: docs/protocol/artifact-appendix.md
         practitioner_guidance: docs/protocol/practitioner-guide.md
+        service_profiles: examples/service-profiles/
       anti_patterns:
         - publishing a release from an unreviewed branch.
         - updating metadata after archive deposit without a new record.

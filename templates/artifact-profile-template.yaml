@@ -12,6 +12,14 @@ artifact_profile:
   orcid_ids: []
   contributors: []
   repository_url: ""
+  service_integration_profile:
+    profile_path: ""
+    profile_status: not_started
+    recommended_roles_reviewed: false
+    non_normative_example_used: ""
+    service_integration_record_ids: []
+    named_services_required_for_conformance: false
+    substitutions_or_omissions_documented: false
   license: ""
   license_recommendation:
     protocol_license_applies_to_artifact: false

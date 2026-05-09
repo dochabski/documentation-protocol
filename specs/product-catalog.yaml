@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 products:
   - id: protocol_foundation
     title: Protocol Foundation and Scope
@@ -54,6 +54,12 @@ products:
     depends_on: [metadata_and_identifier_profile, artifact_package_specification, quality_conformance_and_review_model]
     source_basis: [md_guides, isos_and_more, data_and_information]
     product_file: specs/product-publication-and-registry-model.yaml
+  - id: service_integration_profile
+    title: Recommended Service Integration Profile
+    purpose: Define nonblocking, vendor-neutral service roles, candidate services, evidence patterns, substitutions, omissions, and non-normative example profiles for artifact-package service ecosystems.
+    depends_on: [protocol_foundation, repository_architecture, metadata_and_identifier_profile, publication_and_registry_model]
+    source_basis: [md_guides, data_and_information, protocol_project_decision]
+    product_file: specs/product-service-integration-profile.yaml
   - id: templates_and_checklists
     title: Templates and Checklists
     purpose: Produce reusable templates, checklists, and schema implications for applying the protocol consistently.
@@ -67,12 +73,13 @@ products:
       - quality_conformance_and_review_model
       - artifact_package_specification
       - publication_and_registry_model
+      - service_integration_profile
     source_basis: [md_guides, isos_and_more, dsr_corpus, data_and_information]
     product_file: specs/product-templates-and-checklists.yaml
   - id: automation_and_validation_model
     title: Automation and Validation Model
     purpose: Define schema validation, metadata checks, link checks, package checks, CI gates, and release validation automation.
-    depends_on: [repository_architecture, metadata_and_identifier_profile, quality_conformance_and_review_model, templates_and_checklists]
+    depends_on: [repository_architecture, metadata_and_identifier_profile, quality_conformance_and_review_model, service_integration_profile, templates_and_checklists]
     source_basis: [md_guides, data_and_information, isos_and_more]
     product_file: specs/product-automation-and-validation-model.yaml
   - id: implementation_roadmap
@@ -88,6 +95,7 @@ products:
       - quality_conformance_and_review_model
       - artifact_package_specification
       - publication_and_registry_model
+      - service_integration_profile
       - templates_and_checklists
       - automation_and_validation_model
     source_basis: [md_guides, isos_and_more, dsr_corpus, data_and_information]

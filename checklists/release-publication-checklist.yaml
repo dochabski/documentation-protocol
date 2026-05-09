@@ -26,6 +26,9 @@ release_publication_checklist:
     - id: practitioner-communication-ready
       question: When practice adoption or adaptation is claimed, are practitioner-facing guidance, demonstration material, tutorials, adaptation notes, or videos present or explicitly deferred?
       evidence_required: [practitioner-guide.md, adaptation-notes.md, release-record.yaml]
+    - id: service-integration-profile-reviewed
+      question: For L4/L5 packages, has the service integration profile been reviewed, with DOI archive/equivalent preservation and metadata/indexing roles addressed or deferred with rationale?
+      evidence_required: [service-integration-profile.yaml, service-integration-readiness-checklist.yaml, preservation-record.yaml]
     - id: registry-ready
       question: Does registry metadata match release metadata?
       evidence_required: [registry-submission-record.yaml, release-record.yaml]

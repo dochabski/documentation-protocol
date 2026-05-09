@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: CC0-1.0
+service_integration_record:
+  record_id: ''
+  related_service_profile_id: ''
+  record_date: ''
+  maintainer: ''
+  change_type: initial_profile | update | substitution | omission | validation
+  service_role_id: ''
+  selected_service_name: ''
+  integration_status: planned
+  evidence:
+    public_url: ''
+    doi_or_identifier: ''
+    repository_path: ''
+    record_path: ''
+    notes: ''
+  risk_checks:
+    contains_credentials: false
+    contains_private_account_url: false
+    requires_private_access_for_review: false
+  review_status: pending

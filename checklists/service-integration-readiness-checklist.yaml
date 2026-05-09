@@ -1,0 +1,72 @@
+# SPDX-License-Identifier: CC0-1.0
+service_integration_readiness_checklist:
+  purpose: Check whether a package has considered recommended service roles without making named services mandatory.
+  checks:
+  - id: service-role-neutrality
+    question: Does the profile recommend service roles rather than requiring named platforms?
+    severity: error_if_failed
+    evidence_required:
+    - service-role-vocabulary.yaml
+    - service-integration-profile.yaml
+  - id: no-secrets
+    question: Does the public profile avoid tokens, passwords, private account URLs, submission-console URLs, and credentials?
+    severity: error_if_failed
+    evidence_required:
+    - service-integration-profile.yaml
+    - secret_scan_result
+  - id: source-control-role
+    question: Is there a source-control or change-management service/equivalent, or a rationale for omission?
+    severity: warning_if_missing
+    evidence_required:
+    - repository_url
+    - substitution_or_omission_rationale
+  - id: doi-archive-role
+    question: For L5 packages, is there a DOI-backed archive/equivalent preservation plan and is GitHub not treated as the
+      sole archive?
+    severity: error_if_l5_failed
+    evidence_required:
+    - archive_doi_or_plan
+    - preservation_record
+  - id: metadata-identifiers
+    question: Are contributor, work, organization, DOI, and indexing identifiers documented where available?
+    severity: warning_if_missing
+    evidence_required:
+    - orcid_id
+    - doi_or_identifier
+    - ror_id_or_organization_note
+    - indexed_record_url
+  - id: preprint-dissemination-optional
+    question: If preprint, open-publication, or paper dissemination services are used, are version and moderation/screening
+      status documented?
+    severity: info
+    evidence_required:
+    - preprint_identifier
+    - version_note
+    - screening_or_moderation_status
+  - id: peer-review-optional
+    question: If open peer review or recommendation is used, is the reviewed version and recommendation/review URL documented?
+    severity: info
+    evidence_required:
+    - review_url
+    - version_reviewed
+    - review_status
+  - id: data-repository-fit
+    question: If datasets or supplements exist, is a data or supplement repository/equivalent selected or explicitly deferred?
+    severity: warning_if_applicable_missing
+    evidence_required:
+    - dataset_doi_or_plan
+    - data_license
+    - access_conditions
+  - id: sustainability-community-optional
+    question: If funding, community, standards, or sustainability services are tracked, are they framed as optional support
+      rather than conformance requirements?
+    severity: info
+    evidence_required:
+    - sustainability_note
+    - community_url_or_funding_url
+  - id: personal-profile-location
+    question: Are user-specific service choices stored as non-normative example profiles rather than long-lived protocol branches?
+    severity: warning_if_failed
+    evidence_required:
+    - examples/service-profiles/
+    - branch_policy

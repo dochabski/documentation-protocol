@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: CC0-1.0
+service_integration_profile:
+  profile_id: ''
+  profile_label: ''
+  normative_status: project_profile
+  artifact_or_package_id: ''
+  target_conformance_level: ''
+  version: 0.1.0
+  status: draft
+  owner_or_maintainer: ''
+  governing_rule: Named services are candidates, not universal conformance requirements.
+  disclosure_policy:
+    contains_no_credentials: true
+    contains_no_private_tokens: true
+    contains_no_restricted_links: true
+    public_safe: true
+    notes: ''
+  service_roles:
+  - role_id: ''
+    role_obligation: ''
+    integration_status: planned
+    selected_services:
+    - service_name: ''
+      service_type: ''
+      service_url: ''
+      public_identifier: ''
+      evidence_note: ''
+    substitution_or_omission_rationale: ''
+    evidence_records: []
+    notes: ''
+  validation:
+    warnings: []
+    errors: []
+    last_validation_result: not_checked

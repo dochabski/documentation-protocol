@@ -1,0 +1,84 @@
+# SPDX-License-Identifier: CC0-1.0
+roadmap_record:
+  record_id: record-next-validation-tier-0001
+  title: Next validation tier after DSR Framework pilot
+  status: retained_followup_plan
+  date: "2026-05-05"
+  current_validation_state:
+    completed_pilot:
+      name: DSR Framework pilot application
+      validation_record: records/validations/record-validation-0001-dsr-framework-pilot.yaml
+      result: pass_with_public_draft_self_application_limitations
+    documentation_protocol_status: public_draft_release_usable_citable_under_active_validation
+    strongest_supported_claim: >
+      The Documentation Protocol is coherent, structurally adequate,
+      reviewable, traceable, and usable for at least one complex DSR artifact
+      package pilot.
+    unsupported_claims:
+      - stable_protocol_status
+      - empirical_downstream_utility
+      - external_adoption
+      - independent_external_semantic_validation
+      - l5_archival_publication_ready_status
+  recommended_next_tiers:
+    - tier_id: tier_001_second_internal_pilot
+      title: Second internal pilot
+      purpose: Test whether the protocol generalizes beyond the DSR Framework pilot.
+      candidate_artifact_type: another_structured_research_or_design_artifact_repository
+      evidence_to_retain:
+        - pilot_plan
+        - completed_artifact_profile
+        - package_inventory
+        - checklist_results
+        - review_record
+        - pilot_learning_checklist
+      priority: high
+    - tier_id: tier_002_non_dsr_pilot
+      title: Non-DSR artifact pilot
+      purpose: Test whether the protocol works outside explicitly DSR-specific packages.
+      candidate_artifact_type: educational_quality_artifact_or_policy_artifact_or_data_dictionary
+      evidence_to_retain:
+        - tailoring_record
+        - completed_templates
+        - package_readiness_checklist
+        - review_record
+        - limitations_record
+      priority: high
+    - tier_id: tier_003_external_reviewer_pass
+      title: Independent external reviewer pass
+      purpose: Test whether another reviewer can understand and assess a package without maintainer context.
+      candidate_artifact_type: reviewer_checklist_and_scored_review
+      evidence_to_retain:
+        - reviewer_identity_or_role_description
+        - review_scope
+        - scored_findings
+        - maintainer_response
+        - unresolved_limitations
+      priority: high
+    - tier_id: tier_004_reinstantiation_test
+      title: Time-bounded re-instantiation test
+      purpose: Test whether a user can create a new package from the protocol templates.
+      candidate_artifact_type: new_minimal_artifact_package_created_from_templates
+      evidence_to_retain:
+        - task_prompt
+        - elapsed_time_or_effort_estimate
+        - generated_package
+        - errors_or_ambiguities
+        - pilot_learning_checklist
+      priority: medium
+    - tier_id: tier_005_l5_readiness_review
+      title: L5 readiness review
+      purpose: Test archival, registry, preservation, and external review closure.
+      candidate_artifact_type: release_candidate_with_preservation_and_registry_evidence
+      prerequisites:
+        - independent_external_review_completed
+        - preservation_closure_completed
+        - registry_publication_completed
+        - archival_fixity_evidence_completed
+        - l5_release_approval_record_completed
+      priority: later
+  immediate_recommendation: >
+    Do not advance the Documentation Protocol to stable or L5 status from the
+    DSR Framework pilot alone. Use the DSR Framework pilot as retained
+    evidence for public-draft coherence and plan the next validation tier
+    around a non-DSR or otherwise independent pilot plus external review.

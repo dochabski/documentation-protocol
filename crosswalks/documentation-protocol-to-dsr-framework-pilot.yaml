@@ -1,0 +1,167 @@
+# SPDX-License-Identifier: CC0-1.0
+crosswalk:
+  crosswalk_id: documentation-protocol-to-dsr-framework-pilot
+  title: Documentation Protocol to DSR Framework Pilot Crosswalk
+  status: retained_public_draft_mapping
+  date: "2026-05-05"
+  validation_record: records/validations/record-validation-0001-dsr-framework-pilot.yaml
+  protocol_target:
+    repository_url: https://github.com/dochabski/documentation-protocol
+    release_reference: v0.1.1
+    commit: 80aec1aab1f1317e258fbce12e02419bbe9b6ca1
+  pilot_artifact:
+    repository_url: https://github.com/dochabski/dsr-framework
+    release_reference: v1.2.0
+    commit: 080b634acd256d5be87baf7bb9533d89d1a1c1c7
+  interpretation_rule: >
+    A mapped status means the DSR Framework pilot provides structural,
+    conceptual, or reviewability evidence for the corresponding Documentation
+    Protocol area. It does not mean the protocol has been externally validated
+    or that future downstream artifacts inherit any validation claim.
+  mappings:
+    - mapping_id: map_001_repository_architecture
+      protocol_area: repository_architecture
+      protocol_files:
+        - specs/product-repository-architecture.yaml
+        - manifest.yaml
+        - README.md
+      dsr_framework_evidence:
+        - README.md
+        - manifest.yaml
+        - package-inventory.yaml
+        - conformance-declaration.yaml
+      status: mapped
+      validation_question_ids:
+        - vq_001_repository_architecture
+      limitation: one_repository_case
+    - mapping_id: map_002_source_of_truth_and_human_rendering
+      protocol_area: information_item_architecture
+      protocol_files:
+        - specs/product-information-item-architecture.yaml
+        - docs/protocol/index.md
+      dsr_framework_evidence:
+        - manifest.yaml
+        - metadata.yaml
+        - artifact-profile.yaml
+        - package-inventory.yaml
+        - specs/
+        - docs/protocol/
+      status: mapped
+      validation_question_ids:
+        - vq_002_source_of_truth_discipline
+      limitation: automated_markdown_rendering_not_yet_exercised
+    - mapping_id: map_003_metadata_and_identifier_profile
+      protocol_area: metadata_and_identifier_profile
+      protocol_files:
+        - specs/product-metadata-and-identifier-profile.yaml
+        - metadata.yaml
+        - CITATION.cff
+        - .zenodo.json
+        - codemeta.json
+      dsr_framework_evidence:
+        - metadata.yaml
+        - CITATION.cff
+        - .zenodo.json
+        - codemeta.json
+        - manifest.yaml
+      status: mapped
+      validation_question_ids:
+        - vq_001_repository_architecture
+        - vq_005_overclaiming_control
+      limitation: l5_archival_publication_ready_status_not_claimed
+    - mapping_id: map_004_artifact_package_specification
+      protocol_area: artifact_package_specification
+      protocol_files:
+        - specs/product-artifact-package-specification.yaml
+        - templates/artifact-profile-template.yaml
+        - checklists/artifact-package-readiness-checklist.yaml
+      dsr_framework_evidence:
+        - artifact-profile.yaml
+        - package-inventory.yaml
+        - conformance-declaration.yaml
+        - examples/
+      status: mapped
+      validation_question_ids:
+        - vq_001_repository_architecture
+        - vq_006_followability_without_local_context
+      limitation: external_reuse_not_yet_observed
+    - mapping_id: map_005_dsr_lifecycle_contribution_evaluation
+      protocol_area: dsr_lifecycle_and_contribution_model
+      protocol_files:
+        - specs/product-dsr-lifecycle-and-contribution-model.yaml
+        - templates/artifact-profile-template.yaml
+        - templates/evaluation-plan-template.yaml
+        - templates/contribution-positioning-record-template.yaml
+      dsr_framework_evidence:
+        - models/
+        - vocabularies/
+        - templates/
+        - records/contributions/record-contribution-positioning-0001.yaml
+        - records/evaluations/record-evaluation-plan-0001.yaml
+      status: mapped
+      validation_question_ids:
+        - vq_003_dsr_transparency_support
+        - vq_004_evidence_retention
+      limitation: dsr_specific_detail_is_intentionally_richer_in_the_dsr_framework
+    - mapping_id: map_006_dsr_transparency
+      protocol_area: dsr_transparency
+      protocol_files:
+        - specs/product-dsr-lifecycle-and-contribution-model.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
+      dsr_framework_evidence:
+        - records/dsr-transparency/record-dsr-transparency-crosswalk-0001.yaml
+        - templates/build-transparency-record-template.yaml
+        - templates/solution-space-record-template.yaml
+        - checklists/dsr-transparency-crosswalk-checklist.yaml
+        - docs/protocol/10-transparency-and-reporting.md
+      status: mapped
+      validation_question_ids:
+        - vq_003_dsr_transparency_support
+      limitation: privacy_security_ip_and_nonreplicability_constraints_still_require_case_specific_tailoring
+    - mapping_id: map_007_quality_review_release_preservation
+      protocol_area: quality_conformance_and_review_model
+      protocol_files:
+        - specs/product-quality-conformance-and-review-model.yaml
+        - specs/product-publication-and-registry-model.yaml
+        - templates/review-record-template.yaml
+        - templates/release-record-template.yaml
+        - checklists/review-checklist.yaml
+        - checklists/release-publication-checklist.yaml
+      dsr_framework_evidence:
+        - conformance-declaration.yaml
+        - records/reviews/
+        - records/releases/
+        - records/preservation/
+      status: mapped
+      validation_question_ids:
+        - vq_004_evidence_retention
+        - vq_005_overclaiming_control
+      limitation: independent_external_review_and_l5_closure_are_not_present
+    - mapping_id: map_008_automation_and_validation
+      protocol_area: automation_and_validation_model
+      protocol_files:
+        - specs/product-automation-and-validation-model.yaml
+        - schemas/
+      dsr_framework_evidence:
+        - schemas/
+        - scripts/validate-package.py
+        - records/validation/validation-summary-latest.json
+      status: mapped
+      validation_question_ids:
+        - vq_006_followability_without_local_context
+      limitation: automation_validates_structure_and_selected_rules_not_empirical_utility
+    - mapping_id: map_009_pilot_learning_and_roadmap
+      protocol_area: implementation_roadmap
+      protocol_files:
+        - specs/product-implementation-roadmap.yaml
+        - checklists/pilot-learning-checklist.yaml
+        - records/roadmap/record-next-validation-tier-0001.yaml
+      dsr_framework_evidence:
+        - README.md
+        - records/reviews/
+        - records/releases/
+        - examples/
+      status: mapped_with_followup
+      validation_question_ids:
+        - vq_006_followability_without_local_context
+      limitation: next_validation_tier_must_move_beyond_self_application

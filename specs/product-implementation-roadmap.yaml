@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: implementation_roadmap
   title: Implementation Roadmap and Pilot Plan
@@ -7,7 +7,7 @@ product:
     process, release path, and continuous improvement plan for turning this
     protocol into a reusable GitHub repository.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - md_guides
   - isos_and_more
@@ -23,6 +23,7 @@ dependencies:
   - quality_conformance_and_review_model
   - artifact_package_specification
   - publication_and_registry_model
+  - service_integration_profile
   - templates_and_checklists
   - automation_and_validation_model
 sections:
@@ -50,7 +51,7 @@ sections:
         - id: phase_1_internal_review
           outcome: Product specs are checked for consistency, missing dependencies, and open questions.
         - id: phase_2_pilot_package
-          outcome: One software or executable artifact and one non-software conceptual, method, model, or taxonomy artifact are documented using the protocol.
+          outcome: Pilot artifact packages are documented using the protocol, beginning with the retained DSR Framework pilot and followed by additional non-self-application pilots.
         - id: phase_3_review_and_revision
           outcome: Pilot findings drive revisions to templates, checklists, schemas, and products.
         - id: phase_4_publication_preparation
@@ -74,7 +75,8 @@ sections:
         - Public release must not occur until license, governance, metadata, README, and release records are complete.
         - Open questions that affect public use must be closed or explicitly documented as known limitations.
       should:
-        - The first validation cycle should include one software or executable artifact and one non-software conceptual, method, model, or taxonomy artifact.
+        - The first validation cycle should retain the DSR Framework pilot as bounded self-application evidence and then add at least one further pilot beyond the DSR Framework.
+        - A stronger validation claim should include one software or executable artifact and one non-software conceptual, method, model, taxonomy, policy, education, or data artifact.
         - Pilot packages should target L3 or L4 before the protocol is described as validated.
         - Roadmap progress should be tracked in GitHub issues or a project board after repository publication.
         - Improvements should be grouped into minor releases when they change templates or schemas.
@@ -90,11 +92,19 @@ sections:
     content:
       required_files:
         - specs/product-implementation-roadmap.yaml
+        - records/validations/record-validation-0001-dsr-framework-pilot.yaml
+        - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
+        - docs/validation/dsr-framework-pilot-validation.md
+        - checklists/pilot-learning-checklist.yaml
+        - records/roadmap/record-next-validation-tier-0001.yaml
         - records/roadmap/roadmap-status.yaml
         - records/pilots/pilot-plan.yaml
         - records/pilots/pilot-review-record.yaml
       required_records:
         - roadmap_status_record
+        - pilot_validation_record
+        - pilot_crosswalk_record
+        - next_validation_tier_record
         - pilot_plan_record
         - pilot_review_record
         - improvement_backlog_record
@@ -119,6 +129,9 @@ sections:
         - id: collect_feedback
           action: Record author, reviewer, maintainer, and automation findings.
           output: pilot_review_record
+        - id: record_pilot_learning
+          action: Complete the pilot learning checklist and identify what the protocol should add, clarify, relax, automate, defer, or retain as a limitation.
+          output: pilot_learning_record
         - id: revise_protocol
           action: Update products, templates, checklists, schemas, and docs.
           output: protocol_revision
@@ -127,8 +140,10 @@ sections:
           output: release_readiness_record
       failure_modes:
         - no_pilot_artifact
+        - only_self_application_piloted
         - only_one_artifact_class_piloted
         - pilot_without_dsr_transparency_review
+        - pilot_claim_treated_as_empirical_validation_without_external_evidence
         - unresolved_license
         - product_specs_out_of_sync_with_templates
         - public_release_without_examples
@@ -141,6 +156,8 @@ sections:
         - YAML files parse successfully
         - template suite covers package, evaluation, review, release, and traceability
         - checklist suite covers metadata, package readiness, review, and publication
+        - service integration profile product, vocabulary, templates, checklist, schema, and example profile exist
+        - DSR Framework pilot validation is retained with explicit self-application limitations
         - one software or executable pilot package reaches at least l3_exercisable
         - one non-software conceptual, method, model, or taxonomy pilot package reaches at least l3_exercisable or l4_reusable
         - pilot reviews exercise DSR transparency, contribution positioning, and evaluation strategy checks
@@ -149,6 +166,7 @@ sections:
         - Dependencies in product catalog match product files.
         - Open questions are visible and assigned to release milestones.
         - Pilot findings result in controlled revisions.
+        - Validation claims distinguish self-application evidence from external adoption, empirical utility, independent review, and L5 readiness.
   - id: traceability
     title: Traceability
     purpose: Link roadmap work to products and releases.
@@ -157,6 +175,8 @@ sections:
         - all_prior_products
       downstream_outputs:
         - public_github_repository
+        - pilot_validation_record
+        - pilot_crosswalk
         - pilot_artifact_package
         - release_record
       trace_links:
@@ -171,8 +191,11 @@ sections:
         - Review YAML products for terminology and scope.
         - Assign or confirm governance contacts.
         - Add GitHub issue and PR templates.
-        - Select one software or executable pilot and one non-software DSR pilot with conformance targets.
+        - Retain the DSR Framework pilot as bounded public-draft validation evidence.
+        - Review the recommended service integration profile against the first reusable or publication-ready pilot.
+        - Select a second internal pilot beyond the DSR Framework and a non-DSR or external-review pilot with conformance targets.
         - Run pilots through DSR transparency, contribution-positioning, evaluation-strategy, package, and review checklists.
+        - Complete the pilot learning checklist after each pilot.
         - Record pilot findings, revise protocol, and prepare a v0.2.0 validated-draft release when evidence supports it.
       anti_patterns:
         - publishing before license and governance are resolved.
@@ -186,13 +209,14 @@ sections:
         - pilot-plan-template.yaml
         - roadmap-status-template.yaml
         - improvement-backlog-template.yaml
+        - pilot-validation-record-template.yaml
   - id: open_questions_and_backlog
     title: Open Questions and Backlog
     purpose: Preserve implementation backlog.
     content:
       open_questions:
         - id: oq-roadmap-pilot
-          question: Which real project should be the first protocol pilot?
+          question: Which real project should be the second protocol pilot after the retained DSR Framework self-application pilot?
           status: open
         - id: oq-roadmap-publication
           question: What GitHub organization or account should host the public repository?
@@ -201,15 +225,16 @@ sections:
         - Generate Markdown protocol documentation from YAML.
         - Add active GitHub workflows after validation scripts are selected.
         - Add example artifact package after pilot.
+        - Run an independent external reviewer pass before claiming stable validation.
 quality_gates:
   - id: qg-roadmap-completion
     question: Are all required protocol products and support files present?
     evidence_required: [product_catalog, specs_directory, templates, checklists, schemas]
     status: draft_pass
   - id: qg-roadmap-pilot
-    question: Are two pilot artifacts defined with target conformance and DSR transparency evidence plans?
-    evidence_required: [pilot_plan, target_conformance_level, dsr_transparency_crosswalk]
-    status: pending
+    question: Is the DSR Framework pilot retained and are additional non-self-application pilots defined with target conformance and evidence plans?
+    evidence_required: [dsr_framework_pilot_validation_record, pilot_plan, target_conformance_level, dsr_transparency_crosswalk, pilot_learning_checklist]
+    status: partial_pass
   - id: qg-roadmap-publication
     question: Are license, governance, metadata, and release readiness resolved for public GitHub publication?
     evidence_required: [LICENSE, GOVERNANCE.md, metadata.yaml, release_record]
@@ -225,7 +250,7 @@ traceability:
     status: proposed
 open_questions:
   - id: oq-roadmap-pilot
-    question: Select one software or executable pilot and one non-software DSR pilot for protocol validation.
+    question: Select a second internal pilot beyond the DSR Framework and a non-DSR or external-review pilot for stronger protocol validation.
     status: open
   - id: oq-roadmap-publication
     question: Decide the GitHub account or organization for the public repository.

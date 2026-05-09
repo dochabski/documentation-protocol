@@ -1,0 +1,410 @@
+﻿# SPDX-License-Identifier: CC0-1.0
+product:
+  id: service_integration_profile
+  title: Recommended Service Integration Profile
+  purpose: Define nonblocking, vendor-neutral service roles that protocol-governed artifact packages should consider for storage,
+    source control, persistent identification, archival deposit, metadata indexing, educational dissemination, public communication,
+    open peer review, open-science sustainability, and long-form publication.
+  status: draft
+version: 0.2.0-draft
+source_basis:
+- md_guides
+- data_and_information
+- protocol_project_decision
+dependencies:
+- protocol_foundation
+- repository_architecture
+- metadata_and_identifier_profile
+- publication_and_registry_model
+sections:
+- id: identity_and_purpose
+  title: Identity and Purpose
+  content:
+    profile_identity:
+      name: Recommended Service Integration Profile
+      object_type: nonblocking_service_role_guidance
+      obligation_strength: should
+      conformance_effect: advisory_unless_underlying_evidence_required_elsewhere
+    guiding_principle: The protocol recommends service roles and evidence patterns rather than mandating named third-party
+      platforms, memberships, accounts, or user-specific service choices.
+    primary_outputs:
+    - service_role_model
+    - service_candidate_vocabulary
+    - service_integration_template
+    - service_integration_readiness_checklist
+    - service_integration_record
+    - non_normative_example_profiles
+    - service_candidate_catalog
+- id: conceptual_model
+  title: Conceptual Model
+  content:
+    terms:
+      service_role: A functional role that supports the artifact lifecycle.
+      service_candidate: A named platform, registry, index, archive, community, infrastructure service, or equivalent mechanism
+        that may satisfy a service role.
+      service_profile: A project-level declaration of intended or actual services.
+      service_integration_record: Retained evidence of used, substituted, deferred, omitted, or non-applicable service roles.
+      non_normative_example_profile: A reusable example showing one maintainer or project ecosystem without making those service
+        choices required for other users.
+    branch_policy:
+      use_branches_for:
+      - feature_development
+      - pull_request_review
+      - release_lines_when_needed
+      do_not_use_branches_for:
+      - long_lived_user_specific_service_variants
+      - normative_vendor_forks
+      preferred_variant_location: examples/service-profiles/
+    validation_severity_policy:
+      missing_optional_role: info
+      missing_recommended_role: warning
+      missing_highly_recommended_role: warning
+      named_service_required_by_schema: error
+      secret_or_token_pattern_detected: error
+      github_used_as_sole_archive_for_l5: error
+      membership_service_marked_required_for_all_users: error
+- id: service_roles
+  title: Service Roles
+  content:
+    roles:
+    - role_id: working_storage
+      status: recommended
+      conformance_effect: advisory
+      candidate_services:
+      - Dropbox
+      - OneDrive
+      - Google_Drive
+      - Box
+      - institutional_storage
+      - local_encrypted_storage
+      evidence_to_capture:
+      - working_location_note
+      - backup_note
+      - access_control_note
+    - role_id: source_control_and_change_management
+      status: highly_recommended
+      conformance_effect: warning
+      candidate_services:
+      - GitHub
+      - GitLab
+      - Codeberg
+      - Bitbucket
+      - institutional_git
+      evidence_to_capture:
+      - repository_url
+      - branch_or_tag
+      - issue_links
+      - pull_request_links
+    - role_id: persistent_contributor_identity
+      status: recommended
+      conformance_effect: advisory
+      candidate_services:
+      - ORCID
+      - institutional_identifier
+      - local_contributor_registry
+      evidence_to_capture:
+      - orcid_id
+      - contributor_identifier
+      - contributor_role
+    - role_id: doi_archival_deposit
+      status: highly_recommended
+      conformance_effect: required_only_if_existing_conformance_level_requires_underlying_evidence
+      candidate_services:
+      - Zenodo
+      - Figshare
+      - Mendeley_Data
+      - OSF
+      - Dataverse
+      - Dryad
+      - HAL
+      - institutional_repository
+      - discipline_repository
+      evidence_to_capture:
+      - doi
+      - archive_url
+      - deposit_record
+      - preservation_record
+      - version_snapshot
+    - role_id: open_project_wrapper
+      status: recommended
+      conformance_effect: advisory
+      candidate_services:
+      - OSF
+      - institutional_project_repository
+      - project_website
+      - research_group_repository
+      evidence_to_capture:
+      - project_url
+      - component_map
+      - related_artifacts
+    - role_id: metadata_and_indexing
+      status: recommended
+      conformance_effect: advisory
+      candidate_services:
+      - DataCite
+      - OpenAlex
+      - Crossref
+      - ROR
+      - Google_Scholar
+      - ORCID
+      - CITATION_cff
+      - codemeta_json
+      - schema_org_jsonld
+      evidence_to_capture:
+      - citation_metadata
+      - related_identifiers
+      - indexed_record_urls
+      - metadata_crosswalk
+    - role_id: identifier_registration_infrastructure
+      status: recommended
+      conformance_effect: advisory
+      candidate_services:
+      - DataCite
+      - Crossref
+      - ROR
+      - ORCID
+      - ISSN
+      - ISBN_agency
+      - institutional_identifier_service
+      evidence_to_capture:
+      - identifier_scheme
+      - registered_identifier
+      - metadata_record_url
+      - membership_or_sponsor_note
+      - responsible_party
+    - role_id: scholarly_discovery_profile
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - Google_Scholar
+      - ORCID
+      - OpenAlex
+      - ResearchGate
+      - Academia
+      - institutional_profile
+      - personal_website
+      evidence_to_capture:
+      - profile_url
+      - indexed_work_urls
+      - claim_or_verification_status
+      - profile_scope_note
+    - role_id: data_or_supplement_repository
+      status: recommended
+      conformance_effect: advisory
+      candidate_services:
+      - Dryad
+      - Figshare
+      - Mendeley_Data
+      - Zenodo
+      - OSF
+      - Dataverse
+      - institutional_repository
+      - discipline_repository
+      evidence_to_capture:
+      - dataset_doi
+      - supplementary_file_urls
+      - data_license
+      - access_conditions
+    - role_id: preprint_or_paper_dissemination
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - arXiv
+      - bioRxiv
+      - medRxiv
+      - HAL
+      - SSRN
+      - OSF_Preprints
+      - Octopus
+      - ResearchGate
+      - Academia
+      - institutional_repository
+      evidence_to_capture:
+      - paper_url
+      - preprint_doi_or_identifier
+      - version_note
+      - related_publication
+      - screening_or_moderation_status
+    - role_id: open_peer_review_and_recommendation
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - Peer_Community_In
+      - PREreview
+      - Open_Review
+      - journal_club
+      - disciplinary_review_community
+      evidence_to_capture:
+      - review_url
+      - recommendation_url
+      - review_status
+      - version_reviewed
+      - review_scope_note
+    - role_id: oer_or_training_dissemination
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - OER_Commons
+      - VIVA_Open
+      - MERLOT
+      - institutional_oer_repository
+      - Pressbooks
+      evidence_to_capture:
+      - oer_url
+      - license
+      - audience
+      - instructional_use_note
+    - role_id: professional_public_communication
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - LinkedIn
+      - Substack
+      - X
+      - Mastodon
+      - YouTube
+      - Instagram
+      - Spotify_for_Creators
+      - personal_website
+      evidence_to_capture:
+      - communication_url
+      - audience
+      - summary
+      - date
+    - role_id: open_science_community_and_sustainability
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - FORCE11
+      - SCOSS
+      - data_org
+      - Invest_in_Open_Infrastructure
+      - Research_Data_Alliance
+      - disciplinary_community
+      evidence_to_capture:
+      - community_url
+      - membership_or_application_status
+      - funding_opportunity_url
+      - sustainability_note
+      - relevance_to_artifact
+    - role_id: long_form_publication
+      status: optional
+      conformance_effect: advisory
+      candidate_services:
+      - Amazon_KDP
+      - institutional_press
+      - university_press
+      - Pressbooks
+      - Leanpub
+      evidence_to_capture:
+      - publication_url
+      - isbn_or_asin
+      - version_note
+      - license_or_rights_note
+- id: normative_requirements
+  title: Normative Requirements
+  content:
+    must:
+    - Service integration profiles must distinguish service roles from named service candidates.
+    - Named third-party platforms, memberships, dashboards, personal accounts, and proprietary services must not be required
+      for protocol conformance.
+    - Service profiles must not include secrets, access tokens, passwords, private API keys, unpublished credentials, or private
+      account-console URLs.
+    - Personal or project-specific service profiles must be marked non-normative unless adopted by a project as its own declared
+      profile.
+    should:
+    - Projects should complete a service integration profile before L4 or L5 review.
+    - Projects should use DOI-backed archival deposit or an equivalent preservation mechanism for publication-ready releases.
+    - Projects should link repository, archive, citation, registry, organizational identifiers, contributor identifiers, and
+      related-publication records when available.
+    - Projects should use persistent contributor identifiers and, where applicable, organization identifiers.
+    - Projects should treat open peer review, preprint dissemination, and public communication channels as optional dissemination
+      layers rather than conformance requirements.
+    may:
+    - Projects may use any service, local equivalent, institutional equivalent, or discipline-specific repository that satisfies
+      the documented role.
+    - Projects may omit optional dissemination, peer review, community, and sustainability roles when they are not relevant
+      to the artifact audience.
+    - Projects may include user-specific service choices as non-normative examples in examples/service-profiles/.
+    must_not:
+    - Projects must not treat GitHub or any working repository alone as archival preservation.
+    - Projects must not imply that service-profile use creates an obligation to publish on every listed platform.
+    - Projects must not use long-lived Git branches as the primary mechanism for representing user-specific service choices.
+    - Projects must not present membership organizations such as Crossref, DataCite, SCOSS, or FORCE11 as mandatory for ordinary
+      protocol users.
+- id: information_items
+  title: Information Items and Records
+  content:
+    product_files:
+    - specs/product-service-integration-profile.yaml
+    - vocabularies/service-role-vocabulary.yaml
+    - templates/service-integration-profile-template.yaml
+    - templates/service-integration-record-template.yaml
+    - checklists/service-integration-readiness-checklist.yaml
+    - schemas/service-integration-profile.schema.json
+    - docs/protocol/recommended-service-ecosystem.md
+    optional_example_location: examples/service-profiles/
+    optional_service_candidate_catalog: examples/service-profiles/service-candidate-catalog-v0-2.yaml
+- id: workflow
+  title: Workflow
+  content:
+    steps:
+    - id: identify_service_roles
+      action: Review the service-role vocabulary and decide which roles apply.
+      output: applicable_service_roles
+    - id: select_services_or_equivalents
+      action: Select candidate services, local equivalents, institutional equivalents, discipline-specific services, or substitutions.
+      output: draft_service_profile
+    - id: capture_service_evidence
+      action: Record URLs, DOIs, identifiers, release records, review records, or omission rationales without exposing secrets.
+      output: service_integration_record
+    - id: review_nonblocking_warnings
+      action: Review missing recommended roles and decide whether to add, defer, substitute, or omit with rationale.
+      output: service_readiness_checklist
+- id: implementation_guidance
+  title: Implementation Guidance
+  content:
+    implementation_branch_recommendation: feature/service-integration-profile-bookmarks-v2
+    personal_profile_policy: User-specific choices belong in non-normative example profiles or project-specific profile files,
+      not permanent Git branches.
+    automation_hooks:
+    - validate service profile syntax.
+    - warn when highly recommended roles are missing without rationale.
+    - fail when a named service is encoded as required.
+    - fail when secret-like values appear in public service profile fields.
+    - fail when L5 package treats GitHub as the sole archival preservation mechanism.
+    - warn when a membership or account-dashboard service is listed without a public-safe evidence note.
+    codex_use_note: Codex may update YAML, docs, examples, schemas, and checklists, but it should not publish credentials,
+      authenticate to third-party services, or create public deposits unless separately instructed by the maintainer.
+quality_gates:
+- id: qg-service-role-neutrality
+  question: Does the profile recommend service roles without requiring named platforms?
+  evidence_required:
+  - service_role_model
+  - service_candidate_vocabulary
+  status: draft_pass
+- id: qg-service-evidence
+  question: Are selected services, substitutions, and omissions documented without exposing secrets?
+  evidence_required:
+  - service_integration_profile
+  - service_integration_record
+  status: draft_pass
+- id: qg-service-variant-location
+  question: Are personal or project-specific choices stored as profiles rather than long-lived branches?
+  evidence_required:
+  - example_profile
+  - branch_policy
+  status: draft_pass
+traceability:
+- trace_id: trace-service-integration-001
+  source_type: product
+  source_id: protocol_foundation
+  relationship: extends
+  target_type: product
+  target_id: service_integration_profile
+  evidence_location: product:protocol_foundation
+  status: proposed
+open_questions:
+- id: oq-service-role-defaults
+  question: Decide which service roles should generate warnings by default for L4 and L5 packages.
+  status: open

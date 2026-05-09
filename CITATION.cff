@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: CC0-1.0
 cff-version: 1.2.0
-message: "Citation of the Zenodo DOI for the release used is appreciated and recommended for scholarly traceability, but is not a license requirement."
+message: "Citation of the release used is appreciated and recommended for scholarly traceability, but is not a license requirement."
 type: software
 title: "Documentation Protocol"
 abstract: "A GitHub-centered protocol for documenting, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts."
@@ -8,12 +8,11 @@ authors:
   - family-names: "Ochabski"
     given-names: "David"
     orcid: "https://orcid.org/0009-0000-9117-0651"
-version: "0.1.1"
-date-released: "2026-04-25"
+version: "0.1.2"
+date-released: "2026-05-08"
 license: "CC0-1.0"
-doi: "10.5281/zenodo.19764060"
 repository-code: "https://github.com/dochabski/documentation-protocol"
-url: "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.1"
+url: "https://github.com/dochabski/documentation-protocol/releases/tag/v0.1.2"
 keywords:
   - documentation protocol
   - design science research

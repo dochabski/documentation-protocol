@@ -1,11 +1,11 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 metadata:
   title: Documentation Protocol
   short_description: >
     A GitHub-centered protocol for documenting, reviewing, packaging,
     releasing, publishing, and preserving open research and design artifacts.
   artifact_type: method
-  version: "0.1.1"
+  version: "0.1.2"
   authors:
     - Ochabski, David
   orcid_ids:
@@ -20,7 +20,8 @@ metadata:
     Apache-2.0 where present. Citation is appreciated and recommended but not
     required.
   repository_url: https://github.com/dochabski/documentation-protocol
-  archive_doi: 10.5281/zenodo.19764060
+  archive_doi: ""
+  archive_doi_status: not_yet_minted_for_v0_1_2
   keywords:
     - documentation-protocol
     - design-science-research

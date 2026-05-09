@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 product:
   id: protocol_foundation
   title: Protocol Foundation and Scope
@@ -7,7 +7,7 @@ product:
     assumptions, tailoring rules, and non-goals for a reusable
     GitHub-centered documentation protocol.
   status: draft
-version: "0.1.1"
+version: "0.1.2"
 source_basis:
   - md_guides
   - isos_and_more
@@ -67,6 +67,7 @@ sections:
         - YAML is the controlled source and Markdown is the human render.
         - Review evidence must be inspectable without relying on private memory.
         - Tailoring is allowed only when it is explicit and recorded.
+        - Recommended service integrations are role-based; named third-party platforms are examples rather than conformance requirements.
   - id: normative_requirements
     title: Normative Requirements
     purpose: State protocol-wide requirements using controlled requirement strength.
@@ -82,12 +83,14 @@ sections:
         - Projects should maintain YAML source files and generate Markdown renders for readers.
         - Projects should use issue and pull request templates to capture controlled change information.
         - Projects should automate schema, metadata, link, and package checks before release.
+        - Projects should complete a recommended service integration profile when preparing reusable or publication-ready artifact packages.
       may:
         - Projects may adopt only a lower conformance level for early-stage work.
         - Projects may defer archival DOI assignment until publication or stable release.
         - Projects may add domain-specific templates when they preserve the required metadata and evidence fields.
       must_not:
         - Projects must not claim archival permanence from GitHub alone.
+        - Projects must not require a named third-party service when an equivalent role-satisfying service or documented substitute is available.
         - Projects must not remove review evidence after release.
         - Projects must not silently tailor away required records or quality gates.
         - Projects must not present unsupported results as validated or reusable.
@@ -169,6 +172,7 @@ sections:
         - quality_conformance_and_review_model
         - artifact_package_specification
         - publication_and_registry_model
+        - service_integration_profile
         - templates_and_checklists
         - automation_and_validation_model
         - implementation_roadmap

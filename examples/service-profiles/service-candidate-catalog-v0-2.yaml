@@ -1,0 +1,176 @@
+# SPDX-License-Identifier: CC0-1.0
+additional_service_candidates_v0_2:
+  metadata:
+    purpose: Machine-readable catalog of additional bookmark services to merge into the Documentation Protocol service integration
+      profile.
+    source: User-provided bookmark screenshot, interpreted as public service names only. Verify exact account/dashboard URLs
+      before committing public links.
+    normative_status: candidate_examples_not_requirements
+  services:
+  - service_id: google_scholar
+    display_name: Google Scholar
+    candidate_role_ids:
+    - scholarly_discovery_profile
+    - metadata_and_indexing
+    recommended_use: Public scholarly profile and discovery/indexing layer for author works and citations.
+    evidence_to_capture:
+    - profile_url
+    - indexed_work_urls
+    - profile_scope_note
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: arxiv
+    display_name: arXiv
+    candidate_role_ids:
+    - preprint_or_paper_dissemination
+    recommended_use: Preprint dissemination venue for physics, mathematics, computer science, quantitative biology, quantitative
+      finance, statistics, electrical engineering, systems science, and economics.
+    evidence_to_capture:
+    - preprint_identifier
+    - version_note
+    - submission_status
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: octopus
+    display_name: Octopus
+    candidate_role_ids:
+    - preprint_or_paper_dissemination
+    recommended_use: Open research publication platform for modular research outputs and transparent scholarly communication.
+    evidence_to_capture:
+    - publication_url
+    - module_or_output_type
+    - version_note
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: dryad
+    display_name: Dryad
+    candidate_role_ids:
+    - data_or_supplement_repository
+    - doi_archival_deposit
+    recommended_use: Research data repository for publishable datasets and supplementary data packages.
+    evidence_to_capture:
+    - dataset_doi
+    - data_license
+    - access_conditions
+    - related_publication
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: peer_community_in
+    display_name: Peer Community In
+    candidate_role_ids:
+    - open_peer_review_and_recommendation
+    recommended_use: Community-based peer review and recommendation venue, often linked to preprints.
+    evidence_to_capture:
+    - recommendation_url
+    - review_status
+    - version_reviewed
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: hal
+    display_name: HAL
+    candidate_role_ids:
+    - preprint_or_paper_dissemination
+    - doi_archival_deposit
+    recommended_use: Open archive for scholarly deposits and manuscript dissemination, especially relevant for French and
+      European research contexts.
+    evidence_to_capture:
+    - deposit_url
+    - identifier
+    - version_note
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: biorxiv
+    display_name: bioRxiv
+    candidate_role_ids:
+    - preprint_or_paper_dissemination
+    recommended_use: Life sciences preprint server.
+    evidence_to_capture:
+    - preprint_identifier
+    - version_note
+    - screening_status
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: medrxiv
+    display_name: medRxiv
+    candidate_role_ids:
+    - preprint_or_paper_dissemination
+    recommended_use: Health sciences preprint server; use with clear limitations for non-peer-reviewed medical/clinical content.
+    evidence_to_capture:
+    - preprint_identifier
+    - version_note
+    - screening_status
+    - clinical_caution_note
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: data_org
+    display_name: data.org Funding Opportunities
+    candidate_role_ids:
+    - open_science_community_and_sustainability
+    recommended_use: Funding-opportunity and program-discovery resource relevant to data-for-social-impact and open-data initiatives.
+    evidence_to_capture:
+    - funding_opportunity_url
+    - eligibility_note
+    - application_status
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: force11
+    display_name: FORCE11
+    candidate_role_ids:
+    - open_science_community_and_sustainability
+    recommended_use: Community and standards-oriented venue for scholarly communication and research-data/open-science practices.
+    evidence_to_capture:
+    - community_url
+    - membership_or_dashboard_note
+    - relevance_to_artifact
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: scoss
+    display_name: SCOSS
+    candidate_role_ids:
+    - open_science_community_and_sustainability
+    recommended_use: Open-science infrastructure sustainability coalition; relevant to infrastructure support, membership,
+      and application processes.
+    evidence_to_capture:
+    - application_url
+    - support_status
+    - sustainability_note
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: crossref
+    display_name: Crossref
+    candidate_role_ids:
+    - identifier_registration_infrastructure
+    - metadata_and_indexing
+    recommended_use: DOI registration and metadata infrastructure, primarily relevant for publishers, repositories, organizations,
+      and sponsored registration workflows.
+    evidence_to_capture:
+    - member_or_sponsor_note
+    - doi_metadata_record
+    - responsible_party
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.
+  - service_id: ror
+    display_name: Research Organization Registry
+    candidate_role_ids:
+    - identifier_registration_infrastructure
+    - metadata_and_indexing
+    recommended_use: Open registry of persistent identifiers for research organizations.
+    evidence_to_capture:
+    - ror_id
+    - organization_record_url
+    - affiliation_metadata_note
+    public_url: ''
+    public_safe_note: Record public landing pages, profile pages, DOIs, identifiers, or publication URLs only. Do not record
+      private account, dashboard, token, or submission-console URLs.

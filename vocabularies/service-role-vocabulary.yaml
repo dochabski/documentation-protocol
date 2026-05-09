@@ -1,0 +1,301 @@
+# SPDX-License-Identifier: CC0-1.0
+service_role_vocabulary:
+  metadata:
+    id: service_role_vocabulary_v0_2_0
+    title: Service Role Vocabulary for Documentation Protocol Artifact Packages
+    version: 0.2.0-draft
+    status: draft
+    normative_status: recommended_controlled_vocabulary
+    purpose: Provide vendor-neutral service-role terms and candidate service examples, including open-science repositories,
+      preprint servers, peer-review venues, identifier infrastructure, and sustainability/community resources.
+  obligation_values:
+  - highly_recommended
+  - recommended
+  - optional
+  - conditional
+  - not_applicable
+  integration_status_values:
+  - planned
+  - used
+  - substituted
+  - deferred
+  - omitted_with_rationale
+  - not_applicable
+  conformance_effect_values:
+  - advisory
+  - warning
+  - required_only_if_existing_conformance_level_requires_underlying_evidence
+  - not_applicable
+  roles:
+  - role_id: working_storage
+    preferred_label: Working Storage and Staging
+    obligation: recommended
+    conformance_effect: advisory
+    definition: Private or controlled workspace for drafts, source materials, exports, and backup copies before public release.
+    candidate_services:
+    - Dropbox
+    - OneDrive
+    - Google_Drive
+    - Box
+    - institutional_storage
+    - local_encrypted_storage
+    evidence_fields:
+    - working_location_note
+    - backup_note
+    - access_control_note
+  - role_id: source_control_and_change_management
+    preferred_label: Source Control and Change Management
+    obligation: highly_recommended
+    conformance_effect: warning
+    definition: Versioned collaboration environment for source files, branches, issues, pull requests, review discussion,
+      tags, and change history.
+    candidate_services:
+    - GitHub
+    - GitLab
+    - Codeberg
+    - Bitbucket
+    - institutional_git
+    evidence_fields:
+    - repository_url
+    - branch_or_tag
+    - issue_links
+    - pull_request_links
+  - role_id: persistent_contributor_identity
+    preferred_label: Persistent Contributor Identity
+    obligation: recommended
+    conformance_effect: advisory
+    definition: Persistent identifier system for authors and contributors.
+    candidate_services:
+    - ORCID
+    - institutional_identifier
+    - local_contributor_registry
+    evidence_fields:
+    - orcid_id
+    - contributor_identifier
+    - contributor_role
+  - role_id: doi_archival_deposit
+    preferred_label: DOI-backed Archival Deposit or Equivalent Preservation
+    obligation: highly_recommended
+    conformance_effect: required_only_if_existing_conformance_level_requires_underlying_evidence
+    definition: Preservation service or repository that provides a stable release snapshot and persistent identifier.
+    candidate_services:
+    - Zenodo
+    - Figshare
+    - Mendeley_Data
+    - OSF
+    - Dataverse
+    - Dryad
+    - HAL
+    - institutional_repository
+    - discipline_repository
+    evidence_fields:
+    - doi
+    - archive_url
+    - deposit_record
+    - preservation_record
+    - version_snapshot
+  - role_id: open_project_wrapper
+    preferred_label: Open Project Wrapper
+    obligation: recommended
+    conformance_effect: advisory
+    definition: Project-level container for components, collaborators, lifecycle records, registrations, and related materials.
+    candidate_services:
+    - OSF
+    - institutional_project_repository
+    - project_website
+    - research_group_repository
+    evidence_fields:
+    - project_url
+    - component_map
+    - related_artifacts
+  - role_id: metadata_and_indexing
+    preferred_label: Metadata and Indexing Interoperability
+    obligation: recommended
+    conformance_effect: advisory
+    definition: Services, identifiers, indexes, or machine-readable files that improve discoverability, citation integrity,
+      and related-identifier linking.
+    candidate_services:
+    - DataCite
+    - OpenAlex
+    - Crossref
+    - ROR
+    - Google_Scholar
+    - ORCID
+    - CITATION_cff
+    - codemeta_json
+    - schema_org_jsonld
+    evidence_fields:
+    - citation_metadata
+    - related_identifiers
+    - indexed_record_urls
+    - metadata_crosswalk
+  - role_id: identifier_registration_infrastructure
+    preferred_label: Identifier Registration Infrastructure
+    obligation: recommended
+    conformance_effect: advisory
+    definition: Infrastructure for assigning, registering, resolving, or reconciling persistent identifiers for works, datasets,
+      software, people, organizations, and related research objects.
+    candidate_services:
+    - DataCite
+    - Crossref
+    - ROR
+    - ORCID
+    - ISSN
+    - ISBN_agency
+    - institutional_identifier_service
+    evidence_fields:
+    - identifier_scheme
+    - registered_identifier
+    - metadata_record_url
+    - membership_or_sponsor_note
+    - responsible_party
+  - role_id: scholarly_discovery_profile
+    preferred_label: Scholarly Discovery Profile
+    obligation: optional
+    conformance_effect: advisory
+    definition: Public profile or index that improves discovery of contributors, works, citations, versions, and related artifacts.
+    candidate_services:
+    - Google_Scholar
+    - ORCID
+    - OpenAlex
+    - ResearchGate
+    - Academia
+    - institutional_profile
+    - personal_website
+    evidence_fields:
+    - profile_url
+    - indexed_work_urls
+    - claim_or_verification_status
+    - profile_scope_note
+  - role_id: data_or_supplement_repository
+    preferred_label: Data or Supplement Repository
+    obligation: recommended
+    conformance_effect: advisory
+    definition: Repository for datasets, extraction corpora, figures, supplementary files, replication packages, or non-code
+      artifacts.
+    candidate_services:
+    - Dryad
+    - Figshare
+    - Mendeley_Data
+    - Zenodo
+    - OSF
+    - Dataverse
+    - institutional_repository
+    - discipline_repository
+    evidence_fields:
+    - dataset_doi
+    - supplementary_file_urls
+    - data_license
+    - access_conditions
+  - role_id: preprint_or_paper_dissemination
+    preferred_label: Preprint or Paper Dissemination
+    obligation: optional
+    conformance_effect: advisory
+    definition: Platform for disseminating preprints, papers, reports, manuscripts, or modular research outputs associated
+      with the artifact.
+    candidate_services:
+    - arXiv
+    - bioRxiv
+    - medRxiv
+    - HAL
+    - SSRN
+    - OSF_Preprints
+    - Octopus
+    - ResearchGate
+    - Academia
+    - institutional_repository
+    evidence_fields:
+    - paper_url
+    - preprint_doi_or_identifier
+    - version_note
+    - related_publication
+    - screening_or_moderation_status
+  - role_id: open_peer_review_and_recommendation
+    preferred_label: Open Peer Review and Recommendation
+    obligation: optional
+    conformance_effect: advisory
+    definition: Open review, recommendation, or community evaluation venue for preprints, artifacts, or research outputs.
+    candidate_services:
+    - Peer_Community_In
+    - PREreview
+    - Open_Review
+    - journal_club
+    - disciplinary_review_community
+    evidence_fields:
+    - review_url
+    - recommendation_url
+    - review_status
+    - version_reviewed
+    - review_scope_note
+  - role_id: oer_or_training_dissemination
+    preferred_label: OER or Training Dissemination
+    obligation: optional
+    conformance_effect: advisory
+    definition: Platform for sharing instructional derivatives, templates, rubrics, training modules, or open educational
+      resources.
+    candidate_services:
+    - OER_Commons
+    - VIVA_Open
+    - MERLOT
+    - institutional_oer_repository
+    - Pressbooks
+    evidence_fields:
+    - oer_url
+    - license
+    - audience
+    - instructional_use_note
+  - role_id: professional_public_communication
+    preferred_label: Professional and Public Communication
+    obligation: optional
+    conformance_effect: advisory
+    definition: Channel for explaining, announcing, teaching, or discussing artifact releases with professional, practitioner,
+      public, or scholarly audiences.
+    candidate_services:
+    - LinkedIn
+    - Substack
+    - X
+    - Mastodon
+    - YouTube
+    - Instagram
+    - Spotify_for_Creators
+    - personal_website
+    evidence_fields:
+    - communication_url
+    - audience
+    - summary
+    - date
+  - role_id: open_science_community_and_sustainability
+    preferred_label: Open Science Community and Sustainability
+    obligation: optional
+    conformance_effect: advisory
+    definition: Community, standards, funding, or sustainability venue that supports open scholarship infrastructure, scholarly
+      communication practices, or long-term service viability.
+    candidate_services:
+    - FORCE11
+    - SCOSS
+    - data_org
+    - Invest_in_Open_Infrastructure
+    - Research_Data_Alliance
+    - disciplinary_community
+    evidence_fields:
+    - community_url
+    - membership_or_application_status
+    - funding_opportunity_url
+    - sustainability_note
+    - relevance_to_artifact
+  - role_id: long_form_publication
+    preferred_label: Long-form Publication
+    obligation: optional
+    conformance_effect: advisory
+    definition: Publication channel for book-length derivatives, field guides, handbooks, workbooks, or practitioner manuals.
+    candidate_services:
+    - Amazon_KDP
+    - institutional_press
+    - university_press
+    - Pressbooks
+    - Leanpub
+    evidence_fields:
+    - publication_url
+    - isbn_or_asin
+    - version_note
+    - license_or_rights_note

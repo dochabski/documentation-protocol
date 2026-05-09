@@ -16,7 +16,8 @@ The source of truth is the YAML product specifications in `specs/`. Markdown fil
 4. Apply the package, metadata, quality, review, and publication products to the target project.
 5. Use the files in `templates/`, `checklists/`, and `schemas/` as the reusable operating material.
 6. Use `checklists/dsr-transparency-crosswalk-checklist.yaml` before review for L2 or higher DSR packages.
-7. Preserve decisions, reviews, evaluation records, and release records in the target project's `records/` folder.
+7. Review service roles with `templates/service-integration-profile-template.yaml` when preparing L4/L5 or publication-ready packages; this is advisory unless another protocol requirement already requires the underlying evidence.
+8. Preserve decisions, reviews, evaluation records, and release records in the target project's `records/` folder.
 
 ## DSR Transparency Layer
 
@@ -24,13 +25,25 @@ The protocol treats DSR transparency as a first-class review concern. DSR packag
 
 Evaluation plans should distinguish formative, summative, or combined timing; artificial, naturalistic, or mixed setting; evaluation method family; validity basis; stakeholder confidence basis; and claim-to-component mapping. Demonstration is not evaluation unless acceptance criteria, evidence, and evaluation claims are explicitly defined.
 
+## Recommended Service Ecosystem
+
+The protocol includes a nonblocking Recommended Service Integration Profile. It recommends service roles for working storage, source control, persistent identifiers, archival deposit, metadata/indexing, educational dissemination, public communication, and long-form publication. Named platforms are examples, not conformance requirements. User-specific service choices should be captured in service profile YAML files, not long-lived Git branches.
+
+## Validation Status
+
+The first retained pilot validation is the DSR Framework repository. It is treated as a downstream pilot application and self-application case, not as strong empirical validation of the Documentation Protocol.
+
+The pilot supports the claim that the Documentation Protocol can guide, structure, review, and release a complex DSR artifact package with coherent repository architecture, source-of-truth discipline, traceability, retained evidence, and overclaiming controls. It does not prove external adoption, empirical effectiveness, independent semantic adequacy, or L5 archival/publication-ready status.
+
+See `docs/validation/dsr-framework-pilot-validation.md`, `records/validations/record-validation-0001-dsr-framework-pilot.yaml`, and `crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml`.
+
 ## Source Policy
 
 This protocol was generated from the project corpus and scaffold basis cited in `manifest.yaml`. It intentionally does not expose local source file names or conversion artifact names. Public releases contain generated protocol/scaffold files only and no source PDFs or copyrighted source documents.
 
 ## Citation
 
-Use the citation metadata in `CITATION.cff`. The v0.1.1 draft DOI is `10.5281/zenodo.19764060`. Author identity is linked with ORCID iD [0009-0000-9117-0651](https://orcid.org/0009-0000-9117-0651); see `docs/protocol/orcid-identity.md` for reuse targets. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content.
+Use the citation metadata in `CITATION.cff`. Author identity is linked with ORCID iD [0009-0000-9117-0651](https://orcid.org/0009-0000-9117-0651); see `docs/protocol/orcid-identity.md` for reuse targets. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content. The v0.1.2 GitHub release is citable by release URL; a version-specific Zenodo DOI should be minted separately if archival DOI publication is required.
 
 ## License
 
@@ -61,6 +74,7 @@ The raw documentation protocol builder scaffold archive is not published in this
 - `quality_conformance_and_review_model`
 - `artifact_package_specification`
 - `publication_and_registry_model`
+- `service_integration_profile`
 - `templates_and_checklists`
 - `automation_and_validation_model`
 - `implementation_roadmap`

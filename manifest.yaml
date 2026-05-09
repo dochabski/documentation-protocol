@@ -1,8 +1,8 @@
-# SPDX-License-Identifier: CC0-1.0
+﻿# SPDX-License-Identifier: CC0-1.0
 protocol:
   id: documentation_protocol
   title: Documentation Protocol
-  version: "0.1.1"
+  version: "0.1.2"
   status: draft
   generated_date: "2026-04-24"
   source_of_truth_format: yaml
@@ -43,6 +43,10 @@ source_families:
     role: >
       Data, information, system, metadata, and evidence quality material for
       quality dimensions, measurement, and review.
+  - id: protocol_project_decision
+    role: >
+      Internal protocol design decision material used to encode optional,
+      vendor-neutral service-role guidance and non-normative example profiles.
 source_citations:
   - id: project_control_scaffold_2026
     type: internal_project_control_model
@@ -50,6 +54,12 @@ source_citations:
       Documentation Protocol Builder project-control scaffold, internal draft
       specification, 2026.
     supports: [product_catalog, part_work_breakdown, controlled_models, generation_workflow]
+  - id: service_integration_profile_decision_2026
+    type: internal_project_decision
+    citation: >
+      Documentation Protocol service integration profile decision, internal
+      implementation package, 2026.
+    supports: [service_integration_profile, service_role_vocabulary, service_integration_templates, non_normative_example_profiles]
   - id: acm_artifact_badging_policy_2020
     type: policy
     citation: >
@@ -152,14 +162,28 @@ canonical_directories:
     purpose: YAML source-of-truth specifications for protocol products.
   - path: docs/protocol
     purpose: Human-facing protocol index and future rendered documentation.
+  - path: docs/validation
+    purpose: Human-facing validation summaries and pilot-validation explanations.
+  - path: vocabularies
+    purpose: Controlled vocabularies used by templates, checklists, schemas, and examples.
   - path: templates
     purpose: Reusable starter files for applying the protocol.
   - path: checklists
     purpose: Operational readiness and review checklists.
   - path: schemas
     purpose: JSON schemas for validating generated YAML and JSON files.
+  - path: crosswalks
+    purpose: Protocol-to-pilot, source-to-product, and evidence mapping files.
   - path: records
-    purpose: Placeholder for change, review, evaluation, and release records.
+    purpose: Change, review, evaluation, validation, release, preservation, registry, and roadmap records.
+  - path: records/validations
+    purpose: Retained validation records, including pilot and self-application validation evidence.
+  - path: records/roadmap
+    purpose: Retained roadmap, next-validation-tier, and improvement planning records.
   - path: examples
     purpose: Placeholder for future pilot artifact packages.
+  - path: examples/service-profiles
+    purpose: Non-normative and project-specific service integration example profiles.
+  - path: prompts/codex
+    purpose: Codex handoff prompts for future implementation or maintenance work.
 product_catalog: specs/product-catalog.yaml

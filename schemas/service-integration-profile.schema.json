@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/dochabski/documentation-protocol/schemas/service-integration-profile.schema.json",
+  "title": "Service Integration Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "service_integration_profile"
+  ],
+  "properties": {
+    "service_integration_profile": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "profile_id",
+        "profile_label",
+        "normative_status",
+        "service_roles",
+        "disclosure_policy"
+      ],
+      "properties": {
+        "profile_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "profile_label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normative_status": {
+          "type": "string",
+          "enum": [
+            "project_profile",
+            "non_normative_example",
+            "organizational_profile",
+            "draft_profile"
+          ]
+        },
+        "artifact_or_package_id": {
+          "type": "string"
+        },
+        "target_conformance_level": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "owner_or_maintainer": {
+          "type": "string"
+        },
+        "governing_rule": {
+          "type": "string"
+        },
+        "disclosure_policy": {
+          "type": "object",
+          "required": [
+            "contains_no_credentials",
+            "contains_no_private_tokens",
+            "contains_no_restricted_links",
+            "public_safe"
+          ],
+          "properties": {
+            "contains_no_credentials": {
+              "type": "boolean"
+            },
+            "contains_no_private_tokens": {
+              "type": "boolean"
+            },
+            "contains_no_restricted_links": {
+              "type": "boolean"
+            },
+            "public_safe": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        },
+        "service_roles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "role_id",
+              "integration_status",
+              "selected_services"
+            ],
+            "properties": {
+              "role_id": {
+                "type": "string"
+              },
+              "role_obligation": {
+                "type": "string"
+              },
+              "integration_status": {
+                "type": "string",
+                "enum": [
+                  "planned",
+                  "used",
+                  "substituted",
+                  "deferred",
+                  "omitted_with_rationale",
+                  "not_applicable"
+                ]
+              },
+              "selected_services": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "service_name"
+                  ],
+                  "properties": {
+                    "service_name": {
+                      "type": "string"
+                    },
+                    "service_type": {
+                      "type": "string"
+                    },
+                    "service_url": {
+                      "type": "string"
+                    },
+                    "public_identifier": {
+                      "type": "string"
+                    },
+                    "evidence_note": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "substitution_or_omission_rationale": {
+                "type": "string"
+              },
+              "evidence_records": {
+                "type": "array"
+              },
+              "notes": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
