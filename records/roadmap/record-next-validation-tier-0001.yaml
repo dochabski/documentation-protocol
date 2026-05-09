@@ -9,7 +9,7 @@ roadmap_record:
       name: DSR Framework pilot application
       validation_record: records/validations/record-validation-0001-dsr-framework-pilot.yaml
       result: pass_with_l4_supporting_self_application_limitations
-    documentation_protocol_status: v1_0_0_l4_reusable_stable_l5_not_claimed
+    documentation_protocol_status: v1_0_1_l4_reusable_stable_l5_not_claimed
     strongest_supported_claim: >
       The Documentation Protocol is coherent, structurally adequate,
       reviewable, traceable, and reusable as an L4 protocol package for at
@@ -77,7 +77,7 @@ roadmap_record:
         - l5_release_approval_record_completed
       priority: later
   immediate_recommendation: >
-    Keep the Documentation Protocol at v1.0.0 L4 reusable-stable unless and
+    Keep the Documentation Protocol at v1.0.1 L4 reusable-stable unless and
     until additional non-self-application, external-review, preservation, and
     registry evidence supports stronger validation or L5
     archival/publication-ready claims. Use the DSR Framework pilot as retained

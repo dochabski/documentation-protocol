@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: artifact_package_specification
   title: Artifact Package Specification
@@ -7,7 +7,7 @@ product:
     metadata, evidence, reproducibility material, limitations, examples, and
     conformance-specific package obligations.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - dsr_corpus

@@ -1,0 +1,84 @@
+# SPDX-License-Identifier: CC0-1.0
+review_record:
+  record_id: record-review-bookmark-example-consistency-0001-v1-0-1
+  title: Bookmark example consistency review for Documentation Protocol v1.0.1
+  date: "2026-05-09"
+  review_type: example_consistency_patch_review
+  package_version_reviewed: "1.0.1"
+  package_conformance_target: l4_reusable_stable
+  l5_claimed: false
+  result: pass
+  scope:
+    included:
+      - examples/service-profiles/david-ochabski-service-profile.yaml
+      - examples/service-profiles/service-candidate-catalog.yaml
+      - examples/README.md
+      - schemas/service-integration-profile.schema.json
+      - specs/product-service-integration-profile.yaml
+      - prompts/codex/additional-bookmark-services-implementation-prompt.md
+    excluded:
+      - verification_of_private_bookmark_account_urls
+      - publication_to_external_service_platforms
+      - l5_archival_or_doi_release
+  checks:
+    - id: bookmark_examples_001_stable_paths
+      question: Do bookmark example files use stable paths without stale v0.2 filename markers?
+      result: pass
+      evidence:
+        - examples/service-profiles/service-candidate-catalog.yaml
+        - specs/product-service-integration-profile.yaml
+        - prompts/codex/additional-bookmark-services-implementation-prompt.md
+    - id: bookmark_examples_002_stable_ids
+      question: Do examples use stable object IDs instead of old version-specific IDs?
+      result: pass
+      evidence:
+        - examples/service-profiles/david-ochabski-service-profile.yaml
+        - examples/service-profiles/service-candidate-catalog.yaml
+    - id: bookmark_examples_003_public_safe_metadata
+      question: Do examples declare public-safe status and avoid credentials, tokens, restricted links, or private account URLs?
+      result: pass
+      evidence:
+        - examples/service-profiles/david-ochabski-service-profile.yaml
+        - examples/service-profiles/service-candidate-catalog.yaml
+    - id: bookmark_examples_004_consistent_service_fields
+      question: Do service entries use consistent service IDs, names, types, URLs, public identifiers, and evidence-note fields?
+      result: pass
+      evidence:
+        - examples/service-profiles/david-ochabski-service-profile.yaml
+        - examples/service-profiles/service-candidate-catalog.yaml
+    - id: bookmark_examples_005_non_normative_boundary
+      question: Are bookmark services retained as examples rather than mandatory conformance requirements?
+      result: pass
+      evidence:
+        - examples/README.md
+        - examples/service-profiles/david-ochabski-service-profile.yaml
+        - examples/service-profiles/service-candidate-catalog.yaml
+  findings:
+    - finding_id: bookmark_examples_finding_001
+      type: consistency_fix
+      summary: >
+        The service candidate catalog now uses a stable filename and root key,
+        current v1.0.1 metadata, and consistent public-safe fields.
+    - finding_id: bookmark_examples_finding_002
+      type: consistency_fix
+      summary: >
+        The David Ochabski example profile now uses a stable profile ID and
+        consistent selected-service fields across all roles.
+    - finding_id: bookmark_examples_finding_003
+      type: retained_boundary
+      summary: >
+        Bookmark-derived services remain non-normative examples and do not
+        require other users to adopt named platforms.
+  decision:
+    release_decision: approve_patch_release
+    approved_version: "1.0.1"
+    approved_tag: v1.0.1
+    approved_claim: >
+      Documentation Protocol v1.0.1 -- L4 reusable-stable patch release with
+      normalized bookmark-derived example files; L5 archival/publication-ready
+      not claimed.
+    not_approved:
+      - l5_archival_publication_ready_status
+      - zenodo_doi_minting
+      - external_service_publication
+      - private_bookmark_url_publication

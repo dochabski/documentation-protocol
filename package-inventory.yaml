@@ -2,9 +2,9 @@
 package_inventory:
   package_id: documentation_protocol
   title: Documentation Protocol Package Inventory
-  version: "1.0.0"
+  version: "1.0.1"
   status: l4_reusable_stable
-  inventory_date: "2026-05-08"
+  inventory_date: "2026-05-09"
   repository_url: https://github.com/dochabski/documentation-protocol
   inventory_scope: >
     Generated protocol, scaffold-derived, documentation, metadata, template,
@@ -26,11 +26,11 @@ package_inventory:
     - path: package-inventory.yaml
       purpose: Package inventory and public inclusion/exclusion boundary.
     - path: traceability-matrix.yaml
-      purpose: Claim-to-evidence traceability for the v1.0.0 package.
+      purpose: Claim-to-evidence traceability for the v1.0.1 package.
     - path: evaluation-report.yaml
       purpose: Evaluation summary for the L4 release claim and retained limitations.
     - path: LIMITATIONS.md
-      purpose: Human-facing limitation boundary for v1.0.0.
+      purpose: Human-facing limitation boundary for v1.0.1.
     - path: manifest.yaml
       purpose: Source families, citation policy, repository structure, and conformance pointers.
     - path: metadata.yaml
@@ -91,8 +91,9 @@ package_inventory:
   release_evidence:
     conformance_declaration: conformance-declaration.yaml
     l4_readiness_review: records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
-    release_record: records/releases/record-release-0002-v1-0-0.yaml
-    release_approval: records/releases/record-release-approval-0001-v1-0-0.yaml
+    release_record: records/releases/record-release-0003-v1-0-1.yaml
+    release_approval: records/releases/record-release-approval-0002-v1-0-1.yaml
+    patch_review: records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
     pilot_validation: records/validations/record-validation-0001-dsr-framework-pilot.yaml
     pilot_crosswalk: crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
   public_release_checks:

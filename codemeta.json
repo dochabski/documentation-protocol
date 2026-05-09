@@ -3,14 +3,14 @@
   "@type": "SoftwareSourceCode",
   "name": "Documentation Protocol",
   "description": "A GitHub-centered protocol for documenting, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts.",
-  "version": "1.0.0",
-  "identifier": "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.0",
+  "version": "1.0.1",
+  "identifier": "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.1",
   "codeRepository": "https://github.com/dochabski/documentation-protocol",
-  "url": "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.0",
+  "url": "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.1",
   "license": "https://spdx.org/licenses/CC0-1.0.html",
   "licenseNotes": "Primary repository content is dedicated under CC0-1.0. Executable code, scripts, CI workflows, and software tooling are licensed under Apache-2.0 where present.",
   "dateCreated": "2026-04-24",
-  "datePublished": "2026-05-08",
+  "datePublished": "2026-05-09",
   "author": [
     {
       "@type": "Person",

@@ -2,6 +2,11 @@
 
 # Examples
 
-Use this directory for pilot artifact packages and worked examples after the protocol is reviewed.
+Use this directory for pilot artifact packages and worked examples.
 
-No examples are included yet because the first pilot artifact has not been selected.
+Current non-normative examples:
+
+- `service-profiles/david-ochabski-service-profile.yaml`: bookmark-derived example service integration profile for one maintainer's quality-artifact ecosystem.
+- `service-profiles/service-candidate-catalog.yaml`: public-safe catalog of bookmark-derived service candidates.
+
+These examples illustrate how to record service choices without making named platforms mandatory for other protocol users.

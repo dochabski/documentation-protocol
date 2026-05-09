@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 traceability_matrix:
   artifact_id: documentation_protocol
-  version: "1.0.0"
-  purpose: Trace v1.0.0 release claims to retained evidence.
+  version: "1.0.1"
+  purpose: Trace v1.0.1 release claims to retained evidence.
   links:
     - trace_id: trace_v1_001_l4_conformance
       source_type: release_claim
@@ -13,7 +13,8 @@ traceability_matrix:
       evidence_location:
         - conformance-declaration.yaml
         - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
-        - records/releases/record-release-0002-v1-0-0.yaml
+        - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+        - records/releases/record-release-0003-v1-0-1.yaml
       status: accepted
       reviewer_notes: L4 reusable-stable supported; L5 not claimed.
     - trace_id: trace_v1_002_dsr_transparency
@@ -29,7 +30,7 @@ traceability_matrix:
         - templates/evaluation-plan-template.yaml
         - templates/contribution-positioning-record-template.yaml
       status: accepted
-      reviewer_notes: DSR transparency is first-class in the v1.0.0 package.
+      reviewer_notes: DSR transparency is first-class in the v1.0.1 package.
     - trace_id: trace_v1_003_pilot_validation
       source_type: validation_claim
       source_id: dsr_framework_pilot_application
@@ -65,10 +66,22 @@ traceability_matrix:
       evidence_location:
         - LIMITATIONS.md
         - conformance-declaration.yaml
-        - records/releases/record-release-0002-v1-0-0.yaml
+        - records/releases/record-release-0003-v1-0-1.yaml
         - records/roadmap/record-next-validation-tier-0001.yaml
       status: accepted
       reviewer_notes: DOI, preservation, registry, and independent external validation work remains deferred.
+    - trace_id: trace_v1_006_bookmark_examples
+      source_type: release_claim
+      source_id: bookmark_example_consistency
+      relationship: supported_by
+      target_type: example_files
+      target_id: service_profile_examples
+      evidence_location:
+        - examples/service-profiles/david-ochabski-service-profile.yaml
+        - examples/service-profiles/service-candidate-catalog.yaml
+        - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+      status: accepted
+      reviewer_notes: Bookmark-derived examples have stable IDs, shared public-safe metadata, and consistent service fields.
   dsr_links:
     - trace_id: dsr_trace_v1_001_process
       transparency_dimension: process_transparency

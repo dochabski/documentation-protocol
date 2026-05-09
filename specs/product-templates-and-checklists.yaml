@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: templates_and_checklists
   title: Templates and Checklists
@@ -6,7 +6,7 @@ product:
     Define reusable templates, checklists, and schema implications that make
     the protocol easy to apply consistently across projects.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - isos_and_more

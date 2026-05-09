@@ -9,7 +9,7 @@ crosswalk:
     repository_url: https://github.com/dochabski/documentation-protocol
     release_reference: v0.1.1
     commit: 80aec1aab1f1317e258fbce12e02419bbe9b6ca1
-    later_release_interpretation: v1.0.0_l4_reusable_stable_l5_not_claimed
+    later_release_interpretation: v1.0.x_l4_reusable_stable_l5_not_claimed
   pilot_artifact:
     repository_url: https://github.com/dochabski/dsr-framework
     release_reference: v1.2.0

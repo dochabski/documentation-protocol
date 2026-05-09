@@ -8,11 +8,11 @@ authors:
   - family-names: "Ochabski"
     given-names: "David"
     orcid: "https://orcid.org/0009-0000-9117-0651"
-version: "1.0.0"
-date-released: "2026-05-08"
+version: "1.0.1"
+date-released: "2026-05-09"
 license: "CC0-1.0"
 repository-code: "https://github.com/dochabski/documentation-protocol"
-url: "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.0"
+url: "https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.1"
 keywords:
   - documentation protocol
   - design science research

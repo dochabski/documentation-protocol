@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: automation_and_validation_model
   title: Automation and Validation Model
@@ -7,7 +7,7 @@ product:
     checks, review gates, release gates, and automation responsibilities for
     GitHub-centered protocol use.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - data_and_information

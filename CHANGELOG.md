@@ -4,6 +4,19 @@
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-05-09
+
+### Added
+
+- Added a bookmark example consistency review record for the v1.0.1 patch release.
+- Added v1.0.1 release and release approval records.
+
+### Changed
+
+- Normalized the David Ochabski bookmark-derived service profile with a stable profile ID, current version metadata, service IDs, public identifiers, and evidence-note fields.
+- Renamed the service candidate catalog to `examples/service-profiles/service-candidate-catalog.yaml` and normalized its root key, metadata, service names, service types, and public-safe fields.
+- Updated package metadata, citation metadata, specs, and package-control files for the v1.0.1 patch release.
+
 ## [1.0.0] - 2026-05-08
 
 ### Added

@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: implementation_roadmap
   title: Implementation Roadmap and Pilot Plan
@@ -7,7 +7,7 @@ product:
     process, release path, and continuous improvement plan for turning this
     protocol into a reusable GitHub repository.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - isos_and_more
@@ -38,7 +38,7 @@ sections:
         - improvement_cycle
         - success_metrics
       implementation_goal: >
-        Maintain the v1.0.0 L4 reusable-stable protocol as a reviewed,
+        Maintain the v1.0.1 L4 reusable-stable protocol as a reviewed,
         pilot-tested repository that can be pulled into future projects and
         used to generate project-specific documentation, while collecting
         stronger evidence for future validation or L5 claims.

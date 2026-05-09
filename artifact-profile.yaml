@@ -12,7 +12,7 @@ artifact_profile:
     - documentation_protocol
     - reusable_template_set
   target_conformance_level: l4_reusable
-  version: "1.0.0"
+  version: "1.0.1"
   status: l4_reusable_stable
   authors:
     - Ochabski, David
@@ -81,7 +81,7 @@ artifact_profile:
       - third_party_sources_are_cited_not_relicensed
     release_limits:
       - l5_archival_publication_ready_status_not_claimed
-      - version_specific_zenodo_doi_for_v1_0_0_not_minted_by_this_release
+      - version_specific_zenodo_doi_for_v1_0_1_not_minted_by_this_release
       - independent_external_validation_not_completed
   solution_space:
     designed_artifact: >
@@ -117,7 +117,8 @@ artifact_profile:
     The protocol was generated and iteratively revised from the project corpus,
     scaffold basis, DSR transparency review, licensing update, service-profile
     package, and retained pilot validation evidence. The v1.0.0 release
-    consolidates those materials into an L4 reusable-stable package without
+    stabilized those materials as an L4 reusable-stable package; the v1.0.1
+    patch release normalizes bookmark-derived service example files without
     claiming L5 archival/publication readiness.
   alternatives_considered:
     - alternative: publish_raw_builder_scaffold_archive
@@ -133,7 +134,8 @@ artifact_profile:
     - README.md#builder-scaffold-decision
     - records/validations/record-validation-0001-dsr-framework-pilot.yaml
     - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
-    - records/releases/record-release-approval-0001-v1-0-0.yaml
+    - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+    - records/releases/record-release-approval-0002-v1-0-1.yaml
   contribution_positioning:
     contribution_type: method_and_reusable_protocol_package
     novelty_basis:
@@ -181,6 +183,7 @@ artifact_profile:
         - evaluation-report.yaml
         - records/validations/record-validation-0001-dsr-framework-pilot.yaml
         - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+        - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
     contribution_transparency:
       evidence:
         - artifact-profile.yaml
@@ -188,11 +191,12 @@ artifact_profile:
         - traceability-matrix.yaml
   claims:
     - claim_id: claim_l4_reusable_stable
-      statement: Documentation Protocol v1.0.0 is an L4 reusable-stable protocol package.
+      statement: Documentation Protocol v1.0.1 is an L4 reusable-stable protocol package.
       evidence:
         - conformance-declaration.yaml
         - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
-        - records/releases/record-release-0002-v1-0-0.yaml
+        - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+        - records/releases/record-release-0003-v1-0-1.yaml
     - claim_id: claim_dsr_transparency_support
       statement: The protocol supports DSR transparency, contribution positioning, and evaluation strategy documentation.
       evidence:

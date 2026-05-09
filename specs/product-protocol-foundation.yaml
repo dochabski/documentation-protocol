@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: protocol_foundation
   title: Protocol Foundation and Scope
@@ -7,7 +7,7 @@ product:
     assumptions, tailoring rules, and non-goals for a reusable
     GitHub-centered documentation protocol.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - isos_and_more

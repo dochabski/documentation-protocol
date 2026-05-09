@@ -2,7 +2,7 @@
 
 # Limitations
 
-Documentation Protocol v1.0.0 is an L4 reusable-stable release. It is intended for practical reuse, citation by GitHub release URL, and further pilot application.
+Documentation Protocol v1.0.1 is an L4 reusable-stable patch release. It is intended for practical reuse, citation by GitHub release URL, and further pilot application.
 
 L5 archival/publication-ready status is not claimed. A version-specific Zenodo DOI, preservation closure record, registry/publication closure, archival fixity evidence, and publication appendix or publication acceptance record are deferred.
 

@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: CC0-1.0
 evaluation_report:
-  report_id: evaluation-report-v1-0-0-l4
-  title: Documentation Protocol v1.0.0 L4 Evaluation Summary
-  version: "1.0.0"
-  date: "2026-05-08"
+  report_id: evaluation-report-v1-0-1-l4
+  title: Documentation Protocol v1.0.1 L4 Evaluation Summary
+  version: "1.0.1"
+  date: "2026-05-09"
   evaluation_type: structural_conceptual_and_release_readiness
-  evaluation_timing: summative_for_v1_0_0
+  evaluation_timing: summative_for_v1_0_1
   evaluation_setting: artificial_repository_review_with_downstream_pilot_evidence
   evaluation_method_family:
     - structured_review
@@ -15,12 +15,13 @@ evaluation_report:
     - release_readiness_review
   evaluated_claims:
     - claim_id: claim_l4_reusable_stable
-      claim: Documentation Protocol v1.0.0 is L4 reusable-stable.
+      claim: Documentation Protocol v1.0.1 is L4 reusable-stable.
       result: supported_with_limitations
       evidence:
         - conformance-declaration.yaml
         - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
-        - records/releases/record-release-0002-v1-0-0.yaml
+        - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+        - records/releases/record-release-0003-v1-0-1.yaml
     - claim_id: claim_dsr_framework_pilot_support
       claim: The DSR Framework pilot supports coherence, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control.
       result: supported_with_self_application_limitations
@@ -61,6 +62,9 @@ evaluation_report:
     - finding_id: eval_v1_003
       result: retained_limitation
       summary: L5 DOI, preservation, registry, publication, and independent external validation closure are deferred.
+    - finding_id: eval_v1_004
+      result: pass
+      summary: Bookmark-derived example files use consistent identifiers, metadata, public-safe fields, and current catalog paths.
   validation_commands:
     - command: YAML/CFF/JSON parse validation
       result: pass
@@ -69,7 +73,7 @@ evaluation_report:
     - command: source archive/PDF hygiene search
       result: pass
   conclusion: >
-    The evidence supports releasing Documentation Protocol v1.0.0 as L4
+    The evidence supports releasing Documentation Protocol v1.0.1 as L4
     reusable-stable. The release must not be described as L5
     archival/publication-ready, empirically validated, independently
     externally validated, or automatically validating downstream artifacts.

@@ -12,3 +12,6 @@ Current retained Documentation Protocol records include pilot validation, L4 rea
 - `records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml`
 - `records/releases/record-release-0002-v1-0-0.yaml`
 - `records/releases/record-release-approval-0001-v1-0-0.yaml`
+- `records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml`
+- `records/releases/record-release-0003-v1-0-1.yaml`
+- `records/releases/record-release-approval-0002-v1-0-1.yaml`

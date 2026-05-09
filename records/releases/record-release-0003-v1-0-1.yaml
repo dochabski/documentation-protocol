@@ -1,0 +1,54 @@
+# SPDX-License-Identifier: CC0-1.0
+release_record:
+  record_id: record-release-0003-v1-0-1
+  title: Documentation Protocol v1.0.1 bookmark example consistency patch release
+  release_version: "1.0.1"
+  release_tag: v1.0.1
+  date: "2026-05-09"
+  release_type: l4_reusable_stable_patch_release
+  release_status: approved_for_github_release
+  package_conformance: l4_reusable_stable
+  l5_claimed: false
+  release_url: https://github.com/dochabski/documentation-protocol/releases/tag/v1.0.1
+  release_summary: >
+    Documentation Protocol v1.0.1 is an L4 reusable-stable patch release that
+    normalizes bookmark-derived example service profile files. L5
+    archival/publication-ready status is not claimed.
+  changes:
+    - Normalized the David Ochabski service profile with a stable ID and consistent selected-service fields.
+    - Renamed and normalized the bookmark service candidate catalog.
+    - Updated examples documentation, schema field support, specs, prompts, metadata, citation files, and package-control records.
+  included_evidence:
+    - examples/README.md
+    - examples/service-profiles/david-ochabski-service-profile.yaml
+    - examples/service-profiles/service-candidate-catalog.yaml
+    - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+    - conformance-declaration.yaml
+    - package-inventory.yaml
+    - traceability-matrix.yaml
+    - evaluation-report.yaml
+    - CITATION.cff
+    - .zenodo.json
+    - codemeta.json
+    - metadata.yaml
+  validation_summary:
+    bookmark_example_review: records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+    l4_readiness_baseline: records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
+    result: pass
+    retained_limitations:
+      - l5_archival_publication_ready_status_not_claimed
+      - zenodo_doi_not_minted_by_this_release
+      - private_bookmark_or_account_urls_not_verified_or_published
+  publication_and_preservation:
+    github_release: planned_for_v1_0_1
+    zenodo_doi_for_v1_0_1: not_minted_by_this_record
+    preservation_closure: deferred
+    registry_publication: deferred
+  release_checks:
+    source_pdfs_included: false
+    archives_included: false
+    private_tokens_or_credentials_included: false
+    private_account_urls_included: false
+    generated_protocol_and_example_files_only: true
+    release_tag_to_create: v1.0.1
+    zenodo_doi_minted_from_this_release: false

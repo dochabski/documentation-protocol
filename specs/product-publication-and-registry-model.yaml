@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: publication_and_registry_model
   title: Publication and Registry Model
@@ -7,7 +7,7 @@ product:
     citation, registry submission, publication appendix material, and
     preservation readiness for protocol-governed artifacts.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - isos_and_more

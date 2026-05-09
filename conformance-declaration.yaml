@@ -2,14 +2,14 @@
 conformance_declaration:
   item_id: documentation_protocol_conformance_declaration
   title: Documentation Protocol Conformance Declaration
-  version: "1.0.0"
-  release_tag: v1.0.0
-  date: "2026-05-08"
+  version: "1.0.1"
+  release_tag: v1.0.1
+  date: "2026-05-09"
   package_status: l4_reusable_stable
   package_conformance: l4_reusable_stable
   l5_claimed: false
   claim: >
-    Documentation Protocol v1.0.0 is an L4 reusable-stable protocol package.
+    Documentation Protocol v1.0.1 is an L4 reusable-stable protocol package.
     It is intended for reuse by maintainers, reviewers, artifact authors, and
     AI-assisted documentation workflows. L5 archival/publication-ready status
     is not claimed for this release.
@@ -43,19 +43,20 @@ conformance_declaration:
       - records/validations/record-validation-0001-dsr-framework-pilot.yaml
       - crosswalks/documentation-protocol-to-dsr-framework-pilot.yaml
       - records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml
-      - records/releases/record-release-0002-v1-0-0.yaml
-      - records/releases/record-release-approval-0001-v1-0-0.yaml
+      - records/reviews/record-review-bookmark-example-consistency-0001-v1-0-1.yaml
+      - records/releases/record-release-0003-v1-0-1.yaml
+      - records/releases/record-release-approval-0002-v1-0-1.yaml
   l5_not_claimed:
     deferred_or_missing_evidence:
-      - version_specific_zenodo_doi_for_v1_0_0
-      - preservation_closure_record_for_v1_0_0
+      - version_specific_zenodo_doi_for_v1_0_1
+      - preservation_closure_record_for_v1_0_1
       - registry_publication_closure
       - independent_external_semantic_review
       - publication_appendix_or_publication_package_acceptance
     interpretation: >
-      The v1.0.0 GitHub release is reusable and citable by release URL. A
+      The v1.0.1 GitHub release is reusable and citable by release URL. A
       separate archival DOI release or L5 review may be added later without
-      changing the v1.0.0 L4 claim.
+      changing the v1.0.1 L4 claim.
   validation_boundary:
     supported:
       - coherence
@@ -76,5 +77,5 @@ conformance_declaration:
     license, metadata, conformance target, validation evidence, limitations,
     and release status. Using this protocol does not automatically validate or
     relicense downstream artifacts.
-  current_release_record: records/releases/record-release-0002-v1-0-0.yaml
-  current_release_approval: records/releases/record-release-approval-0001-v1-0-0.yaml
+  current_release_record: records/releases/record-release-0003-v1-0-1.yaml
+  current_release_approval: records/releases/record-release-approval-0002-v1-0-1.yaml

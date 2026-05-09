@@ -36,7 +36,7 @@ Evaluation evidence must be separated from demonstration evidence unless accepta
 
 The first retained pilot is the DSR Framework repository. It validates the protocol only in a bounded sense: downstream pilot application, self-application, and structural-conceptual validation. The current verdict is pass with public-draft/self-application limitations.
 
-This supports coherence, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control. In combination with the v1.0.0 L4 readiness review and release records, it supports the package-level L4 reusable-stable release claim. It does not support claims of external adoption, empirical effectiveness, independent external semantic review, or L5 archival/publication-ready status. Use `conformance-declaration.yaml`, `docs/validation/dsr-framework-pilot-validation.md`, `records/validations/record-validation-0001-dsr-framework-pilot.yaml`, and `records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml` for the retained validation boundary.
+This supports coherence, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control. In combination with the v1.0.0 L4 readiness review and later patch release records, it supports the package-level L4 reusable-stable release claim. It does not support claims of external adoption, empirical effectiveness, independent external semantic review, or L5 archival/publication-ready status. Use `conformance-declaration.yaml`, `docs/validation/dsr-framework-pilot-validation.md`, `records/validations/record-validation-0001-dsr-framework-pilot.yaml`, and `records/reviews/record-review-l4-readiness-0001-v1-0-0.yaml` for the retained validation boundary.
 
 ## Recommended Service Ecosystem
 

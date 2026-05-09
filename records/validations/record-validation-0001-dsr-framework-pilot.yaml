@@ -11,7 +11,7 @@ validation_record:
     release_reference: v0.1.1
     commit: 80aec1aab1f1317e258fbce12e02419bbe9b6ca1
     role: general_meta_protocol_layer
-    later_release_interpretation: v1.0.0_l4_reusable_stable_l5_not_claimed
+    later_release_interpretation: v1.0.x_l4_reusable_stable_l5_not_claimed
   validation_vehicle:
     name: DSR Framework
     repository_url: https://github.com/dochabski/dsr-framework
@@ -210,12 +210,12 @@ validation_record:
     decision: retain_as_bounded_pilot_validation_evidence
     conformance_interpretation: >
       Supports Documentation Protocol L4 reusable-stable status when paired
-      with the v1.0.0 L4 readiness review, conformance declaration, and
+      with the v1.0.0 L4 readiness review, v1.0.x conformance declaration, and
       release approval evidence. Does not justify external empirical
       validation, automatic downstream validation, or an L5
       archival/publication-ready claim.
     release_implication: >
-      Supports a v1.0.0 GitHub release described as L4 reusable-stable and
+      Supports v1.0.x GitHub releases described as L4 reusable-stable and
       not L5 archival/publication-ready.
   next_validation_needed:
     - second_internal_pilot_beyond_dsr_framework

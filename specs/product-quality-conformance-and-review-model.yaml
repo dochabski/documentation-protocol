@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: quality_conformance_and_review_model
   title: Quality, Conformance, and Review Model
@@ -7,7 +7,7 @@ product:
     workflow, scoring rubrics, acceptance criteria, and evidence requirements
     for protocol-governed artifact packages.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
   - md_guides
   - data_and_information

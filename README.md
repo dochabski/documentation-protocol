@@ -2,7 +2,7 @@
 
 # Documentation Protocol
 
-**Status:** v1.0.0 L4 reusable-stable release -- usable and citable; L5 archival/publication-ready status is not claimed.
+**Status:** v1.0.1 L4 reusable-stable patch release -- usable and citable; L5 archival/publication-ready status is not claimed.
 
 This folder contains a standalone, GitHub-centered documentation protocol for creating, reviewing, packaging, releasing, publishing, and preserving open research and design artifacts.
 
@@ -31,13 +31,13 @@ The protocol includes a nonblocking Recommended Service Integration Profile. It 
 
 ## Conformance Status
 
-Documentation Protocol v1.0.0 is released as a package-level `L4 reusable-stable` protocol. The L4 claim is based on modular source-of-truth YAML specifications, human-facing documentation, reusable templates, checklists, schemas, service-profile examples, package-control files, provenance/citation metadata, retained release records, and the DSR Framework pilot application.
+Documentation Protocol v1.0.1 is released as a package-level `L4 reusable-stable` protocol. The L4 claim is based on modular source-of-truth YAML specifications, human-facing documentation, reusable templates, checklists, schemas, normalized service-profile examples, package-control files, provenance/citation metadata, retained release records, and the DSR Framework pilot application.
 
-L5 archival/publication-ready status is not claimed for v1.0.0. L5 would require separate archival/preservation closure, registry/publication evidence, and any stronger external validation records selected for that claim.
+L5 archival/publication-ready status is not claimed for v1.0.1. L5 would require separate archival/preservation closure, registry/publication evidence, and any stronger external validation records selected for that claim.
 
 The first retained pilot validation is the DSR Framework repository. It supports coherence, structural adequacy, repository usability, source-of-truth discipline, traceability, reviewability, and overclaiming control. It does not prove external adoption, empirical effectiveness, independent semantic adequacy, or automatic validation of downstream artifacts.
 
-See `artifact-profile.yaml`, `package-inventory.yaml`, `traceability-matrix.yaml`, `evaluation-report.yaml`, `LIMITATIONS.md`, `conformance-declaration.yaml`, `records/releases/record-release-0002-v1-0-0.yaml`, `records/releases/record-release-approval-0001-v1-0-0.yaml`, `docs/validation/dsr-framework-pilot-validation.md`, and `records/validations/record-validation-0001-dsr-framework-pilot.yaml`.
+See `artifact-profile.yaml`, `package-inventory.yaml`, `traceability-matrix.yaml`, `evaluation-report.yaml`, `LIMITATIONS.md`, `conformance-declaration.yaml`, `records/releases/record-release-0003-v1-0-1.yaml`, `records/releases/record-release-approval-0002-v1-0-1.yaml`, `docs/validation/dsr-framework-pilot-validation.md`, and `records/validations/record-validation-0001-dsr-framework-pilot.yaml`.
 
 ## Source Policy
 
@@ -45,7 +45,7 @@ This protocol was generated from the project corpus and scaffold basis cited in 
 
 ## Citation
 
-Use the citation metadata in `CITATION.cff`. Author identity is linked with ORCID iD [0009-0000-9117-0651](https://orcid.org/0009-0000-9117-0651); see `docs/protocol/orcid-identity.md` for reuse targets. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content. The v1.0.0 GitHub release is citable by release URL; a version-specific Zenodo DOI should be minted separately if archival DOI publication is required for an L5 or archive-centered release.
+Use the citation metadata in `CITATION.cff`. Author identity is linked with ORCID iD [0009-0000-9117-0651](https://orcid.org/0009-0000-9117-0651); see `docs/protocol/orcid-identity.md` for reuse targets. Citation is appreciated and recommended for scholarly traceability, but it is not legally required as a license condition for CC0 content. The v1.0.1 GitHub release is citable by release URL; a version-specific Zenodo DOI should be minted separately if archival DOI publication is required for an L5 or archive-centered release.
 
 ## License
 

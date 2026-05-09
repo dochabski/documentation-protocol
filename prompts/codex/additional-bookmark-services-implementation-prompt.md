@@ -4,7 +4,7 @@ You are updating `dochabski/documentation-protocol`.
 
 ## Goal
 
-Add the second service-candidate set to the Documentation Protocol's Recommended Service Integration Profile. This update adds Google Scholar, arXiv, Octopus, Dryad, Peer Community In, HAL, bioRxiv, medRxiv, data.org Funding Opportunities, FORCE11, SCOSS, Crossref, and ROR as **candidate examples** under vendor-neutral service roles.
+Add the bookmark-derived service-candidate set to the Documentation Protocol's Recommended Service Integration Profile. This update adds Google Scholar, arXiv, Octopus, Dryad, Peer Community In, HAL, bioRxiv, medRxiv, data.org Funding Opportunities, FORCE11, SCOSS, Crossref, and ROR as **candidate examples** under vendor-neutral service roles.
 
 Do **not** make any named service, membership, dashboard, or personal account mandatory for protocol conformance.
 
@@ -33,10 +33,10 @@ checklists/service-integration-readiness-checklist.yaml
 schemas/service-integration-profile.schema.json
 docs/protocol/recommended-service-ecosystem.md
 examples/service-profiles/david-ochabski-service-profile.yaml
-examples/service-profiles/service-candidate-catalog-v0-2.yaml
+examples/service-profiles/service-candidate-catalog.yaml
 ```
 
-If these files already exist, merge carefully or replace with the v0.2 files after confirming no unrelated local changes would be lost.
+If these files already exist, merge carefully or replace with the packaged files after confirming no unrelated local changes would be lost.
 
 ## Existing files to patch
 
@@ -107,7 +107,7 @@ Also run any existing repository validation, lint, or tests if present.
 ## Acceptance criteria
 
 - `service_integration_profile` appears in product catalog and README product set.
-- All v0.2 service candidate examples are present in the vocabulary or example catalog.
+- All bookmark-derived service candidate examples are present in the vocabulary or example catalog.
 - `david-ochabski-service-profile.yaml` includes the new bookmarks as non-normative examples.
 - No named service is required for conformance.
 - No credential, token, or private account URL is added.
@@ -126,7 +126,7 @@ Use this PR summary:
 
 ```markdown
 ## Summary
-- Adds v0.2 service-role vocabulary and candidate catalog for additional open-science services.
+- Adds service-role vocabulary updates and a candidate catalog for additional open-science services.
 - Adds Google Scholar, arXiv, Octopus, Dryad, PCI, HAL, bioRxiv, medRxiv, data.org, FORCE11, SCOSS, Crossref, and ROR as candidate examples.
 - Keeps all named services nonmandatory and records David Ochabski's choices as a non-normative example profile.
 

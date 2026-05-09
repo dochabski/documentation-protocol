@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: CC0-1.0
+# SPDX-License-Identifier: CC0-1.0
 product:
   id: service_integration_profile
   title: Recommended Service Integration Profile
@@ -6,7 +6,7 @@ product:
     source control, persistent identification, archival deposit, metadata indexing, educational dissemination, public communication,
     open peer review, open-science sustainability, and long-form publication.
   status: l4_reusable_stable
-version: "1.0.0"
+version: "1.0.1"
 source_basis:
 - md_guides
 - data_and_information
@@ -344,7 +344,7 @@ sections:
     - schemas/service-integration-profile.schema.json
     - docs/protocol/recommended-service-ecosystem.md
     optional_example_location: examples/service-profiles/
-    optional_service_candidate_catalog: examples/service-profiles/service-candidate-catalog-v0-2.yaml
+    optional_service_candidate_catalog: examples/service-profiles/service-candidate-catalog.yaml
 - id: workflow
   title: Workflow
   content:

@@ -3,7 +3,7 @@ checklist:
   id: pilot-learning-checklist
   title: Pilot Learning Checklist
   status: l4_reusable_stable
-  version: "1.0.0"
+  version: "1.0.1"
   purpose: >
     Capture what each pilot reveals that the Documentation Protocol should
     add, clarify, relax, automate, defer, or preserve as a limitation.

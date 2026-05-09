@@ -115,6 +115,9 @@
                     "service_name"
                   ],
                   "properties": {
+                    "service_id": {
+                      "type": "string"
+                    },
                     "service_name": {
                       "type": "string"
                     },
